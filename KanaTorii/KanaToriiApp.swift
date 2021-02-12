@@ -1,20 +1,21 @@
 //
 //  KanaToriiApp.swift
-//  KanaTorii
+//  Shared
 //
-//  Created by Clément FLORET on 03/02/2021.
+//  Created by Clément FLORET on 22/12/2020.
 //
 
 import SwiftUI
 
+
 @main
 struct KanaToriiApp: App {
-    let persistenceController = PersistenceController.shared
+    @StateObject private var modelData = ModelData()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView(tabViewSelectedItem: 1)
+                .environmentObject(ModelData())
         }
     }
 }
