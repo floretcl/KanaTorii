@@ -1,5 +1,5 @@
 //
-//  TitleWrite.swift
+//  TitleDraw.swift
 //  Kana Torii
 //
 //  Created by Clément FLORET on 19/01/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TitleWrite: View {
+struct TitleDraw: View {
     var kanaType: String
     var kana: Kana
     var sizeText: CGFloat
@@ -25,10 +25,10 @@ struct TitleWrite: View {
     }
 }
 
-struct TitleWrite_Previews: PreviewProvider {
+struct TitleDraw_Previews: PreviewProvider {
     static let modelData = ModelData()
     static var previews: some View {
-        TitleWrite(kanaType: "hiragana", kana: modelData.kanas[20], sizeText: 20)
+        TitleDraw(kanaType: "hiragana", kana: modelData.kanas[20], sizeText: 20)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  WritingGrid.swift
+//  DrawingGrid.swift
 //  Kana Torii
 //
 //  Created by Clément FLORET on 26/01/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WritingGrid: View {
+struct DrawingGrid: View {
     var body: some View {
         ZStack {
             VerticalDottedLine()
@@ -18,9 +18,9 @@ struct WritingGrid: View {
     }
 }
 
-struct WritingGrid_Previews: PreviewProvider {
+struct DrawingGrid_Previews: PreviewProvider {
     static var previews: some View {
-        WritingGrid()
-            .preferredColorScheme(.dark)
+        DrawingGrid()
+            
     }
 }

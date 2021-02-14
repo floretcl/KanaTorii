@@ -8,6 +8,7 @@
 import Foundation
 import CoreVideo
 import CoreImage
+import UIKit
 
 struct ImageProcessor {
     static func pixelBuffer(forImage image:CGImage) -> CVPixelBuffer? {

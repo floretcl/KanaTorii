@@ -17,7 +17,7 @@ struct LessonsView: View {
         NavigationView {
             List(lessons) { lesson in
                 NavigationLink(
-                    destination: LessonInfo(lesson: lesson),
+                    destination: LessonInfoView(lesson: lesson),
                     label: {
                         LessonRow(lesson: lesson)
                     })

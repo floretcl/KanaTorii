@@ -27,28 +27,7 @@ struct HomeView: View {
                         Spacer()
                         Spacer()
                         Spacer()
-                        Button(action: {
-                            showIntroduction.toggle()
-                        }, label: {
-                            HomeButton(
-                                textButton: "Introduction",
-                                width: widthDevice/2.3,
-                                heightPadding: heightDevice/55,
-                                sizeText: 20)
-                        }).sheet(isPresented: $showIntroduction) {
-                            IntroductionView()
-                        }
-                        Button(action: {
-                            showAbout.toggle()
-                        }, label: {
-                            HomeButton(
-                                textButton: "About Kana",
-                                width: widthDevice/2.3,
-                                heightPadding: heightDevice/55,
-                                sizeText: 20)
-                        }).sheet(isPresented: $showAbout) {
-                            AboutView()
-                        }
+                        HomeButtons(showIntroduction: $showIntroduction, showAbout: $showAbout, width: widthDevice/2.3, heightPadding: heightDevice/55, sizeText: 20)
                         Spacer()
                     }
                 }

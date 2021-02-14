@@ -12,7 +12,7 @@ struct TestWriting: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var currentLesson: Lesson
     @ObservedObject var test: TestDrawing
-    @State var currentDrawing: Drawing = Drawing()
+    @State var drawing: Drawing = Drawing()
     @State var drawings: [Drawing] = [Drawing]()
     @State var showGuide: Bool = true
     @State var numberOfDisplayActionSheet: Int = 0
@@ -31,8 +31,8 @@ struct TestWriting: View {
             return "Wrong Answer"
         }
     }
-    var hiraganaRecognizer: HiraganaRecognizer
-    var katakanaRecognizer: KatakanaRecognizer
+//    var hiraganaRecognizer: HiraganaRecognizer
+//    var katakanaRecognizer: KatakanaRecognizer
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -59,15 +59,15 @@ struct TestWriting: View {
                                     style: .continuous)
                                 .foregroundColor(Color(UIColor.systemBackground))
                                 .shadow(color: Color("Shadow"), radius: 10, x: 0, y: 0)
-                                WritingArea(
-                                    currentDrawing: $currentDrawing,
-                                    drawings: $drawings,
+                                DrawingArea(
+                                    drawing: $drawing,
+                                    paths: $drawings,
                                     color: .primary,
                                     lineWidth: widthDevice/35)
                                 if showGuide {
                                     GuideWriting(romaji: test.romaji, kanaType: kanaType)
                                 }
-                                WritingGrid()
+                                DrawingGrid()
                             }
                             .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                             .padding(.all, heightDevice/40)

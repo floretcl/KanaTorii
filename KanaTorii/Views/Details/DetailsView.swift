@@ -1,5 +1,5 @@
 //
-//  KanaDetailPageView.swift
+//  DetailsView.swift
 //  Kana Torii
 //
 //  Created by Clément FLORET on 15/01/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct KanaDetailPageView<Page: View>: View {
+struct DetailsView<Page: View>: View {
     @State var currentPage: Int
     var pages: [Page]
     
@@ -21,9 +21,9 @@ struct KanaDetailPageView<Page: View>: View {
     }
 }
 
-struct KanaDetailPageView_Previews: PreviewProvider {
+struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        KanaDetailPageView(
+        DetailsView(
             currentPage: 4,
             pages: ModelData().kanas.map {
                 DetailPage(kana: $0, kanaType: .hiragana)

@@ -90,33 +90,4 @@ class TestDrawing: ObservableObject {
             AudioServicesPlaySystemSound(mySound);
         }
     }
-    func getPrediction(drawing: Drawing) {
-        //var imageView: UIImageView?
-        var prediction: String = ""
-        
-//        if colorScheme == .light {
-//            imageView = ImageProcessor.invertColorsImage(forImageView: mainImageView!)
-//        } else {
-//            imageView = drawing
-//        }
-        
-        if let imageToAnalyse = drawing {
-            if let predictionString = classLabel(forImage: imageToAnalyse) {
-                prediction = predictionString
-            }
-        }
-        switch traitCollection.userInterfaceStyle {
-        case .dark: //dark mode
-            mainImageView = ImageProcessor.invertColorsImage(forImageView: imageView!)
-        default:
-            break
-        }
-        
-        if prediction == test.currentKana {
-            answerQuestion(prediction: true)
-        } else {
-            alert(title: NSLocalizedString("AutoDetectionFailed", comment: ""), message: NSLocalizedString("ManualCorrection", comment: "") )
-            setCorrectionView()
-        }
-    }
 }

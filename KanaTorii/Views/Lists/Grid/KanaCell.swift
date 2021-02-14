@@ -21,7 +21,7 @@ struct KanaCell: View {
     
     var body: some View {
         NavigationLink(
-            destination: KanaDetailPageView(
+            destination: DetailsView(
                 currentPage: getId(),
                 pages: ModelData().kanas.map {
                     DetailPage(kana: $0, kanaType: kanaType)

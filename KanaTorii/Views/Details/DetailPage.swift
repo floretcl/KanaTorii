@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailPage: View {
-    @State var showWriteView = false
+    @State var showDrawingView = false
     @State var kana: Kana
     var kanaType: Kana.KanaType
     var type: String {
@@ -36,32 +36,19 @@ struct DetailPage: View {
             let heightDevice = geometry.size.height
             if UIDevice.current.localizedModel == "iPad" {
                 VStack {
-                    HStack {
-                        Spacer()
-                        FlashCard(
-                            kanaType: self.type,
-                            label: self.kanaLabel,
-                            otherLabel: self.otherLabel,
-                            romaji: kana.romaji,
-                            heightDevice: heightDevice)
-                        Spacer()
-                    }
-                    .padding(.top, heightDevice/30)
-                    .padding(.bottom, heightDevice/40)
-                    HStack {
-                        Button(action: {
-                            kana.readTextInJapanese(text: kanaLabel)
-                        }, label: {
-                            DetailButtonLabel(text: "Listen", sizeText: heightDevice/45, systemImage: "speaker.wave.2")
+                    FlashCard(
+                        kanaType: type,
+                        label: kanaLabel,
+                        otherLabel: otherLabel,
+                        romaji: kana.romaji,
+                        heightDevice: heightDevice)
+                        .padding(.top, heightDevice/30)
+                        .padding(.bottom, heightDevice/40)
+                    DetailButtons(showDrawingView: $showDrawingView, kana: kana, kanaLabel: kanaLabel, sizeText: heightDevice/45)
+                        .padding(.all, heightDevice/80)
+                        .fullScreenCover(isPresented: $showDrawingView, content: {
+                            DrawView(kana: kana, kanaType: type)
                         })
-                        Button(action: {
-                            showWriteView.toggle()
-                        }, label: {
-                            DetailButtonLabel(text: "Write", sizeText: heightDevice/45, systemImage: "hand.draw")
-                        }).fullScreenCover(isPresented: $showWriteView, content: {
-                            WriteView(kana: kana, kanaType: type)
-                        })
-                    }.padding(.all, heightDevice/80)
                     StatisticsSection(
                         nbCorrectAnswers: self.nbCorrectAnswers,
                         nbTotalAnswers: self.nbTotalAnswers,
@@ -82,33 +69,19 @@ struct DetailPage: View {
                 .edgesIgnoringSafeArea(.top)
             } else {
                 VStack {
-                    HStack {
-                        Spacer()
-                        FlashCard(
-                            kanaType: self.type,
-                            label: self.kanaLabel,
-                            otherLabel: self.otherLabel,
-                            romaji: kana.romaji,
-                            heightDevice: heightDevice)
-                        Spacer()
-                    }
-                    .padding(.top, heightDevice/30)
-                    .padding(.bottom, heightDevice/40)
-                    HStack {
-                        Button(action: {
-                            kana.readTextInJapanese(text: kanaLabel)
-                        }, label: {
-                            DetailButtonLabel(text: "Listen", sizeText: heightDevice/30, systemImage: "speaker.wave.2")
-                            
+                    FlashCard(
+                        kanaType: type,
+                        label: kanaLabel,
+                        otherLabel: otherLabel,
+                        romaji: kana.romaji,
+                        heightDevice: heightDevice)
+                        .padding(.top, heightDevice/30)
+                        .padding(.bottom, heightDevice/40)
+                    DetailButtons(showDrawingView: $showDrawingView, kana: kana, kanaLabel: kanaLabel, sizeText: heightDevice/35)
+                        .padding(.all, heightDevice/80)
+                        .fullScreenCover(isPresented: $showDrawingView, content: {
+                            DrawView(kana: kana, kanaType: type)
                         })
-                        Button(action: {
-                            showWriteView.toggle()
-                        }, label: {
-                            DetailButtonLabel(text: "Write", sizeText: heightDevice/30, systemImage: "hand.draw")
-                        }).fullScreenCover(isPresented: $showWriteView, content: {
-                            WriteView(kana: kana, kanaType: type)
-                        })
-                    }.padding(.all, heightDevice/80)
                     StatisticsSection(
                         nbCorrectAnswers: self.nbCorrectAnswers,
                         nbTotalAnswers: self.nbTotalAnswers,

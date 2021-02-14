@@ -27,5 +27,6 @@ struct NavigationButton: View {
 struct NavigationButton_Previews: PreviewProvider {
     static var previews: some View {
         NavigationButton(text: "Text", systemImage: "drop", sizeText: 30, inversed: false, width: 150, height: 50)
+            .previewLayout(.sizeThatFits)
     }
 }
