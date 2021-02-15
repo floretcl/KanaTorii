@@ -24,12 +24,7 @@ struct LessonMemoWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            Text("Memorize the writing order of the lines and the shape of this kana")
-                                .font(.system(size: heightDevice/35))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                                .padding(.vertical, heightDevice/70)
-                                .padding(.horizontal, 20)
+                            TitleLessonMemo(heightDevice: heightDevice, text: "Memorize the writing order of the lines and the shape of this kana")
                             MemoCard(
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
@@ -38,14 +33,7 @@ struct LessonMemoWriting: View {
                                 .padding(.horizontal, widthDevice/4.5)
                             Spacer()
                             ZStack {
-                                Button(action: {
-                                    showTest.toggle()
-                                    currentLesson.newPart()
-                                }, label: {
-                                    ContinueLabel(
-                                        widthDevice: widthDevice,
-                                        heightDevice: heightDevice)
-                                })
+                                ContinueButtonTestLessonMemo(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice)
                                 .padding(.bottom, heightDevice/20)
                                 .sheet(isPresented: $showTest, content: {
                                     TestWriting(
@@ -56,13 +44,7 @@ struct LessonMemoWriting: View {
                                             romaji: currentLesson.currentRomaji))
                                 })
                                 if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
-                                    Button(action: {
-                                        showQuiz.toggle()
-                                    }, label: {
-                                        ContinueLabel(
-                                            widthDevice: widthDevice,
-                                            heightDevice: heightDevice)
-                                    })
+                                    ContinueButtonQuizLessonMemo(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice)
                                     .padding(.bottom, heightDevice/20)
                                     .sheet(isPresented: $showQuiz, content: {
                                         //

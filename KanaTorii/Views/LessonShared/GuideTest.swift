@@ -1,5 +1,5 @@
 //
-//  GuideWriting.swift
+//  GuideTest.swift
 //  KanaTorii
 //
 //  Created by Clément FLORET on 08/02/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GuideWriting: View {
+struct GuideTest: View {
     var romaji: String
     var kanaType: String
     var kana: Kana = Kana.default
@@ -26,10 +26,10 @@ func getLinesImageFilename(kana: Kana,romaji: String, kanaType: String) -> Strin
     return kana.getLinesImageFilename(romaji: romaji, kanaType: kanaType == "hiragana" ? .hiragana : .katakana)
 }
 
-struct GuideWriting_Previews: PreviewProvider {
+struct GuideTest_Previews: PreviewProvider {
     static var modelData = ModelData()
     static var previews: some View {
-        Guide(kana: modelData.kanas[0], kanaType: "katakana")
+        GuideTest(romaji: "a", kanaType: "katakana")
             .previewLayout(.sizeThatFits)
     }
 }

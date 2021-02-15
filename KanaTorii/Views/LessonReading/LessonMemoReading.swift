@@ -22,53 +22,31 @@ struct LessonMemoReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            Text("Memorize the shape and pronunciation of this kana")
-                                .font(.system(size: heightDevice/35))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                                .padding(.vertical, heightDevice/70)
-                                .padding(.horizontal, 20)
+                            TitleLessonMemo(heightDevice: heightDevice, text: "Memorize the shape and pronunciation of this kana")
                             MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/12)
                                 .padding(.horizontal, widthDevice/4)
-                            Button(action: {
-                                currentLesson.readTextInJapanese(text: currentLesson.currentKana)
-                            }, label: {
-                                SoundImage(sizeText: 40)
-                            })
-                            .padding(heightDevice/80)
+                            SoundButton(currentLesson: currentLesson)
+                                .padding(heightDevice/80)
                             Spacer()
                             ZStack {
-                                Button(action: {
-                                    showTest.toggle()
-                                    currentLesson.newPart()
-                                }, label: {
-                                    ContinueLabel(
-                                        widthDevice: widthDevice,
-                                        heightDevice: heightDevice)
-                                })
-                                .padding(.bottom, heightDevice/20)
-                                .fullScreenCover(isPresented: $showTest, content: {
-                                    TestReading(
-                                        currentLesson: currentLesson,
-                                        test: Test(
-                                            type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
-                                            kanas: currentLesson.kanas,
-                                            romajis: currentLesson.romajis,
-                                            currentIndex: currentLesson.kanaIndex))
-                                })
-                                if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
-                                    Button(action: {
-                                        showQuiz.toggle()
-                                    }, label: {
-                                        ContinueLabel(
-                                            widthDevice: widthDevice,
-                                            heightDevice: heightDevice)
-                                    })
+                                ContinueButtonTestLessonMemo(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice)
                                     .padding(.bottom, heightDevice/20)
-                                    .fullScreenCover(isPresented: $showQuiz, content: {
-                                        Quiz()
+                                    .fullScreenCover(isPresented: $showTest, content: {
+                                        TestReading(
+                                            currentLesson: currentLesson,
+                                            test: Test(
+                                                type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
+                                                kanas: currentLesson.kanas,
+                                                romajis: currentLesson.romajis,
+                                                currentIndex: currentLesson.kanaIndex))
                                     })
+                                if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
+                                    ContinueButtonQuizLessonMemo(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice)
+                                        .padding(.bottom, heightDevice/20)
+                                        .fullScreenCover(isPresented: $showQuiz, content: {
+                                            //
+                                        })
                                 }
                             }
                         }
@@ -87,53 +65,31 @@ struct LessonMemoReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            Text("Memorize the shape and pronunciation of this kana")
-                                .font(.system(size: heightDevice/35))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                                .padding(.vertical, heightDevice/70)
-                            .padding(.horizontal, 20)
+                            TitleLessonMemo(heightDevice: heightDevice, text: "Memorize the shape and pronunciation of this kana")
                             MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
-                            .padding(.vertical, heightDevice/50)
-                            .padding(.horizontal, widthDevice/4.5)
-                            Button(action: {
-                                currentLesson.readTextInJapanese(text: currentLesson.currentKana)
-                            }, label: {
-                                SoundImage(sizeText: 30)
-                            })
-                            .padding(heightDevice/80)
+                                .padding(.vertical, heightDevice/50)
+                                .padding(.horizontal, widthDevice/4.5)
+                            SoundButton(currentLesson: currentLesson)
+                                .padding(heightDevice/80)
                             Spacer()
                             ZStack {
-                                Button(action: {
-                                    showTest.toggle()
-                                    currentLesson.newPart()
-                                }, label: {
-                                    ContinueLabel(
-                                        widthDevice: widthDevice,
-                                        heightDevice: heightDevice)
-                                })
-                                .padding(.bottom, heightDevice/20)
-                                .sheet(isPresented: $showTest, content: {
-                                    TestReading(
-                                        currentLesson: currentLesson,
-                                        test: Test(
-                                            type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
-                                            kanas: currentLesson.kanas,
-                                            romajis: currentLesson.romajis,
-                                            currentIndex: currentLesson.kanaIndex))
-                                })
-                                if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
-                                    Button(action: {
-                                        showQuiz.toggle()
-                                    }, label: {
-                                        ContinueLabel(
-                                            widthDevice: widthDevice,
-                                            heightDevice: heightDevice)
-                                    })
+                                ContinueButtonTestLessonMemo(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice)
                                     .padding(.bottom, heightDevice/20)
-                                    .sheet(isPresented: $showQuiz, content: {
-                                        //
+                                    .sheet(isPresented: $showTest, content: {
+                                        TestReading(
+                                            currentLesson: currentLesson,
+                                            test: Test(
+                                                type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
+                                                kanas: currentLesson.kanas,
+                                                romajis: currentLesson.romajis,
+                                                currentIndex: currentLesson.kanaIndex))
                                     })
+                                if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
+                                    ContinueButtonQuizLessonMemo(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice)
+                                        .padding(.bottom, heightDevice/20)
+                                        .sheet(isPresented: $showQuiz, content: {
+                                            //
+                                        })
                                 }
                             }
                         }
@@ -143,7 +99,6 @@ struct LessonMemoReading: View {
                 .navigationBarTitle(currentLesson.name)
             }).background(Color(UIColor.secondarySystemBackground))
         }
-        
     }
 }
 

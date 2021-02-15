@@ -23,13 +23,6 @@ struct Drawing: Identifiable {
     }
     points.append(point)
   }
-  
-  mutating func smoothLine() {
-    var newPath = Path()
-    newPath.interpolatePoints(interpolationPoints: points)
-    path = newPath
-  }
-  
 }
 
 struct DrawingArea: View {
@@ -39,28 +32,38 @@ struct DrawingArea: View {
     @State var lineWidth: CGFloat
     
     var body: some View {
-        let dragGesture = DragGesture(minimumDistance: 0)
-            .onChanged({ stroke in
-                self.drawing.addLine(to: stroke.location,
-                                         color: color)
-            })
-            .onEnded({ stroke in
-                self.drawing.smoothLine()
-                if !self.drawing.path.isEmpty {
-                  self.paths.append(self.drawing)
-                }
-                self.drawing = Drawing()
-            })
-        return ZStack {
-            Color(UIColor.systemBackground)
-              .edgesIgnoringSafeArea(.all)
-            .gesture(dragGesture)
+        GeometryReader { geometry in
+            let heightDevice = geometry.size.height
+            let widthDevice = geometry.size.width
+            ZStack {
+                Color(UIColor.systemBackground)
+            }
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged({ stroke in
+                        let currentPoint = stroke.location
+                        if currentPoint.y >= 0 &&
+                            currentPoint.x >= 0 &&
+                            currentPoint.x < widthDevice
+                            && currentPoint.y < heightDevice {
+                            self.drawing.addLine(to: stroke.location,
+                                                     color: color)
+                        }
+                    })
+                    .onEnded({ stroke in
+                        if !self.drawing.path.isEmpty {
+                          self.paths.append(self.drawing)
+                        }
+                        self.drawing = Drawing()
+                    })
+            )
             ForEach(paths) { drawingPaths in
                 drawingPaths.path
                     .stroke(drawingPaths.color, style: StrokeStyle(lineWidth: self.lineWidth, lineCap: .round, lineJoin: .round, miterLimit: 10, dash: [CGFloat](), dashPhase: 0))
             }
             drawing.path.stroke(self.color, style: StrokeStyle(lineWidth: self.lineWidth, lineCap: .round, lineJoin: .round, miterLimit: 10, dash: [CGFloat](), dashPhase: 0))
         }
+        .padding()
     }
 }
 

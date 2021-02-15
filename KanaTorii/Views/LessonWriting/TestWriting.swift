@@ -53,24 +53,9 @@ struct TestWriting: View {
                                 .foregroundColor(.accentColor)
                                 .padding(.vertical, heightDevice/40)
                                 .padding(.horizontal, 20)
-                            ZStack {
-                                RoundedRectangle(
-                                    cornerRadius: 10,
-                                    style: .continuous)
-                                .foregroundColor(Color(UIColor.systemBackground))
-                                .shadow(color: Color("Shadow"), radius: 10, x: 0, y: 0)
-                                DrawingArea(
-                                    drawing: $drawing,
-                                    paths: $drawings,
-                                    color: .primary,
-                                    lineWidth: widthDevice/35)
-                                if showGuide {
-                                    GuideWriting(romaji: test.romaji, kanaType: kanaType)
-                                }
-                                DrawingGrid()
-                            }
-                            .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
-                            .padding(.all, heightDevice/40)
+                            DrawingPadTest(drawing: $drawing, drawings: $drawings, lineWidth: widthDevice/35, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
+                                .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
+                                .padding(.all, heightDevice/40)
                             HStack {
                                 if numberOfDisplayActionSheet == 0 {
                                     Spacer()

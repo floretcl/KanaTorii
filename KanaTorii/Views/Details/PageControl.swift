@@ -12,7 +12,7 @@ struct PageControl: UIViewRepresentable {
     var numberOfPages: Int
     
     func makeCoordinator() -> Coordinator {
-            Coordinator(self)
+        Coordinator(self)
     }
     
     func makeUIView(context: Context) -> UIPageControl {
