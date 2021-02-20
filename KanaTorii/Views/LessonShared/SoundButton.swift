@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SoundButton: View {
     @ObservedObject var currentLesson: Lesson
+    
     var body: some View {
         Button(action: {
             currentLesson.readTextInJapanese(text: currentLesson.currentKana)

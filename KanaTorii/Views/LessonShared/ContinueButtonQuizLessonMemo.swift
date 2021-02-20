@@ -19,7 +19,7 @@ struct ContinueButtonQuizLessonMemo: View {
         }, label: {
             ContinueLabel(
                 widthDevice: widthDevice,
-                heightDevice: heightDevice)
+                heightDevice: heightDevice, textSize: heightDevice/40)
         })
     }
 }

@@ -7,6 +7,9 @@
 
 import Foundation
 import AVFoundation
+import SwiftUI
+import CoreML
+import Vision
 
 class TestDrawing: ObservableObject {
     var type: KanaType
@@ -35,6 +38,9 @@ class TestDrawing: ObservableObject {
             return Mode.test
         }
     }
+    var hiraganaRecognizer: HiraganaRecognizer!
+    var katakanaRecognizer: KatakanaRecognizer!
+    
     init(type: KanaType, kana: String, romaji: String) {
         self.type = type
         self.kana = kana
@@ -43,6 +49,7 @@ class TestDrawing: ObservableObject {
         self.numberOfTestsPerformed = 0
         self.correctDrawing = false
         self.testDone = false
+        initializeConfiguration()
     }
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
@@ -57,7 +64,7 @@ class TestDrawing: ObservableObject {
         }
         testDone = true
     }
-    func testAnswer(with answer: String) -> Bool {
+    private func testAnswer(with answer: String) -> Bool {
         if numberOfTestsPerformed < 2 {
             if answer.lowercased() == kana.lowercased() {
                 return true
@@ -90,4 +97,41 @@ class TestDrawing: ObservableObject {
             AudioServicesPlaySystemSound(mySound);
         }
     }
+    private func initializeConfiguration() {
+        if type == .hiragana {
+            do {
+                try hiraganaRecognizer = HiraganaRecognizer(configuration: .init())
+            } catch {
+                fatalError("Error to init model")
+            }
+        } else {
+            do {
+                try katakanaRecognizer = KatakanaRecognizer(configuration: .init())
+            } catch {
+                fatalError("Error to init model")
+            }
+        }
+    }
+    
+    func classLabel(forImage: UIImage) -> String? {
+        var prediction: String
+        if let pixelbuffer = ImageProcessor.pixelBuffer(forImage: forImage.cgImage!) {
+            if type == .hiragana {
+                do {
+                    try prediction = hiraganaRecognizer.prediction(image: pixelbuffer).classLabel
+                } catch {
+                    fatalError("Unexpected runtime error: \(error)")
+                }
+            } else {
+                do {
+                    try prediction = katakanaRecognizer.prediction(image: pixelbuffer).classLabel
+                } catch {
+                    fatalError("Unexpected runtime error: \(error)")
+                }
+            }
+            return prediction
+        }
+        return nil
+    }
+   
 }

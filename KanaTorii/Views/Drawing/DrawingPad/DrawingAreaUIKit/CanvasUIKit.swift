@@ -27,10 +27,14 @@ class CanvasUIKit: UIControl {
     override func draw(_ rect: CGRect) {
         drawingImage?.draw(in: rect)
     }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        drawingImage = UIGraphicsImageRenderer(size: bounds.size).image { context in
-            UIColor.white.setFill()
+        let format = UIGraphicsImageRendererFormat()
+        format.opaque = false
+        let renderer = UIGraphicsImageRenderer(size: bounds.size, format: format)
+        drawingImage = renderer.image { context in
+            UIColor(white: 1, alpha: 0.1).setFill()
             context.fill(bounds)
             drawingImage?.draw(in: bounds)
             drawStroke(context: context.cgContext, touch: touch)

@@ -34,18 +34,16 @@ struct ImageProcessor {
         return pixelBuffer
     }
     
-    static func invertColorsImage(forImageView imageView:UIImageView) -> UIImageView? {
-        if let imageToInvert = imageView.image {
-            let ciImage = convertCGImageToCIImage(image: imageToInvert.cgImage!)
-            if let filter = CIFilter(name: "CIColorInvert") {
-                filter.setValue(ciImage, forKey: kCIInputImageKey)
-                var newImage = UIImage(ciImage: filter.outputImage!)
-                let newCgImage = convertCIImageToCGImage(image: newImage.ciImage!)
-                newImage = UIImage(cgImage: newCgImage!)
-                imageView.image = newImage
-            }
+    static func invertColorsImage(uiimage: UIImage) -> UIImage? {
+        var newImage: UIImage = UIImage()
+        let ciImage = convertCGImageToCIImage(image: uiimage.cgImage!)
+        if let filter = CIFilter(name: "CIColorInvert") {
+            filter.setValue(ciImage, forKey: kCIInputImageKey)
+            newImage = UIImage(ciImage: filter.outputImage!)
+            let newCgImage = convertCIImageToCGImage(image: newImage.ciImage!)
+            newImage = UIImage(cgImage: newCgImage!)
         }
-        return imageView
+        return newImage
     }
     
     static func convertCGImageToCIImage(image: CGImage) -> CIImage! {

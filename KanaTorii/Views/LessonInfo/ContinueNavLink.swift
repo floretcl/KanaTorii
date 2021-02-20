@@ -11,6 +11,7 @@ struct ContinueNavLink: View {
     var lesson: LessonForList
     var widthDevice: CGFloat
     var heightDevice: CGFloat
+    
     var body: some View {
         if lesson.type == "Reading" {
             VStack {
@@ -22,7 +23,7 @@ struct ContinueNavLink: View {
                             kanas: lesson.kanas,
                             romajis: lesson.romaji)),
                     label: {
-                        ContinueLabel(widthDevice: widthDevice, heightDevice: heightDevice)
+                        ContinueLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40)
                     }
                 )
             }
@@ -36,7 +37,7 @@ struct ContinueNavLink: View {
                             kanas: lesson.kanas,
                             romajis: lesson.romaji)),
                     label: {
-                        ContinueLabel(widthDevice: widthDevice, heightDevice: heightDevice)
+                        ContinueLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40)
                     }
                 )
             }

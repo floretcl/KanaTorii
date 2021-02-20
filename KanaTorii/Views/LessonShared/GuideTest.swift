@@ -19,7 +19,7 @@ struct GuideTest: View {
         Image(imageFileName)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .opacity(0.25)
+            .opacity(0.5)
     }
 }
 func getLinesImageFilename(kana: Kana,romaji: String, kanaType: String) -> String {

@@ -41,6 +41,6 @@ struct LessonInfoView_Previews: PreviewProvider {
     static var lessons = ModelData().lessons
     static var previews: some View {
         LessonInfoView(lesson: lessons[0])
-            .previewDevice("iPhone 11")
+            
     }
 }

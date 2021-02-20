@@ -28,6 +28,7 @@ struct Drawing: Identifiable {
 struct DrawingArea: View {
     @Binding var drawing: Drawing
     @Binding var paths: [Drawing]
+    @Binding var image: UIImage
     @State var color: Color
     @State var lineWidth: CGFloat
     
@@ -55,6 +56,8 @@ struct DrawingArea: View {
                           self.paths.append(self.drawing)
                         }
                         self.drawing = Drawing()
+                        image = self.takeScreenshot(origin: geometry.frame(in: .global).origin, size: geometry.size)
+                        print(image)
                     })
             )
             ForEach(paths) { drawingPaths in
@@ -63,12 +66,11 @@ struct DrawingArea: View {
             }
             drawing.path.stroke(self.color, style: StrokeStyle(lineWidth: self.lineWidth, lineCap: .round, lineJoin: .round, miterLimit: 10, dash: [CGFloat](), dashPhase: 0))
         }
-        .padding()
     }
 }
 
 struct DrawingArea_Previews: PreviewProvider {
     static var previews: some View {
-        DrawingArea(drawing: .constant(Drawing()), paths: .constant([Drawing]()), color: .primary, lineWidth: 10)
+        DrawingArea(drawing: .constant(Drawing()), paths: .constant([Drawing]()), image: .constant(UIImage()), color: .primary, lineWidth: 10)
     }
 }

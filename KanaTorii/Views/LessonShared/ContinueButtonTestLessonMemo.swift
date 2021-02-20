@@ -12,6 +12,7 @@ struct ContinueButtonTestLessonMemo: View {
     @Binding var showTest: Bool
     var widthDevice: CGFloat
     var heightDevice: CGFloat
+    var textSize: CGFloat
     
     var body: some View {
         Button(action: {
@@ -20,7 +21,7 @@ struct ContinueButtonTestLessonMemo: View {
         }, label: {
             ContinueLabel(
                 widthDevice: widthDevice,
-                heightDevice: heightDevice)
+                heightDevice: heightDevice, textSize: textSize)
         })
     }
 }
@@ -36,7 +37,8 @@ struct ContinueButtonTestLessonMemo_Previews: PreviewProvider {
                 romajis: ["a","i","u","e","o"]),
             showTest: .constant(false),
             widthDevice: 320,
-            heightDevice: 830)
+            heightDevice: 830,
+            textSize: 20)
             .previewLayout(.sizeThatFits)
     }
 }

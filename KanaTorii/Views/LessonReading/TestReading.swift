@@ -39,30 +39,13 @@ struct TestReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            Text("Find correct answer")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                                .padding(.vertical, heightDevice/40)
-                                .padding(.horizontal, 20)
+                            TitleLesson(heightDevice: heightDevice, text: "Find correct answer")
                             Text(label)
                                 .font(.system(size: heightDevice/5))
+                                .padding(heightDevice/20)
                             Spacer()
-                            LazyVGrid(
-                                columns: [itemsCellIpad,itemsCellIpad],
-                                alignment: .center,
-                                spacing: 40,
-                                content: {
-                                    ForEach(0..<test.suggestions.count) { index in
-                                        SuggestionCell(
-                                            test: test,
-                                            showActionSheet: $showActionSheet,
-                                            index: index,
-                                            width: 200,
-                                            height: 200)
-                                    }
-                                }
-                            ).padding(.bottom, heightDevice/10)
+                            SuggestionsTest(test: test, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 40, width: 200, height: 200, textSize: heightDevice/30)
+                                .padding(.bottom, heightDevice/10)
                         }
                         Spacer()
                     }
@@ -80,7 +63,8 @@ struct TestReading: View {
                         presentation.wrappedValue.dismiss()
                     }
                     test.nextQuestion()
-                }))
+                    })
+                )
             })
         } else {
             GeometryReader(content: { geometry in
@@ -91,30 +75,12 @@ struct TestReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            Text("Find correct answer")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                                .padding(.vertical, heightDevice/40)
-                                .padding(.horizontal, 20)
+                            TitleLesson(heightDevice: heightDevice, text: "Find correct answer")
                             Text(label)
                                 .font(.system(size: heightDevice/5))
                             Spacer()
-                            LazyVGrid(
-                                columns: [itemsCellIphone,itemsCellIphone],
-                                alignment: .center,
-                                spacing: 30,
-                                content: {
-                                    ForEach(0..<test.suggestions.count) { index in
-                                        SuggestionCell(
-                                            test: test,
-                                            showActionSheet: $showActionSheet,
-                                            index: index,
-                                            width: 100,
-                                            height: 100)
-                                    }
-                                }
-                            ).padding(.bottom, heightDevice/10)
+                            SuggestionsTest(test: test, showActionSheet: $showActionSheet, items: itemsCellIphone, spacing: 30, width: 100, height: 100, textSize: heightDevice/25)
+                                .padding(.bottom, heightDevice/10)
                         }
                         Spacer()
                     }

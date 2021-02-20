@@ -10,6 +10,7 @@ import SwiftUI
 struct DrawingPadTest: View {
     @Binding var drawing: Drawing
     @Binding var drawings: [Drawing]
+    @Binding var image: UIImage
     var lineWidth: CGFloat
     var romaji: String
     var kanaType: String
@@ -25,6 +26,7 @@ struct DrawingPadTest: View {
             DrawingArea(
                 drawing: $drawing,
                 paths: $drawings,
+                image: $image,
                 color: .primary,
                 lineWidth: lineWidth)
             if showGuide {
@@ -37,6 +39,6 @@ struct DrawingPadTest: View {
 
 struct DrawingPadTest_Previews: PreviewProvider {
     static var previews: some View {
-        DrawingPadTest(drawing: .constant(Drawing()), drawings: .constant([Drawing]()), lineWidth: 20, romaji: "a", kanaType: "hiragana", showGuide: true)
+        DrawingPadTest(drawing: .constant(Drawing()), drawings: .constant([Drawing]()), image: .constant(UIImage()), lineWidth: 20, romaji: "a", kanaType: "hiragana", showGuide: true)
     }
 }

@@ -22,7 +22,7 @@ struct LessonMemoReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLessonMemo(heightDevice: heightDevice, text: "Memorize the shape and pronunciation of this kana")
+                            TitleLesson(heightDevice: heightDevice, text: "Memorize the shape and pronunciation of this kana")
                             MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/12)
                                 .padding(.horizontal, widthDevice/4)
@@ -30,7 +30,7 @@ struct LessonMemoReading: View {
                                 .padding(heightDevice/80)
                             Spacer()
                             ZStack {
-                                ContinueButtonTestLessonMemo(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice)
+                                ContinueButtonTestLessonMemo(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
                                     .padding(.bottom, heightDevice/20)
                                     .fullScreenCover(isPresented: $showTest, content: {
                                         TestReading(
@@ -65,7 +65,7 @@ struct LessonMemoReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLessonMemo(heightDevice: heightDevice, text: "Memorize the shape and pronunciation of this kana")
+                            TitleLesson(heightDevice: heightDevice, text: "Memorize the shape and pronunciation of this kana")
                             MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/50)
                                 .padding(.horizontal, widthDevice/4.5)
@@ -73,7 +73,7 @@ struct LessonMemoReading: View {
                                 .padding(heightDevice/80)
                             Spacer()
                             ZStack {
-                                ContinueButtonTestLessonMemo(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice)
+                                ContinueButtonTestLessonMemo(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
                                     .padding(.bottom, heightDevice/20)
                                     .sheet(isPresented: $showTest, content: {
                                         TestReading(

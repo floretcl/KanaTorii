@@ -14,6 +14,7 @@ struct SuggestionCell: View {
     var index: Int
     var width: CGFloat
     var height: CGFloat
+    var textSize: CGFloat
     var color: Color {
         if test.testAnswer(with: test.suggestions[index]) && test.testDone {
             return Color("AnswerGreen")
@@ -29,7 +30,7 @@ struct SuggestionCell: View {
             showActionSheet.toggle()
         }, label: {
             Text(test.suggestions[index])
-                .font(.title)
+                .font(.system(size: textSize))
                 .foregroundColor(.primary)
                 .frame(width: width, height: height, alignment: .center)
                 .border(Color.primary, width: 0.45)
@@ -53,7 +54,8 @@ struct SuggestionCell_Previews: PreviewProvider {
                        showActionSheet: .constant(false),
                        index: 1,
                        width: 100,
-                       height: 100)
+                       height: 100,
+                       textSize: 20)
             
             
     }
