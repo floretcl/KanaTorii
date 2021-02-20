@@ -14,7 +14,7 @@ struct KanaToriiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(tabViewSelectedItem: 1)
+            ContentView()
                 .environmentObject(ModelData())
         }
     }

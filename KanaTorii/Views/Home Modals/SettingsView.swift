@@ -73,7 +73,7 @@ struct SettingsView: View {
                     }
                 }
                 .padding(.horizontal, 100)
-                .background(Color(.secondarySystemBackground))
+                //.background(Color(.secondarySystemBackground))
                 Spacer()
             }
         } else {
@@ -96,10 +96,10 @@ struct SettingsView: View {
                             Text("Number of questions: \(Int(stepperNbQuestions))")
                             Slider(
                                 value: $stepperNbQuestions,
-                                in: 5...100,
+                                in: 5...30,
                                 step: 5,
                                 minimumValueLabel: Text("5"),
-                                maximumValueLabel: Text("100"))
+                                maximumValueLabel: Text("30"))
                                 {
                                 Text("Number of questions: \(Int(stepperNbQuestions))")
                                 }

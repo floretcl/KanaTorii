@@ -25,12 +25,6 @@ struct ListsView: View {
         }
     }
     
-    init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("Green"))
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("Green"))], for: .normal)
-    }
-    
     var body: some View {
         GeometryReader { geometry in
             let widthDevice = geometry.size.width

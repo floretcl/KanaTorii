@@ -10,6 +10,12 @@ import SwiftUI
 struct ContentView: View {
     @State var tabViewSelectedItem: Int = 1
     
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("Green"))
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("Green"))], for: .normal)
+    }
+    
     var body: some View {
         TabView(selection: $tabViewSelectedItem,
             content: {
@@ -46,13 +52,13 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(tabViewSelectedItem: 1)
+            ContentView()
                 .environmentObject(ModelData())
                 .preferredColorScheme(.dark)
-            ContentView(tabViewSelectedItem: 1)
+            ContentView()
                 .environmentObject(ModelData())
                 .previewDevice("iPod touch (7th generation)")
-            ContentView(tabViewSelectedItem: 1)
+            ContentView()
                 .environmentObject(ModelData())
                 .preferredColorScheme(.light)
                 .previewDevice("iPad Pro (12.9-inch) (4th generation)")

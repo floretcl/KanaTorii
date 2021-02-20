@@ -10,8 +10,6 @@ import SwiftUI
 struct GreenSegmentedControl: View {
     @Binding var pickerSelection: String
     
-    
-    
     var body: some View {
         Picker("Kana Type", selection: $pickerSelection, content: {
             Text("Hiragana").tag("hiragana")
