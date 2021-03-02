@@ -57,7 +57,6 @@ struct DrawingArea: View {
                         }
                         self.drawing = Drawing()
                         image = self.takeScreenshot(origin: geometry.frame(in: .global).origin, size: geometry.size)
-                        print(image)
                     })
             )
             ForEach(paths) { drawingPaths in

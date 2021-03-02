@@ -11,11 +11,13 @@ import SwiftUI
 @main
 struct KanaToriiApp: App {
     @StateObject private var modelData = ModelData()
+    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(ModelData())
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

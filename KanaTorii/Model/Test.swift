@@ -9,14 +9,14 @@ import Foundation
 import AudioToolbox
 
 class Test: ObservableObject {
-    var type: KanaType
-    var kanas: [String]
-    var romajis: [String]
-    @Published var state: State
+    private var type: KanaType
+    private var kanas: [String]
+    private var romajis: [String]
+    private var state: State
     @Published var suggestions: [String]
     @Published var correctAnswer: Bool
-    var currentIndex: Int
-    var numberOfTestsPerformed: Int
+    private var currentIndex: Int
+    private var numberOfTestsPerformed: Int
     @Published var testDone: Bool
     enum KanaType {
         case hiragana
@@ -36,10 +36,10 @@ class Test: ObservableObject {
     var currentRomaji: String {
         return romajis[currentIndex]
     }
-    var numberTotalKana: Int {
+    private var numberTotalKana: Int {
         return kanas.count
     }
-    var numberOfSuggestions: Int {
+    private var numberOfSuggestions: Int {
         if kanas.count == 5 {
             return 4
         } else {
@@ -53,7 +53,7 @@ class Test: ObservableObject {
             return Direction.toKana
         }
     }
-    var currentSolution: String {
+    private var currentSolution: String {
         if translationDirection == .toRomaji {
             return currentRomaji
         } else {
@@ -71,8 +71,9 @@ class Test: ObservableObject {
         self.numberOfTestsPerformed = 0
         self.suggestions = []
         self.testDone = false
-        suggestions = createSuggestions()
+        suggestions = getSuggestions()
     }
+    
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
             let isCorrectAnswer = testAnswer(with: answer)
@@ -100,19 +101,19 @@ class Test: ObservableObject {
     func nextQuestion() {
         numberOfTestsPerformed += 1
         if numberOfTestsPerformed == 2 {
-            testfinished()
+            testEnd()
         }
         resetStateAnswer()
-        suggestions = createSuggestions()
+        suggestions = getSuggestions()
     }
     private func resetStateAnswer() {
         correctAnswer = false
         testDone = false
     }
-    private func testfinished() {
+    private func testEnd() {
         state = .end
     }
-    private func createSuggestions() -> [String] {
+    private func getSuggestions() -> [String] {
         var characteresArray: [String]
         var characteresString: String
         if translationDirection == .toRomaji {

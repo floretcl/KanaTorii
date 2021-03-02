@@ -59,12 +59,13 @@ class Lesson: ObservableObject {
     var currentRomaji: String {
         return romajis[kanaIndex]
     }
-    var currentProgression: Double {
-        return (Double(currentPartIndex)) / 10.0
-    }
     var currentPartNumber: Int {
         return currentPartIndex + 1
     }
+    var currentProgression: Double {
+        return (Double(currentPartNumber)) / Double(parts.count)
+    }
+    
     
     init(name: String, mode: Mode, kanaType: String, kanas: [String], romajis: [String]) {
         self.name = name

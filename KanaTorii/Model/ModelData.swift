@@ -12,6 +12,16 @@ final class ModelData: ObservableObject {
     var kanasForList: [KanaForList] = load("kanaForListData.json")
     @Published var kanas: [Kana] = load("kanaData.json")
     var lessons: [LessonForList] = load("lessonData.json")
+    
+    var gojuons: [Kana] {
+        kanas.filter { $0.isGojuon }
+    }
+    var handakuons: [Kana] {
+        kanas.filter { $0.isDakuonHandakuon }
+    }
+    var yoons: [Kana] {
+        kanas.filter { $0.isYoon }
+    }
 }
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

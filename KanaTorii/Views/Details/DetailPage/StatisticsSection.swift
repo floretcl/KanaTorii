@@ -37,7 +37,7 @@ struct StatisticsSection: View {
             ProgressView("Correct Answers : \(Int(percCorrectAnswers))%", value: percCorrectAnswers, total: 100.0)
                 .font(.system(size: sizeText))
                 .progressViewStyle(LinearProgressViewStyle(tint: progressViewColor))
-            Text("\(Int(nbCorrectAnswers)) / \(Int(nbTotalAnswers))")
+            Text("\(Int(nbCorrectAnswers)) Corrects / \(Int(nbTotalAnswers)) Answers")
                 .font(.system(size: sizeText))
         }
         .padding(.horizontal)

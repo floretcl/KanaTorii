@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct LessonRow: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
+        animation: .default) var statLesson: FetchedResults<StatLesson>
     var lesson: LessonForList
+    var color: Color {
+        var done: Bool = false
+        for stat in statLesson {
+            if stat.name == "\(lesson.title) | \(lesson.type)" {
+                if stat.done {
+                    done = true
+                }
+            }
+        }
+        return done ? .green : .accentColor
+    }
     
     var body: some View {
         HStack{
             ZStack {
                 Circle()
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(color)
                     .frame(width: 45, height: 45, alignment: .center)
                 Text("\(lesson.kanas[0])")
                     .font(.title2)

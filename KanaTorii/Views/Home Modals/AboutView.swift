@@ -16,7 +16,7 @@ struct AboutView: View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
             VStack {
-                SheetHeader(title: "About Kana: Hiragana & Katakana", systemImage: "", paddingLeading: 5)
+                SheetHeader(title: "About Kana: Hiragana & Katakana", systemImage: "questionmark.circle.fill", paddingLeading: 5)
                 ScrollView {
                     Group {
                         Text("To write and read Japanese,we use Kana and Kanji, what interests us here are Kana." +
@@ -26,7 +26,7 @@ struct AboutView: View {
                             "To write these characters, there is a specific order of the lines, very important." +
                             "The Hiragana are used to write the typical Japanese words and the Katakana the words of foreign origin.")
                     }
-                    .frame(width: widthDevice/1.2, height: .infinity, alignment: .center)
+                    .frame(width: widthDevice/1.2, alignment: .center)
                     .padding(.vertical, 20)
                     .font(.body)
                     .lineSpacing(5)

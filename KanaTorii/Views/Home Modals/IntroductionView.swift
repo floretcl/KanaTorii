@@ -15,7 +15,7 @@ struct IntroductionView: View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
             VStack {
-                SheetHeader(title: "Introduction to Kana Torii", systemImage: "", paddingLeading: 5)
+                SheetHeader(title: "Introduction to Kana Torii", systemImage: "questionmark.circle.fill", paddingLeading: 5)
                 ScrollView {
                     Group {
                         Text("The first step in learning Japanese is to know how to read and write." +
@@ -25,7 +25,7 @@ struct IntroductionView: View {
                         Text("For an overview, you can go to the 'hiragana' and 'katakana' sections, see a particular character, know its writing, listen to its pronunciation and practice writing it." +
                             " Finally a Quiz section will allow you to practice when you get to know hiragana and katakana better.")
                     }
-                    .frame(width: widthDevice/1.2, height: .infinity, alignment: .center)
+                    .frame(width: widthDevice/1.2, alignment: .center)
                     .padding(.vertical, 20)
                     .font(.body)
                     .lineSpacing(5)

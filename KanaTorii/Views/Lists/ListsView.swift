@@ -50,10 +50,7 @@ struct ListsView: View {
                         .font(.title)
                         .padding(.bottom, 10.0)
                         .fullScreenCover(isPresented: $showSettings, content: {
-                            SettingsView(
-                                dislayStatisticsColorIsOn: true,
-                                pickerDisplayMode: 1,
-                                stepperNbQuestions: 10)
+                            SettingsView()
                         })
                 }))
             })

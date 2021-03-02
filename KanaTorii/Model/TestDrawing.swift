@@ -6,19 +6,20 @@
 //
 
 import Foundation
-import AVFoundation
+import AudioToolbox
 import SwiftUI
 import CoreML
-import Vision
 
 class TestDrawing: ObservableObject {
-    var type: KanaType
-    var kana: String
-    var romaji: String
-    @Published var state: State
+    private var hiraganaRecognizer: HiraganaRecognizer?
+    private var katakanaRecognizer: KatakanaRecognizer?
+    private var kana: String
+    @Published var type: KanaType
+    @Published var romaji: String
+    private var state: State
     @Published var correctDrawing: Bool
-    var numberOfTestsPerformed: Int
-    @Published var testDone: Bool
+    @Published var numberOfTestsPerformed: Int
+    private var testDone: Bool
     enum KanaType {
         case hiragana
         case katakana
@@ -31,15 +32,14 @@ class TestDrawing: ObservableObject {
         case practice
         case test
     }
-    var mode: Mode {
+    private var mode: Mode {
         if numberOfTestsPerformed == 0 {
             return Mode.practice
         } else {
             return Mode.test
         }
     }
-    var hiraganaRecognizer: HiraganaRecognizer!
-    var katakanaRecognizer: KatakanaRecognizer!
+    
     
     init(type: KanaType, kana: String, romaji: String) {
         self.type = type
@@ -78,7 +78,7 @@ class TestDrawing: ObservableObject {
     func nextQuestion() {
         numberOfTestsPerformed += 1
         if numberOfTestsPerformed == 2 {
-            testfinished()
+            testEnd()
         }
         resetStateAnswer()
     }
@@ -86,7 +86,7 @@ class TestDrawing: ObservableObject {
         correctDrawing = false
         testDone = false
     }
-    private func testfinished() {
+    private func testEnd() {
         state = .end
     }
     private func playSound(sound: String, ext: String) {
@@ -112,26 +112,26 @@ class TestDrawing: ObservableObject {
             }
         }
     }
-    
     func classLabel(forImage: UIImage) -> String? {
         var prediction: String
-        if let pixelbuffer = ImageProcessor.pixelBuffer(forImage: forImage.cgImage!) {
-            if type == .hiragana {
-                do {
-                    try prediction = hiraganaRecognizer.prediction(image: pixelbuffer).classLabel
-                } catch {
-                    fatalError("Unexpected runtime error: \(error)")
+        if let cGImage = forImage.cgImage {
+            if let pixelbuffer = ImageProcessor.pixelBuffer(forImage: cGImage) {
+                if type == .hiragana {
+                    do {
+                        try prediction = hiraganaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
+                    } catch {
+                        fatalError("Unexpected runtime error: \(error)")
+                    }
+                } else {
+                    do {
+                        try prediction = katakanaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
+                    } catch {
+                        fatalError("Unexpected runtime error: \(error)")
+                    }
                 }
-            } else {
-                do {
-                    try prediction = katakanaRecognizer.prediction(image: pixelbuffer).classLabel
-                } catch {
-                    fatalError("Unexpected runtime error: \(error)")
-                }
+                return prediction
             }
-            return prediction
         }
         return nil
     }
-   
 }

@@ -37,7 +37,7 @@ struct GojuonGrid: View {
                                 .padding(.vertical, widthDevice/60)
                                 .padding(.horizontal, widthDevice/40)
                         }
-                        }
+                    }
             })
             .padding(.top, 20)
             .padding(.bottom, 60)

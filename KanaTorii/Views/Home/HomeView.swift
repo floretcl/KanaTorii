@@ -42,10 +42,7 @@ struct HomeView: View {
                     trailing:
                         ButtonSettings(showSettings: $showSettings)
                             .fullScreenCover(isPresented: $showSettings, content: {
-                                SettingsView(
-                                    dislayStatisticsColorIsOn: true,
-                                    pickerDisplayMode: 1,
-                                    stepperNbQuestions: 10)
+                                SettingsView()
                             })
                 )
             }
