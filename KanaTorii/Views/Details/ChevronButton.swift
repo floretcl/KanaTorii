@@ -21,6 +21,7 @@ struct ChevronButton: View {
                 Spacer()
                 HStack {
                     Button(action: {
+                        hapticFeedback(style: .soft)
                         if currentPage == 0 {
                             currentPage = (kanas.count - 1)
                         } else {
@@ -31,6 +32,7 @@ struct ChevronButton: View {
                     })
                     Spacer()
                     Button(action: {
+                        hapticFeedback(style: .soft)
                         if currentPage == (kanas.count - 1) {
                             currentPage = 0
                         } else {

@@ -11,6 +11,7 @@ struct TestReading: View {
     @Environment(\.presentationMode) var presentation
     @ObservedObject var currentLesson: Lesson
     @ObservedObject var test: Test
+    @Binding var showQuiz: Bool
     @State var numberOfDisplayActionSheet: Int = 0
     @State var showActionSheet: Bool = false
     private var label: String {
@@ -22,9 +23,9 @@ struct TestReading: View {
     }
     private var textActionSheet: String {
         if test.correctAnswer {
-            return "Right Answer"
+            return "Right Answer: \(test.currentSolution.uppercased())"
         } else {
-            return "Wrong Answer"
+            return "Wrong Answer: \(test.currentSolution.uppercased())"
         }
     }
     let itemsCellIphone = GridItem(.fixed(120))
@@ -59,8 +60,9 @@ struct TestReading: View {
                 Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
                     numberOfDisplayActionSheet += 1
                     if numberOfDisplayActionSheet == 2 {
-                        if currentLesson.nextPart == .memo {
-                            currentLesson.newPart()
+                        currentLesson.newPart()
+                        if currentLesson.currentPart == .quiz {
+                            showQuiz.toggle()
                         }
                         presentation.wrappedValue.dismiss()
                     }
@@ -98,8 +100,9 @@ struct TestReading: View {
                         .default(Text("Continue"), action: {
                             numberOfDisplayActionSheet += 1
                             if numberOfDisplayActionSheet == 2 {
-                                if currentLesson.nextPart == .memo {
-                                    currentLesson.newPart()
+                                currentLesson.newPart()
+                                if currentLesson.currentPart == .quiz {
+                                    showQuiz.toggle()
                                 }
                                 presentation.wrappedValue.dismiss()
                             }
@@ -126,7 +129,8 @@ struct TestReading_Previews: PreviewProvider {
                     type: .hiragana,
                     kanas: ["あ","い","う","え","お"],
                     romajis: ["a","i","u","e","o"],
-                    currentIndex: 0)
+                    currentIndex: 0),
+                showQuiz: .constant(false)
             )
         }
     }

@@ -16,11 +16,13 @@ struct DetailButtons: View {
     var body: some View {
         HStack {
             Button(action: {
+                hapticFeedback(style: .soft)
                 kana.readTextInJapanese(text: kanaLabel)
             }, label: {
                 DetailButtonLabel(text: "Listen", sizeText: sizeText, systemImage: "speaker.wave.2")
             })
             Button(action: {
+                hapticFeedback(style: .soft)
                 showDrawingView.toggle()
             }, label: {
                 DetailButtonLabel(text: "Write", sizeText: sizeText, systemImage: "hand.draw")

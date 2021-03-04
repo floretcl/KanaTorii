@@ -15,6 +15,7 @@ struct ScoreQuizButton: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             showScore.toggle()
         }, label: {
             Text("Show Score")

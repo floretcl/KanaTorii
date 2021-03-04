@@ -8,6 +8,17 @@
 import Foundation
 import SwiftUI
 
+//For Haptic feedback
+extension View {
+    func hapticFeedback(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        let impact = UIImpactFeedbackGenerator(style: style)
+        impact.impactOccurred()
+    }
+}
+
+
+
+//For ScreenShot
 extension View {
 
   // Requires the origin and size of the view. These can be gotten

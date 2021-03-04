@@ -25,6 +25,7 @@ struct ContinueButtonQuizDrawing: View {
 
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             let answer = getPrediction(uiimage: image)
             image = UIImage()
             //print(answer)
@@ -32,7 +33,7 @@ struct ContinueButtonQuizDrawing: View {
             addItemToCoreData(correctAnswer: quiz.correctAnswer)
             showActionSheet.toggle()
         }, label: {
-            ContinueLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize)
+            ButtonLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize, text: "Continue")
         })
     }
     func getPrediction(uiimage: UIImage) -> String {

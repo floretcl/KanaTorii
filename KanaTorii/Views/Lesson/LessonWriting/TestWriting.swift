@@ -61,11 +61,7 @@ struct TestWriting: View {
             })
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
-                    if currentLesson.nextPart == .memo {
-                        currentLesson.newPart()
-                    }
-                    test.nextQuestion()
-                    showGuide = false
+                    currentLesson.newPart()
                     drawings = [Drawing]()
                     presentation.wrappedValue.dismiss()
                     })
@@ -101,11 +97,7 @@ struct TestWriting: View {
                     title: Text(textActionSheet),
                     buttons: [
                         .default(Text("Continue"), action: {
-                            if currentLesson.nextPart == .memo {
-                                currentLesson.newPart()
-                            }
-                            test.nextQuestion()
-                            showGuide = false
+                            currentLesson.newPart()
                             drawings = [Drawing]()
                             presentation.wrappedValue.dismiss()
                         })

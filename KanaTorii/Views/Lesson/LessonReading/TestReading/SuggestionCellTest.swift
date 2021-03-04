@@ -27,6 +27,7 @@ struct SuggestionCellTest: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             test.answerCurrentQuestion(with: test.suggestions[index])
             showActionSheet.toggle()
         }, label: {

@@ -62,13 +62,21 @@ struct QuizsView: View {
                                 Picker("Display mode", selection: $pickerMode) {
                                     Text("Quiz").tag(1)
                                     Text("Quick quiz").tag(2)
-                                }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: pickerMode, perform: { _ in
+                                    hapticFeedback(style: .soft)
+                                })
                             }
                             Section(header: Text("Difficulty")) {
                                 Picker("Difficulty mode", selection: $pickerDifficulty) {
                                     Text("Easy").tag(1)
                                     Text("Hard").tag(2)
-                                }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: pickerDifficulty, perform: { _ in
+                                    hapticFeedback(style: .soft)
+                                })
                                 if pickerDifficulty == 1 {
                                     Text("Multiple choice questions")
                                         .font(.subheadline)
@@ -81,7 +89,11 @@ struct QuizsView: View {
                                 Picker("Kana Type", selection: $pickerKanaType) {
                                     Text("Hiragana").tag(1)
                                     Text("Katakana").tag(2)
-                                }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: pickerKanaType, perform: { _ in
+                                    hapticFeedback(style: .soft)
+                                })
                                 Picker("Direction mode", selection: $pickerDirection) {
                                     if pickerKanaType == 1 {
                                         Text("あ　-> a").tag(1)
@@ -90,7 +102,11 @@ struct QuizsView: View {
                                         Text("ア　-> a").tag(1)
                                         Text("a -> ア").tag(2)
                                     }
-                                }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: pickerDirection, perform: { _ in
+                                    hapticFeedback(style: .soft)
+                                })
                                 if pickerDirection == 1 && pickerKanaType == 1 {
                                     Text("Hiragana Reading")
                                         .font(.subheadline)
@@ -139,7 +155,11 @@ struct QuizsView: View {
                                         Text("Gojuon").tag("gojuon")
                                         Text("HanDakuon").tag("handakuon")
                                         Text("Yoon").tag("yoon")
-                                    }.pickerStyle(SegmentedPickerStyle())
+                                    }
+                                    .pickerStyle(SegmentedPickerStyle())
+                                    .onChange(of: pickerKanaSection, perform: { _ in
+                                        hapticFeedback(style: .soft)
+                                    })
                                 }
                             } else {
                                 Section(header: Text("QUICK QUIZ")) {
@@ -149,6 +169,9 @@ struct QuizsView: View {
                                             value: $userSettings.quickQuizNbQuestions,
                                             in: 10...40,
                                             step: 5,
+                                            onEditingChanged: { _ in
+                                                hapticFeedback(style: .soft)
+                                            },
                                             minimumValueLabel: Text("10"),
                                             maximumValueLabel: Text("40"))
                                             {
@@ -214,13 +237,21 @@ struct QuizsView: View {
                                 Picker("Display mode", selection: $pickerMode) {
                                     Text("Quiz").tag(1)
                                     Text("Quick quiz").tag(2)
-                                }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: pickerMode, perform: { _ in
+                                    hapticFeedback(style: .soft)
+                                })
                             }
                             Section(header: Text("Difficulty")) {
                                 Picker("Difficulty mode", selection: $pickerDifficulty) {
                                     Text("Easy").tag(1)
                                     Text("Hard").tag(2)
-                                }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: pickerDifficulty, perform: { _ in
+                                    hapticFeedback(style: .soft)
+                                })
                                 if pickerDifficulty == 1 {
                                     Text("Multiple choice questions")
                                         .font(.subheadline)
@@ -233,7 +264,11 @@ struct QuizsView: View {
                                 Picker("Kana Type", selection: $pickerKanaType) {
                                     Text("Hiragana").tag(1)
                                     Text("Katakana").tag(2)
-                                }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: pickerKanaType, perform: { _ in
+                                    hapticFeedback(style: .soft)
+                                })
                                 Picker("Direction mode", selection: $pickerDirection) {
                                     if pickerKanaType == 1 {
                                         Text("あ　-> a").tag(1)
@@ -242,7 +277,11 @@ struct QuizsView: View {
                                         Text("ア　-> a").tag(1)
                                         Text("a -> ア").tag(2)
                                     }
-                                }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .onChange(of: pickerDirection, perform: { _ in
+                                    hapticFeedback(style: .soft)
+                                })
                                 if pickerDirection == 1 && pickerKanaType == 1 {
                                     Text("Hiragana Reading")
                                         .font(.subheadline)
@@ -291,7 +330,11 @@ struct QuizsView: View {
                                         Text("Gojuon").tag("gojuon")
                                         Text("HanDakuon").tag("handakuon")
                                         Text("Yoon").tag("yoon")
-                                    }.pickerStyle(SegmentedPickerStyle())
+                                    }
+                                    .pickerStyle(SegmentedPickerStyle())
+                                    .onChange(of: pickerKanaSection, perform: { _ in
+                                        hapticFeedback(style: .soft)
+                                    })
                                 }
                             } else {
                                 Section(header: Text("QUICK QUIZ")) {
@@ -301,6 +344,9 @@ struct QuizsView: View {
                                             value: $userSettings.quickQuizNbQuestions,
                                             in: 10...40,
                                             step: 5,
+                                            onEditingChanged: {_ in
+                                                hapticFeedback(style: .soft)
+                                            },
                                             minimumValueLabel: Text("10"),
                                             maximumValueLabel: Text("40"))
                                             {

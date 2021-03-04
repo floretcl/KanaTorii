@@ -24,8 +24,10 @@ struct LessonsView: View {
             }
             .navigationTitle("Lessons")
             .navigationBarItems(trailing: Button(action: {
-                    //
-                }, label: {
+                hapticFeedback(style: .soft)
+                //
+                },
+                label: {
                     Label("", systemImage: "clock.arrow.circlepath")
                         .foregroundColor(Color.accentColor)
                         .font(.title)

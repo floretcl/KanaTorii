@@ -19,11 +19,13 @@ class Lesson: ObservableObject {
     @Published var numberOfMemo: Int
     @Published var numberOfTest: Int
     @Published var numberOfQuiz: Int
+    @Published var numberOfScore: Int
     @Published var state: State
     enum LessonPart {
         case memo
         case test
         case quiz
+        case score
     }
     enum State {
         case play
@@ -37,10 +39,11 @@ class Lesson: ObservableObject {
         let memo = LessonPart.memo
         let test = LessonPart.test
         let quiz = LessonPart.quiz
+        let score = LessonPart.score
         if kanas.count == 5 {
-            return [memo,test,memo,test,memo,test,memo,test,memo,test,quiz]
+            return [memo,test,memo,test,memo,test,memo,test,memo,test,quiz,score]
         } else {
-            return [memo,test,memo,test,memo,test,quiz]
+            return [memo,test,memo,test,memo,test,quiz,score]
         }
         
     }
@@ -78,17 +81,20 @@ class Lesson: ObservableObject {
         self.numberOfMemo = 0
         self.numberOfTest = 0
         self.numberOfQuiz = 0
+        self.numberOfScore = 0
         self.kanaIndex = 0
     }
     func newPart() {
         if currentPartIndex + 1 < totalParts {
             currentPartIndex += 1
             if currentPart == .memo {
-                kanaIndex = currentPartIndex - numberOfTest
+                kanaIndex = currentPartIndex - numberOfTest - numberOfQuiz
             } else if currentPart == .test {
                 numberOfTest += 1
             } else if currentPart == .quiz {
                 numberOfQuiz += 1
+            } else if currentPart == .score {
+                numberOfScore += 1
             }
         } else {
             lessonFinished()

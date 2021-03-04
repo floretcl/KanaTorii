@@ -18,7 +18,7 @@ struct CustomSection: View {
                 .fontWeight(.light)
                 .foregroundColor(Color.white)
                 .padding(15)
-                .shadow(color: Color.black, radius: 4, x: 0.0, y: 2.0)
+                .shadow(color: Color.black, radius: 3, x: 1.0, y: 3.0)
             Spacer()
         }.background(Color("Green"))
     }

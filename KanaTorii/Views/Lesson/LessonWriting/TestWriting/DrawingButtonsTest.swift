@@ -20,6 +20,7 @@ struct DrawingButtonsTest: View {
             if test.numberOfTestsPerformed == 0 {
                 Spacer()
                 Button(action: {
+                    hapticFeedback(style: .soft)
                     showGuide.toggle()
                 }, label: {
                     ShowGuideButtonLabel(sizeText: sizeText, width: width, height: height)
@@ -27,6 +28,7 @@ struct DrawingButtonsTest: View {
             }
             Spacer()
             Button(action: {
+                hapticFeedback(style: .soft)
                 drawings = [Drawing]()
             }, label: {
                 DeleteButtonLabel(sizeText: sizeText, width: width, height: height)

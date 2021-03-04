@@ -42,17 +42,6 @@ struct ListsView: View {
                     }
                 }
                 .navigationBarTitle(navigationTitle, displayMode: .inline)
-                .navigationBarItems(trailing: Button(action: {
-                    showSettings.toggle()
-                }, label: {
-                    Label("", systemImage: "gearshape")
-                        .foregroundColor(Color("Green"))
-                        .font(.title)
-                        .padding(.bottom, 10.0)
-                        .fullScreenCover(isPresented: $showSettings, content: {
-                            SettingsView()
-                        })
-                }))
             })
             .navigationViewStyle(StackNavigationViewStyle())
         }

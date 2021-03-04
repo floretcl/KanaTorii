@@ -21,9 +21,9 @@ struct QuizForTestReading: View {
     }
     private var textActionSheet: String {
         if quizForTest.correctAnswer {
-            return "Right Answer"
+            return "Right Answer: \(quizForTest.currentSolution.uppercased())"
         } else {
-            return "Wrong Answer"
+            return "Wrong Answer: \(quizForTest.currentSolution.uppercased())"
         }
     }
     let itemsCellIphone = GridItem(.fixed(120))

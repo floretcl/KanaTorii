@@ -21,9 +21,9 @@ struct QuizKeyboard: View {
     @State var heightDeviceSaved: CGFloat = 0
     private var textActionSheet: String {
         if quiz.correctAnswer {
-            return "Right Answer"
+            return "Right Answer: \(quiz.currentSolution.uppercased())"
         } else {
-            return "Wrong Answer"
+            return "Wrong Answer: \(quiz.currentSolution.uppercased())"
         }
     }
     

@@ -16,9 +16,9 @@ struct QuizWriting: View {
     @State var image: UIImage = UIImage()
     private var textActionSheet: String {
         if quiz.correctAnswer {
-            return "Correct drawing"
+            return "Correct drawing: \(quiz.currentSolution.uppercased())"
         } else {
-            return "Incorrect drawing"
+            return "Incorrect drawing: \(quiz.currentSolution.uppercased())"
         }
     }
     private var kanaType: String {

@@ -53,7 +53,7 @@ class Test: ObservableObject {
             return Direction.toKana
         }
     }
-    private var currentSolution: String {
+    var currentSolution: String {
         if translationDirection == .toRomaji {
             return currentRomaji
         } else {
@@ -88,12 +88,8 @@ class Test: ObservableObject {
         testDone = true
     }
     func testAnswer(with answer: String) -> Bool {
-        if numberOfTestsPerformed < 2 {
-            if answer.lowercased() == currentSolution.lowercased() {
-                return true
-            } else {
-                return false
-            }
+        if answer.lowercased() == currentSolution.lowercased() {
+            return true
         } else {
             return false
         }

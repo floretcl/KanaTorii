@@ -147,7 +147,7 @@
         "title": "Lesson 19 : Hiragana wa (w)o n",
         "type": "Reading",
         "kanas": ["わ","を","ん"],
-        "romaji": ["wa","(w)o","n"],
+        "romaji": ["wa","wo","n"],
         "text": "Here are last 3 characters of the 46 Gojuon Hiraganas: わ を ん",
         "id": 18
     },
@@ -155,7 +155,7 @@
         "title": "Lesson 20 : Hiragana wa (w)o n",
         "type": "Writing",
         "kanas": ["わ","を","ん"],
-        "romaji": ["wa","(w)o","n"],
+        "romaji": ["wa","wo","n"],
         "text": "In this lesson, let's see the writing of characters from previous lesson: わ を ん",
         "id": 19
     },
@@ -195,7 +195,7 @@
         "title": "Lesson 25 : Hiragana da ji zu de do",
         "type": "Reading",
         "kanas": ["だ","ぢ","づ","で","ど"],
-        "romaji": ["da","ji(di)","zu(du)","de","do"],
+        "romaji": ["da","ji","zu","de","do"],
         "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nHere t- becomes d-.\nAlso, pay attention to じ(ji) and ぢ(ji). And also to ず(zu) and づ(zu): だ ぢ づ で ど",
         "id": 24
     },
@@ -203,7 +203,7 @@
         "title": "Lesson 26 : Hiragana da ji zu de do",
         "type": "Writing",
         "kanas": ["だ","ぢ","づ","で","ど"],
-        "romaji": ["da","ji(di)","zu(du)","de","do"],
+        "romaji": ["da","ji","zu","de","do"],
         "text": "In this lesson, let's see the writing of characters from previous lesson: だ ぢ づ で ど",
         "id": 25
     },

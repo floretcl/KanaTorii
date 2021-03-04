@@ -12,6 +12,7 @@ struct SoundButton: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             currentLesson.readTextInJapanese(text: currentLesson.currentKana)
         }, label: {
             Image(systemName: "speaker.wave.2.fill")

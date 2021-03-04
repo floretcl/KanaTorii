@@ -14,6 +14,7 @@ struct LessonHeader: View {
     var body: some View {
         HStack {
             Button(action: {
+                currentLesson.state = .end
                 presentation.wrappedValue.dismiss()
             }, label: {
                 Image(systemName: "multiply")

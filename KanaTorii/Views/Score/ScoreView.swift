@@ -39,7 +39,7 @@ struct ScoreView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             )
-        })
+        }).edgesIgnoringSafeArea(.all)
         
     }
 }

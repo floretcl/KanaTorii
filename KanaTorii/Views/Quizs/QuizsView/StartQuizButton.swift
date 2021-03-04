@@ -15,10 +15,12 @@ struct StartQuizButton: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             showQuiz.toggle()
         }, label: {
             Text("Start")
                 .font(.system(size: textSize))
+                .shadow(color: Color.black, radius: 4, x: 0.0, y: 2.0)
                 .padding(.horizontal, widthDevice/6)
                 .padding(.vertical, heightDevice/50)
                 .foregroundColor(.white)

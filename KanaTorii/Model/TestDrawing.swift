@@ -65,12 +65,8 @@ class TestDrawing: ObservableObject {
         testDone = true
     }
     private func testAnswer(with answer: String) -> Bool {
-        if numberOfTestsPerformed < 2 {
-            if answer.lowercased() == kana.lowercased() {
-                return true
-            } else {
-                return false
-            }
+        if answer.lowercased() == kana.lowercased() {
+            return true
         } else {
             return false
         }

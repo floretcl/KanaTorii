@@ -17,6 +17,9 @@ struct GreenSegmentedControl: View {
                 .tag("katakana")
         })
         .pickerStyle((SegmentedPickerStyle()))
+        .onChange(of: pickerSelection, perform: { _ in
+            hapticFeedback(style: .soft)
+        })
     }
 }
 

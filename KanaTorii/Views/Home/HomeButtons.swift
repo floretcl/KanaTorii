@@ -17,6 +17,7 @@ struct HomeButtons: View {
     var body: some View {
         VStack {
             Button(action: {
+                hapticFeedback(style: .soft)
                 showIntroduction.toggle()
             }, label: {
                 HomeButton(
@@ -28,6 +29,7 @@ struct HomeButtons: View {
                 IntroductionView()
             }
             Button(action: {
+                hapticFeedback(style: .soft)
                 showAbout.toggle()
             }, label: {
                 HomeButton(

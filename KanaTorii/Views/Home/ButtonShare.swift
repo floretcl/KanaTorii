@@ -12,6 +12,7 @@ struct ButtonShare: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             self.showShare = true
         }, label: {
             Label("Share", systemImage: "square.and.arrow.up")

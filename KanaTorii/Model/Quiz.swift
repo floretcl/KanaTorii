@@ -63,7 +63,7 @@ class Quiz: ObservableObject {
     var numberTotalKana: Int {
         return kanas.count
     }
-    private var currentSolution: String {
+    var currentSolution: String {
         if translationDirection == .toRomaji {
             return currentName
         } else {

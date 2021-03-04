@@ -16,11 +16,12 @@ struct ContinueButtonScore: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             showScore.toggle()
         }, label: {
-            ContinueLabel(
+            ButtonLabel(
                 widthDevice: widthDevice,
-                heightDevice: heightDevice, textSize: textSize)
+                heightDevice: heightDevice, textSize: textSize, text: "Show score")
         })
     }
 }

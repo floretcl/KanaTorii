@@ -36,6 +36,7 @@ struct DrawingNavigationButtons: View {
         HStack {
             Spacer()
             Button(action: {
+                hapticFeedback(style: .soft)
                 drawings = [Drawing]()
                 kana = previousKana
             }, label: {
@@ -43,6 +44,7 @@ struct DrawingNavigationButtons: View {
             }).padding(.horizontal, 10)
             Spacer()
             Button(action: {
+                hapticFeedback(style: .soft)
                 drawings = [Drawing]()
                 kana = nextKana
             }, label: {

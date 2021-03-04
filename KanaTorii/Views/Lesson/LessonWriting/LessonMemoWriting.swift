@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LessonMemoWriting: View {
+    @Environment(\.presentationMode) private var presentation
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
@@ -52,7 +53,7 @@ struct LessonMemoWriting: View {
                                             kana: currentLesson.currentKana,
                                             romaji: currentLesson.currentRomaji))
                                 })
-                                if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
+                                if currentLesson.currentPart == .quiz {
                                     ContinueButtonQuiz(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
                                     .padding(.bottom, heightDevice/20)
                                     .fullScreenCover(
@@ -69,14 +70,14 @@ struct LessonMemoWriting: View {
                                                 kanas: currentLesson.kanas,
                                                 romajis: currentLesson.romajis, draw: true))
                                     })
-                                } else if currentLesson.currentPartNumber == currentLesson.totalParts {
+                                } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
                                     .padding(.bottom, heightDevice/20)
                                     .sheet(
                                         isPresented: $showScore,
                                         onDismiss: {
                                             addItemToCoreData()
-                                            //quitter la leçon
+                                            self.presentation.wrappedValue.dismiss()
                                         },
                                         content: {
                                             ScoreView()
@@ -123,7 +124,7 @@ struct LessonMemoWriting: View {
                                             kana: currentLesson.currentKana,
                                             romaji: currentLesson.currentRomaji))
                                 })
-                                if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
+                                if currentLesson.currentPart == .quiz {
                                     ContinueButtonQuiz(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
                                     .padding(.bottom, heightDevice/20)
                                     .fullScreenCover(
@@ -140,14 +141,14 @@ struct LessonMemoWriting: View {
                                                 kanas: currentLesson.kanas,
                                                 romajis: currentLesson.romajis, draw: true))
                                     })
-                                } else if currentLesson.currentPartNumber == currentLesson.totalParts {
+                                } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
                                     .padding(.bottom, heightDevice/20)
                                     .sheet(
                                         isPresented: $showScore,
                                         onDismiss: {
                                             addItemToCoreData()
-                                            //quitter la leçon
+                                            self.presentation.wrappedValue.dismiss()
                                         },
                                         content: {
                                             ScoreView()

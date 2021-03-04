@@ -31,6 +31,7 @@ struct SuggestionCellTestQuiz: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             quizForTest.answerCurrentQuestion(with: quizForTest.suggestions![index])
             addItemToCoreData(correctAnswer: quizForTest.correctAnswer)
             showActionSheet.toggle()

@@ -20,19 +20,20 @@ struct ContinueButtonTestDrawing: View {
 
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             let answer = getPrediction(uiimage: image)
             image = UIImage()
             //print(answer)
-            if test.numberOfTestsPerformed > 0 {
-                test.answerCurrentQuestion(with: answer)
-                showActionSheet.toggle()
-            } else {
-                test.nextQuestion()
+            if test.numberOfTestsPerformed == 0 {
                 showGuide = false
                 drawings = [Drawing]()
+                test.nextQuestion()
+            } else {
+                test.answerCurrentQuestion(with: answer)
+                showActionSheet.toggle()
             }
         }, label: {
-            ContinueLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize)
+            ButtonLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize, text: "Continue")
         })
     }
     func getPrediction(uiimage: UIImage) -> String {

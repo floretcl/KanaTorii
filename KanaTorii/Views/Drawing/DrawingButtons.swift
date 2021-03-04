@@ -18,12 +18,14 @@ struct DrawingButtons: View {
         HStack {
             Spacer()
             Button(action: {
+                hapticFeedback(style: .soft)
                 showGuide.toggle()
             }, label: {
                 ShowGuideButtonLabel(sizeText: sizeText, width: width, height: height)
             })
             Spacer()
             Button(action: {
+                hapticFeedback(style: .soft)
                 drawings = [Drawing]()
             }, label: {
                 DeleteButtonLabel(sizeText: sizeText, width: width, height: height)

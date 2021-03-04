@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct LessonInfoView: View {
+    @Environment(\.presentationMode) private var presentation
     @Environment(\.colorScheme) var colorScheme
-    @State var showActionSheet: Bool = true
     var lesson: LessonForList
+    @ObservedObject var currentLesson: Lesson
     
     var body: some View {
         GeometryReader(content: { geometry in
@@ -41,6 +42,5 @@ struct LessonInfoView_Previews: PreviewProvider {
     static var lessons = ModelData().lessons
     static var previews: some View {
         LessonInfoView(lesson: lessons[0])
-            
     }
 }

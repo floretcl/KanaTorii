@@ -16,12 +16,12 @@ struct ContinueButtonQuiz: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             showQuiz.toggle()
-            currentLesson.newPart()
         }, label: {
-            ContinueLabel(
+            ButtonLabel(
                 widthDevice: widthDevice,
-                heightDevice: heightDevice, textSize: textSize)
+                heightDevice: heightDevice, textSize: textSize, text: "Quiz")
         })
     }
 }

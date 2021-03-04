@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LessonMemoReading: View {
+    @Environment(\.presentationMode) private var presentation
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
@@ -36,28 +37,35 @@ struct LessonMemoReading: View {
                             Spacer()
                             ZStack {
                                 ContinueButtonTest(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                    .padding(.bottom, heightDevice/20)
-                                    .fullScreenCover(
-                                        isPresented: $showTest,
-                                        onDismiss: {
-                                            showQuiz.toggle()
-                                    }, content: {
+                                .padding(.bottom, heightDevice/20)
+                                .fullScreenCover(
+                                    isPresented: $showTest,
+                                    onDismiss: {
+                                        if currentLesson.state == .end {
+                                            self.presentation.wrappedValue.dismiss()
+                                        }
+                                    },
+                                    content: {
                                         TestReading(
                                             currentLesson: currentLesson,
                                             test: Test(
                                                 type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
                                                 kanas: currentLesson.kanas,
                                                 romajis: currentLesson.romajis,
-                                                currentIndex: currentLesson.kanaIndex))
+                                                currentIndex: currentLesson.kanaIndex),
+                                            showQuiz: $showQuiz)
                                     })
-                                if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
+                                if currentLesson.currentPart == .quiz {
                                     ContinueButtonQuiz(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                        .padding(.bottom, heightDevice/20)
-                                        .fullScreenCover(
-                                            isPresented: $showQuiz,
-                                            onDismiss: {
-                                                currentLesson.newPart()
-                                                showScore.toggle()
+                                    .padding(.bottom, heightDevice/20)
+                                    .fullScreenCover(
+                                        isPresented: $showQuiz,
+                                        onDismiss: {
+                                            currentLesson.newPart()
+                                            showScore.toggle()
+                                            if currentLesson.state == .end {
+                                                self.presentation.wrappedValue.dismiss()
+                                            }
                                         },content: {
                                             QuizForTestReading(
                                                 currentLesson: currentLesson,
@@ -67,14 +75,14 @@ struct LessonMemoReading: View {
                                                     romajis: currentLesson.romajis, draw: false)
                                             )
                                         })
-                                } else if currentLesson.currentPartNumber == currentLesson.totalParts {
+                                } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
                                     .padding(.bottom, heightDevice/20)
                                     .sheet(
                                         isPresented: $showScore,
                                         onDismiss: {
                                             addItemToCoreData()
-                                            //quitter la leçon
+                                            self.presentation.wrappedValue.dismiss()
                                         },
                                         content: {
                                             ScoreView()
@@ -110,24 +118,31 @@ struct LessonMemoReading: View {
                                     .fullScreenCover(
                                         isPresented: $showTest,
                                         onDismiss: {
-                                            showQuiz.toggle()
-                                        },content: {
+                                            if currentLesson.state == .end {
+                                                self.presentation.wrappedValue.dismiss()
+                                            }
+                                        },
+                                        content: {
                                         TestReading(
                                             currentLesson: currentLesson,
                                             test: Test(
                                                 type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
                                                 kanas: currentLesson.kanas,
                                                 romajis: currentLesson.romajis,
-                                                currentIndex: currentLesson.kanaIndex)
+                                                currentIndex: currentLesson.kanaIndex),
+                                            showQuiz: $showQuiz
                                         )
                                     })
-                                if currentLesson.currentPartNumber == currentLesson.totalParts - 1 {
+                                if currentLesson.currentPart == .quiz {
                                     ContinueButtonQuiz(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
                                         .padding(.bottom, heightDevice/20)
                                         .fullScreenCover(isPresented: $showQuiz,
                                                onDismiss: {
                                                 currentLesson.newPart()
                                                 showScore.toggle()
+                                                if currentLesson.state == .end {
+                                                    self.presentation.wrappedValue.dismiss()
+                                                }
                                                },content: {
                                                 QuizForTestReading(
                                                     currentLesson: currentLesson,
@@ -137,14 +152,14 @@ struct LessonMemoReading: View {
                                                         romajis: currentLesson.romajis, draw: false)
                                                 )
                                         })
-                                } else if currentLesson.currentPartNumber == currentLesson.totalParts {
+                                } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
                                     .padding(.bottom, heightDevice/20)
                                     .sheet(
                                         isPresented: $showScore,
                                         onDismiss: {
                                             addItemToCoreData()
-                                            //quitter la leçon
+                                            self.presentation.wrappedValue.dismiss()
                                         },
                                         content: {
                                             ScoreView()

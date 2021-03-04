@@ -27,11 +27,7 @@ struct DakuonHandakuonGrid: View {
                 spacing: widthDevice/20,
                 content: {
                     ForEach(limitGojuon+4..<limitDakuonHandakuon) { index in
-                        KanaCell(kanaType: self.type, kanaForList: kanasForList[index])
-                            .padding(.vertical, widthDevice/60)
-                            .padding(.horizontal, widthDevice/40)
-                            .overlay(RoundedRectangle(cornerRadius: widthDevice/50)
-                                        .stroke(Color.primary, lineWidth: 0.5))
+                        KanaCell(kanaType: self.type, kanaForList: kanasForList[index], widthDevice: widthDevice)
                     }
             })
             .padding(.top, 20)

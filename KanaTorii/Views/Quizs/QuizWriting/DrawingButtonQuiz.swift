@@ -17,6 +17,7 @@ struct DrawingButtonQuiz: View {
         HStack {
             Spacer()
             Button(action: {
+                hapticFeedback(style: .soft)
                 drawings = [Drawing]()
             }, label: {
                 DeleteButtonLabel(sizeText: sizeText, width: width, height: height)

@@ -37,11 +37,14 @@ struct SettingsView: View {
                                 value: $userSettings.quickQuizNbQuestions,
                                 in: 10...40,
                                 step: 5,
+                                onEditingChanged: {_ in
+                                    hapticFeedback(style: .soft)
+                                },
                                 minimumValueLabel: Text("10"),
                                 maximumValueLabel: Text("40"))
                                 {
                                 Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
-                                }
+                            }
                         }
                     }
                     Section(header: Text("DATA")) {
@@ -50,6 +53,7 @@ struct SettingsView: View {
                             Spacer()
                             Button("Reset") {
                                 showAlertResetData.toggle()
+                                hapticFeedback(style: .medium)
                             }.padding(.all, 12.0)
                             .foregroundColor(.white)
                             .background(Color.red)
@@ -100,6 +104,14 @@ struct SettingsView: View {
                 Form {
                     Section(header: Text("CHARACTER CHARTS")) {
                         Toggle("Statistics colors in tables", isOn: $userSettings.colorsInTables)
+                        HStack {
+                            Text("Primary").foregroundColor(.primary)
+                            Text("Red").foregroundColor(.red)
+                            Text("Orange").foregroundColor(.orange)
+                            Text("Yellow").foregroundColor(.yellow)
+                            Text("Green").foregroundColor(.green)
+                        }
+                        
                     }
                     Section(header: Text("QUICK QUIZ")) {
                         VStack {
@@ -108,6 +120,9 @@ struct SettingsView: View {
                                 value: $userSettings.quickQuizNbQuestions,
                                 in: 10...40,
                                 step: 5,
+                                onEditingChanged: { _ in
+                                    hapticFeedback(style: .soft)
+                                },
                                 minimumValueLabel: Text("10"),
                                 maximumValueLabel: Text("40"))
                                 {
@@ -121,6 +136,7 @@ struct SettingsView: View {
                             Spacer()
                             Button("Reset") {
                                 showAlertResetData.toggle()
+                                hapticFeedback(style: .medium)
                             }
                             .padding(.all, 12.0)
                             .foregroundColor(.white)

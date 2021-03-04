@@ -12,6 +12,7 @@ struct ButtonSettings: View {
     
     var body: some View {
         Button(action: {
+            hapticFeedback(style: .soft)
             self.showSettings.toggle()
         }, label: {
             Label("Settings", systemImage: "gearshape")

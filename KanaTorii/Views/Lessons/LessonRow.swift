@@ -33,6 +33,7 @@ struct LessonRow: View {
                     .frame(width: 45, height: 45, alignment: .center)
                 Text("\(lesson.kanas[0])")
                     .font(.title2)
+                    .shadow(color: Color.black, radius: 2, x: 1.0, y: 2.0)
                     .foregroundColor(Color(UIColor.secondarySystemBackground))
             }
             VStack(alignment: .leading, spacing: 0, content: {
