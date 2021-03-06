@@ -35,7 +35,7 @@ struct ContinueNavLink: View {
                             mode: .writing,
                             kanaType: lesson.kanaTypeString,
                             kanas: lesson.kanas,
-                            romajis: lesson.romaji)),
+                                                    romajis: lesson.romaji)),
                     label: {
                         ButtonLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, text: "Continue")
                     }

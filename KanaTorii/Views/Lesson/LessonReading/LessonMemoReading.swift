@@ -42,6 +42,7 @@ struct LessonMemoReading: View {
                                     isPresented: $showTest,
                                     onDismiss: {
                                         if currentLesson.state == .end {
+                                            currentLesson.reset()
                                             self.presentation.wrappedValue.dismiss()
                                         }
                                     },
@@ -64,6 +65,7 @@ struct LessonMemoReading: View {
                                             currentLesson.newPart()
                                             showScore.toggle()
                                             if currentLesson.state == .end {
+                                                currentLesson.reset()
                                                 self.presentation.wrappedValue.dismiss()
                                             }
                                         },content: {
@@ -82,6 +84,7 @@ struct LessonMemoReading: View {
                                         isPresented: $showScore,
                                         onDismiss: {
                                             addItemToCoreData()
+                                            currentLesson.reset()
                                             self.presentation.wrappedValue.dismiss()
                                         },
                                         content: {
@@ -119,6 +122,7 @@ struct LessonMemoReading: View {
                                         isPresented: $showTest,
                                         onDismiss: {
                                             if currentLesson.state == .end {
+                                                currentLesson.reset()
                                                 self.presentation.wrappedValue.dismiss()
                                             }
                                         },
@@ -141,6 +145,7 @@ struct LessonMemoReading: View {
                                                 currentLesson.newPart()
                                                 showScore.toggle()
                                                 if currentLesson.state == .end {
+                                                    currentLesson.reset()
                                                     self.presentation.wrappedValue.dismiss()
                                                 }
                                                },content: {
@@ -159,6 +164,7 @@ struct LessonMemoReading: View {
                                         isPresented: $showScore,
                                         onDismiss: {
                                             addItemToCoreData()
+                                            currentLesson.reset()
                                             self.presentation.wrappedValue.dismiss()
                                         },
                                         content: {

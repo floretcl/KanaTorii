@@ -43,7 +43,10 @@ struct LessonMemoWriting: View {
                                 .fullScreenCover(
                                     isPresented: $showTest,
                                     onDismiss: {
-                                        showQuiz.toggle()
+                                        if currentLesson.state == .end {
+                                            currentLesson.reset()
+                                            self.presentation.wrappedValue.dismiss()
+                                        }
                                     },
                                     content: {
                                     TestWriting(
@@ -61,6 +64,10 @@ struct LessonMemoWriting: View {
                                         onDismiss: {
                                             currentLesson.newPart()
                                             showScore.toggle()
+                                            if currentLesson.state == .end {
+                                                currentLesson.reset()
+                                                self.presentation.wrappedValue.dismiss()
+                                            }
                                         },
                                         content: {
                                         QuizForTestWriting(
@@ -77,6 +84,7 @@ struct LessonMemoWriting: View {
                                         isPresented: $showScore,
                                         onDismiss: {
                                             addItemToCoreData()
+                                            currentLesson.reset()
                                             self.presentation.wrappedValue.dismiss()
                                         },
                                         content: {
@@ -114,7 +122,10 @@ struct LessonMemoWriting: View {
                                 .fullScreenCover(
                                     isPresented: $showTest,
                                     onDismiss: {
-                                        showQuiz.toggle()
+                                        if currentLesson.state == .end {
+                                            currentLesson.reset()
+                                            self.presentation.wrappedValue.dismiss()
+                                        }
                                     },
                                     content: {
                                     TestWriting(
@@ -132,6 +143,10 @@ struct LessonMemoWriting: View {
                                         onDismiss: {
                                             currentLesson.newPart()
                                             showScore.toggle()
+                                            if currentLesson.state == .end {
+                                                currentLesson.reset()
+                                                self.presentation.wrappedValue.dismiss()
+                                            }
                                         },
                                         content: {
                                         QuizForTestWriting(
@@ -148,6 +163,7 @@ struct LessonMemoWriting: View {
                                         isPresented: $showScore,
                                         onDismiss: {
                                             addItemToCoreData()
+                                            currentLesson.reset()
                                             self.presentation.wrappedValue.dismiss()
                                         },
                                         content: {

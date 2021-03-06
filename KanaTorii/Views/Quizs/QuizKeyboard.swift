@@ -16,7 +16,6 @@ struct QuizKeyboard: View {
     @ObservedObject var quiz: Quiz
     @State var showActionSheet: Bool = false
     @State var text: String = ""
-    @State var keyboardVisible = false
     @State var widthDeviceSaved: CGFloat = 0
     @State var heightDeviceSaved: CGFloat = 0
     private var textActionSheet: String {
@@ -44,16 +43,16 @@ struct QuizKeyboard: View {
                                 .padding(heightDeviceSaved/20)
                             HStack {
                                 TextField("Enter your answer", text: $text) { Boolean in
-                                    keyboardVisible.toggle()
                                 } onCommit: {
                                     quiz.answerCurrentQuestion(with: text)
                                     addItemToCoreData(correctAnswer: quiz.correctAnswer)
                                     showActionSheet.toggle()
                                 }
+                                .foregroundColor(Color.accentColor)
                                 .padding(.vertical, heightDeviceSaved/25)
                                 .padding(.horizontal, widthDeviceSaved/4)
+                                .disableAutocorrection(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .keyboardType(.alphabet)
                             }
                             Spacer()
                         }
@@ -63,10 +62,8 @@ struct QuizKeyboard: View {
                 //.navigationBarTitle()
                 .edgesIgnoringSafeArea(.bottom)
                 .onAppear(perform: {
-                    if keyboardVisible == false {
-                        widthDeviceSaved = widthDevice
-                        heightDeviceSaved = heightDevice
-                    }
+                    widthDeviceSaved = widthDevice
+                    heightDeviceSaved = heightDevice
                 })
             })
             .alert(isPresented: $showActionSheet, content: {
@@ -74,8 +71,7 @@ struct QuizKeyboard: View {
                         if quiz.state == .play {
                             quiz.nextQuestion()
                             text = ""
-                        }
-                        if quiz.state == .end {
+                        } else {
                             presentation.wrappedValue.dismiss()
                         }
                     })
@@ -96,14 +92,15 @@ struct QuizKeyboard: View {
                                 .font(.system(size: heightDeviceSaved/5))
                             HStack {
                                 TextField("Enter your answer", text: $text) { Boolean in
-                                    keyboardVisible.toggle()
                                 } onCommit: {
                                     quiz.answerCurrentQuestion(with: text)
                                     addItemToCoreData(correctAnswer: quiz.correctAnswer)
                                     showActionSheet.toggle()
                                 }
+                                .foregroundColor(Color.accentColor)
                                 .padding(.vertical, heightDeviceSaved/25)
                                 .padding(.horizontal, widthDeviceSaved/6)
+                                .disableAutocorrection(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                             }
                             Spacer()
@@ -114,10 +111,9 @@ struct QuizKeyboard: View {
                 //.navigationBarTitle()
                 .edgesIgnoringSafeArea(.bottom)
                 .onAppear(perform: {
-                    if keyboardVisible == false {
-                        widthDeviceSaved = widthDevice
-                        heightDeviceSaved = heightDevice
-                    }
+                    UIApplication.shared.end
+                    widthDeviceSaved = widthDevice
+                    heightDeviceSaved = heightDevice
                 })
             })
             .actionSheet(isPresented: $showActionSheet, content: {
@@ -128,8 +124,7 @@ struct QuizKeyboard: View {
                             if quiz.state == .play {
                                 quiz.nextQuestion()
                                 text = ""
-                            }
-                            if quiz.state == .end {
+                            } else {
                                 presentation.wrappedValue.dismiss()
                             }
                         })

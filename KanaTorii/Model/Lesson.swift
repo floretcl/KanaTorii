@@ -103,6 +103,15 @@ class Lesson: ObservableObject {
     func lessonFinished() {
         state = .end
     }
+    func reset() {
+        self.state = .play
+        self.currentPartIndex = 0
+        self.numberOfMemo = 0
+        self.numberOfTest = 0
+        self.numberOfQuiz = 0
+        self.numberOfScore = 0
+        self.kanaIndex = 0
+    }
     func readTextInJapanese(text: String) {
         let synthesizer = AVSpeechSynthesizer()
         let audioSession = AVAudioSession.sharedInstance()

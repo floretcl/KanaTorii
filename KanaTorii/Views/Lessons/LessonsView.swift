@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LessonsView: View {
     @EnvironmentObject var modelData: ModelData
+    @State var showReminder: Bool = false
     var lessons: [LessonForList] {
         return modelData.lessons
     }
@@ -24,18 +25,20 @@ struct LessonsView: View {
             }
             .navigationTitle("Lessons")
             .navigationBarItems(trailing: Button(action: {
-                hapticFeedback(style: .soft)
-                //
+                    hapticFeedback(style: .soft)
+                    showReminder.toggle()
                 },
                 label: {
-                    Label("", systemImage: "clock.arrow.circlepath")
+                    Label("Reminder", systemImage: "clock.arrow.circlepath")
                         .foregroundColor(Color.accentColor)
-                        .font(.title)
+                        .font(.title3)
                         .padding(.bottom, 10.0)
+                }).sheet(isPresented: $showReminder, content: {
+                    ReminderView()
                 })
             )
             VStack {
-                Image("ema")
+                Image("Ema")
                     .resizable()
                     .frame(width: 300, height: 300, alignment: .center)
                     .clipShape(Circle())

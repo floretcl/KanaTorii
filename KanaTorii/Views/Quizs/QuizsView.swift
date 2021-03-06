@@ -209,7 +209,7 @@ struct QuizsView: View {
                                                 isPresented: $showScore,
                                                 onDismiss: {quizIsDone.toggle()},
                                                 content: {
-                                                ScoreView()
+                                                    ScoreView()
                                                 }
                                             )
                                         .padding(.vertical, 5)

@@ -113,7 +113,7 @@ class Quiz: ObservableObject {
         }
         if difficulty == .easy {
             suggestions = getSuggestions()
-        } else {
+        } else if difficulty == .hard && translationDirection == .toKana {
             initializeConfiguration()
         }
         resetScore()
