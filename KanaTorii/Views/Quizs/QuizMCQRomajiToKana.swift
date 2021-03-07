@@ -11,6 +11,7 @@ struct QuizMCQRomajiToKana: View {
     @Environment(\.presentationMode) var presentation
     @ObservedObject var quiz: Quiz
     @State var showActionSheet: Bool = false
+    @Binding var showScore: Bool
     let itemsCellIphone = GridItem(.fixed(90))
     let itemsCellIpad = GridItem(.fixed(220))
     private var textActionSheet: String {
@@ -27,7 +28,7 @@ struct QuizMCQRomajiToKana: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    QuizHeader(quiz: quiz, heightDevice: heightDevice)
+                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -44,13 +45,13 @@ struct QuizMCQRomajiToKana: View {
                     }
                 }.background(Color(UIColor.secondarySystemBackground))
                 //.navigationBarTitle()
-                .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
                         if quiz.state == .play {
                             quiz.nextQuestion()
                         } else {
+                            showScore.toggle()
                             presentation.wrappedValue.dismiss()
                         }
                     })
@@ -61,14 +62,14 @@ struct QuizMCQRomajiToKana: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    QuizHeader(quiz: quiz, heightDevice: heightDevice)
+                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
                         VStack {
                             TitleQuiz(heightDevice: heightDevice, text: "Find correct answer")
                             Text(quiz.currentName)
-                                .font(.system(size: heightDevice/6))
+                                .font(.system(size: heightDevice/9))
                             Spacer()
                             SuggestionsQuiz(quiz: quiz, showActionSheet: $showActionSheet, items: itemsCellIphone, spacing: 20, width: 80, height: 80, textSize: widthDevice/15)
                                 .padding(.bottom, heightDevice/10)
@@ -77,7 +78,6 @@ struct QuizMCQRomajiToKana: View {
                     }
                 }.background(Color(UIColor.secondarySystemBackground))
                 //.navigationBarTitle()
-                .edgesIgnoringSafeArea(.bottom)
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
@@ -87,6 +87,7 @@ struct QuizMCQRomajiToKana: View {
                             if quiz.state == .play {
                                 quiz.nextQuestion()
                             } else {
+                                showScore.toggle()
                                 presentation.wrappedValue.dismiss()
                             }
                         })
@@ -108,7 +109,8 @@ struct QuizMCQRomajiToKana_Previews: PreviewProvider {
                 hiragana: false,
                 katakana: true,
                 kanaSection: .gojuon,
-                nbQuestions: 10.0)
+                nbQuestions: 10.0),
+            showScore: .constant(false)
         )
     }
 }

@@ -82,7 +82,6 @@
 		7E3E437F25CB42DF00B2F5AC /* LessonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E437B25CB42DF00B2F5AC /* LessonHeader.swift */; };
 		7E3E438125CB42DF00B2F5AC /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E437D25CB42DF00B2F5AC /* ButtonLabel.swift */; };
 		7E3E438225CB42DF00B2F5AC /* MemoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E437E25CB42DF00B2F5AC /* MemoCard.swift */; };
-		7E3E438925CB435600B2F5AC /* QuizsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E438825CB435600B2F5AC /* QuizsView.swift */; };
 		7E3E438E25CB435F00B2F5AC /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E438D25CB435F00B2F5AC /* StatisticsView.swift */; };
 		7E3E439925CB446100B2F5AC /* Kana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E439325CB446000B2F5AC /* Kana.swift */; };
 		7E3E439A25CB446100B2F5AC /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E439425CB446000B2F5AC /* Lesson.swift */; };
@@ -121,7 +120,7 @@
 		7E60023A25EAB41700231C40 /* ContinueButtonTestQuizDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E60023925EAB41700231C40 /* ContinueButtonTestQuizDrawing.swift */; };
 		7E863A2125CC5E9E00D3570E /* SuggestionCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E863A2025CC5E9E00D3570E /* SuggestionCellTest.swift */; };
 		7E89855325E16A2000C4900B /* ContinueButtonTestDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89855225E16A2000C4900B /* ContinueButtonTestDrawing.swift */; };
-		7E8BAADC25F3EFE800205949 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8BAADB25F3EFE800205949 /* UITextField.swift */; };
+		7E8BAB0825F3FCC300205949 /* QuizsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8BAB0725F3FCC300205949 /* QuizsView.swift */; };
 		7E978B1D25D968C7007B5A04 /* DrawingNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E978B1C25D968C7007B5A04 /* DrawingNavigationButtons.swift */; };
 		7E9B2B6A25E41F1300481D71 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B2B6925E41F1300481D71 /* Quiz.swift */; };
 		7EA5EC3125D9A78F00A1FCF4 /* ContinueButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5EC3025D9A78F00A1FCF4 /* ContinueButtonTest.swift */; };
@@ -236,7 +235,6 @@
 		7E3E437B25CB42DF00B2F5AC /* LessonHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonHeader.swift; sourceTree = "<group>"; };
 		7E3E437D25CB42DF00B2F5AC /* ButtonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		7E3E437E25CB42DF00B2F5AC /* MemoCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCard.swift; sourceTree = "<group>"; };
-		7E3E438825CB435600B2F5AC /* QuizsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizsView.swift; sourceTree = "<group>"; };
 		7E3E438D25CB435F00B2F5AC /* StatisticsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		7E3E439325CB446000B2F5AC /* Kana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kana.swift; sourceTree = "<group>"; };
 		7E3E439425CB446000B2F5AC /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
@@ -276,7 +274,7 @@
 		7E60023925EAB41700231C40 /* ContinueButtonTestQuizDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTestQuizDrawing.swift; sourceTree = "<group>"; };
 		7E863A2025CC5E9E00D3570E /* SuggestionCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellTest.swift; sourceTree = "<group>"; };
 		7E89855225E16A2000C4900B /* ContinueButtonTestDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTestDrawing.swift; sourceTree = "<group>"; };
-		7E8BAADB25F3EFE800205949 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		7E8BAB0725F3FCC300205949 /* QuizsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizsView.swift; sourceTree = "<group>"; };
 		7E978B1C25D968C7007B5A04 /* DrawingNavigationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingNavigationButtons.swift; sourceTree = "<group>"; };
 		7E9B2B6925E41F1300481D71 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		7EA5EC3025D9A78F00A1FCF4 /* ContinueButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTest.swift; sourceTree = "<group>"; };
@@ -589,13 +587,12 @@
 		7E3E438625CB432300B2F5AC /* Quizs */ = {
 			isa = PBXGroup;
 			children = (
-				7E3E438825CB435600B2F5AC /* QuizsView.swift */,
+				7E8BAB0725F3FCC300205949 /* QuizsView.swift */,
 				7E3FE90C25E3F8F500AB398D /* QuizsView */,
 				7E3FE92A25E3FE2E00AB398D /* QuizMCQKanaToRomaji.swift */,
 				7E3FE93225E3FE4A00AB398D /* QuizMCQRomajiToKana.swift */,
 				7E335B3125E6BE26004EC2C9 /* SharedQuizMCQ */,
 				7E3FE93725E3FE8700AB398D /* QuizKeyboard.swift */,
-				7E8BAADB25F3EFE800205949 /* UITextField.swift */,
 				7E3FE91D25E3FDB800AB398D /* QuizWriting.swift */,
 				7EBF6DD625E7FEC80077F4D2 /* QuizWriting */,
 				7EBF6DC225E7F52F0077F4D2 /* QuizShared */,
@@ -917,7 +914,6 @@
 				7E3E432725CB361D00B2F5AC /* DetailsView.swift in Sources */,
 				7E0954A925D9A5BF00A58AFF /* TitleLesson.swift in Sources */,
 				7E3E42F125CB345A00B2F5AC /* HomeBackground.swift in Sources */,
-				7E3E438925CB435600B2F5AC /* QuizsView.swift in Sources */,
 				7EBF6DCF25E7F5F40077F4D2 /* QuizHeader.swift in Sources */,
 				7E3F6A7425D6FD0600F22669 /* ImageProcessor.swift in Sources */,
 				7E3E431A25CB35B800B2F5AC /* DakuonHandakuonGrid.swift in Sources */,
@@ -926,7 +922,6 @@
 				7E23B86E25D9A0E80010EAF6 /* DrawingPadTest.swift in Sources */,
 				7E3E431C25CB35B800B2F5AC /* KanaCell.swift in Sources */,
 				7E3E430C25CB358200B2F5AC /* ListsView.swift in Sources */,
-				7E8BAADC25F3EFE800205949 /* UITextField.swift in Sources */,
 				7E3E42F625CB345A00B2F5AC /* HomeView.swift in Sources */,
 				7E3E433525CB366400B2F5AC /* StatisticsSection.swift in Sources */,
 				7E3E437025CB393600B2F5AC /* LessonMemoReading.swift in Sources */,
@@ -994,6 +989,7 @@
 				7E3E432625CB361D00B2F5AC /* ChevronButton.swift in Sources */,
 				7E3E439E25CB446100B2F5AC /* KanaForList.swift in Sources */,
 				7E3E434925CB369900B2F5AC /* InversedLabel.swift in Sources */,
+				7E8BAB0825F3FCC300205949 /* QuizsView.swift in Sources */,
 				7E3E434A25CB369900B2F5AC /* DrawingGrid.swift in Sources */,
 				7E3E439A25CB446100B2F5AC /* Lesson.swift in Sources */,
 				7E3E438125CB42DF00B2F5AC /* ButtonLabel.swift in Sources */,

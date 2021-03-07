@@ -20,8 +20,6 @@ struct ContinueButtonQuizDrawing: View {
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
-    
-    
 
     var body: some View {
         Button(action: {

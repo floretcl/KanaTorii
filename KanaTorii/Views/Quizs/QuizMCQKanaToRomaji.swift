@@ -13,6 +13,7 @@ struct QuizMCQKanaToRomaji: View {
     @State var showActionSheet: Bool = false
     let itemsCellIphone = GridItem(.fixed(90))
     let itemsCellIpad = GridItem(.fixed(220))
+    @Binding var showScore: Bool
     private var textActionSheet: String {
         if quiz.correctAnswer {
             return "Right Answer: \(quiz.currentSolution.uppercased())"
@@ -27,7 +28,7 @@ struct QuizMCQKanaToRomaji: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    QuizHeader(quiz: quiz, heightDevice: heightDevice)
+                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -44,13 +45,13 @@ struct QuizMCQKanaToRomaji: View {
                     }
                 }.background(Color(UIColor.secondarySystemBackground))
                 //.navigationBarTitle()
-                .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
                         if quiz.state == .play {
                             quiz.nextQuestion()
                         } else {
+                            showScore.toggle()
                             presentation.wrappedValue.dismiss()
                         }
                     })
@@ -61,14 +62,14 @@ struct QuizMCQKanaToRomaji: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    QuizHeader(quiz: quiz, heightDevice: heightDevice)
+                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
                         VStack {
                             TitleQuiz(heightDevice: heightDevice, text: "Find correct answer")
                             Text(quiz.currentKana)
-                                .font(.system(size: heightDevice/6))
+                                .font(.system(size: heightDevice/9))
                             Spacer()
                             SuggestionsQuiz(quiz: quiz, showActionSheet: $showActionSheet, items: itemsCellIphone, spacing: 20, width: 80, height: 80, textSize: widthDevice/15)
                                 .padding(.bottom, heightDevice/10)
@@ -77,7 +78,6 @@ struct QuizMCQKanaToRomaji: View {
                     }
                 }.background(Color(UIColor.secondarySystemBackground))
                 //.navigationBarTitle()
-                .edgesIgnoringSafeArea(.bottom)
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
@@ -87,6 +87,7 @@ struct QuizMCQKanaToRomaji: View {
                             if quiz.state == .play {
                                 quiz.nextQuestion()
                             } else {
+                                showScore.toggle()
                                 presentation.wrappedValue.dismiss()
                             }
                         })
@@ -109,7 +110,8 @@ struct QuizMCQKanaToRomaji_Previews: PreviewProvider {
                     hiragana: true,
                     katakana: false,
                     kanaSection: .all,
-                    nbQuestions: 10.0)
+                    nbQuestions: 10.0),
+                showScore: .constant(false)
             )
         }
     }

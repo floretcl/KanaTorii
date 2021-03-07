@@ -116,8 +116,8 @@ class Quiz: ObservableObject {
         } else if difficulty == .hard && translationDirection == .toKana {
             initializeConfiguration()
         }
-        resetScore()
     }
+    
     
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
@@ -162,10 +162,6 @@ class Quiz: ObservableObject {
     }
     private func saveScore() {
         scoreData.nbCorrectAnswers = score
-        scoreData.nbTotalQuestions = numberTotalKana
-    }
-    private func resetScore() {
-        scoreData.nbCorrectAnswers = 0
         scoreData.nbTotalQuestions = numberTotalKana
     }
     private func getRandomKana() -> [Kana] {

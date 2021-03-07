@@ -18,6 +18,7 @@ struct QuizKeyboard: View {
     @State var text: String = ""
     @State var widthDeviceSaved: CGFloat = 0
     @State var heightDeviceSaved: CGFloat = 0
+    @Binding var showScore: Bool
     private var textActionSheet: String {
         if quiz.correctAnswer {
             return "Right Answer: \(quiz.currentSolution.uppercased())"
@@ -32,7 +33,7 @@ struct QuizKeyboard: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    QuizHeader(quiz: quiz, heightDevice: heightDeviceSaved)
+                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDeviceSaved)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -48,41 +49,40 @@ struct QuizKeyboard: View {
                                     addItemToCoreData(correctAnswer: quiz.correctAnswer)
                                     showActionSheet.toggle()
                                 }
-                                .foregroundColor(Color.accentColor)
                                 .padding(.vertical, heightDeviceSaved/25)
                                 .padding(.horizontal, widthDeviceSaved/4)
                                 .disableAutocorrection(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                            }
+                                .keyboardType(.alphabet)
+                            }.alert(isPresented: $showActionSheet, content: {
+                                Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
+                                        if quiz.state == .play {
+                                            quiz.nextQuestion()
+                                            text = ""
+                                        } else {
+                                            showScore.toggle()
+                                            presentation.wrappedValue.dismiss()
+                                        }
+                                    })
+                                )
+                            })
                             Spacer()
                         }
                         Spacer()
                     }
                 }.background(Color(UIColor.secondarySystemBackground))
                 //.navigationBarTitle()
-                .edgesIgnoringSafeArea(.bottom)
                 .onAppear(perform: {
                     widthDeviceSaved = widthDevice
                     heightDeviceSaved = heightDevice
                 })
-            })
-            .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
-                        if quiz.state == .play {
-                            quiz.nextQuestion()
-                            text = ""
-                        } else {
-                            presentation.wrappedValue.dismiss()
-                        }
-                    })
-                )
             })
         } else {
             GeometryReader(content: { geometry in
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    QuizHeader(quiz: quiz, heightDevice: heightDeviceSaved)
+                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDeviceSaved)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -97,12 +97,26 @@ struct QuizKeyboard: View {
                                     addItemToCoreData(correctAnswer: quiz.correctAnswer)
                                     showActionSheet.toggle()
                                 }
-                                .foregroundColor(Color.accentColor)
                                 .padding(.vertical, heightDeviceSaved/25)
                                 .padding(.horizontal, widthDeviceSaved/6)
                                 .disableAutocorrection(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                            }
+                            }.actionSheet(isPresented: $showActionSheet, content: {
+                                ActionSheet(
+                                    title: Text(textActionSheet),
+                                    buttons: [
+                                        .default(Text("Continue"), action: {
+                                            if quiz.state == .play {
+                                                quiz.nextQuestion()
+                                                text = ""
+                                            } else {
+                                                showScore.toggle()
+                                                presentation.wrappedValue.dismiss()
+                                            }
+                                        })
+                                    ]
+                                )
+                            })
                             Spacer()
                         }
                         Spacer()
@@ -111,25 +125,9 @@ struct QuizKeyboard: View {
                 //.navigationBarTitle()
                 .edgesIgnoringSafeArea(.bottom)
                 .onAppear(perform: {
-                    UIApplication.shared.end
                     widthDeviceSaved = widthDevice
                     heightDeviceSaved = heightDevice
                 })
-            })
-            .actionSheet(isPresented: $showActionSheet, content: {
-                ActionSheet(
-                    title: Text(textActionSheet),
-                    buttons: [
-                        .default(Text("Continue"), action: {
-                            if quiz.state == .play {
-                                quiz.nextQuestion()
-                                text = ""
-                            } else {
-                                presentation.wrappedValue.dismiss()
-                            }
-                        })
-                    ]
-                )
             })
         }
     }
@@ -179,7 +177,8 @@ struct QuizKeyboard_Previews: PreviewProvider {
                     hiragana: true,
                     katakana: false,
                     kanaSection: .all,
-                    nbQuestions: 10.0)
+                    nbQuestions: 10.0),
+                showScore: .constant(false)
             ).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }

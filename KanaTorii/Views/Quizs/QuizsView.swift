@@ -1,20 +1,20 @@
 //
 //  QuizsView.swift
-//  Kana Torii (iOS)
+//  KanaTorii
 //
-//  Created by Clément FLORET on 26/12/2020.
+//  Created by Clément FLORET on 06/03/2021.
 //
 
 import SwiftUI
 
 struct QuizsView: View {
     @ObservedObject var userSettings = UserSettings()
+    @ObservedObject var scoreData = Score()
     @State var pickerMode: Int = 1
     @State var pickerDifficulty: Int = 1
     @State var pickerDirection: Int = 1
     @State var pickerKanaType: Int = 1
     @State var pickerKanaSection: String = "all"
-    @State var showQuiz: Bool = false
     @State var showScore: Bool = false
     @State var quizIsDone: Bool = false
     var quickQuiz: Bool {
@@ -183,41 +183,41 @@ struct QuizsView: View {
                             HStack {
                                 Spacer()
                                 ZStack {
-                                    StartQuizButton(showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                        .fullScreenCover(
-                                            isPresented: $showQuiz,
-                                            onDismiss: {
-                                                quizIsDone.toggle()
-                                                showScore.toggle()
-                                            },
-                                            content: {
-                                                if pickerDifficulty == 1 && pickerDirection == 1 {
-                                                    QuizMCQKanaToRomaji(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions))
-                                                } else if pickerDifficulty == 1 && pickerDirection == 2 {
-                                                    QuizMCQRomajiToKana(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions))
-                                                } else if pickerDifficulty == 2 && pickerDirection == 1 {
-                                                    QuizKeyboard(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions))
-                                                } else {
-                                                    QuizWriting(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions))
-                                                }
+                                    NavigationLink(
+                                        destination: VStack{
+                                            if pickerDifficulty == 1 && pickerDirection == 1 {
+                                                QuizMCQKanaToRomaji(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                            } else if pickerDifficulty == 1 && pickerDirection == 2 {
+                                                QuizMCQRomajiToKana(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                            } else if pickerDifficulty == 2 && pickerDirection == 1 {
+                                                QuizKeyboard(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                            } else {
+                                                QuizWriting(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
                                             }
-                                        )
-                                        .padding(.vertical, 10)
-                                    if quizIsDone {
-                                        ScoreQuizButton(showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                            .sheet(
-                                                isPresented: $showScore,
-                                                onDismiss: {quizIsDone.toggle()},
-                                                content: {
-                                                    ScoreView()
-                                                }
-                                            )
-                                        .padding(.vertical, 5)
+                                        },
+                                        label: {
+                                            Text("Start")
+                                                .font(.system(size: widthDevice/33))
+                                                .shadow(color: Color.black, radius: 4, x: 0.0, y: 2.0)
+                                                .padding(.horizontal, widthDevice/6)
+                                                .padding(.vertical, heightDevice/50)
+                                                .foregroundColor(.white)
+                                                .background(Color.orange)
+                                                .clipShape(Capsule())
+                                        }).padding(.vertical, 10)
+                                }.sheet(
+                                    isPresented: $showScore,
+                                    onDismiss: {
+                                        resetScore()
+                                    },
+                                    content: {
+                                        ScoreView()
                                     }
-                                }
+                                )
                                 Spacer()
                             }
                         }
+                        
                     }
                     .navigationBarTitle("Quiz", displayMode: .inline)
                     .padding(.horizontal, 100)
@@ -358,37 +358,37 @@ struct QuizsView: View {
                             HStack {
                                 Spacer()
                                 ZStack {
-                                    StartQuizButton(showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                        .fullScreenCover(
-                                            isPresented: $showQuiz,
-                                            onDismiss: {
-                                                quizIsDone.toggle()
-                                                showScore.toggle()},
-                                            content: {
-                                                if pickerDifficulty == 1 && pickerDirection == 1 {
-                                                    QuizMCQKanaToRomaji(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions))
-                                                } else if pickerDifficulty == 1 && pickerDirection == 2 {
-                                                    QuizMCQRomajiToKana(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions))
-                                                } else if pickerDifficulty == 2 && pickerDirection == 1 {
-                                                    QuizKeyboard(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions))
-                                                } else {
-                                                    QuizWriting(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions))
-                                                }
+                                    NavigationLink(
+                                        destination: VStack{
+                                            if pickerDifficulty == 1 && pickerDirection == 1 {
+                                                QuizMCQKanaToRomaji(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                            } else if pickerDifficulty == 1 && pickerDirection == 2 {
+                                                QuizMCQRomajiToKana(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                            } else if pickerDifficulty == 2 && pickerDirection == 1 {
+                                                QuizKeyboard(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                            } else {
+                                                QuizWriting(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
                                             }
-                                        )
-                                        .padding(.vertical, 5)
-                                    if quizIsDone {
-                                        ScoreQuizButton(showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                            .sheet(
-                                                isPresented: $showScore,
-                                                onDismiss: {quizIsDone.toggle()},
-                                                content: {
-                                                    ScoreView()
-                                                }
-                                            )
-                                        .padding(.vertical, 5)
+                                        },
+                                        label: {
+                                            Text("Start")
+                                                .font(.system(size: widthDevice/33))
+                                                .shadow(color: Color.black, radius: 4, x: 0.0, y: 2.0)
+                                                .padding(.horizontal, widthDevice/6)
+                                                .padding(.vertical, heightDevice/50)
+                                                .foregroundColor(.white)
+                                                .background(Color.orange)
+                                                .clipShape(Capsule())
+                                        }).padding(.vertical, 5)
+                                }.sheet(
+                                    isPresented: $showScore,
+                                    onDismiss: {
+                                        resetScore()
+                                    },
+                                    content: {
+                                        ScoreView()
                                     }
-                                }
+                                )
                                 Spacer()
                             }
                         }
@@ -399,6 +399,10 @@ struct QuizsView: View {
                 userSettings.quickQuizNbQuestions = UserDefaults.standard.object(forKey: "quick-quiz-nb-questions") as? Double ?? 10.0
             })
         }
+    }
+    private func resetScore() {
+        scoreData.nbCorrectAnswers = 0
+        scoreData.nbTotalQuestions = 0
     }
 }
 

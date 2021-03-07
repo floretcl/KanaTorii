@@ -10,10 +10,12 @@ import SwiftUI
 struct QuizHeader: View {
     @Environment(\.presentationMode) var presentation
     @ObservedObject var quiz: Quiz
+    @Binding var showScore: Bool
     var heightDevice: CGFloat
     var body: some View {
         HStack {
             Button(action: {
+                showScore.toggle()
                 presentation.wrappedValue.dismiss()
             }, label: {
                 Image(systemName: "multiply")
@@ -42,6 +44,7 @@ struct QuizHeader_Previews: PreviewProvider {
                 katakana: false,
                 kanaSection: .all,
                 nbQuestions: 10.0),
+            showScore: .constant(false),
             heightDevice: 830)
             .previewLayout(.sizeThatFits)
     }
