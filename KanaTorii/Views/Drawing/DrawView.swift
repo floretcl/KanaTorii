@@ -30,7 +30,7 @@ struct DrawView: View {
                     DrawingPad(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60, kana: kana, kanaType: kanaType, showGuide: showGuide)
                         .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                         .padding(.all, heightDevice/40)
-                    DrawingButtons(drawings: $drawings, showGuide: $showGuide, sizeText: widthDevice/35, width: widthDevice/6, height: heightDevice/22)
+                    DrawingButtons(drawings: $drawings, showGuide: $showGuide, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
                     Spacer()
                     DrawingNavigationButtons(drawings: $drawings, kana: $kana, sizeText: widthDevice/33, width: widthDevice/4, height: heightDevice/20)
                         .padding(.all, heightDevice/60)

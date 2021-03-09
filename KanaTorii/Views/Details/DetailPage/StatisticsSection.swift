@@ -34,7 +34,7 @@ struct StatisticsSection: View {
     
     var body: some View {
         VStack {
-            ProgressView("Correct Answers : \(Int(percCorrectAnswers))%", value: percCorrectAnswers, total: 100.0)
+            ProgressView("Correct answers : \(Int(percCorrectAnswers))%", value: percCorrectAnswers, total: 100.0)
                 .font(.system(size: sizeText))
                 .progressViewStyle(LinearProgressViewStyle(tint: progressViewColor))
             Text("\(Int(nbCorrectAnswers)) Corrects / \(Int(nbTotalAnswers)) Answers")

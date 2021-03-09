@@ -17,9 +17,9 @@ struct QuizWriting: View {
     @Binding var showScore: Bool
     private var textActionSheet: String {
         if quiz.correctAnswer {
-            return "Correct drawing: \(quiz.currentSolution.uppercased())"
+            return "Right answer: \(quiz.currentSolution.uppercased())"
         } else {
-            return "Incorrect drawing: \(quiz.currentSolution.uppercased())"
+            return "Wrong answer: \(quiz.currentSolution.uppercased())"
         }
     }
     private var kanaType: String {
@@ -41,12 +41,12 @@ struct QuizWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuiz(heightDevice: heightDevice, text: "Draw the \(kanaType) for \(quiz.currentName.capitalized)")
+                            TitleQuiz(heightDevice: heightDevice, text: "Draw \(kanaType) for \(quiz.currentName.capitalized)")
                             Spacer()
                             DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
-                            DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/35, width: widthDevice/6, height: heightDevice/22)
+                            DrawingButtonQuiz(drawings: $drawings, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
                             Spacer()
                             ContinueButtonQuizDrawing(quiz: quiz, showActionSheet: $showActionSheet, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
                                 .padding(.bottom, heightDevice/20)
@@ -78,7 +78,7 @@ struct QuizWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuiz(heightDevice: heightDevice, text: "Draw the \(kanaType) for \(quiz.currentName.capitalized)")
+                            TitleQuiz(heightDevice: heightDevice, text: "Draw \(kanaType) for \(quiz.currentName.capitalized)")
                             DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/35)
                                 .frame(minWidth: 220, idealWidth: 300, maxWidth: 600, minHeight: 220, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)

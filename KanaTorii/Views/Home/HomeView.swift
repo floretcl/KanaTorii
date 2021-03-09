@@ -26,7 +26,6 @@ struct HomeView: View {
                         SubtitleHome()
                         Spacer()
                         Spacer()
-                        Spacer()
                         HomeButtons(showIntroduction: $showIntroduction, showAbout: $showAbout, width: widthDevice/2.3, heightPadding: heightDevice/55, sizeText: 20)
                         Spacer()
                     }

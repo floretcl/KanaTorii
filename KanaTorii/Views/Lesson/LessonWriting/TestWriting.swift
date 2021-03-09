@@ -26,9 +26,9 @@ struct TestWriting: View {
     }
     private var textActionSheet: String {
         if test.correctDrawing {
-            return "Correct drawing"
+            return "Right answer"
         } else {
-            return "Incorrect drawing"
+            return "Wrong answer"
         }
     }
     
@@ -48,7 +48,7 @@ struct TestWriting: View {
                             DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
-                            DrawingButtonsTest(drawings: $drawings, showGuide: $showGuide, test: test, sizeText: widthDevice/35, width: widthDevice/6, height: heightDevice/22)
+                            DrawingButtonsTest(drawings: $drawings, showGuide: $showGuide, test: test, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
                             Spacer()
                             ContinueButtonTestDrawing(test: test, showActionSheet: $showActionSheet, showGuide: $showGuide, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
                                 .padding(.bottom, heightDevice/20)

@@ -21,9 +21,9 @@ struct QuizKeyboard: View {
     @Binding var showScore: Bool
     private var textActionSheet: String {
         if quiz.correctAnswer {
-            return "Right Answer: \(quiz.currentSolution.uppercased())"
+            return "Right answer: \(quiz.currentSolution.uppercased())"
         } else {
-            return "Wrong Answer: \(quiz.currentSolution.uppercased())"
+            return "Wrong answer: \(quiz.currentSolution.uppercased())"
         }
     }
     

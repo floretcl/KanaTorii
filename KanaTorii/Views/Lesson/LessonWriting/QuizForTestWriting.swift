@@ -25,9 +25,9 @@ struct QuizForTestWriting: View {
     }
     private var textActionSheet: String {
         if quizForTest.correctAnswer {
-            return "Correct drawing: \(quizForTest.currentSolution)"
+            return "Right answer: \(quizForTest.currentSolution)"
         } else {
-            return "Incorrect drawing: \(quizForTest.currentSolution)"
+            return "Wrong answer: \(quizForTest.currentSolution)"
         }
     }
     

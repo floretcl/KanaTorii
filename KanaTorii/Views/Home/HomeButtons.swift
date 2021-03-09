@@ -20,11 +20,7 @@ struct HomeButtons: View {
                 hapticFeedback(style: .soft)
                 showIntroduction.toggle()
             }, label: {
-                HomeButton(
-                    textButton: "Introduction",
-                    width: width,
-                    heightPadding: heightPadding,
-                    sizeText: sizeText)
+                HomeButton(textButton: "Introduction", width: width, heightPadding: heightPadding, sizeText: sizeText)
             }).sheet(isPresented: $showIntroduction) {
                 IntroductionView()
             }
@@ -32,11 +28,7 @@ struct HomeButtons: View {
                 hapticFeedback(style: .soft)
                 showAbout.toggle()
             }, label: {
-                HomeButton(
-                    textButton: "About Kana",
-                    width: width,
-                    heightPadding: heightPadding,
-                    sizeText: sizeText)
+                HomeButton(textButton: "About", width: width, heightPadding: heightPadding, sizeText: sizeText)
             }).sheet(isPresented: $showAbout) {
                 AboutView()
             }

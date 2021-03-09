@@ -1,8 +1,8 @@
 //
 //  HomeButton.swift
-//  Shared
+//  KanaTorii
 //
-//  Created by Clément FLORET on 23/12/2020.
+//  Created by Clément FLORET on 08/03/2021.
 //
 
 import SwiftUI

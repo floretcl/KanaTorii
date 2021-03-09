@@ -24,7 +24,7 @@ struct StatisticsView: View {
                         Text("\(kana.romaji!)")
                         VStack {
                             ProgressView(
-                                "Correct Answers : \(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)))%",
+                                "Correct answers : \(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)))%",
                                 value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers),
                                 total: 100.0
                             )
@@ -49,7 +49,7 @@ struct StatisticsView: View {
                             .font(.title2)
                         VStack {
                             ProgressView(
-                                "Correct Answers : \(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)))%",
+                                "Correct answers : \(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)))%",
                                 value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers),
                                 total: 100.0
                             )

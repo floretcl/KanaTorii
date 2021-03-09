@@ -17,6 +17,8 @@ struct SettingsView: View {
         animation: .default) var statLesson: FetchedResults<StatLesson>
     @ObservedObject var userSettings = UserSettings()
     @State var showAlertResetData: Bool = false
+    let minimumValue: String = "10"
+    let maximumValue: String = "40"
     var appVersion: String? {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     }
@@ -40,8 +42,8 @@ struct SettingsView: View {
                                 onEditingChanged: {_ in
                                     hapticFeedback(style: .soft)
                                 },
-                                minimumValueLabel: Text("10"),
-                                maximumValueLabel: Text("40"))
+                                minimumValueLabel: Text(minimumValue),
+                                maximumValueLabel: Text(maximumValue))
                                 {
                                 Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
                             }

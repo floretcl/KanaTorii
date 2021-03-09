@@ -17,6 +17,8 @@ struct QuizsView: View {
     @State var pickerKanaSection: String = "all"
     @State var showScore: Bool = false
     @State var quizIsDone: Bool = false
+    let minimumValue: String = "10"
+    let maximumValue: String = "40"
     var quickQuiz: Bool {
         if pickerMode == 2 {
             return true
@@ -54,7 +56,6 @@ struct QuizsView: View {
         if UIDevice.current.localizedModel == "iPad" {
             GeometryReader(content: { geometry in
                 let widthDevice = geometry.size.width
-                let heightDevice = geometry.size.height
                 NavigationView {
                     VStack {
                         Form {
@@ -172,8 +173,8 @@ struct QuizsView: View {
                                             onEditingChanged: { _ in
                                                 hapticFeedback(style: .soft)
                                             },
-                                            minimumValueLabel: Text("10"),
-                                            maximumValueLabel: Text("40"))
+                                            minimumValueLabel: Text(minimumValue),
+                                            maximumValueLabel: Text(maximumValue))
                                             {
                                             Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
                                             }
@@ -198,12 +199,7 @@ struct QuizsView: View {
                                         label: {
                                             Text("Start")
                                                 .font(.system(size: widthDevice/33))
-                                                .shadow(color: Color.black, radius: 4, x: 0.0, y: 2.0)
-                                                .padding(.horizontal, widthDevice/6)
-                                                .padding(.vertical, heightDevice/50)
-                                                .foregroundColor(.white)
-                                                .background(Color.orange)
-                                                .clipShape(Capsule())
+                                                .foregroundColor(.accentColor)
                                         }).padding(.vertical, 10)
                                 }.sheet(
                                     isPresented: $showScore,
@@ -229,7 +225,6 @@ struct QuizsView: View {
         } else {
             GeometryReader(content: { geometry in
                 let widthDevice = geometry.size.width
-                let heightDevice = geometry.size.height
                 NavigationView {
                     VStack {
                         Form {
@@ -372,13 +367,8 @@ struct QuizsView: View {
                                         },
                                         label: {
                                             Text("Start")
-                                                .font(.system(size: widthDevice/33))
-                                                .shadow(color: Color.black, radius: 4, x: 0.0, y: 2.0)
-                                                .padding(.horizontal, widthDevice/6)
-                                                .padding(.vertical, heightDevice/50)
-                                                .foregroundColor(.white)
-                                                .background(Color.orange)
-                                                .clipShape(Capsule())
+                                                .font(.system(size: widthDevice/20))
+                                                .foregroundColor(.accentColor)
                                         }).padding(.vertical, 5)
                                 }.sheet(
                                     isPresented: $showScore,
@@ -402,7 +392,6 @@ struct QuizsView: View {
     }
     private func resetScore() {
         scoreData.nbCorrectAnswers = 0
-        scoreData.nbTotalQuestions = 0
     }
 }
 

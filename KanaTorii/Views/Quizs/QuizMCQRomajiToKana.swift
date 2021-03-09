@@ -13,12 +13,12 @@ struct QuizMCQRomajiToKana: View {
     @State var showActionSheet: Bool = false
     @Binding var showScore: Bool
     let itemsCellIphone = GridItem(.fixed(90))
-    let itemsCellIpad = GridItem(.fixed(220))
+    let itemsCellIpad = GridItem(.fixed(200))
     private var textActionSheet: String {
         if quiz.correctAnswer {
-            return "Right Answer: \(quiz.currentSolution.uppercased())"
+            return "Right answer: \(quiz.currentSolution.uppercased())"
         } else {
-            return "Wrong Answer: \(quiz.currentSolution.uppercased())"
+            return "Wrong answer: \(quiz.currentSolution.uppercased())"
         }
     }
     
@@ -35,10 +35,10 @@ struct QuizMCQRomajiToKana: View {
                         VStack {
                             TitleQuiz(heightDevice: heightDevice, text: "Find correct answer")
                             Text(quiz.currentName)
-                                .font(.system(size: heightDevice/5))
+                                .font(.system(size: heightDevice/9))
                                 .padding(heightDevice/20)
                             Spacer()
-                            SuggestionsQuiz(quiz: quiz, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 40, width: 200, height: 200, textSize: widthDevice/20)
+                            SuggestionsQuiz(quiz: quiz, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 40, width: 150, height: 150, textSize: widthDevice/20)
                                 .padding(.bottom, heightDevice/10)
                         }
                         Spacer()

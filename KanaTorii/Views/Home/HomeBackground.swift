@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeBackground: View {
+    @State var orientation = UIDevice.current.orientation
+    let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
+        .makeConnectable()
+        .autoconnect()
     var transparentColor: Color = Color.black.opacity(0)
     
     var body: some View {
