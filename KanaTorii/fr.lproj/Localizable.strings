@@ -6,7 +6,8 @@
   
 */
 
-"%@ Corrects / %@ Answers" = "%@ Corrects / %@ Réponses";
+"%lld Corrects / %lld Answers" = "%lld / %lld";
+"%@ charts" = "Tableaux des %@";
 "All" = "Tous";
 "ABOUT" = "À PROPOS";
 "About" = "À propos";
@@ -15,7 +16,7 @@
 "CHARACTER CHARTS" = "TABLEAU DES HIRAGANA";
 "Close" = "Fermer";
 "Continue" = "Continuer";
-"Correct answers : %@%" = "Bonnes réponses : %@%";
+"Correct(s) answer(s): " = "Bonne(s) réponse(s): ";
 "DATA" = "DONNEES";
 "Delete" = "Effacer";
 "Difficulty" = "Difficulté";
@@ -25,19 +26,18 @@
 "Find correct answer" = "Trouve la bonne réponse";
 "Green" = "Vert";
 "Hard" = "Difficile";
-"Hiragana charts" = "Tableaux des Hiragana";
 "Hiragana Drawing" = "Écriture de Hiragana ";
 "Hiragana Reading" = "Lecture de Hiragana ";
 "Home" = "Accueil";
 "Introduction" = "Introduction";
 "Introduction to Kana" = "Introduction aux Kanas";
 "Introduction text" = "Lorsque l’on commence l’apprentissage du Japonais, la première étape pour comprendre et écrire en japonais est d’apprendre et de retenir les \"Kana\".\nLes Kana sont composés de deux syllabaires, qui représentent l’ensemble des sons de la langue: \"les Hiragana\" et  les \"Katakana\". Ces deux systèmes d’écritures sont un peu les \"Alphabets\" Japonais. Chaque son a deux écritures, soit en hiragana pour les mots japonais (si l’on n’utilise pas les Kanji), soit en katakana pour les mots d’origine étrangère.\n\nDans ces deux systèmes d’écritures il y a de nombreux caractères mais les plus utilisés sont au nombre de 104 : les \"Gojuon\" (46 caractères simples), les \"Dakuon\" (20 caractères) et \"Handakuon\" (5 caractères) dérivés de caractères simples, et enfin les \"Yoon\" (33 caractères) composés de deux caractères simples.\n\nPour apprendre les kana il n'y a pas de secret, il faut les apprendre par coeur !";
-"Katakana charts" = "Tableaux des Katakana";
 "Katakana Drawing" = "Écriture de Katakana";
 "Katakana Reading" = "Lecture de Katakana";
 "Keyboard and drawing" = "Clavier et Écriture";
 "Learn Hiragana and Katakana\n in a simple and effective way" = "Apprends les Hiragana et Katakana\n de manière simple et efficace";
 "Lessons" = "Leçons";
+"Lesson %lld" = "Leçon %lld";
 "Line writing order" = "Ordre d'écriture des traits";
 "Listen" = "Écouter";
 "Lists" = "Listes";
@@ -47,9 +47,9 @@
 "Multiple choice questions" = "Question à choix multiple";
 "Next" = "Suivant";
 "Notification will arrive on time" = "La notification arrivera à temps";
-"Number of questions: %@" = "Nombres de questions: %@";
+"Number of questions: %lld" = "Nombres de questions: %lld";
 "Orange" = "Orange";
-"Part %@ / %@" = "Partie %@ / %@";
+"Part %lld / %lld" = "Partie %lld / %lld";
 "Practice drawing %@: %@" = "Entraîne toi à écrire le %@: %@";
 "Previous" = "Précédent";
 "Primary" = "Noir/Blanc";
@@ -63,23 +63,25 @@
 "Reset all datas" = "Réinitialiser toutes les données";
 "Reminder" = "Rappels";
 "Right answer" = "Bonne réponse";
-"Right Answer: %@" = "Bonne réponse: %@";
+"Right answer: %@" = "Bonne réponse: %@";
 "Romaji :" = "Romaji :";
 "Selection" = "Sélection";
 "Settings" = "Réglages";
 "Share" = "Partager";
 "Show Score" = "Voir le Score";
-"Show guide" = "Guide";
+"Show guide" = "Aff. guide";
 "Start" = "Commencer";
 "Start a lesson right now by clicking on 'lessons' at the top left" = "Commence une leçon tout de suite en cliquant sur \"leçons\" en haut à gauche de l'écran";
 "Statistics" = "Statistiques";
 "Statistics colors in tables" = "Couleurs de statistique dans les tableaux";
 "Validate" = "Valider";
 "Version" = "Version";
-"Yellow" = "Jaune";
-"Your Score : " = "Ton Score : ";
-"Your result: " = "Résultat: ";
 "Write" = "Écrire";
 "Write the Romaji for %@" = "Écrit le Romaji pour %@";
 "Writing" = "Écriture";
 "Wrong answer: %@" = "Mauvaise réponse: %@";
+"Wrong answer" = "Mauvaise réponse";
+"Yellow" = "Jaune";
+"Your score : " = "Ton score : ";
+"Your result: " = "Résultat: ";
+

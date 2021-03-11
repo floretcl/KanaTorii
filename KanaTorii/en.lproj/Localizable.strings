@@ -6,7 +6,8 @@
   
 */
 
-"%@ Corrects / %@ Answers" = "%@ Corrects / %@ Answers";
+"%lld Corrects / %lld Answers" = "%lld / %lld";
+"%@ charts" = "%@ charts";
 "All" = "All";
 "ABOUT" = "ABOUT";
 "About" = "About";
@@ -15,7 +16,7 @@
 "CHARACTER CHARTS" = "CHARACTER CHARTS";
 "Close" = "Close";
 "Continue" = "Continue";
-"Correct answers : %@%" = "Correct answers : %@%";
+"Correct(s) answer(s): " = "Correct(s) answer(s): ";
 "DATA" = "DATA";
 "Delete" = "Delete";
 "Difficulty" = "Difficulty";
@@ -25,19 +26,18 @@
 "Find correct answer" = "Find correct answer";
 "Green" = "Green";
 "Hard" = "Hard";
-"Hiragana charts" = "Hiragana charts";
 "Hiragana Drawing" = "Hiragana Drawing";
 "Hiragana Reading" = "Hiragana Reading";
 "Home" = "Home";
 "Introduction" = "Introduction";
 "Introduction to Kana" = "Introduction to Kana";
 "Introduction text" = "When starting to learn Japanese, the first step in understanding and writing in Japanese is to learn and remember \"Kana\".\nKana are made up of two syllabaries, which represent the set of sounds of the language: the \"Hiragana\" and the \"Katakana\". These two writing systems are a bit like the Japanese \"Alphabets\". Each sound has two scripts, either in Hiragana for Japanese words (if Kanji is not used) or in Katakana for words of foreign origin.\n\nIn these two writing systems there are many characters but the most used are 104: the \"Gojuon\" (46 single characters), the \"Dakuon\" (20 characters) and \"Handakuon\" (5 characters) derived from characters simple, and finally the \"Yoon\" (33 characters) composed of two single characters.\n\nTo learn the kana there is no secret, you have to learn them by heart!";
-"Katakana charts" = "Katakana charts";
 "Katakana Drawing" = "Katakana Drawing";
 "Katakana Reading" = "Katakana Reading";
 "Keyboard and drawing" = "Keyboard and drawing";
 "Learn Hiragana and Katakana\n in a simple and effective way" = "Learn Hiragana and Katakana\n in a simple and effective way";
 "Lessons" = "Lessons";
+"Lesson %lld" = "Lesson %lld";
 "Line writing order" = "Line writing order";
 "Listen" = "Listen";
 "Lists" = "Lists";
@@ -47,10 +47,10 @@
 "Multiple choice questions" = "Multiple choice questions";
 "Next" = "Next";
 "Notification will arrive on time" = "Notification will arrive on time";
-"Number of questions: %@" = "Number of questions: %@";
+"Number of questions: %lld" = "Number of questions: %lld";
 "Orange" = "Orange";
 "Part %@ / %@" = "Part %@ / %@";
-"Practice drawing %@: %@" = "Practice drawing %@: %@" ;
+"Practice drawing %@: %@" = "Practice drawing %@: %@";
 "Previous" = "Previous";
 "Primary" = "Primary";
 "Progress of lessons and statistics will be deleted" = "Progress of lessons and statistics will be deleted";
@@ -76,10 +76,11 @@
 "Statistics colors in tables" = "Statistics colors in tables";
 "Validate" = "Validate";
 "Version" = "Version";
-"Yellow" = "Yellow";
-"Your Score : " = "Your Score : ";
-"Your result: " = "Your result: ";
 "Write" = "Write";
 "Write the Romaji for %@" = "Write the Romaji for %@";
 "Writing" = "Writing";
 "Wrong answer: %@" = "Wrong answer: %@";
+"Yellow" = "Yellow";
+"Your score : " = "Your score : ";
+"Your result: " = "Your result: ";
+

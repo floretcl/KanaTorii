@@ -15,7 +15,7 @@ struct IntroductionView: View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
             VStack {
-                SheetHeader(title: "Introduction to Kana", systemImage: "questionmark.circle.fill", paddingLeading: 5)
+                SheetHeaderIntroduction(systemImage: "questionmark.circle.fill", paddingLeading: 5)
                 ScrollView {
                     Text("Introduction text")
                     .frame(width: widthDevice/1.2, alignment: .center)

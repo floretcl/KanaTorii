@@ -25,7 +25,7 @@ struct FlashCard: View {
         HStack {
             Spacer()
             VStack {
-                Text("\(kanaType)")
+                Text("\(kanaType.capitalized)")
                     .font(.system(size: heightDevice/30))
                 Text("\(label)")
                     .font(.custom("YuMincho", size: heightDevice/10))

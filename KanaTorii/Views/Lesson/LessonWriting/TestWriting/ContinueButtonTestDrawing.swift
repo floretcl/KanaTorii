@@ -33,7 +33,13 @@ struct ContinueButtonTestDrawing: View {
                 showActionSheet.toggle()
             }
         }, label: {
-            ButtonLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize, text: "Continue")
+            Text("Continue")
+                .font(.system(size: textSize))
+                .padding(.horizontal, widthDevice/8)
+                .padding(.vertical, heightDevice/50)
+                .foregroundColor(.white)
+                .background(Color.orange)
+                .clipShape(Capsule())
         })
     }
     func getPrediction(uiimage: UIImage) -> String {

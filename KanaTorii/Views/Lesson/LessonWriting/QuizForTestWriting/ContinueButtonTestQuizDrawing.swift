@@ -33,7 +33,13 @@ struct ContinueButtonTestQuizDrawing: View {
             addItemToCoreData(correctAnswer: quizForTest.correctAnswer)
             showActionSheet.toggle()
         }, label: {
-            ButtonLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize, text: "Continue")
+            Text("Continue")
+                .font(.system(size: textSize))
+                .padding(.horizontal, widthDevice/8)
+                .padding(.vertical, heightDevice/50)
+                .foregroundColor(.white)
+                .background(Color.orange)
+                .clipShape(Capsule())
         })
     }
     func getPrediction(uiimage: UIImage) -> String {
@@ -62,8 +68,9 @@ struct ContinueButtonTestQuizDrawing: View {
                 do {
                     try viewContext.save()
                 } catch {
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    print(error)
+                    //let nsError = error as NSError
+                    //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
                 same = true
             }
@@ -79,8 +86,9 @@ struct ContinueButtonTestQuizDrawing: View {
             do {
                 try viewContext.save()
             } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                print(error)
+                //let nsError = error as NSError
+                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

@@ -17,13 +17,6 @@ struct ListsView: View {
             return .katakana
         }
     }
-    private var navigationTitle: String {
-        if pickerSelection == "hiragana" {
-            return "Hiragana charts"
-        } else {
-            return "Katakana charts"
-        }
-    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -41,7 +34,7 @@ struct ListsView: View {
                         Spacer()
                     }
                 }
-                .navigationBarTitle(navigationTitle, displayMode: .inline)
+                .navigationBarTitle("\(pickerSelection.capitalized) charts", displayMode: .inline)
             })
             .navigationViewStyle(StackNavigationViewStyle())
         }

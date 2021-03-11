@@ -23,13 +23,6 @@ struct QuizForTestWriting: View {
             return "katakana"
         }
     }
-    private var textActionSheet: String {
-        if quizForTest.correctAnswer {
-            return "Right answer: \(quizForTest.currentSolution)"
-        } else {
-            return "Wrong answer: \(quizForTest.currentSolution)"
-        }
-    }
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -42,7 +35,7 @@ struct QuizForTestWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Draw \(kanaType) for \(quizForTest.currentRomaji.capitalized)")
+                            TitleQuizForTestWriting(quizForTest: quizForTest, kanaType: kanaType, heightDevice: heightDevice)
                             Spacer()
                             DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
@@ -59,7 +52,9 @@ struct QuizForTestWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
+                Alert(title: Text("Your result: "),
+                      message: quizForTest.correctAnswer ? Text("Right answer: \(quizForTest.currentSolution.uppercased())") : Text("Wrong answer: \(quizForTest.currentSolution.uppercased())"),
+                      dismissButton: .default(Text("Continue"), action: {
                         drawings = [Drawing]()
                         if quizForTest.state == .play {
                             quizForTest.nextQuestion()
@@ -79,7 +74,7 @@ struct QuizForTestWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Draw \(kanaType) for \(quizForTest.currentRomaji.capitalized)")
+                            TitleQuizForTestWriting(quizForTest: quizForTest, kanaType: kanaType, heightDevice: heightDevice)
                             DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/35)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
@@ -96,7 +91,7 @@ struct QuizForTestWriting: View {
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
-                    title: Text(textActionSheet),
+                    title: quizForTest.correctAnswer ? Text("Right answer: \(quizForTest.currentSolution.uppercased())") : Text("Wrong answer: \(quizForTest.currentSolution.uppercased())"),
                     buttons: [
                         .default(Text("Continue"), action: {
                             drawings = [Drawing]()

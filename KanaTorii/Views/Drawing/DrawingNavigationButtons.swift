@@ -40,7 +40,7 @@ struct DrawingNavigationButtons: View {
                 drawings = [Drawing]()
                 kana = previousKana
             }, label: {
-                NavigationButton(text: "Previous", systemImage: "chevron.left", sizeText: sizeText, inversed: false, width: width, height: height)
+                NavigationButtonPrevious(systemImage: "chevron.left", sizeText: sizeText, inversed: false, width: width, height: height)
             }).padding(.horizontal, 10)
             Spacer()
             Button(action: {
@@ -48,7 +48,7 @@ struct DrawingNavigationButtons: View {
                 drawings = [Drawing]()
                 kana = nextKana
             }, label: {
-                NavigationButton(text: "Next", systemImage: "chevron.right", sizeText: sizeText, inversed: false, width: width, height: height)
+                NavigationButtonNext(systemImage: "chevron.right", sizeText: sizeText, inversed: false, width: width, height: height)
             }).padding(.horizontal, 10)
             Spacer()
         }

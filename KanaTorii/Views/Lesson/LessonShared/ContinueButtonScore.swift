@@ -19,9 +19,13 @@ struct ContinueButtonScore: View {
             hapticFeedback(style: .soft)
             showScore.toggle()
         }, label: {
-            ButtonLabel(
-                widthDevice: widthDevice,
-                heightDevice: heightDevice, textSize: textSize, text: "Show score")
+            Text("Show score")
+                .font(.system(size: textSize))
+                .padding(.horizontal, widthDevice/8)
+                .padding(.vertical, heightDevice/50)
+                .foregroundColor(.white)
+                .background(Color.orange)
+                .clipShape(Capsule())
         })
     }
 }

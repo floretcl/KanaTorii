@@ -29,7 +29,7 @@ struct LessonMemoWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Memorize the writing order of the lines and the shape of this kana")
+                            TitleLessonWriting(heightDevice: heightDevice)
                             MemoCard(
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
@@ -108,7 +108,7 @@ struct LessonMemoWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Memorize the writing order of the lines and the shape of this kana")
+                            TitleLessonWriting(heightDevice: heightDevice)
                             MemoCard(
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
@@ -193,8 +193,9 @@ struct LessonMemoWriting: View {
             do {
                 try viewContext.save()
             } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                print(error)
+                //let nsError = error as NSError
+                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

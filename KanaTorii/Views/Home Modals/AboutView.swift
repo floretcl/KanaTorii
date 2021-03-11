@@ -16,7 +16,7 @@ struct AboutView: View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
             VStack {
-                SheetHeader(title: "About Kana Torii", systemImage: "questionmark.circle.fill", paddingLeading: 5)
+                SheetHeaderAbout(systemImage: "questionmark.circle.fill", paddingLeading: 5)
                 ScrollView {
                     Group {
                         Text("About text")

@@ -19,13 +19,6 @@ struct QuizForTestReading: View {
             return quizForTest.currentKana
         }
     }
-    private var textActionSheet: String {
-        if quizForTest.correctAnswer {
-            return "Right answer: \(quizForTest.currentSolution.uppercased())"
-        } else {
-            return "Wrong answer: \(quizForTest.currentSolution.uppercased())"
-        }
-    }
     let itemsCellIphone = GridItem(.fixed(120))
     let itemsCellIpad = GridItem(.fixed(220))
     
@@ -40,7 +33,7 @@ struct QuizForTestReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Find correct answer")
+                            TitleTestReading(heightDevice: heightDevice)
                             Text(label)
                                 .font(.system(size: heightDevice/5))
                                 .padding(heightDevice/20)
@@ -55,7 +48,9 @@ struct QuizForTestReading: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
+                Alert(title: Text("Your result: "),
+                      message: quizForTest.correctAnswer ? Text("Right answer: \(quizForTest.currentSolution.uppercased())") : Text("Wrong answer: \(quizForTest.currentSolution.uppercased())"),
+                      dismissButton: .default(Text("Continue"), action: {
                         if quizForTest.state == .play {
                             quizForTest.nextQuestion()
                         } else {
@@ -74,7 +69,7 @@ struct QuizForTestReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Find correct answer")
+                            TitleTestReading(heightDevice: heightDevice)
                             Text(label)
                                 .font(.system(size: heightDevice/5))
                             Spacer()
@@ -89,7 +84,7 @@ struct QuizForTestReading: View {
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
-                    title: Text(textActionSheet),
+                    title: quizForTest.correctAnswer ? Text("Right answer: \(quizForTest.currentSolution.uppercased())") : Text("Wrong answer: \(quizForTest.currentSolution.uppercased())"),
                     buttons: [
                         .default(Text("Continue"), action: {
                             if quizForTest.state == .play {

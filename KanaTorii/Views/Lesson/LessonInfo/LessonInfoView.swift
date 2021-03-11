@@ -10,7 +10,7 @@ import SwiftUI
 struct LessonInfoView: View {
     @Environment(\.presentationMode) private var presentation
     @Environment(\.colorScheme) var colorScheme
-    @State var lessonStart: Bool = false
+    @State var lessonAlreadyStart: Bool = false
     var lesson: LessonForList
     
     var body: some View {
@@ -24,7 +24,7 @@ struct LessonInfoView: View {
                     ContinueNavLink(lesson: lesson, widthDevice: widthDevice, heightDevice: heightDevice)
                         .padding(.bottom, heightDevice/20)
                         .onTapGesture(perform: {
-                            lessonStart.toggle()
+                            lessonAlreadyStart.toggle()
                         })
                 }
                 .background(Color(UIColor.secondarySystemBackground))
@@ -35,14 +35,14 @@ struct LessonInfoView: View {
                     ContinueNavLink(lesson: lesson, widthDevice: widthDevice, heightDevice: heightDevice)
                         .padding(.bottom, heightDevice/20)
                         .onTapGesture(perform: {
-                            lessonStart.toggle()
+                            lessonAlreadyStart.toggle()
                         })
                 }
             }
         })
         .navigationBarTitle("Lesson \(lesson.id + 1)", displayMode: .inline)
         .onAppear(perform: {
-            if lessonStart {
+            if lessonAlreadyStart {
                 presentation.wrappedValue.dismiss()
             }
         })

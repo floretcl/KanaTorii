@@ -23,7 +23,7 @@ struct DrawView: View {
             let widthDevice = geometry.size.width
             if UIDevice.current.localizedModel == "iPad" {
                 VStack {
-                    SheetHeader(title: "Writing", systemImage: "hand.draw", paddingLeading: 20)
+                    SheetHeaderDraw(systemImage: "hand.draw", paddingLeading: 20)
                     TitleDraw(kanaType: kanaType, kana: kana, sizeText: heightDevice/30)
                         .padding(.top, heightDevice/20)
                     Spacer()
@@ -41,7 +41,7 @@ struct DrawView: View {
                 Spacer()
             } else {
                 VStack {
-                    SheetHeader(title: "Writing", systemImage: "hand.draw", paddingLeading: 20)
+                    SheetHeaderDraw(systemImage: "hand.draw", paddingLeading: 20)
                     TitleDraw(kanaType: kanaType, kana: kana, sizeText: heightDevice/30)
                         .padding(.top, heightDevice/20)
                     Spacer()

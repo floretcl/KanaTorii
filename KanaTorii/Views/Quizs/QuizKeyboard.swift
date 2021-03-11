@@ -19,13 +19,6 @@ struct QuizKeyboard: View {
     @State var widthDeviceSaved: CGFloat = 0
     @State var heightDeviceSaved: CGFloat = 0
     @Binding var showScore: Bool
-    private var textActionSheet: String {
-        if quiz.correctAnswer {
-            return "Right answer: \(quiz.currentSolution.uppercased())"
-        } else {
-            return "Wrong answer: \(quiz.currentSolution.uppercased())"
-        }
-    }
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -38,7 +31,7 @@ struct QuizKeyboard: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuiz(heightDevice: heightDeviceSaved, text: "Write the Romaji for \(quiz.currentKana.capitalized)")
+                            TitleQuizKeyboard(quiz: quiz, heightDevice: heightDevice)
                             Text(quiz.currentKana)
                                 .font(.system(size: heightDeviceSaved/5))
                                 .padding(heightDeviceSaved/20)
@@ -55,7 +48,9 @@ struct QuizKeyboard: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .keyboardType(.alphabet)
                             }.alert(isPresented: $showActionSheet, content: {
-                                Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
+                                Alert(title: Text("Your result: "),
+                                      message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
+                                      dismissButton: .default(Text("Continue"), action: {
                                         if quiz.state == .play {
                                             quiz.nextQuestion()
                                             text = ""
@@ -87,7 +82,7 @@ struct QuizKeyboard: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuiz(heightDevice: heightDeviceSaved, text: "Write the Romaji for:")
+                            TitleQuizKeyboard(quiz: quiz, heightDevice: heightDevice)
                             Text(quiz.currentKana)
                                 .font(.system(size: heightDeviceSaved/5))
                             HStack {
@@ -103,7 +98,7 @@ struct QuizKeyboard: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                             }.actionSheet(isPresented: $showActionSheet, content: {
                                 ActionSheet(
-                                    title: Text(textActionSheet),
+                                    title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
                                     buttons: [
                                         .default(Text("Continue"), action: {
                                             if quiz.state == .play {
@@ -142,8 +137,9 @@ struct QuizKeyboard: View {
                 do {
                     try viewContext.save()
                 } catch {
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    print(error)
+                    //let nsError = error as NSError
+                    //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
                 same = true
             }
@@ -159,8 +155,9 @@ struct QuizKeyboard: View {
             do {
                 try viewContext.save()
             } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                print(error)
+                //let nsError = error as NSError
+                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

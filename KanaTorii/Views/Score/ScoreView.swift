@@ -22,7 +22,7 @@ struct ScoreView: View {
                             .foregroundColor(Color("ShadowTopHome"))
                             .frame(width: widthDevice/1.5, height: widthDevice/1.5, alignment: .center)
                         VStack {
-                            Text("Your Score : ")
+                            Text("Your score : ")
                                 .font(.title)
                                 .foregroundColor(.white)
                             Text("\(score.nbCorrectAnswers) / \(score.nbTotalQuestions)")

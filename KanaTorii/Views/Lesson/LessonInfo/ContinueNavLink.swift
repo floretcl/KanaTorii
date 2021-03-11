@@ -13,7 +13,7 @@ struct ContinueNavLink: View {
     var heightDevice: CGFloat
     
     var body: some View {
-        if lesson.type == "Reading" {
+        if lesson.type == "Reading" || lesson.type == "Lecture" {
             VStack {
                 NavigationLink(
                     destination: LessonMemoReading(currentLesson: Lesson(
@@ -23,7 +23,13 @@ struct ContinueNavLink: View {
                             kanas: lesson.kanas,
                             romajis: lesson.romaji)),
                     label: {
-                        ButtonLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, text: "Continue")
+                        Text("Continue")
+                            .font(.system(size: heightDevice/40))
+                            .padding(.horizontal, widthDevice/8)
+                            .padding(.vertical, heightDevice/50)
+                            .foregroundColor(.white)
+                            .background(Color.orange)
+                            .clipShape(Capsule())
                     }
                 )
             }
@@ -35,9 +41,15 @@ struct ContinueNavLink: View {
                             mode: .writing,
                             kanaType: lesson.kanaTypeString,
                             kanas: lesson.kanas,
-                                                    romajis: lesson.romaji)),
+                            romajis: lesson.romaji)),
                     label: {
-                        ButtonLabel(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, text: "Continue")
+                        Text("Continue")
+                            .font(.system(size: heightDevice/40))
+                            .padding(.horizontal, widthDevice/8)
+                            .padding(.vertical, heightDevice/50)
+                            .foregroundColor(.white)
+                            .background(Color.orange)
+                            .clipShape(Capsule())
                     }
                 )
             }

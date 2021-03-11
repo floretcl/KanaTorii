@@ -412,7 +412,7 @@
         "type": "Writing",
         "kanas": ["ぴゃ","ぴゅ","ぴょ"],
         "romaji": ["pya","pyu","pyo"],
-        "text": "In this lesson, let's see the writing of characters from previous lesson: ぴゃ ぴゅ ぴょ",
+        "text": "In this lesson, let's see the writing of characters from previous lesson, after you can take quizzes to practice Hiragana: ぴゃ ぴゅ ぴょ",
         "id": 51
     },
     {
@@ -828,7 +828,7 @@
         "type": "Writing",
         "kanas": ["ピャ","ピュ","ピョ"],
         "romaji": ["pya","pyu","pyo"],
-        "text": "In this lesson, let's see the writing of characters from previous lesson: ピャ ピュ ピョ",
+        "text": "In this lesson, let's see the writing of characters from previous lesson, after you can do as many quizzes as necessary to master all the Kana: ピャ ピュ ピョ",
         "id": 103
     }
 ]

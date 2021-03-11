@@ -15,13 +15,6 @@ struct QuizWriting: View {
     @State var drawings: [Drawing] = [Drawing]()
     @State var image: UIImage = UIImage()
     @Binding var showScore: Bool
-    private var textActionSheet: String {
-        if quiz.correctAnswer {
-            return "Right answer: \(quiz.currentSolution.uppercased())"
-        } else {
-            return "Wrong answer: \(quiz.currentSolution.uppercased())"
-        }
-    }
     private var kanaType: String {
         if quiz.hiragana {
             return "hiragana"
@@ -41,7 +34,7 @@ struct QuizWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuiz(heightDevice: heightDevice, text: "Draw \(kanaType) for \(quiz.currentName.capitalized)")
+                            TitleQuizWriting(quiz: quiz, kanaType: kanaType, heightDevice: heightDevice)
                             Spacer()
                             DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
@@ -57,7 +50,9 @@ struct QuizWriting: View {
                 //.navigationBarTitle()
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
+                Alert(title: Text("Your result: "),
+                      message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
+                      dismissButton: .default(Text("Continue"), action: {
                         if quiz.state == .play {
                             quiz.nextQuestion()
                             drawings = [Drawing]()
@@ -78,7 +73,7 @@ struct QuizWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuiz(heightDevice: heightDevice, text: "Draw \(kanaType) for \(quiz.currentName.capitalized)")
+                            TitleQuizWriting(quiz: quiz, kanaType: kanaType, heightDevice: heightDevice)
                             DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/35)
                                 .frame(minWidth: 220, idealWidth: 300, maxWidth: 600, minHeight: 220, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
@@ -94,7 +89,7 @@ struct QuizWriting: View {
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
-                    title: Text(textActionSheet),
+                    title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
                     buttons: [
                         .default(Text("Continue"), action: {
                             if quiz.state == .play {

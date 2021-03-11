@@ -1,15 +1,14 @@
 //
-//  SheetHeader.swift
-//  Kana Torii
+//  SheetHeaderDraw.swift
+//  KanaTorii
 //
-//  Created by Clément FLORET on 26/12/2020.
+//  Created by Clément FLORET on 10/03/2021.
 //
 
 import SwiftUI
 
-struct SheetHeader: View {
+struct SheetHeaderDraw: View {
     @Environment(\.presentationMode) var presentation
-    var title: String
     var systemImage: String
     var paddingLeading: CGFloat
     
@@ -22,7 +21,7 @@ struct SheetHeader: View {
                         .padding(.leading, 60)
                         .padding(.leading, paddingLeading)
                         .padding(.horizontal, 7)
-                    Text(title)
+                    Text("Writing")
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.leading)
@@ -46,7 +45,7 @@ struct SheetHeader: View {
                         .font(.title)
                         .padding(.leading, paddingLeading)
                         .padding(.horizontal, 7)
-                    Text(title)
+                    Text("Writing")
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.leading)
@@ -66,9 +65,9 @@ struct SheetHeader: View {
     }
 }
 
-struct SheetHeader_Previews: PreviewProvider {
+struct SheetHeaderDraw_Previews: PreviewProvider {
     static var previews: some View {
-        SheetHeader(title: "Placeholder", systemImage: "sun.min", paddingLeading: 20)
+        SheetHeaderDraw(systemImage: "sun.min", paddingLeading: 20)
             .previewDevice("iPad Pro (12.9-inch) (4th generation)")
             .preferredColorScheme(.light)
             .previewLayout(.sizeThatFits)

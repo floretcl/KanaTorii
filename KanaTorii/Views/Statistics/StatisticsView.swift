@@ -23,11 +23,12 @@ struct StatisticsView: View {
                             .font(.title)
                         Text("\(kana.romaji!)")
                         VStack {
-                            ProgressView(
-                                "Correct answers : \(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)))%",
-                                value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers),
-                                total: 100.0
-                            )
+                            ProgressView(value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers), total: 100.0) {
+                                HStack {
+                                    Text("Correct(s) answer(s): ")
+                                    Text("\(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers))) %")
+                                }
+                            }
                                 .progressViewStyle(
                                     LinearProgressViewStyle(
                                         tint: getProgressViewColor(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)
@@ -48,11 +49,12 @@ struct StatisticsView: View {
                         Text("\(kana.romaji!)")
                             .font(.title2)
                         VStack {
-                            ProgressView(
-                                "Correct answers : \(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)))%",
-                                value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers),
-                                total: 100.0
-                            )
+                            ProgressView(value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers), total: 100.0) {
+                                HStack {
+                                    Text("Correct(s) answer(s): ")
+                                    Text("\(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers))) %")
+                                }
+                            }
                                 .progressViewStyle(
                                     LinearProgressViewStyle(
                                         tint: getProgressViewColor(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)
@@ -73,8 +75,9 @@ struct StatisticsView: View {
             do {
                 try viewContext.save()
             } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                print(error)
+                //let nsError = error as NSError
+                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

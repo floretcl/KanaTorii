@@ -1,6 +1,6 @@
 [
     {
-        "title": "Lesson 1 : Hiragana a i u e o",
+        "title": "Leçon 1 : Hiragana a i u e o",
         "type": "Lecture",
         "kanas": ["あ","い","う","え","お"],
         "romaji": ["a","i","u","e","o"],
@@ -8,7 +8,7 @@
         "id": 0
     },
     {
-        "title": "Lesson 2 : Hiragana a i u e o",
+        "title": "Leçon 2 : Hiragana a i u e o",
         "type": "Écriture",
         "kanas": ["あ","い","う","え","お"],
         "romaji": ["a","i","u","e","o"],
@@ -16,7 +16,7 @@
         "id": 1
     },
     {
-        "title": "Lesson 3 : Hiragana ka ki ku ke ko",
+        "title": "Leçon 3 : Hiragana ka ki ku ke ko",
         "type": "Lecture",
         "kanas": ["か","き","く","け","こ"],
         "romaji": ["ka","ki","ku","ke","ko"],
@@ -24,7 +24,7 @@
         "id": 2
     },
     {
-        "title": "Lesson 4 : Hiragana ka ki ku ke ko",
+        "title": "Leçon 4 : Hiragana ka ki ku ke ko",
         "type": "Écriture",
         "kanas": ["か","き","く","け","こ"],
         "romaji": ["ka","ki","ku","ke","ko"],
@@ -32,7 +32,7 @@
         "id": 3
     },
     {
-        "title": "Lesson 5 : Hiragana sa shi su se so",
+        "title": "Leçon 5 : Hiragana sa shi su se so",
         "type": "Lecture",
         "kanas": ["さ","し","す","せ","そ"],
         "romaji": ["sa","shi","su","se","so"],
@@ -40,7 +40,7 @@
         "id": 4
     },
     {
-        "title": "Lesson 6 : Hiragana sa shi su se so",
+        "title": "Leçon 6 : Hiragana sa shi su se so",
         "type": "Écriture",
         "kanas": ["さ","し","す","せ","そ"],
         "romaji": ["sa","shi","su","se","so"],
@@ -48,7 +48,7 @@
         "id": 5
     },
     {
-        "title": "Lesson 7 : Hiragana ta chi tsu te to",
+        "title": "Leçon 7 : Hiragana ta chi tsu te to",
         "type": "Lecture",
         "kanas": ["た","ち","つ","て","と"],
         "romaji": ["ta","chi","tsu","te","to"],
@@ -56,7 +56,7 @@
         "id": 6
     },
     {
-        "title": "Lesson 8 : Hiragana ta chi tsu te to",
+        "title": "Leçon 8 : Hiragana ta chi tsu te to",
         "type": "Écriture",
         "kanas": ["た","ち","つ","て","と"],
         "romaji": ["ta","chi","tsu","te","to"],
@@ -64,7 +64,7 @@
         "id": 7
     },
     {
-        "title": "Lesson 9 : Hiragana na ni nu ne no",
+        "title": "Leçon 9 : Hiragana na ni nu ne no",
         "type": "Lecture",
         "kanas": ["な","に","ぬ","ね","の"],
         "romaji": ["na","ni","nu","ne","no"],
@@ -72,7 +72,7 @@
         "id": 8
     },
     {
-        "title": "Lesson 10 : Hiragana na ni nu ne no",
+        "title": "Leçon 10 : Hiragana na ni nu ne no",
         "type": "Écriture",
         "kanas": ["な","に","ぬ","ね","の"],
         "romaji": ["na","ni","nu","ne","no"],
@@ -80,7 +80,7 @@
         "id": 9
     },
     {
-        "title": "Lesson 11 : Hiragana ha hi fu he ho",
+        "title": "Leçon 11 : Hiragana ha hi fu he ho",
         "type": "Lecture",
         "kanas": ["は","ひ","ふ","へ","ほ"],
         "romaji": ["ha","hi","fu","he","ho"],
@@ -88,7 +88,7 @@
         "id": 10
     },
     {
-        "title": "Lesson 12 : Hiragana ha hi fu he ho",
+        "title": "Leçon 12 : Hiragana ha hi fu he ho",
         "type": "Écriture",
         "kanas": ["は","ひ","ふ","へ","ほ"],
         "romaji": ["ha","hi","fu","he","ho"],
@@ -96,7 +96,7 @@
         "id": 11
     },
     {
-        "title": "Lesson 13 : Hiragana ma mi mu me mo",
+        "title": "Leçon 13 : Hiragana ma mi mu me mo",
         "type": "Lecture",
         "kanas": ["ま","み","む","め","も"],
         "romaji": ["ma","mi","mu","me","mo"],
@@ -104,7 +104,7 @@
         "id": 12
     },
     {
-        "title": "Lesson 14 : Hiragana ma mi mu me mo",
+        "title": "Leçon 14 : Hiragana ma mi mu me mo",
         "type": "Écriture",
         "kanas": ["ま","み","む","め","も"],
         "romaji": ["ma","mi","mu","me","mo"],
@@ -112,7 +112,7 @@
         "id": 13
     },
     {
-        "title": "Lesson 15 : Hiragana ya yu yo",
+        "title": "Leçon 15 : Hiragana ya yu yo",
         "type": "Lecture",
         "kanas": ["や","ゆ","よ"],
         "romaji": ["ya","yu","yo"],
@@ -120,7 +120,7 @@
         "id": 14
     },
     {
-        "title": "Lesson 16 : Hiragana ya yu yo",
+        "title": "Leçon 16 : Hiragana ya yu yo",
         "type": "Écriture",
         "kanas": ["や","ゆ","よ"],
         "romaji": ["ya","yu","yo"],
@@ -128,7 +128,7 @@
         "id": 15
     },
     {
-        "title": "Lesson 17 : Hiragana ra ri ru re ro",
+        "title": "Leçon 17 : Hiragana ra ri ru re ro",
         "type": "Lecture",
         "kanas": ["ら","り","る","れ","ろ"],
         "romaji": ["ra","ri","ru","re","ro"],
@@ -136,7 +136,7 @@
         "id": 16
     },
     {
-        "title": "Lesson 18 : Hiragana ra ri ru re ro",
+        "title": "Leçon 18 : Hiragana ra ri ru re ro",
         "type": "Écriture",
         "kanas": ["ら","り","る","れ","ろ"],
         "romaji": ["ra","ri","ru","re","ro"],
@@ -144,7 +144,7 @@
         "id": 17
     },
     {
-        "title": "Lesson 19 : Hiragana wa (w)o n",
+        "title": "Leçon 19 : Hiragana wa (w)o n",
         "type": "Lecture",
         "kanas": ["わ","を","ん"],
         "romaji": ["wa","wo","n"],
@@ -152,7 +152,7 @@
         "id": 18
     },
     {
-        "title": "Lesson 20 : Hiragana wa (w)o n",
+        "title": "Leçon 20 : Hiragana wa (w)o n",
         "type": "Écriture",
         "kanas": ["わ","を","ん"],
         "romaji": ["wa","wo","n"],
@@ -160,7 +160,7 @@
         "id": 19
     },
     {
-        "title": "Lesson 21 : Hiragana ga gi gu ge go",
+        "title": "Leçon 21 : Hiragana ga gi gu ge go",
         "type": "Lecture",
         "kanas": ["が","ぎ","ぐ","げ","ご"],
         "romaji": ["ga","gi","gu","ge","go"],
@@ -168,7 +168,7 @@
         "id": 20
     },
     {
-        "title": "Lesson 22 : Hiragana ga gi gu ge go",
+        "title": "Leçon 22 : Hiragana ga gi gu ge go",
         "type": "Écriture",
         "kanas": ["が","ぎ","ぐ","げ","ご"],
         "romaji": ["ga","gi","gu","ge","go"],
@@ -176,7 +176,7 @@
         "id": 21
     },
     {
-        "title": "Lesson 23 : Hiragana za ji zu ze zo",
+        "title": "Leçon 23 : Hiragana za ji zu ze zo",
         "type": "Lecture",
         "kanas": ["ざ","じ","ず","ぜ","ぞ"],
         "romaji": ["za","ji","zu","ze","zo"],
@@ -184,7 +184,7 @@
         "id": 22
     },
     {
-        "title": "Lesson 24 : Hiragana za ji zu ze zo",
+        "title": "Leçon 24 : Hiragana za ji zu ze zo",
         "type": "Écriture",
         "kanas": ["ざ","じ","ず","ぜ","ぞ"],
         "romaji": ["za","ji","zu","ze","zo"],
@@ -192,7 +192,7 @@
         "id": 23
     },
     {
-        "title": "Lesson 25 : Hiragana da ji zu de do",
+        "title": "Leçon 25 : Hiragana da ji zu de do",
         "type": "Lecture",
         "kanas": ["だ","ぢ","づ","で","ど"],
         "romaji": ["da","ji","zu","de","do"],
@@ -200,7 +200,7 @@
         "id": 24
     },
     {
-        "title": "Lesson 26 : Hiragana da ji zu de do",
+        "title": "Leçon 26 : Hiragana da ji zu de do",
         "type": "Écriture",
         "kanas": ["だ","ぢ","づ","で","ど"],
         "romaji": ["da","ji","zu","de","do"],
@@ -208,15 +208,15 @@
         "id": 25
     },
     {
-        "title": "Lesson 27 : Hiragana ba bi bu be bo",
+        "title": "Leçon 27 : Hiragana ba bi bu be bo",
         "type": "Lecture",
         "kanas": ["ば","び","ぶ","べ","ぼ"],
         "romaji": ["ba","bi","bu","be","bo"],
-        "text": "Très bien, voici les 5 prochains Hiragana.\Ici h- devient b- avec les Dakuten: ば び ぶ べ ぼ",
+        "text": "Très bien, voici les 5 prochains Hiragana.\nIci h- devient b- avec les Dakuten: ば び ぶ べ ぼ",
         "id": 26
     },
     {
-        "title": "Lesson 28 : Hiragana ba bi bu be bo",
+        "title": "Leçon 28 : Hiragana ba bi bu be bo",
         "type": "Écriture",
         "kanas": ["ば","び","ぶ","べ","ぼ"],
         "romaji": ["ba","bi","bu","be","bo"],
@@ -224,7 +224,7 @@
         "id": 27
     },
     {
-        "title": "Lesson 29 : Hiragana pa pi pu pe po",
+        "title": "Leçon 29 : Hiragana pa pi pu pe po",
         "type": "Lecture",
         "kanas": ["ぱ","ぴ","ぷ","ぺ","ぽ"],
         "romaji": ["pa","pi","pu","pe","po"],
@@ -232,7 +232,7 @@
         "id": 28
     },
     {
-        "title": "Lesson 30 : Hiragana pa pi pu pe po",
+        "title": "Leçon 30 : Hiragana pa pi pu pe po",
         "type": "Écriture",
         "kanas": ["ぱ","ぴ","ぷ","ぺ","ぽ"],
         "romaji": ["pa","pi","pu","pe","po"],
@@ -240,7 +240,7 @@
         "id": 29
     },
     {
-        "title": "Lesson 31 : Hiragana kya kyu kyo",
+        "title": "Leçon 31 : Hiragana kya kyu kyo",
         "type": "Lecture",
         "kanas": ["きゃ","きゅ","きょ"],
         "romaji": ["kya","kyu","kyo"],
@@ -248,7 +248,7 @@
         "id": 30
     },
     {
-        "title": "Lesson 32 : Hiragana kya kyu kyo",
+        "title": "Leçon 32 : Hiragana kya kyu kyo",
         "type": "Écriture",
         "kanas": ["きゃ","きゅ","きょ"],
         "romaji": ["kya","kyu","kyo"],
@@ -256,7 +256,7 @@
         "id": 31
     },
     {
-        "title": "Lesson 33 : Hiragana sha shu sho",
+        "title": "Leçon 33 : Hiragana sha shu sho",
         "type": "Lecture",
         "kanas": ["しゃ","しゅ","しょ"],
         "romaji": ["sha","shu","sho"],
@@ -264,7 +264,7 @@
         "id": 32
     },
     {
-        "title": "Lesson 34 : Hiragana sha shu sho",
+        "title": "Leçon 34 : Hiragana sha shu sho",
         "type": "Écriture",
         "kanas": ["しゃ","しゅ","しょ"],
         "romaji": ["sha","shu","sho"],
@@ -272,7 +272,7 @@
         "id": 33
     },
     {
-        "title": "Lesson 35 : Hiragana cha chu cho",
+        "title": "Leçon 35 : Hiragana cha chu cho",
         "type": "Lecture",
         "kanas": ["ちゃ","ちゅ","ちょ"],
         "romaji": ["cha","chu","cho"],
@@ -280,7 +280,7 @@
         "id": 34
     },
     {
-        "title": "Lesson 36 : Hiragana cha chu cho",
+        "title": "Leçon 36 : Hiragana cha chu cho",
         "type": "Écriture",
         "kanas": ["ちゃ","ちゅ","ちょ"],
         "romaji": ["cha","chu","cho"],
@@ -288,7 +288,7 @@
         "id": 35
     },
     {
-        "title": "Lesson 37 : Hiragana nya nyu nyo",
+        "title": "Leçon 37 : Hiragana nya nyu nyo",
         "type": "Lecture",
         "kanas": ["にゃ","にゅ","にょ"],
         "romaji": ["nya","nyu","nyo"],
@@ -296,7 +296,7 @@
         "id": 36
     },
     {
-        "title": "Lesson 38 : Hiragana nya nyu nyo",
+        "title": "Leçon 38 : Hiragana nya nyu nyo",
         "type": "Écriture",
         "kanas": ["にゃ","にゅ","にょ"],
         "romaji": ["nya","nyu","nyo"],
@@ -304,7 +304,7 @@
         "id": 37
     },
     {
-        "title": "Lesson 39 : Hiragana hya hyu hyo",
+        "title": "Leçon 39 : Hiragana hya hyu hyo",
         "type": "Lecture",
         "kanas": ["ひゃ","ひゅ","ひょ"],
         "romaji": ["hya","hyu","hyo"],
@@ -312,7 +312,7 @@
         "id": 38
     },
     {
-        "title": "Lesson 40 : Hiragana hya hyu hyo",
+        "title": "Leçon 40 : Hiragana hya hyu hyo",
         "type": "Écriture",
         "kanas": ["ひゃ","ひゅ","ひょ"],
         "romaji": ["hya","hyu","hyo"],
@@ -320,7 +320,7 @@
         "id": 39
     },
     {
-        "title": "Lesson 41 : Hiragana mya myu myo",
+        "title": "Leçon 41 : Hiragana mya myu myo",
         "type": "Lecture",
         "kanas": ["みゃ","みゅ","みょ"],
         "romaji": ["mya","myu","myo"],
@@ -328,7 +328,7 @@
         "id": 40
     },
     {
-        "title": "Lesson 42 : Hiragana mya myu myo",
+        "title": "Leçon 42 : Hiragana mya myu myo",
         "type": "Écriture",
         "kanas": ["みゃ","みゅ","みょ"],
         "romaji": ["mya","myu","myo"],
@@ -336,7 +336,7 @@
         "id": 41
     },
     {
-        "title": "Lesson 43 : Hiragana rya ryu ryo",
+        "title": "Leçon 43 : Hiragana rya ryu ryo",
         "type": "Lecture",
         "kanas": ["りゃ","りゅ","りょ"],
         "romaji": ["rya","ryu","ryo"],
@@ -344,7 +344,7 @@
         "id": 42
     },
     {
-        "title": "Lesson 44 : Hiragana rya ryu ryo",
+        "title": "Leçon 44 : Hiragana rya ryu ryo",
         "type": "Écriture",
         "kanas": ["りゃ","りゅ","りょ"],
         "romaji": ["rya","ryu","ryo"],
@@ -352,7 +352,7 @@
         "id": 43
     },
     {
-        "title": "Lesson 45 : Hiragana gya gyu gyo",
+        "title": "Leçon 45 : Hiragana gya gyu gyo",
         "type": "Lecture",
         "kanas": ["ぎゃ","ぎゅ","ぎょ"],
         "romaji": ["gya","gyu","gyo"],
@@ -360,7 +360,7 @@
         "id": 44
     },
     {
-        "title": "Lesson 46 : Hiragana gya gyu gyo",
+        "title": "Leçon 46 : Hiragana gya gyu gyo",
         "type": "Écriture",
         "kanas": ["ぎゃ","ぎゅ","ぎょ"],
         "romaji": ["gya","gyu","gyo"],
@@ -368,7 +368,7 @@
         "id": 45
     },
     {
-        "title": "Lesson 47 : Hiragana ja ju jo",
+        "title": "Leçon 47 : Hiragana ja ju jo",
         "type": "Lecture",
         "kanas": ["じゃ","じゅ","じょ"],
         "romaji": ["ja","ju","jo"],
@@ -376,7 +376,7 @@
         "id": 46
     },
     {
-        "title": "Lesson 48 : Hiragana ja ju jo",
+        "title": "Leçon 48 : Hiragana ja ju jo",
         "type": "Écriture",
         "kanas": ["じゃ","じゅ","じょ"],
         "romaji": ["ja","ju","jo"],
@@ -384,15 +384,15 @@
         "id": 47
     },
     {
-        "title": "Lesson 49 : Hiragana bya byu byo",
+        "title": "Leçon 49 : Hiragana bya byu byo",
         "type": "Lecture",
         "kanas": ["びゃ","びゅ","びょ"],
         "romaji": ["bya","byu","byo"],
-        "text": "Tu as presque déjà vu tous les Hiraganas. On continue avec les 3 prochains caractères.\nCeux-ci sont des associations du Hiragana び(bi) avec や(ya), ゆ(yu) et よ(yo): びゃ びゅ びょ",
+        "text": "Tu as presque déjà vu tous les Hiragana. On continue avec les 3 prochains caractères.\nCeux-ci sont des associations du Hiragana び(bi) avec や(ya), ゆ(yu) et よ(yo): びゃ びゅ びょ",
         "id": 48
     },
     {
-        "title": "Lesson 50 : Hiragana bya byu byo",
+        "title": "Leçon 50 : Hiragana bya byu byo",
         "type": "Écriture",
         "kanas": ["びゃ","びゅ","びょ"],
         "romaji": ["bya","byu","byo"],
@@ -400,15 +400,15 @@
         "id": 49
     },
     {
-        "title": "Lesson 51 : Hiragana pya pyu pyo",
+        "title": "Leçon 51 : Hiragana pya pyu pyo",
         "type": "Lecture",
         "kanas": ["ぴゃ","ぴゅ","ぴょ"],
         "romaji": ["pya","pyu","pyo"],
-        "text": "Voici les derniers Yoon et les derniers Hiraganas.\nCe sont associations du Hiragana ぴ(pi) avec や(ya), ゆ(yu) et よ(yo): ぴゃ ぴゅ ぴょ",
+        "text": "Voici les derniers Yoon et les derniers Hiragana.\nCe sont associations du Hiragana ぴ(pi) avec や(ya), ゆ(yu) et よ(yo): ぴゃ ぴゅ ぴょ",
         "id": 50
     },
     {
-        "title": "Lesson 52 : Hiragana pya pyu pyo",
+        "title": "Leçon 52 : Hiragana pya pyu pyo",
         "type": "Écriture",
         "kanas": ["ぴゃ","ぴゅ","ぴょ"],
         "romaji": ["pya","pyu","pyo"],
@@ -416,7 +416,7 @@
         "id": 51
     },
     {
-        "title": "Lesson 53 : Katakana a i u e o",
+        "title": "Leçon 53 : Katakana a i u e o",
         "type": "Lecture",
         "kanas": ["ア","イ","ウ","エ","オ"],
         "romaji": ["a","i","u","e","o"],
@@ -424,7 +424,7 @@
         "id": 52
     },
     {
-        "title": "Lesson 54 : Katakana a i u e o",
+        "title": "Leçon 54 : Katakana a i u e o",
         "type": "Écriture",
         "kanas": ["ア","イ","ウ","エ","オ"],
         "romaji": ["a","i","u","e","o"],
@@ -432,7 +432,7 @@
         "id": 53
     },
     {
-        "title": "Lesson 55 : Katakana ka ki ku ke ko",
+        "title": "Leçon 55 : Katakana ka ki ku ke ko",
         "type": "Lecture",
         "kanas": ["カ","キ","ク","ケ","コ"],
         "romaji": ["ka","ki","ku","ke","ko"],
@@ -440,7 +440,7 @@
         "id": 54
     },
     {
-        "title": "Lesson 56 : Katakana ka ki ku ke ko",
+        "title": "Leçon 56 : Katakana ka ki ku ke ko",
         "type": "Écriture",
         "kanas": ["カ","キ","ク","ケ","コ"],
         "romaji": ["ka","ki","ku","ke","ko"],
@@ -448,7 +448,7 @@
         "id": 55
     },
     {
-        "title": "Lesson 57 : Katakana sa shi su se so",
+        "title": "Leçon 57 : Katakana sa shi su se so",
         "type": "Lecture",
         "kanas": ["サ","シ","ス","セ","ソ"],
         "romaji": ["sa","shi","su","se","so"],
@@ -456,7 +456,7 @@
         "id": 56
     },
     {
-        "title": "Lesson 58 : Katakana sa shi su se so",
+        "title": "Leçon 58 : Katakana sa shi su se so",
         "type": "Écriture",
         "kanas": ["サ","シ","ス","セ","ソ"],
         "romaji": ["sa","shi","su","se","so"],
@@ -464,7 +464,7 @@
         "id": 57
     },
     {
-        "title": "Lesson 59 : Katakana ta chi tsu te to",
+        "title": "Leçon 59 : Katakana ta chi tsu te to",
         "type": "Lecture",
         "kanas": ["タ","チ","ツ","テ","ト"],
         "romaji": ["ta","chi","tsu","te","to"],
@@ -472,7 +472,7 @@
         "id": 58
     },
     {
-        "title": "Lesson 60 : Katakana ta chi tsu te to",
+        "title": "Leçon 60 : Katakana ta chi tsu te to",
         "type": "Écriture",
         "kanas": ["タ","チ","ツ","テ","ト"],
         "romaji": ["ta","chi","tsu","te","to"],
@@ -480,7 +480,7 @@
         "id": 59
     },
     {
-        "title": "Lesson 61 : Katakana na ni nu ne no",
+        "title": "Leçon 61 : Katakana na ni nu ne no",
         "type": "Lecture",
         "kanas": ["ナ","ニ","ヌ","ネ","ノ"],
         "romaji": ["na","ni","nu","ne","no"],
@@ -488,7 +488,7 @@
         "id": 60
     },
     {
-        "title": "Lesson 62 : Katakana na ni nu ne no",
+        "title": "Leçon 62 : Katakana na ni nu ne no",
         "type": "Écriture",
         "kanas": ["ナ","ニ","ヌ","ネ","ノ"],
         "romaji": ["na","ni","nu","ne","no"],
@@ -496,7 +496,7 @@
         "id": 61
     },
     {
-        "title": "Lesson 63 : Katakana ha hi fu he ho",
+        "title": "Leçon 63 : Katakana ha hi fu he ho",
         "type": "Lecture",
         "kanas": ["ハ","ヒ","フ","ヘ","ホ"],
         "romaji": ["ha","hi","fu","he","ho"],
@@ -504,7 +504,7 @@
         "id": 62
     },
     {
-        "title": "Lesson 64 : Katakana ha hi fu he ho",
+        "title": "Leçon 64 : Katakana ha hi fu he ho",
         "type": "Écriture",
         "kanas": ["ハ","ヒ","フ","ヘ","ホ"],
         "romaji": ["ha","hi","fu","he","ho"],
@@ -512,7 +512,7 @@
         "id": 63
     },
     {
-        "title": "Lesson 65 : Katakana ma mi mu me mo",
+        "title": "Leçon 65 : Katakana ma mi mu me mo",
         "type": "Lecture",
         "kanas": ["マ","ミ","ム","メ","モ"],
         "romaji": ["ma","mi","mu","me","mo"],
@@ -520,7 +520,7 @@
         "id": 64
     },
     {
-        "title": "Lesson 66 : Katakana ma mi mu me mo",
+        "title": "Leçon 66 : Katakana ma mi mu me mo",
         "type": "Écriture",
         "kanas": ["マ","ミ","ム","メ","モ"],
         "romaji": ["ma","mi","mu","me","mo"],
@@ -528,7 +528,7 @@
         "id": 65
     },
     {
-        "title": "Lesson 67 : Katakana ya yu yo",
+        "title": "Leçon 67 : Katakana ya yu yo",
         "type": "Lecture",
         "kanas": ["ヤ","ユ","ヨ"],
         "romaji": ["ya","yu","yo"],
@@ -536,7 +536,7 @@
         "id": 66
     },
     {
-        "title": "Lesson 68 : Katakana ya yu yo",
+        "title": "Leçon 68 : Katakana ya yu yo",
         "type": "Écriture",
         "kanas": ["ヤ","ユ","ヨ"],
         "romaji": ["ya","yu","yo"],
@@ -544,7 +544,7 @@
         "id": 67
     },
     {
-        "title": "Lesson 69 : Katakana ra ri ru re ro",
+        "title": "Leçon 69 : Katakana ra ri ru re ro",
         "type": "Lecture",
         "kanas": ["ラ","リ","ル","レ","ロ"],
         "romaji": ["ra","ri","ru","re","ro"],
@@ -552,7 +552,7 @@
         "id": 68
     },
     {
-        "title": "Lesson 70 : Katakana ra ri ru re ro",
+        "title": "Leçon 70 : Katakana ra ri ru re ro",
         "type": "Écriture",
         "kanas": ["ラ","リ","ル","レ","ロ"],
         "romaji": ["ra","ri","ru","re","ro"],
@@ -560,7 +560,7 @@
         "id": 69
     },
     {
-        "title": "Lesson 71 : Katakana wa (w)o n",
+        "title": "Leçon 71 : Katakana wa (w)o n",
         "type": "Lecture",
         "kanas": ["ワ","ヲ","ン"],
         "romaji": ["wa","(w)o","n"],
@@ -568,7 +568,7 @@
         "id": 70
     },
     {
-        "title": "Lesson 72 : Katakana wa (w)o n",
+        "title": "Leçon 72 : Katakana wa (w)o n",
         "type": "Écriture",
         "kanas": ["ワ","ヲ","ン"],
         "romaji": ["wa","(w)o","n"],
@@ -576,7 +576,7 @@
         "id": 71
     },
     {
-        "title": "Lesson 73 : Katakana ga gi gu ge go",
+        "title": "Leçon 73 : Katakana ga gi gu ge go",
         "type": "Lecture",
         "kanas": ["ガ","ギ","グ","ゲ","ゴ"],
         "romaji": ["ga","gi","gu","ge","go"],
@@ -584,7 +584,7 @@
         "id": 72
     },
     {
-        "title": "Lesson 74 : Katakana ga gi gu ge go",
+        "title": "Leçon 74 : Katakana ga gi gu ge go",
         "type": "Écriture",
         "kanas": ["ガ","ギ","グ","ゲ","ゴ"],
         "romaji": ["ga","gi","gu","ge","go"],
@@ -592,7 +592,7 @@
         "id": 73
     },
     {
-        "title": "Lesson 75 : Katakana za ji zu ze zo",
+        "title": "Leçon 75 : Katakana za ji zu ze zo",
         "type": "Lecture",
         "kanas": ["ザ","ジ","ズ","ゼ","ゾ"],
         "romaji": ["za","ji","zu","ze","zo"],
@@ -600,7 +600,7 @@
         "id": 74
     },
     {
-        "title": "Lesson 76 : Katakana za ji zu ze zo",
+        "title": "Leçon 76 : Katakana za ji zu ze zo",
         "type": "Écriture",
         "kanas": ["ザ","ジ","ズ","ゼ","ゾ"],
         "romaji": ["za","ji","zu","ze","zo"],
@@ -608,7 +608,7 @@
         "id": 75
     },
     {
-        "title": "Lesson 77 : Katakana da ji zu de do",
+        "title": "Leçon 77 : Katakana da ji zu de do",
         "type": "Lecture",
         "kanas": ["ダ","ヂ","ヅ","デ","ド"],
         "romaji": ["da","ji","zu","de","do"],
@@ -616,7 +616,7 @@
         "id": 76
     },
     {
-        "title": "Lesson 78 : Katakana da ji zu de do",
+        "title": "Leçon 78 : Katakana da ji zu de do",
         "type": "Écriture",
         "kanas": ["ダ","ヂ","ヅ","デ","ド"],
         "romaji": ["da","ji","zu","de","do"],
@@ -624,15 +624,15 @@
         "id": 77
     },
     {
-        "title": "Lesson 79 : Katakana ba bi bu be bo",
+        "title": "Leçon 79 : Katakana ba bi bu be bo",
         "type": "Lecture",
         "kanas": ["バ","ビ","ブ","ベ","ボ"],
         "romaji": ["ba","bi","bu","be","bo"],
-        "text": "Très bien. Pense à réviser de temps en temps tout les Kana que tu as appris. Voici les 5 prochains Katakana.\Ici h- devient b- avec les Dakuten: バ ビ ブ ベ ボ",
+        "text": "Très bien. Pense à réviser de temps en temps tout les Kana que tu as appris. Voici les 5 prochains Katakana.\nIci h- devient b- avec les Dakuten: バ ビ ブ ベ ボ",
         "id": 78
     },
     {
-        "title": "Lesson 80 : Katakana ba bi bu be bo",
+        "title": "Leçon 80 : Katakana ba bi bu be bo",
         "type": "Écriture",
         "kanas": ["バ","ビ","ブ","ベ","ボ"],
         "romaji": ["ba","bi","bu","be","bo"],
@@ -640,7 +640,7 @@
         "id": 79
     },
     {
-        "title": "Lesson 81 : Katakana pa pi pu pe po",
+        "title": "Leçon 81 : Katakana pa pi pu pe po",
         "type": "Lecture",
         "kanas": ["パ","ピ","プ","ペ","ポ"],
         "romaji": ["pa","pi","pu","pe","po"],
@@ -648,7 +648,7 @@
         "id": 80
     },
     {
-        "title": "Lesson 82 : Katakana pa pi pu pe po",
+        "title": "Leçon 82 : Katakana pa pi pu pe po",
         "type": "Écriture",
         "kanas": ["パ","ピ","プ","ペ","ポ"],
         "romaji": ["pa","pi","pu","pe","po"],
@@ -656,7 +656,7 @@
         "id": 81
     },
     {
-        "title": "Lesson 83 : Katakana kya kyu kyo",
+        "title": "Leçon 83 : Katakana kya kyu kyo",
         "type": "Lecture",
         "kanas": ["キャ","キュ","キョ"],
         "romaji": ["kya","kyu","kyo"],
@@ -664,7 +664,7 @@
         "id": 82
     },
     {
-        "title": "Lesson 84 : Katakana kya kyu kyo",
+        "title": "Leçon 84 : Katakana kya kyu kyo",
         "type": "Écriture",
         "kanas": ["キャ","キュ","キョ"],
         "romaji": ["kya","kyu","kyo"],
@@ -672,7 +672,7 @@
         "id": 83
     },
     {
-        "title": "Lesson 85 : Katakana sha shu sho",
+        "title": "Leçon 85 : Katakana sha shu sho",
         "type": "Lecture",
         "kanas": ["シャ","シュ","ショ"],
         "romaji": ["sha","shu","sho"],
@@ -680,7 +680,7 @@
         "id": 84
     },
     {
-        "title": "Lesson 86 : Katakana sha shu sho",
+        "title": "Leçon 86 : Katakana sha shu sho",
         "type": "Écriture",
         "kanas": ["シャ","シュ","ショ"],
         "romaji": ["sha","shu","sho"],
@@ -688,7 +688,7 @@
         "id": 85
     },
     {
-        "title": "Lesson 87 : Katakana cha chu cho",
+        "title": "Leçon 87 : Katakana cha chu cho",
         "type": "Lecture",
         "kanas": ["チャ","チュ","チョ"],
         "romaji": ["cha","chu","cho"],
@@ -696,7 +696,7 @@
         "id": 86
     },
     {
-        "title": "Lesson 88 : Katakana cha chu cho",
+        "title": "Leçon 88 : Katakana cha chu cho",
         "type": "Écriture",
         "kanas": ["チャ","チュ","チョ"],
         "romaji": ["cha","chu","cho"],
@@ -704,7 +704,7 @@
         "id": 87
     },
     {
-        "title": "Lesson 89 : Katakana nya nyu nyo",
+        "title": "Leçon 89 : Katakana nya nyu nyo",
         "type": "Lecture",
         "kanas": ["ニャ","ニュ","ニョ"],
         "romaji": ["nya","nyu","nyo"],
@@ -712,7 +712,7 @@
         "id": 88
     },
     {
-        "title": "Lesson 90 : Katakana nya nyu nyo",
+        "title": "Leçon 90 : Katakana nya nyu nyo",
         "type": "Écriture",
         "kanas": ["ニャ","ニュ","ニョ"],
         "romaji": ["nya","nyu","nyo"],
@@ -720,7 +720,7 @@
         "id": 89
     },
     {
-        "title": "Lesson 91 : Katakana hya hyu hyo",
+        "title": "Leçon 91 : Katakana hya hyu hyo",
         "type": "Lecture",
         "kanas": ["ヒャ","ヒュ","ヒョ"],
         "romaji": ["hya","hyu","hyo"],
@@ -728,7 +728,7 @@
         "id": 90
     },
     {
-        "title": "Lesson 92 : Katakana hya hyu hyo",
+        "title": "Leçon 92 : Katakana hya hyu hyo",
         "type": "Écriture",
         "kanas": ["ヒャ","ヒュ","ヒョ"],
         "romaji": ["hya","hyu","hyo"],
@@ -736,7 +736,7 @@
         "id": 91
     },
     {
-        "title": "Lesson 93 : Katakana mya myu myo",
+        "title": "Leçon 93 : Katakana mya myu myo",
         "type": "Lecture",
         "kanas": ["ミャ","ミュ","ミョ"],
         "romaji": ["mya","myu","myo"],
@@ -744,7 +744,7 @@
         "id": 92
     },
     {
-        "title": "Lesson 94 : Katakana mya myu myo",
+        "title": "Leçon 94 : Katakana mya myu myo",
         "type": "Écriture",
         "kanas": ["ミャ","ミュ","ミョ"],
         "romaji": ["mya","myu","myo"],
@@ -752,7 +752,7 @@
         "id": 93
     },
     {
-        "title": "Lesson 95 : Katakana rya ryu ryo",
+        "title": "Leçon 95 : Katakana rya ryu ryo",
         "type": "Lecture",
         "kanas": ["リャ","リュ","リョ"],
         "romaji": ["rya","ryu","ryo"],
@@ -760,7 +760,7 @@
         "id": 94
     },
     {
-        "title": "Lesson 96 : Katakana rya ryu ryo",
+        "title": "Leçon 96 : Katakana rya ryu ryo",
         "type": "Écriture",
         "kanas": ["リャ","リュ","リョ"],
         "romaji": ["rya","ryu","ryo"],
@@ -768,15 +768,15 @@
         "id": 95
     },
     {
-        "title": "Lesson 97 : Katakana gya gyu gyo",
+        "title": "Leçon 97 : Katakana gya gyu gyo",
         "type": "Lecture",
         "kanas": ["ギャ","ギュ","ギョ"],
         "romaji": ["gya","gyu","gyo"],
-        "text": "Tu as appris 21 Yoon, continue comme ça!\nCeux là sont des associations du Katakana ギ(gi) avec les Katakana ヤ(ya), ユ(yu) and ヨ(yo): ギャ ギュ ギョ",
+        "text": "Tu as appris 21 Yoon, continue comme ça!\nCeux là sont des associations du Katakana ギ(gi) avec les Katakana ヤ(ya), ユ(yu) et ヨ(yo): ギャ ギュ ギョ",
         "id": 96
     },
     {
-        "title": "Lesson 98 : Katakana gya gyu gyo",
+        "title": "Leçon 98 : Katakana gya gyu gyo",
         "type": "Écriture",
         "kanas": ["ギャ","ギュ","ギョ"],
         "romaji": ["gya","gyu","gyo"],
@@ -784,15 +784,15 @@
         "id": 97
     },
     {
-        "title": "Lesson 99 : Katakana ja ju jo",
+        "title": "Leçon 99 : Katakana ja ju jo",
         "type": "Lecture",
         "kanas": ["ジャ","ジュ","ジョ"],
         "romaji": ["ja","ju","jo"],
-        "text": "Nouvelle leçon, nouveau caractères.\nVoici les suivants, ce sont des associations du Katakana ジ(ji) avec ヤ(ya), ユ(yu) and ヨ(yo): ジャ ジュ ジョ",
+        "text": "Nouvelle leçon, nouveau caractères.\nVoici les suivants, ce sont des associations du Katakana ジ(ji) avec ヤ(ya), ユ(yu) et ヨ(yo): ジャ ジュ ジョ",
         "id": 98
     },
     {
-        "title": "Lesson 100 : Katakana ja ju jo",
+        "title": "Leçon 100 : Katakana ja ju jo",
         "type": "Écriture",
         "kanas": ["ジャ","ジュ","ジョ"],
         "romaji": ["ja","ju","jo"],
@@ -800,7 +800,7 @@
         "id": 99
     },
     {
-        "title": "Lesson 101 : Katakana bya byu byo",
+        "title": "Leçon 101 : Katakana bya byu byo",
         "type": "Lecture",
         "kanas": ["ビャ","ビュ","ビョ"],
         "romaji": ["bya","byu","byo"],
@@ -808,7 +808,7 @@
         "id": 100
     },
     {
-        "title": "Lesson 102 : Katakana bya byu byo",
+        "title": "Leçon 102 : Katakana bya byu byo",
         "type": "Écriture",
         "kanas": ["ビャ","ビュ","ビョ"],
         "romaji": ["bya","byu","byo"],
@@ -816,7 +816,7 @@
         "id": 101
     },
     {
-        "title": "Lesson 103 : Katakana pya pyu pyo",
+        "title": "Leçon 103 : Katakana pya pyu pyo",
         "type": "Lecture",
         "kanas": ["ピャ","ピュ","ピョ"],
         "romaji": ["pya","pyu","pyo"],
@@ -824,7 +824,7 @@
         "id": 102
     },
     {
-        "title": "Lesson 104 : Katakana pya pyu pyo",
+        "title": "Leçon 104 : Katakana pya pyu pyo",
         "type": "Écriture",
         "kanas": ["ピャ","ピュ","ピョ"],
         "romaji": ["pya","pyu","pyo"],

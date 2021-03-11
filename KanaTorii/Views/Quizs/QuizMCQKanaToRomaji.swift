@@ -14,13 +14,6 @@ struct QuizMCQKanaToRomaji: View {
     let itemsCellIphone = GridItem(.fixed(90))
     let itemsCellIpad = GridItem(.fixed(200))
     @Binding var showScore: Bool
-    private var textActionSheet: String {
-        if quiz.correctAnswer {
-            return "Right answer: \(quiz.currentSolution.uppercased())"
-        } else {
-            return "Wrong answer: \(quiz.currentSolution.uppercased())"
-        }
-    }
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -33,7 +26,7 @@ struct QuizMCQKanaToRomaji: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuiz(heightDevice: heightDevice, text: "Find correct answer")
+                            TitleQuizMCQ(heightDevice: heightDevice)
                             Text(quiz.currentKana)
                                 .font(.system(size: heightDevice/9))
                                 .padding(heightDevice/20)
@@ -47,7 +40,9 @@ struct QuizMCQKanaToRomaji: View {
                 //.navigationBarTitle()
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
+                Alert(title: Text("Your result: "),
+                      message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
+                      dismissButton: .default(Text("Continue"), action: {
                         if quiz.state == .play {
                             quiz.nextQuestion()
                         } else {
@@ -67,7 +62,7 @@ struct QuizMCQKanaToRomaji: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuiz(heightDevice: heightDevice, text: "Find correct answer")
+                            TitleQuizMCQ(heightDevice: heightDevice)
                             Text(quiz.currentKana)
                                 .font(.system(size: heightDevice/9))
                             Spacer()
@@ -81,7 +76,7 @@ struct QuizMCQKanaToRomaji: View {
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
-                    title: Text(textActionSheet),
+                    title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
                     buttons: [
                         .default(Text("Continue"), action: {
                             if quiz.state == .play {

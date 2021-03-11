@@ -28,7 +28,7 @@ struct LessonMemoReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Memorize the shape and pronunciation of this kana")
+                            TitleLessonReading(heightDevice: heightDevice)
                             MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/12)
                                 .padding(.horizontal, widthDevice/4)
@@ -108,7 +108,7 @@ struct LessonMemoReading: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Memorize the shape and pronunciation of this kana")
+                            TitleLessonReading(heightDevice: heightDevice)
                             MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/50)
                                 .padding(.horizontal, widthDevice/4.5)
@@ -194,8 +194,9 @@ struct LessonMemoReading: View {
             do {
                 try viewContext.save()
             } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                print(error)
+                //let nsError = error as NSError
+                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

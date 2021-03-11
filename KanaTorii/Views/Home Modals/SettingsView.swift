@@ -26,7 +26,7 @@ struct SettingsView: View {
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             VStack {
-                SheetHeader(title: "Settings", systemImage: "gearshape", paddingLeading: 20)
+                SheetHeaderSettings(systemImage: "gearshape", paddingLeading: 20)
                 Spacer()
                 Form {
                     Section(header: Text("CHARACTER CHARTS")) {
@@ -101,7 +101,7 @@ struct SettingsView: View {
             })
         } else {
             VStack {
-                SheetHeader(title: "Settings", systemImage: "gearshape", paddingLeading: 20)
+                SheetHeaderSettings(systemImage: "gearshape", paddingLeading: 20)
                 Spacer()
                 Form {
                     Section(header: Text("CHARACTER CHARTS")) {

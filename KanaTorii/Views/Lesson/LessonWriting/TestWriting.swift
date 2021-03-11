@@ -43,7 +43,7 @@ struct TestWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Practice drawing \(kanaType): \(test.romaji.capitalized)")
+                            TitleTestWriting(test: test, kanaType: kanaType, heightDevice: heightDevice)
                             Spacer()
                             DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
@@ -60,7 +60,8 @@ struct TestWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "), message: Text(textActionSheet), dismissButton: .default(Text("Continue"), action: {
+                Alert(title: Text("Your result: "), message: test.correctDrawing ? Text("Right answer") : Text("Wrong answer"),
+                      dismissButton: .default(Text("Continue"), action: {
                     currentLesson.newPart()
                     drawings = [Drawing]()
                     presentation.wrappedValue.dismiss()
@@ -77,7 +78,7 @@ struct TestWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleLesson(heightDevice: heightDevice, text: "Practice drawing \(kanaType): \(test.romaji.capitalized)")
+                            TitleTestWriting(test: test, kanaType: kanaType, heightDevice: heightDevice)
                             DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/35, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
@@ -94,7 +95,7 @@ struct TestWriting: View {
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
-                    title: Text(textActionSheet),
+                    title: test.correctDrawing ? Text("Right answer") : Text("Wrong answer"),
                     buttons: [
                         .default(Text("Continue"), action: {
                             currentLesson.newPart()

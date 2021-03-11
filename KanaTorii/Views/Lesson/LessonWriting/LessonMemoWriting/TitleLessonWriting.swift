@@ -1,18 +1,17 @@
 //
-//  TitleQuiz.swift
+//  TitleLessonWriting.swift
 //  KanaTorii
 //
-//  Created by Clément FLORET on 25/02/2021.
+//  Created by Clément FLORET on 10/03/2021.
 //
 
 import SwiftUI
 
-struct TitleQuiz: View {
+struct TitleLessonWriting: View {
     var heightDevice: CGFloat
-    var text: String
     
     var body: some View {
-        Text(text)
+        Text("Memorize the writing order of the lines and the shape of this kana")
             .font(.system(size: heightDevice/35))
             .fontWeight(.semibold)
             .foregroundColor(.accentColor)
@@ -21,9 +20,9 @@ struct TitleQuiz: View {
     }
 }
 
-struct TitleQuiz_Previews: PreviewProvider {
+struct TitleLessonWriting_Previews: PreviewProvider {
     static var previews: some View {
-        TitleQuiz(heightDevice: 800, text: "Memorize the shape and pronunciation of this kana")
+        TitleLessonWriting(heightDevice: 800)
             .previewLayout(.sizeThatFits)
     }
 }

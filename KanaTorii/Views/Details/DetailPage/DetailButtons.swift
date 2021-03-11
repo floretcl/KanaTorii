@@ -19,13 +19,27 @@ struct DetailButtons: View {
                 hapticFeedback(style: .soft)
                 kana.readTextInJapanese(text: kanaLabel)
             }, label: {
-                DetailButtonLabel(text: "Listen", sizeText: sizeText, systemImage: "speaker.wave.2")
+                Label("Listen", systemImage: "speaker.wave.2")
+                    .font(.system(size: sizeText))
+                    .foregroundColor(.white)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 14)
+                    .background(Color.orange)
+                    .cornerRadius(30.0)
+                    .padding(.horizontal, 6)
             })
             Button(action: {
                 hapticFeedback(style: .soft)
                 showDrawingView.toggle()
             }, label: {
-                DetailButtonLabel(text: "Write", sizeText: sizeText, systemImage: "hand.draw")
+                Label("Write", systemImage: "hand.draw")
+                    .font(.system(size: sizeText))
+                    .foregroundColor(.white)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 14)
+                    .background(Color.orange)
+                    .cornerRadius(30.0)
+                    .padding(.horizontal, 6)
             })
         }
     }
