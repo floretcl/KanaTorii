@@ -17,6 +17,8 @@
 		7E21A34D25E049A90073A3EF /* SuggestionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A34C25E049A80073A3EF /* SuggestionsTest.swift */; };
 		7E21A35825E04D940073A3EF /* DrawingButtonsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A35725E04D940073A3EF /* DrawingButtonsTest.swift */; };
 		7E23B86E25D9A0E80010EAF6 /* DrawingPadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23B86D25D9A0E80010EAF6 /* DrawingPadTest.swift */; };
+		7E25672725FBBDDD005B71A8 /* weekdays.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E25672925FBBDDD005B71A8 /* weekdays.json */; };
+		7E25672F25FBBE5C005B71A8 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E25672E25FBBE5C005B71A8 /* Weekday.swift */; };
 		7E335B3325E6BE46004EC2C9 /* SuggestionsQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E335B3225E6BE45004EC2C9 /* SuggestionsQuiz.swift */; };
 		7E335B3B25E6BE55004EC2C9 /* SuggestionCellQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E335B3A25E6BE55004EC2C9 /* SuggestionCellQuiz.swift */; };
 		7E3E425625CB2C7C00B2F5AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3E425525CB2C7C00B2F5AC /* Assets.xcassets */; };
@@ -127,7 +129,6 @@
 		7EBF6DD825E7FEEB0077F4D2 /* DrawingPadQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF6DD725E7FEEB0077F4D2 /* DrawingPadQuiz.swift */; };
 		7EBF6DE025E7FF200077F4D2 /* DrawingButtonQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF6DDF25E7FF200077F4D2 /* DrawingButtonQuiz.swift */; };
 		7EBF6DE525E7FF430077F4D2 /* ContinueButtonQuizDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF6DE425E7FF430077F4D2 /* ContinueButtonQuizDrawing.swift */; };
-		7EC7084325F660AF00013F38 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC7084225F660AF00013F38 /* StoreKit.framework */; };
 		7EC7085525F6625F00013F38 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7085725F6625F00013F38 /* Localizable.strings */; };
 		7ED04E3725D96F3200686D48 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED04E3625D96F3200686D48 /* HomeButtons.swift */; };
 		7EED307E25F92D3D00B2C5F1 /* HomeButtonAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EED307D25F92D3D00B2C5F1 /* HomeButtonAbout.swift */; };
@@ -174,6 +175,9 @@
 		7E21A34C25E049A80073A3EF /* SuggestionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTest.swift; sourceTree = "<group>"; };
 		7E21A35725E04D940073A3EF /* DrawingButtonsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButtonsTest.swift; sourceTree = "<group>"; };
 		7E23B86D25D9A0E80010EAF6 /* DrawingPadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadTest.swift; sourceTree = "<group>"; };
+		7E25672825FBBDDD005B71A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/weekdays.json; sourceTree = "<group>"; };
+		7E25672D25FBBDE1005B71A8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/weekdays.json; sourceTree = "<group>"; };
+		7E25672E25FBBE5C005B71A8 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		7E335B3225E6BE45004EC2C9 /* SuggestionsQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsQuiz.swift; sourceTree = "<group>"; };
 		7E335B3A25E6BE55004EC2C9 /* SuggestionCellQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellQuiz.swift; sourceTree = "<group>"; };
 		7E3E424E25CB2C7C00B2F5AC /* KanaTorii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanaTorii.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,7 +296,6 @@
 		7EBF6DD725E7FEEB0077F4D2 /* DrawingPadQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadQuiz.swift; sourceTree = "<group>"; };
 		7EBF6DDF25E7FF200077F4D2 /* DrawingButtonQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButtonQuiz.swift; sourceTree = "<group>"; };
 		7EBF6DE425E7FF430077F4D2 /* ContinueButtonQuizDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonQuizDrawing.swift; sourceTree = "<group>"; };
-		7EC7084225F660AF00013F38 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7EC7085625F6625F00013F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7EC7085B25F6626300013F38 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7ED04E3625D96F3200686D48 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
@@ -317,7 +320,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC7084325F660AF00013F38 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +651,7 @@
 				7E60022225EA8C0600231C40 /* QuizForTest.swift */,
 				7E9B2B6925E41F1300481D71 /* Quiz.swift */,
 				7E4AE9FF25ED9F3300FDFDC6 /* Score.swift */,
+				7E25672E25FBBE5C005B71A8 /* Weekday.swift */,
 				7E3E43A425CB44CE00B2F5AC /* HiraganaRecognizer.mlmodel */,
 				7E3E43AA25CB44CF00B2F5AC /* KatakanaRecognizer.mlmodel */,
 				7E049CAD25DECD0300C9324D /* HiraganaClassifier.mlmodel */,
@@ -672,6 +675,7 @@
 				7E3F061E25F7E15D000FE9EE /* kanaData.json */,
 				7E3F061925F7E12B000FE9EE /* kanaForListData.json */,
 				7E3F062825F7E17F000FE9EE /* lessonData.json */,
+				7E25672925FBBDDD005B71A8 /* weekdays.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -786,7 +790,6 @@
 		7EC7084125F660AF00013F38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EC7084225F660AF00013F38 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E25672725FBBDDD005B71A8 /* weekdays.json in Resources */,
 				7E3E43AD25CB44CF00B2F5AC /* Correct Beep.mp3 in Resources */,
 				7E3E425925CB2C7C00B2F5AC /* Preview Assets.xcassets in Resources */,
 				7E3E425625CB2C7C00B2F5AC /* Assets.xcassets in Resources */,
@@ -1045,6 +1049,7 @@
 				7EF5EAAD25F9548D003D498B /* TitleQuizKeyboard.swift in Sources */,
 				7E3E42E225CB343300B2F5AC /* ContentView.swift in Sources */,
 				7EBF6DD825E7FEEB0077F4D2 /* DrawingPadQuiz.swift in Sources */,
+				7E25672F25FBBE5C005B71A8 /* Weekday.swift in Sources */,
 				7EF5EA6B25F933BA003D498B /* SheetHeaderDraw.swift in Sources */,
 				7EED308325F92D7B00B2C5F1 /* HomeButtonIntroduction.swift in Sources */,
 				7EF5EA9D25F94A5F003D498B /* TitleTestWriting.swift in Sources */,
@@ -1113,6 +1118,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7E25672925FBBDDD005B71A8 /* weekdays.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E25672825FBBDDD005B71A8 /* en */,
+				7E25672D25FBBDE1005B71A8 /* fr */,
+			);
+			name = weekdays.json;
+			sourceTree = "<group>";
+		};
 		7E3F062825F7E17F000FE9EE /* lessonData.json */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1257,6 +1271,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KanaTorii/KanaTorii.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"KanaTorii/Preview Content\"";
 				DEVELOPMENT_TEAM = X56656LMAV;
 				ENABLE_PREVIEWS = YES;
@@ -1281,6 +1296,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KanaTorii/KanaTorii.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"KanaTorii/Preview Content\"";
 				DEVELOPMENT_TEAM = X56656LMAV;
 				ENABLE_PREVIEWS = YES;

@@ -13,12 +13,11 @@ struct QuizMCQRomajiToKana: View {
     @State var showActionSheet: Bool = false
     @Binding var showScore: Bool
     let itemsCellIphone = GridItem(.fixed(90))
-    let itemsCellIpad = GridItem(.fixed(200))
+    let itemsCellIpad = GridItem(.fixed(160))
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             GeometryReader(content: { geometry in
-                let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
                     QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
@@ -28,11 +27,11 @@ struct QuizMCQRomajiToKana: View {
                         VStack {
                             TitleQuizMCQ(heightDevice: heightDevice)
                             Text(quiz.currentName)
-                                .font(.system(size: heightDevice/9))
-                                .padding(heightDevice/20)
+                                .font(.system(size: heightDevice/10))
+                                .padding(heightDevice/35)
                             Spacer()
-                            SuggestionsQuiz(quiz: quiz, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 40, width: 150, height: 150, textSize: widthDevice/20)
-                                .padding(.bottom, heightDevice/10)
+                            SuggestionsQuiz(quiz: quiz, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 30, width: 125, height: 125, textSize: heightDevice/24)
+                                .padding(.bottom, heightDevice/8)
                         }
                         Spacer()
                     }

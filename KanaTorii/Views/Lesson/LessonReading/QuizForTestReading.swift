@@ -12,6 +12,7 @@ struct QuizForTestReading: View {
     @ObservedObject var currentLesson: Lesson
     @ObservedObject var quizForTest: QuizForTest
     @State var showActionSheet: Bool = false
+    @State var showMessage: Bool = false
     private var label: String {
         if quizForTest.translationDirection == .toKana {
             return quizForTest.currentRomaji
@@ -20,12 +21,11 @@ struct QuizForTestReading: View {
         }
     }
     let itemsCellIphone = GridItem(.fixed(120))
-    let itemsCellIpad = GridItem(.fixed(220))
+    let itemsCellIpad = GridItem(.fixed(200))
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             GeometryReader(content: { geometry in
-                let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
                     LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
@@ -35,11 +35,11 @@ struct QuizForTestReading: View {
                         VStack {
                             TitleTestReading(heightDevice: heightDevice)
                             Text(label)
-                                .font(.system(size: heightDevice/5))
-                                .padding(heightDevice/20)
+                                .font(.system(size: heightDevice/7))
+                                .padding(heightDevice/35)
                             Spacer()
-                            SuggestionsTestQuiz(quizForTest: quizForTest, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 40, width: 200, height: 200, textSize: widthDevice/20)
-                                .padding(.bottom, heightDevice/10)
+                            SuggestionsTestQuiz(quizForTest: quizForTest, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 35, width: 175, height: 175, textSize: heightDevice/24)
+                                .padding(.bottom, heightDevice/8)
                         }
                         Spacer()
                     }

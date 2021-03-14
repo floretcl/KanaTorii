@@ -49,12 +49,13 @@ struct LessonMemoWriting: View {
                                         }
                                     },
                                     content: {
-                                    TestWriting(
-                                        currentLesson: currentLesson,
-                                        test: TestDrawing(
-                                            type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
-                                            kana: currentLesson.currentKana,
-                                            romaji: currentLesson.currentRomaji))
+                                        TestWriting(
+                                            currentLesson: currentLesson,
+                                            test: TestDrawing(
+                                                type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
+                                                kana: currentLesson.currentKana,
+                                                romaji: currentLesson.currentRomaji),
+                                                showQuiz: $showQuiz)
                                 })
                                 if currentLesson.currentPart == .quiz {
                                     ContinueButtonQuiz(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
@@ -133,7 +134,8 @@ struct LessonMemoWriting: View {
                                         test: TestDrawing(
                                             type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
                                             kana: currentLesson.currentKana,
-                                            romaji: currentLesson.currentRomaji))
+                                            romaji: currentLesson.currentRomaji),
+                                            showQuiz: $showQuiz)
                                 })
                                 if currentLesson.currentPart == .quiz {
                                     ContinueButtonQuiz(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)

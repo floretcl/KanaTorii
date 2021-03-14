@@ -15,8 +15,8 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
             let newKana = StatKana(context: viewContext)
-            newKana.kana = "あ"
-            newKana.romaji = "a"
+            newKana.kana = "ぎゃ"
+            newKana.romaji = "gya"
             newKana.nbCorrectAnswers = 10
             newKana.nbTotalAnswers = 30
             let newlesson = StatLesson(context: viewContext)

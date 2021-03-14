@@ -12,6 +12,7 @@ struct TestWriting: View {
     @Environment(\.presentationMode) var presentation
     @ObservedObject var currentLesson: Lesson
     @ObservedObject var test: TestDrawing
+    @Binding var showQuiz: Bool
     @State var drawing: Drawing = Drawing()
     @State var drawings: [Drawing] = [Drawing]()
     @State var showGuide: Bool = true
@@ -45,7 +46,7 @@ struct TestWriting: View {
                         VStack {
                             TitleTestWriting(test: test, kanaType: kanaType, heightDevice: heightDevice)
                             Spacer()
-                            DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
+                            DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: 15, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
                             DrawingButtonsTest(drawings: $drawings, showGuide: $showGuide, test: test, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
@@ -60,11 +61,15 @@ struct TestWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "), message: test.correctDrawing ? Text("Right answer") : Text("Wrong answer"),
+                Alert(title: Text("Your result: "),
+                      message: test.correctDrawing ? Text("Right answer") : Text("Wrong answer"),
                       dismissButton: .default(Text("Continue"), action: {
-                    currentLesson.newPart()
-                    drawings = [Drawing]()
-                    presentation.wrappedValue.dismiss()
+                        currentLesson.newPart()
+                        drawings = [Drawing]()
+                        if currentLesson.currentPart == .quiz {
+                            showQuiz.toggle()
+                        }
+                        presentation.wrappedValue.dismiss()
                     })
                 )
             })
@@ -79,7 +84,7 @@ struct TestWriting: View {
                         Spacer()
                         VStack {
                             TitleTestWriting(test: test, kanaType: kanaType, heightDevice: heightDevice)
-                            DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/35, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
+                            DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/40, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
                             DrawingButtonsTest(drawings: $drawings, showGuide: $showGuide, test: test, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
@@ -100,6 +105,9 @@ struct TestWriting: View {
                         .default(Text("Continue"), action: {
                             currentLesson.newPart()
                             drawings = [Drawing]()
+                            if currentLesson.currentPart == .quiz {
+                                showQuiz.toggle()
+                            }
                             presentation.wrappedValue.dismiss()
                         })
                     ]
@@ -118,7 +126,8 @@ struct TestWriting_Previews: PreviewProvider {
                     mode: .reading,
                     kanaType: "hiragana", kanas: ["あ","い","う","え","お"],
                     romajis: ["a","i","u","e","o"]),
-                test: TestDrawing(type: .hiragana, kana: "あ", romaji: "a")
+                test: TestDrawing(type: .hiragana, kana: "あ", romaji: "a"),
+                showQuiz: .constant(false)
             )
         }
     }

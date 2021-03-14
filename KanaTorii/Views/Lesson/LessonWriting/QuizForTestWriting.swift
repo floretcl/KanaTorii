@@ -37,7 +37,7 @@ struct QuizForTestWriting: View {
                         VStack {
                             TitleQuizForTestWriting(quizForTest: quizForTest, kanaType: kanaType, heightDevice: heightDevice)
                             Spacer()
-                            DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60)
+                            DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: 15)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
                             DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/35, width: widthDevice/6, height: heightDevice/22)
@@ -75,7 +75,7 @@ struct QuizForTestWriting: View {
                         Spacer()
                         VStack {
                             TitleQuizForTestWriting(quizForTest: quizForTest, kanaType: kanaType, heightDevice: heightDevice)
-                            DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/35)
+                            DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/40)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
                             DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)

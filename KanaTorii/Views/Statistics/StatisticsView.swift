@@ -19,13 +19,15 @@ struct StatisticsView: View {
             List {
                 ForEach(statKana) { kana in
                     HStack {
-                        Text("\(kana.kana!)")
-                            .font(.title)
-                        Text("\(kana.romaji!)")
+                        VStack {
+                            Text("\(kana.kana!)")
+                                .font(.title)
+                            Text("\(kana.romaji!)")
+                        }.frame(width: 100, alignment: .center)
                         VStack {
                             ProgressView(value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers), total: 100.0) {
                                 HStack {
-                                    Text("Correct(s) answer(s): ")
+                                    Text("Corrects answers: ")
                                     Text("\(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers))) %")
                                 }
                             }
@@ -44,14 +46,16 @@ struct StatisticsView: View {
             List {
                 ForEach(statKana) { kana in
                     HStack {
-                        Text("\(kana.kana!)")
-                            .font(.title)
-                        Text("\(kana.romaji!)")
-                            .font(.title2)
+                        VStack {
+                            Text("\(kana.kana!)")
+                                .font(.title)
+                            Text("\(kana.romaji!)")
+                                .font(.title2)
+                        }.frame(width: 70, alignment: .center)
                         VStack {
                             ProgressView(value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers), total: 100.0) {
                                 HStack {
-                                    Text("Correct(s) answer(s): ")
+                                    Text("Corrects answers: ")
                                     Text("\(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers))) %")
                                 }
                             }

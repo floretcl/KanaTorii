@@ -13,7 +13,11 @@ struct ScoreView: View {
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
+            let heightDevice = geometry.size.height
             VStack {
+                Image(systemName: "chevron.down")
+                    .font(.system(size: 50))
+                    .padding(.top, heightDevice/25)
                 Spacer()
                 HStack {
                     Spacer()
@@ -32,7 +36,6 @@ struct ScoreView: View {
                     }
                     Spacer()
                 }
-                
                 Spacer()
             }.background(
                 Image("Score")

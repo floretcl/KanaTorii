@@ -12,6 +12,7 @@ final class ModelData: ObservableObject {
     var kanasForList: [KanaForList] = load("kanaForListData.json")
     @Published var kanas: [Kana] = load("kanaData.json")
     var lessons: [LessonForList] = load("lessonData.json")
+    var weekdays: [Weekday] = load("weekdays.json")
     
     var gojuons: [Kana] {
         kanas.filter { $0.isGojuon }

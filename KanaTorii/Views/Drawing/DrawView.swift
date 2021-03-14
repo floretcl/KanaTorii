@@ -27,7 +27,7 @@ struct DrawView: View {
                     TitleDraw(kanaType: kanaType, kana: kana, sizeText: heightDevice/30)
                         .padding(.top, heightDevice/20)
                     Spacer()
-                    DrawingPad(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/60, kana: kana, kanaType: kanaType, showGuide: showGuide)
+                    DrawingPad(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: 15, kana: kana, kanaType: kanaType, showGuide: showGuide)
                         .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                         .padding(.all, heightDevice/40)
                     DrawingButtons(drawings: $drawings, showGuide: $showGuide, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
@@ -45,7 +45,7 @@ struct DrawView: View {
                     TitleDraw(kanaType: kanaType, kana: kana, sizeText: heightDevice/30)
                         .padding(.top, heightDevice/20)
                     Spacer()
-                    DrawingPad(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/35, kana: kana, kanaType: kanaType, showGuide: showGuide)
+                    DrawingPad(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/40, kana: kana, kanaType: kanaType, showGuide: showGuide)
                         .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                         .padding(.all, heightDevice/40)
                     DrawingButtons(drawings: $drawings, showGuide: $showGuide, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
@@ -66,7 +66,6 @@ struct DrawView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             DrawView(kana: modelData.kanas[100], kanaType: "hiragana")
-                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
         }
     }
 }

@@ -8,23 +8,26 @@
 import SwiftUI
 
 struct ReminderView: View {
+    @EnvironmentObject var modelData: ModelData
     @ObservedObject var localNotification = LocalNotification()
     @State var showFootnote: Bool = false
     @State var date: Date = Date()
     @State var calendar = Calendar.current
     @State var selectedWeekDay: Int = 0
-    var weekday = ["All","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    var weekdays : [Weekday] {
+        return modelData.weekdays
+    }
     
     var body: some View {
         
         NavigationView {
             Form(content: {
                 Picker("Weekday", selection: $selectedWeekDay) {
-                    ForEach(0..<weekday.count) {
-                        Text(self.weekday[$0])
+                    ForEach(0..<weekdays.count) {
+                        Text(self.weekdays[$0].name)
                     }
                 }
-                DatePicker("Hour: ", selection: $date, displayedComponents: [.hourAndMinute,])
+                DatePicker("Hour:", selection: $date, displayedComponents: [.hourAndMinute,])
                 Button(action: {
                     hapticFeedback(style: .soft)
                     let hour = calendar.component(.hour, from: date)
@@ -41,16 +44,12 @@ struct ReminderView: View {
             })
             .navigationTitle("Reminder")
         }
-            
-        
-        
-        
-        //self.localNotification.sendNotification(title: "Kana Torii", subtitle: nil, body: "it's time to revise your kanas !!　がんばてください!　(Do your best!)", weekday: selectedWeekDay, hour: selectedHour, minute: selectedMinute)
     }
 }
 
 struct ReminderView_Previews: PreviewProvider {
     static var previews: some View {
         ReminderView()
+            .environmentObject(ModelData())
     }
 }

@@ -31,6 +31,13 @@ struct SettingsView: View {
                 Form {
                     Section(header: Text("CHARACTER CHARTS")) {
                         Toggle("Statistics colors in tables", isOn: $userSettings.colorsInTables)
+                        HStack {
+                            Text("Primary").foregroundColor(.primary)
+                            Text("Red").foregroundColor(.red)
+                            Text("Orange").foregroundColor(.orange)
+                            Text("Yellow").foregroundColor(.yellow)
+                            Text("Green").foregroundColor(.green)
+                        }
                     }
                     Section(header: Text("QUICK QUIZ")) {
                         VStack {
@@ -113,7 +120,6 @@ struct SettingsView: View {
                             Text("Yellow").foregroundColor(.yellow)
                             Text("Green").foregroundColor(.green)
                         }
-                        
                     }
                     Section(header: Text("QUICK QUIZ")) {
                         VStack {

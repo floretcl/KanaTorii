@@ -51,7 +51,7 @@ struct DetailPage: View {
                         })
                     StatisticsSection(
                         nbCorrectAnswers: self.nbCorrectAnswers,
-                        nbTotalAnswers: self.nbTotalAnswers,
+                        nbTotalAnswers: self.nbTotalAnswers, widthDevice: widthDevice,
                         heightDevice: heightDevice,
                         sizeText: heightDevice/40)
                         .padding(.all, heightDevice/80)
@@ -84,7 +84,7 @@ struct DetailPage: View {
                         })
                     StatisticsSection(
                         nbCorrectAnswers: self.nbCorrectAnswers,
-                        nbTotalAnswers: self.nbTotalAnswers,
+                        nbTotalAnswers: self.nbTotalAnswers, widthDevice: widthDevice,
                         heightDevice: heightDevice,
                         sizeText: heightDevice/34)
                         .padding(.all, heightDevice/80)
@@ -125,6 +125,5 @@ struct DetailPage_Previews: PreviewProvider {
     static let modelData = ModelData()
     static var previews: some View {
         DetailPage(kana: modelData.kanas[0], kanaType: .hiragana)
-            .previewDevice("iPhone 11")
     }
 }

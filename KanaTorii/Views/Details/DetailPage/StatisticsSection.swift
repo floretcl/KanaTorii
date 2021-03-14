@@ -10,6 +10,7 @@ import SwiftUI
 struct StatisticsSection: View {
     var nbCorrectAnswers: Float
     var nbTotalAnswers: Float
+    var widthDevice: CGFloat
     var heightDevice: CGFloat
     var sizeText: CGFloat
     private var percCorrectAnswers: Float {
@@ -37,17 +38,17 @@ struct StatisticsSection: View {
             ProgressView(
                 value: percCorrectAnswers,
                 total: 100.0) {
-                HStack {
-                    Text("Correct(s) answer(s): ").font(.subheadline)
-                    Text("\(Int(percCorrectAnswers)) %")
+                    HStack {
+                        Text("Corrects answers: ").font(.subheadline)
+                        Text("\(Int(percCorrectAnswers)) %")
+                    }
                 }
-            }
                 .font(.system(size: sizeText))
                 .progressViewStyle(LinearProgressViewStyle(tint: progressViewColor))
             Text("\(Int(nbCorrectAnswers)) Corrects / \(Int(nbTotalAnswers)) Answers")
                 .font(.system(size: sizeText))
         }
-        .padding(.horizontal)
+        .padding(.horizontal, widthDevice/40)
         .padding(.vertical, 5)
         .background(Color(UIColor.tertiarySystemBackground))
         .cornerRadius(7)
@@ -57,7 +58,7 @@ struct StatisticsSection: View {
 
 struct StatisticsSection_Previews: PreviewProvider {
     static var previews: some View {
-        StatisticsSection(nbCorrectAnswers: 10.0, nbTotalAnswers: 50.0, heightDevice: 800, sizeText: 20)
+        StatisticsSection(nbCorrectAnswers: 10.0, nbTotalAnswers: 50.0, widthDevice: 350, heightDevice: 800, sizeText: 20)
             .previewLayout(.sizeThatFits)
     }
 }
