@@ -9,25 +9,26 @@ import SwiftUI
 
 struct YoonGrid: View {
     @EnvironmentObject var modelData: ModelData
-    var widthDevice: CGFloat
-    let itemsYoonCell = GridItem(.flexible(minimum: 30, maximum: 210))
-    let limitYoon: Int = 113
-    let limitDakuonHandakuon: Int = 80
-    var type: Kana.KanaType
     var kanasForList: [KanaForList] {
         return modelData.kanasForList
     }
+    
+    let limitDakuonHandakuon: Int = 80
+    let limitYoon: Int = 113
+    let itemsCell = GridItem(.flexible(minimum: 30, maximum: 210))
+    var kanaType: Kana.KanaType
+    var widthDevice: CGFloat
     
     var body: some View {
         HStack {
             Spacer()
             LazyVGrid(
-                columns: [itemsYoonCell, itemsYoonCell, itemsYoonCell],
+                columns: [itemsCell, itemsCell, itemsCell],
                 alignment: .center,
                 spacing: widthDevice/20,
                 content: {
                     ForEach(limitDakuonHandakuon..<limitYoon) { index in
-                        KanaCell(kanaType: self.type, kanaForList: kanasForList[index], widthDevice: widthDevice)
+                        KanaCell(kanaForList: kanasForList[index], kanaType: self.kanaType, widthDevice: widthDevice)
                     }
             })
             .padding(.top, 20)
@@ -39,7 +40,7 @@ struct YoonGrid: View {
 
 struct YoonGrid_Previews: PreviewProvider {
     static var previews: some View {
-        YoonGrid(widthDevice: 400, type: .hiragana)
+        YoonGrid(kanaType: .hiragana, widthDevice: 400)
             .environmentObject(ModelData())
     }
 }

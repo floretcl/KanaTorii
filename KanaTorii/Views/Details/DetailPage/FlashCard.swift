@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct FlashCard: View {
-    var kanaType: String
+    var type: String
     var label: String
     var otherLabel: String
     var romaji: String
-    var heightDevice: CGFloat
-    private var otherKanaType: String {
-        if kanaType == "hiragana" {
+    private var otherType: String {
+        if type == "hiragana" {
             return "katakana"
         } else {
             return "hiragana"
         }
     }
+    var heightDevice: CGFloat
     
     var body: some View {
         HStack {
             Spacer()
             VStack {
-                Text("\(kanaType.capitalized)")
+                Text("\(type.capitalized)")
                     .font(.system(size: heightDevice/30))
                 Text("\(label)")
                     .font(.custom("YuMincho", size: heightDevice/10))
@@ -33,7 +33,7 @@ struct FlashCard: View {
                 Group {
                     HStack {
                         Group {
-                            Text("\(otherKanaType) :")
+                            Text("\(otherType) :")
                             Text("\(otherLabel)")
                         }.font(.system(size: heightDevice/30))
                     }
@@ -59,6 +59,6 @@ struct FlashCard: View {
 
 struct FlashCard_Previews: PreviewProvider {
     static var previews: some View {
-        FlashCard( kanaType: "hiragana", label: "あ", otherLabel: "ア", romaji: "a", heightDevice: 800)
+        FlashCard(type: "hiragana", label: "あ", otherLabel: "ア", romaji: "a", heightDevice: 800)
     }
 }

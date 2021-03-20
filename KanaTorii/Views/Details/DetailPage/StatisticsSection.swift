@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct StatisticsSection: View {
-    var nbCorrectAnswers: Float
-    var nbTotalAnswers: Float
-    var widthDevice: CGFloat
-    var heightDevice: CGFloat
-    var sizeText: CGFloat
+    // Core Data
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
+        animation: .default) var statKana: FetchedResults<StatKana>
+    
+    var kanaLabel: String
+    private var nbCorrectAnswers: Float {
+        for stat in statKana {
+            if self.kanaLabel == stat.kana {
+                return stat.nbCorrectAnswers
+            }
+        }
+        return 0
+    }
+    private var nbTotalAnswers: Float {
+        for stat in statKana {
+            if self.kanaLabel == stat.kana {
+                return stat.nbTotalAnswers
+            }
+        }
+        return 0
+    }
     private var percCorrectAnswers: Float {
-        return (nbCorrectAnswers / nbTotalAnswers) * 100.0
+        if nbCorrectAnswers == 0 && nbTotalAnswers == 0 {
+            return 0
+        } else {
+            return (nbCorrectAnswers / nbTotalAnswers) * 100.0
+        }
     }
     private var progressViewColor: Color {
         switch percCorrectAnswers {
@@ -32,6 +54,9 @@ struct StatisticsSection: View {
             return .gray
         }
     }
+    var sizeText: CGFloat
+    var widthDevice: CGFloat
+    var heightDevice: CGFloat
     
     var body: some View {
         VStack {
@@ -58,7 +83,7 @@ struct StatisticsSection: View {
 
 struct StatisticsSection_Previews: PreviewProvider {
     static var previews: some View {
-        StatisticsSection(nbCorrectAnswers: 10.0, nbTotalAnswers: 50.0, widthDevice: 350, heightDevice: 800, sizeText: 20)
+        StatisticsSection(kanaLabel: "あ", sizeText: 20, widthDevice: 350, heightDevice: 800)
             .previewLayout(.sizeThatFits)
     }
 }

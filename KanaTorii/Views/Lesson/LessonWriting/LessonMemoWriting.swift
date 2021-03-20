@@ -77,6 +77,7 @@ struct LessonMemoWriting: View {
                                                 type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
                                                 kanas: currentLesson.kanas,
                                                 romajis: currentLesson.romajis, draw: true))
+                                            .environment(\.managedObjectContext, self.viewContext)
                                     })
                                 } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
@@ -157,6 +158,7 @@ struct LessonMemoWriting: View {
                                                 type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
                                                 kanas: currentLesson.kanas,
                                                 romajis: currentLesson.romajis, draw: true))
+                                            .environment(\.managedObjectContext, self.viewContext)
                                     })
                                 } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct QuizForTestReading: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     @ObservedObject var currentLesson: Lesson
     @ObservedObject var quizForTest: QuizForTest
@@ -39,6 +40,7 @@ struct QuizForTestReading: View {
                                 .padding(heightDevice/35)
                             Spacer()
                             SuggestionsTestQuiz(quizForTest: quizForTest, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 35, width: 175, height: 175, textSize: heightDevice/24)
+                                .environment(\.managedObjectContext, self.viewContext)
                                 .padding(.bottom, heightDevice/8)
                         }
                         Spacer()
@@ -74,6 +76,7 @@ struct QuizForTestReading: View {
                                 .font(.system(size: heightDevice/5))
                             Spacer()
                             SuggestionsTestQuiz(quizForTest: quizForTest, showActionSheet: $showActionSheet, items: itemsCellIphone, spacing: 30, width: 100, height: 100, textSize: widthDevice/14)
+                                .environment(\.managedObjectContext, self.viewContext)
                                 .padding(.bottom, heightDevice/10)
                         }
                         Spacer()

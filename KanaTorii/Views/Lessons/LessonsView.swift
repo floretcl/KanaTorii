@@ -23,7 +23,7 @@ struct LessonsView: View {
                         LessonRow(lesson: lesson)
                     })
             }
-            .navigationTitle("Lessons")
+            .navigationBarTitle("Lessons")
             .navigationBarItems(trailing: Button(action: {
                     hapticFeedback(style: .soft)
                     showReminder.toggle()
@@ -37,17 +37,19 @@ struct LessonsView: View {
                     ReminderView()
                 })
             )
-            VStack {
-                Image("Ema")
-                    .resizable()
-                    .frame(width: 300, height: 300, alignment: .center)
-                    .clipShape(Circle())
-                Text("Start a lesson right now by clicking on 'lessons' at the top left")
-                    .font(.title)
-                    .foregroundColor(.gray)
-                    .padding(.bottom, 100)
+            if UIDevice.current.localizedModel == "iPad" {
+                VStack {
+                    Image("Ema")
+                        .resizable()
+                        .frame(width: 300, height: 300, alignment: .center)
+                        .clipShape(Circle())
+                    Text("Start a lesson right now by clicking on 'lessons' at the top left")
+                        .font(.title)
+                        .foregroundColor(.gray)
+                        .padding(.bottom, 100)
+                }
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

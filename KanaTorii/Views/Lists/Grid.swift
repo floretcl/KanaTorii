@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Grid: View {
-    var type: Kana.KanaType
+    var kanaType: Kana.KanaType
     var heightDevice: CGFloat
     var widthDevice: CGFloat
     
@@ -16,13 +16,13 @@ struct Grid: View {
         ScrollView(.vertical, showsIndicators: true, content: {
             VStack {
                 Section(header: CustomSection(label: "Gojuon").padding(.bottom, heightDevice/40)) {
-                    GojuonGrid(widthDevice: widthDevice, type: type)
+                    GojuonGrid(kanaType: kanaType, widthDevice: widthDevice)
                 }
                 Section(header: CustomSection(label: "Dakuon & Handakuon").padding(.bottom, heightDevice/40)) {
-                    DakuonHandakuonGrid(widthDevice: widthDevice, type: type)
+                    DakuonHandakuonGrid(kanaType: kanaType, widthDevice: widthDevice)
                 }
                 Section(header: CustomSection(label: "Yoon").padding(.bottom, heightDevice/40)) {
-                    YoonGrid(widthDevice: widthDevice, type: type)
+                    YoonGrid(kanaType: kanaType, widthDevice: widthDevice)
                 }
             }
         })
@@ -31,7 +31,7 @@ struct Grid: View {
 
 struct Grid_Previews: PreviewProvider {
     static var previews: some View {
-        Grid(type: .hiragana, heightDevice: 800, widthDevice: 350)
+        Grid(kanaType: .hiragana, heightDevice: 800, widthDevice: 350)
             .environmentObject(ModelData())
     }
 }

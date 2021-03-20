@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct DetailButtons: View {
-    @Binding var showDrawingView: Bool
     var kana: Kana
     var kanaLabel: String
     var sizeText: CGFloat
+    @Binding var showDrawingView: Bool
     
     var body: some View {
         HStack {
@@ -48,7 +48,7 @@ struct DetailButtons: View {
 struct DetailButtons_Previews: PreviewProvider {
     static let modelData = ModelData()
     static var previews: some View {
-        DetailButtons(showDrawingView: .constant(false), kana: modelData.kanas[0], kanaLabel: "", sizeText: 20)
+        DetailButtons(kana: modelData.kanas[0], kanaLabel: "", sizeText: 20, showDrawingView: .constant(false))
             .previewLayout(.sizeThatFits)
     }
 }

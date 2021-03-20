@@ -110,24 +110,25 @@ class TestDrawing: ObservableObject {
     }
     func classLabel(forImage: UIImage) -> String? {
         var prediction: String
-        if let cGImage = forImage.cgImage {
-            if let pixelbuffer = ImageProcessor.pixelBuffer(forImage: cGImage) {
-                if type == .hiragana {
-                    do {
-                        try prediction = hiraganaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
-                    } catch {
-                        fatalError("Unexpected runtime error: \(error)")
-                    }
-                } else {
-                    do {
-                        try prediction = katakanaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
-                    } catch {
-                        fatalError("Unexpected runtime error: \(error)")
-                    }
-                }
-                return prediction
+        guard let cGImage = forImage.cgImage else {
+            return nil
+        }
+        guard let pixelbuffer = ImageProcessor.pixelBuffer(forImage: cGImage) else {
+            return nil
+        }
+        if type == .hiragana {
+            do {
+                try prediction = hiraganaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
+            } catch {
+                fatalError("Unexpected runtime error: \(error)")
+            }
+        } else {
+            do {
+                try prediction = katakanaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
+            } catch {
+                fatalError("Unexpected runtime error: \(error)")
             }
         }
-        return nil
+        return prediction
     }
 }

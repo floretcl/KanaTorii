@@ -88,6 +88,7 @@ struct StatisticsView: View {
     private func getPercentage(nbCorrectAnswers: Float, nbTotalAnswers: Float) -> Float {
         return (nbCorrectAnswers / nbTotalAnswers) * 100.0
     }
+    
     private func getProgressViewColor(nbCorrectAnswers: Float, nbTotalAnswers: Float) -> Color {
         switch getPercentage(nbCorrectAnswers: nbCorrectAnswers, nbTotalAnswers: nbTotalAnswers) {
         case 0..<20:

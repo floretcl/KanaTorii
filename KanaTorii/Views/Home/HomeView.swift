@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    // Core Data
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @State var showShare = false
     @State var showSettings = false
     @State var showIntroduction = false
@@ -37,11 +40,12 @@ struct HomeView: View {
                                    content: {
                                     ActivityView(
                                         activityItems: [NSURL(string: "https://apps.apple.com/us/app/kana-torii/id1542369272")!] as [Any],
-                                    applicationActivities: nil) }),
+                                    applicationActivities: nil)
+                                   }),
                     trailing:
                         ButtonSettings(showSettings: $showSettings)
                             .fullScreenCover(isPresented: $showSettings, content: {
-                                SettingsView()
+                                SettingsView().environment(\.managedObjectContext, self.viewContext)
                             })
                 )
             }

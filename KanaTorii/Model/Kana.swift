@@ -49,7 +49,7 @@ struct Kana: Hashable, Codable, Identifiable {
             }
         }
     }
-    func getIdKana(name: String) -> Int {
+    static func getIdKana(name: String) -> Int {
         let modelData = ModelData()
         var kanas: [Kana] {
             return modelData.kanas

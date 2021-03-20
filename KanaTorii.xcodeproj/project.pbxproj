@@ -119,6 +119,7 @@
 		7E89855325E16A2000C4900B /* ContinueButtonTestDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89855225E16A2000C4900B /* ContinueButtonTestDrawing.swift */; };
 		7E8BAB0825F3FCC300205949 /* QuizsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8BAB0725F3FCC300205949 /* QuizsView.swift */; };
 		7E978B1D25D968C7007B5A04 /* DrawingNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E978B1C25D968C7007B5A04 /* DrawingNavigationButtons.swift */; };
+		7E9A89A12605298A00DE8573 /* SettingsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9A89A02605298A00DE8573 /* SettingsForm.swift */; };
 		7E9B2B6A25E41F1300481D71 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B2B6925E41F1300481D71 /* Quiz.swift */; };
 		7EA5EC3125D9A78F00A1FCF4 /* ContinueButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5EC3025D9A78F00A1FCF4 /* ContinueButtonTest.swift */; };
 		7EA5EC3F25D9A9B500A1FCF4 /* ContinueButtonQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5EC3E25D9A9B500A1FCF4 /* ContinueButtonQuiz.swift */; };
@@ -286,6 +287,7 @@
 		7E89855225E16A2000C4900B /* ContinueButtonTestDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTestDrawing.swift; sourceTree = "<group>"; };
 		7E8BAB0725F3FCC300205949 /* QuizsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizsView.swift; sourceTree = "<group>"; };
 		7E978B1C25D968C7007B5A04 /* DrawingNavigationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingNavigationButtons.swift; sourceTree = "<group>"; };
+		7E9A89A02605298A00DE8573 /* SettingsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsForm.swift; sourceTree = "<group>"; };
 		7E9B2B6925E41F1300481D71 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		7EA5EC3025D9A78F00A1FCF4 /* ContinueButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTest.swift; sourceTree = "<group>"; };
 		7EA5EC3E25D9A9B500A1FCF4 /* ContinueButtonQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonQuiz.swift; sourceTree = "<group>"; };
@@ -359,6 +361,22 @@
 				7E3E434225CB369800B2F5AC /* DeleteButtonLabel.swift */,
 			);
 			path = DrawingButtons;
+			sourceTree = "<group>";
+		};
+		7E24850D26052C0300972718 /* IntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				7E3E430025CB353000B2F5AC /* SheetHeaderIntroduction.swift */,
+			);
+			path = IntroductionView;
+			sourceTree = "<group>";
+		};
+		7E24850E26052C1E00972718 /* AboutView */ = {
+			isa = PBXGroup;
+			children = (
+				7EF5EA5F25F92FDB003D498B /* SheetHeaderAbout.swift */,
+			);
+			path = AboutView;
 			sourceTree = "<group>";
 		};
 		7E27AB4A25D9757F00D10EC1 /* ChevronButton */ = {
@@ -482,11 +500,11 @@
 			isa = PBXGroup;
 			children = (
 				7E3E42FE25CB352F00B2F5AC /* IntroductionView.swift */,
+				7E24850D26052C0300972718 /* IntroductionView */,
 				7EBD6AD325F69251005FE0F4 /* AboutView.swift */,
+				7E24850E26052C1E00972718 /* AboutView */,
 				7E3E42FD25CB352F00B2F5AC /* SettingsView.swift */,
-				7E3E430025CB353000B2F5AC /* SheetHeaderIntroduction.swift */,
-				7EF5EA5F25F92FDB003D498B /* SheetHeaderAbout.swift */,
-				7EF5EA5725F92FBF003D498B /* SheetHeaderSettings.swift */,
+				7E9A899F2605297000DE8573 /* SettingsView */,
 			);
 			path = "Home Modals";
 			sourceTree = "<group>";
@@ -766,6 +784,15 @@
 				7E3E433D25CB369800B2F5AC /* InversedLabel.swift */,
 			);
 			path = DrawingNavigationButtons;
+			sourceTree = "<group>";
+		};
+		7E9A899F2605297000DE8573 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				7EF5EA5725F92FBF003D498B /* SheetHeaderSettings.swift */,
+				7E9A89A02605298A00DE8573 /* SettingsForm.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		7EAA3B9E25EACBC200A137E8 /* Score */ = {
@@ -1055,6 +1082,7 @@
 				7EF5EA9D25F94A5F003D498B /* TitleTestWriting.swift in Sources */,
 				7E410B7225D1B8C400CABEE1 /* TestDrawing.swift in Sources */,
 				7E60022325EA8C0600231C40 /* QuizForTest.swift in Sources */,
+				7E9A89A12605298A00DE8573 /* SettingsForm.swift in Sources */,
 				7E3E436525CB38AC00B2F5AC /* LessonInfoList.swift in Sources */,
 				7E3E434D25CB369900B2F5AC /* ShowGuideButtonLabel.swift in Sources */,
 				7E3E425B25CB2C7C00B2F5AC /* Persistence.swift in Sources */,
@@ -1271,7 +1299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KanaTorii/KanaTorii.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KanaTorii/Preview Content\"";
 				DEVELOPMENT_TEAM = X56656LMAV;
 				ENABLE_PREVIEWS = YES;
@@ -1281,7 +1309,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1296,7 +1324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KanaTorii/KanaTorii.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KanaTorii/Preview Content\"";
 				DEVELOPMENT_TEAM = X56656LMAV;
 				ENABLE_PREVIEWS = YES;
@@ -1306,7 +1334,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

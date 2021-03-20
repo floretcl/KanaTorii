@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ListsView: View {
     @State var pickerSelection: String = "hiragana"
-    @State var showSettings = false
     private var kanaType: Kana.KanaType {
         if pickerSelection == "hiragana" {
             return .hiragana
@@ -24,7 +23,7 @@ struct ListsView: View {
             let heightDevice = geometry.size.height
             NavigationView(content: {
                 VStack {
-                    Grid(type: kanaType, heightDevice: heightDevice, widthDevice: widthDevice)
+                    Grid(kanaType: kanaType, heightDevice: heightDevice, widthDevice: widthDevice)
                     HStack {
                         Spacer()
                         GreenSegmentedControl(pickerSelection: $pickerSelection)

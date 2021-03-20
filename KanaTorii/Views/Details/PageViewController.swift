@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PageViewController<Page: View>: UIViewControllerRepresentable {
-    @Binding var currentPage: Int
     var pages: [Page]
+    @Binding var currentPage: Int
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)

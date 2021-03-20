@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var tabViewSelectedItem: Int = 1
     
+    // For Segmented Control Colors
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("Green"))
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)

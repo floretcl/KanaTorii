@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ChevronButton: View {
     @EnvironmentObject var modelData: ModelData
-    @Binding var currentPage: Int
     var kanas: [Kana] {
         return modelData.kanas
     }
+    
+    @Binding var currentPage: Int
     
     var body: some View {
         GeometryReader(content: { geometry in

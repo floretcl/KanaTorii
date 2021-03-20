@@ -36,7 +36,7 @@ struct LessonRow: View {
                     .shadow(color: Color.black, radius: 2, x: 1.0, y: 2.0)
                     .foregroundColor(Color(UIColor.secondarySystemBackground))
             }
-            VStack(alignment: .leading, spacing: 0, content: {
+            VStack(alignment: .leading, spacing: nil, content: {
                 Text(lesson.title)
                     .font(.subheadline)
                 Text(lesson.type)

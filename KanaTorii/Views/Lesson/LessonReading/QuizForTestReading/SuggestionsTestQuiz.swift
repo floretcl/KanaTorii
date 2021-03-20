@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SuggestionsTestQuiz: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var quizForTest: QuizForTest
     @Binding var showActionSheet: Bool
     var items: GridItem
@@ -28,7 +29,7 @@ struct SuggestionsTestQuiz: View {
                         showActionSheet: $showActionSheet,
                         index: index,
                         width: width,
-                        height: height, textSize: textSize)
+                        height: height, textSize: textSize).environment(\.managedObjectContext, self.viewContext)
                 }
             }
         )

@@ -9,6 +9,7 @@ import SwiftUI
 import CoreML
 
 struct QuizForTestWriting: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     @ObservedObject var currentLesson: Lesson
     @ObservedObject var quizForTest: QuizForTest
@@ -43,6 +44,7 @@ struct QuizForTestWriting: View {
                             DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/35, width: widthDevice/6, height: heightDevice/22)
                             Spacer()
                             ContinueButtonTestQuizDrawing(quizForTest: quizForTest, showActionSheet: $showActionSheet, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
+                                .environment(\.managedObjectContext, self.viewContext)
                                 .padding(.bottom, heightDevice/20)
                         }
                         Spacer()
@@ -81,6 +83,7 @@ struct QuizForTestWriting: View {
                             DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
                             Spacer()
                             ContinueButtonTestQuizDrawing(quizForTest: quizForTest, showActionSheet: $showActionSheet, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
+                                .environment(\.managedObjectContext, self.viewContext)
                                 .padding(.bottom, heightDevice/20)
                         }
                         Spacer()

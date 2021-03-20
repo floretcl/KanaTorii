@@ -76,6 +76,7 @@ struct LessonMemoReading: View {
                                                     kanas: currentLesson.kanas,
                                                     romajis: currentLesson.romajis, draw: false)
                                             )
+                                            .environment(\.managedObjectContext, self.viewContext)
                                         })
                                 } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
@@ -156,6 +157,7 @@ struct LessonMemoReading: View {
                                                         kanas: currentLesson.kanas,
                                                         romajis: currentLesson.romajis, draw: false)
                                                 )
+                                                .environment(\.managedObjectContext, self.viewContext)
                                         })
                                 } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)

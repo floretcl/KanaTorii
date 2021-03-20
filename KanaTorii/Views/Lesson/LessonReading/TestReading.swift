@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TestReading: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     @ObservedObject var currentLesson: Lesson
     @ObservedObject var test: Test

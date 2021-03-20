@@ -18,6 +18,8 @@ class Test: ObservableObject {
     private var currentIndex: Int
     private var numberOfTestsPerformed: Int
     @Published var testDone: Bool
+    let nbSuggestionIf5possibility: Int = 4
+    let nbSuggestionIf3possibility: Int = 3
     enum KanaType {
         case hiragana
         case katakana
@@ -41,9 +43,9 @@ class Test: ObservableObject {
     }
     private var numberOfSuggestions: Int {
         if kanas.count == 5 {
-            return 4
+            return nbSuggestionIf5possibility
         } else {
-            return 3
+            return nbSuggestionIf3possibility
         }
     }
     var translationDirection: Direction {

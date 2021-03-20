@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct DetailsView<Page: View>: View {
-    @State var currentPage: Int
     var pages: [Page]
+    @State var currentPage: Int
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-            PageViewController(currentPage: $currentPage, pages: pages)
+            PageViewController(pages: pages, currentPage: $currentPage)
                 .edgesIgnoringSafeArea(.all)
-            PageControl(currentPage: $currentPage, numberOfPages: pages.count)
+            PageControl(numberOfPages: pages.count, currentPage: $currentPage)
             ChevronButton(currentPage: $currentPage)
         }
     }
@@ -24,10 +24,9 @@ struct DetailsView<Page: View>: View {
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsView(
-            currentPage: 4,
             pages: ModelData().kanas.map {
-                DetailPage(kana: $0, kanaType: .hiragana)
-            }
+                DetailPage(kana: $0, kanaType: .hiragana)},
+            currentPage: 4
         )
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContinueNavLink: View {
+    @Environment(\.managedObjectContext) private var viewContext
     var lesson: LessonForList
     var widthDevice: CGFloat
     var heightDevice: CGFloat
@@ -21,7 +22,8 @@ struct ContinueNavLink: View {
                             mode: .reading,
                             kanaType: lesson.kanaTypeString,
                             kanas: lesson.kanas,
-                            romajis: lesson.romaji)),
+                            romajis: lesson.romaji))
+                        .environment(\.managedObjectContext, self.viewContext),
                     label: {
                         Text("Continue")
                             .font(.system(size: heightDevice/40))
@@ -41,7 +43,8 @@ struct ContinueNavLink: View {
                             mode: .writing,
                             kanaType: lesson.kanaTypeString,
                             kanas: lesson.kanas,
-                            romajis: lesson.romaji)),
+                            romajis: lesson.romaji))
+                        .environment(\.managedObjectContext, self.viewContext),
                     label: {
                         Text("Continue")
                             .font(.system(size: heightDevice/40))
