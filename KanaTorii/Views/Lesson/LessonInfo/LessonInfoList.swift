@@ -10,6 +10,7 @@ import SwiftUI
 struct LessonInfoList: View {
     var lesson: LessonForList
     var heightDevice: CGFloat
+    
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             List {

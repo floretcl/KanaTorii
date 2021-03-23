@@ -10,6 +10,7 @@ import SwiftUI
 struct TitleQuizWriting: View {
     @ObservedObject var quiz: Quiz
     var kanaType: String
+    
     var heightDevice: CGFloat
     
     var body: some View {

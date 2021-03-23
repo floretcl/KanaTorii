@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct ContinueButtonQuizDrawing: View {
+    // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.kana, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
+    
     @Environment(\.colorScheme) var colorScheme
+    
     @ObservedObject var quiz: Quiz
-    @Binding var showActionSheet: Bool
+    
     @Binding var drawings: [Drawing]
     @Binding var image: UIImage
+    
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
+    
+    @Binding var showActionSheet: Bool
 
     var body: some View {
         Button(action: {
@@ -31,15 +37,10 @@ struct ContinueButtonQuizDrawing: View {
             addItemToCoreData(correctAnswer: quiz.correctAnswer)
             showActionSheet.toggle()
         }, label: {
-            Text("Continue")
-                .font(.system(size: textSize))
-                .padding(.horizontal, widthDevice/8)
-                .padding(.vertical, heightDevice/50)
-                .foregroundColor(.white)
-                .background(Color.orange)
-                .clipShape(Capsule())
+            ContinueText(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize)
         })
     }
+    
     func getPrediction(uiimage: UIImage) -> String {
         var imageView: UIImage?
         var prediction: String = ""
@@ -55,6 +56,7 @@ struct ContinueButtonQuizDrawing: View {
         }
         return prediction
     }
+    
     private func addItemToCoreData(correctAnswer: Bool) {
         var same: Bool = false
         for stat in statKana {
@@ -103,13 +105,13 @@ struct ContinueButtonQuizDrawing_Previews: PreviewProvider {
                 katakana: true,
                 kanaSection: .all,
                 nbQuestions: 5.0),
-            showActionSheet: .constant(false),
             drawings: .constant([Drawing]()),
             image: .constant(UIImage()),
             widthDevice: 320,
             heightDevice: 830,
-            textSize: 20
-        )
+            textSize: 20,
+            showActionSheet: .constant(false))
         .previewLayout(.sizeThatFits)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  QuizForTestWriting.swift
+//  MiniQuizWriting.swift
 //  KanaTorii
 //
 //  Created by Clément FLORET on 27/02/2021.
@@ -8,22 +8,27 @@
 import SwiftUI
 import CoreML
 
-struct QuizForTestWriting: View {
+struct MiniQuizWriting: View {
+    // Core Data
     @Environment(\.managedObjectContext) private var viewContext
+    
     @Environment(\.presentationMode) var presentation
+    
     @ObservedObject var currentLesson: Lesson
-    @ObservedObject var quizForTest: QuizForTest
-    @State var drawing: Drawing = Drawing()
-    @State var drawings: [Drawing] = [Drawing]()
-    @State var showActionSheet: Bool = false
-    @State var image: UIImage = UIImage()
+    @ObservedObject var miniQuiz: MiniQuiz
     private var kanaType: String {
-        if quizForTest.type == .hiragana {
+        if miniQuiz.type == .hiragana {
             return "hiragana"
         } else {
             return "katakana"
         }
     }
+    
+    @State var drawing: Drawing = Drawing()
+    @State var drawings: [Drawing] = [Drawing]()
+    @State var image: UIImage = UIImage()
+    
+    @State var showActionSheet: Bool = false
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -36,14 +41,14 @@ struct QuizForTestWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuizForTestWriting(quizForTest: quizForTest, kanaType: kanaType, heightDevice: heightDevice)
+                            TitleMiniQuizWriting(miniQuiz: miniQuiz, kanaType: kanaType, heightDevice: heightDevice)
                             Spacer()
                             DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: 15)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
                             DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/35, width: widthDevice/6, height: heightDevice/22)
                             Spacer()
-                            ContinueButtonTestQuizDrawing(quizForTest: quizForTest, showActionSheet: $showActionSheet, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
+                            ContinueButtonMiniQuizDrawing(miniQuiz: miniQuiz, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
                                 .environment(\.managedObjectContext, self.viewContext)
                                 .padding(.bottom, heightDevice/20)
                         }
@@ -55,11 +60,11 @@ struct QuizForTestWriting: View {
             })
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "),
-                      message: quizForTest.correctAnswer ? Text("Right answer: \(quizForTest.currentSolution.uppercased())") : Text("Wrong answer: \(quizForTest.currentSolution.uppercased())"),
+                      message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Wrong answer: \(miniQuiz.currentSolution.uppercased())"),
                       dismissButton: .default(Text("Continue"), action: {
                         drawings = [Drawing]()
-                        if quizForTest.state == .play {
-                            quizForTest.nextQuestion()
+                        if miniQuiz.state == .play {
+                            miniQuiz.nextQuestion()
                         } else {
                             presentation.wrappedValue.dismiss()
                         }
@@ -76,13 +81,13 @@ struct QuizForTestWriting: View {
                     HStack {
                         Spacer()
                         VStack {
-                            TitleQuizForTestWriting(quizForTest: quizForTest, kanaType: kanaType, heightDevice: heightDevice)
+                            TitleMiniQuizWriting(miniQuiz: miniQuiz, kanaType: kanaType, heightDevice: heightDevice)
                             DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/40)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
                             DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
                             Spacer()
-                            ContinueButtonTestQuizDrawing(quizForTest: quizForTest, showActionSheet: $showActionSheet, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
+                            ContinueButtonMiniQuizDrawing(miniQuiz: miniQuiz, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
                                 .environment(\.managedObjectContext, self.viewContext)
                                 .padding(.bottom, heightDevice/20)
                         }
@@ -94,12 +99,12 @@ struct QuizForTestWriting: View {
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
-                    title: quizForTest.correctAnswer ? Text("Right answer: \(quizForTest.currentSolution.uppercased())") : Text("Wrong answer: \(quizForTest.currentSolution.uppercased())"),
+                    title: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Wrong answer: \(miniQuiz.currentSolution.uppercased())"),
                     buttons: [
                         .default(Text("Continue"), action: {
                             drawings = [Drawing]()
-                            if quizForTest.state == .play {
-                                quizForTest.nextQuestion()
+                            if miniQuiz.state == .play {
+                                miniQuiz.nextQuestion()
                             } else {
                                 presentation.wrappedValue.dismiss()
                             }
@@ -111,19 +116,20 @@ struct QuizForTestWriting: View {
     }
 }
 
-struct QuizForTestWriting_Previews: PreviewProvider {
+struct MiniQuizWriting_Previews: PreviewProvider {
     static var previews: some View {
-        QuizForTestWriting(
+        MiniQuizWriting(
             currentLesson: Lesson(
                 name: "Lesson 1 Hiragana a i u e o | Reading",
                 mode: .reading,
                 kanaType: "hiragana", kanas: ["あ","い","う","え","お"],
                 romajis: ["a","i","u","e","o"]),
-            quizForTest: QuizForTest(
+            miniQuiz: MiniQuiz(
                 type: .hiragana,
                 kanas: ["あ","い","う","え","お"],
                 romajis: ["a","i","u","e","o"],
                 draw: true)
+                
         )
     }
 }

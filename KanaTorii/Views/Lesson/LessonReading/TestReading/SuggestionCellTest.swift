@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SuggestionCellTest: View {
     @ObservedObject var test: Test
-    @Binding var showActionSheet: Bool
     @State var testDone: Bool = false
+    
     var index: Int
     var width: CGFloat
     var height: CGFloat
@@ -24,6 +24,8 @@ struct SuggestionCellTest: View {
             return Color(UIColor.systemBackground)
         }
     }
+    
+    @Binding var showActionSheet: Bool
     
     var body: some View {
         Button(action: {
@@ -48,17 +50,16 @@ struct SuggestionCellTest: View {
 
 struct SuggestionCellTest_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionCellTest(test: Test(
-                            type: .hiragana,
-                            kanas: ["あ","い","う","え","お"],
-                            romajis: ["a","i","u","e","o"],
-                            currentIndex: 0),
-                       showActionSheet: .constant(false),
-                       index: 1,
-                       width: 100,
-                       height: 100,
-                       textSize: 20)
-            
-            
+        SuggestionCellTest(
+            test: Test(
+                    type: .hiragana,
+                    kanas: ["あ","い","う","え","お"],
+                    romajis: ["a","i","u","e","o"],
+                    currentIndex: 0),
+            index: 1,
+            width: 100,
+            height: 100,
+            textSize: 20,
+            showActionSheet: .constant(false))
     }
 }

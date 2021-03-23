@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContinueButtonTest: View {
     @ObservedObject var currentLesson: Lesson
-    @Binding var showTest: Bool
+    
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
+    
+    @Binding var showTest: Bool
     
     var body: some View {
         Button(action: {
@@ -20,13 +22,7 @@ struct ContinueButtonTest: View {
             currentLesson.newPart()
             showTest.toggle()
         }, label: {
-            Text("Continue")
-                .font(.system(size: textSize))
-                .padding(.horizontal, widthDevice/8)
-                .padding(.vertical, heightDevice/50)
-                .foregroundColor(.white)
-                .background(Color.orange)
-                .clipShape(Capsule())
+            ContinueText(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize)
         })
     }
 }
@@ -40,10 +36,10 @@ struct ContinueButtonTest_Previews: PreviewProvider {
                 kanaType: "hiragana",
                 kanas: ["あ","い","う","え","お"],
                 romajis: ["a","i","u","e","o"]),
-            showTest: .constant(false),
             widthDevice: 320,
             heightDevice: 830,
-            textSize: 20)
+            textSize: 20,
+            showTest: .constant(false))
             .previewLayout(.sizeThatFits)
     }
 }

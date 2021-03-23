@@ -1,42 +1,46 @@
 //
-//  SuggestionCellTestQuiz.swift
+//  SuggestionCellQuiz.swift
 //  KanaTorii
 //
-//  Created by Clément FLORET on 27/02/2021.
+//  Created by Clément FLORET on 24/02/2021.
 //
 
 import SwiftUI
 
-struct SuggestionCellTestQuiz: View {
+struct SuggestionCellQuiz: View {
+    // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    @ObservedObject var quizForTest: QuizForTest
-    @Binding var showActionSheet: Bool
+    
+    @ObservedObject var quiz: Quiz
     @State var testDone: Bool = false
+    
     var index: Int
     var width: CGFloat
     var height: CGFloat
     var textSize: CGFloat
     var color: Color {
-        if quizForTest.testAnswer(with: quizForTest.suggestions![index]) && quizForTest.testDone {
+        if quiz.testAnswer(with: quiz.suggestions![index]) && quiz.testDone {
             return Color("AnswerGreen")
-        } else if quizForTest.testAnswer(with: quizForTest.suggestions![index]) == false && quizForTest.correctAnswer == false && quizForTest.testDone {
+        } else if quiz.testAnswer(with: quiz.suggestions![index]) == false && quiz.correctAnswer == false && quiz.testDone {
             return Color("AnswerRed")
         } else {
             return Color(UIColor.systemBackground)
         }
     }
     
+    @Binding var showActionSheet: Bool
+    
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
-            quizForTest.answerCurrentQuestion(with: quizForTest.suggestions![index])
-            addItemToCoreData(correctAnswer: quizForTest.correctAnswer)
+            quiz.answerCurrentQuestion(with: quiz.suggestions![index])
+            addItemToCoreData(correctAnswer: quiz.correctAnswer)
             showActionSheet.toggle()
         }, label: {
-            Text(quizForTest.suggestions![index])
+            Text(quiz.suggestions![index])
                 .font(.system(size: textSize))
                 .foregroundColor(.primary)
                 .frame(width: width, height: height, alignment: .center)
@@ -52,7 +56,7 @@ struct SuggestionCellTestQuiz: View {
     private func addItemToCoreData(correctAnswer: Bool) {
         var same: Bool = false
         for stat in statKana {
-            if quizForTest.currentKana == stat.kana {
+            if quiz.currentKana == stat.kana {
                 if correctAnswer {
                     stat.nbCorrectAnswers += Float(1)
                 }
@@ -69,8 +73,8 @@ struct SuggestionCellTestQuiz: View {
         }
         if same == false {
             let newStat = StatKana(context: viewContext)
-            newStat.kana = quizForTest.currentKana
-            newStat.romaji = quizForTest.currentRomaji
+            newStat.kana = quiz.currentKana
+            newStat.romaji = quiz.currentRomaji
             if correctAnswer {
                 newStat.nbCorrectAnswers = Float(1)
             }
@@ -86,17 +90,23 @@ struct SuggestionCellTestQuiz: View {
     }
 }
 
-struct SuggestionCellTestQuiz_Previews: PreviewProvider {
+struct SuggestionCellQuiz_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionCellTestQuiz(quizForTest: QuizForTest(
-                                    type: .hiragana,
-                                    kanas: ["あ","い","う","え","お"],
-                                romajis: ["a","i","u","e","o"],
-                                draw: false),
-                               showActionSheet: .constant(false),
-                               index: 1,
-                               width: 100,
-                               height: 100,
-                               textSize: 20)
+        SuggestionCellQuiz(
+            quiz: Quiz(
+                quickQuiz: false,
+                difficulty: .easy,
+                direction: .toRomaji,
+                hiragana: true,
+                katakana: false,
+                kanaSection: .all,
+                nbQuestions: 10.0),
+            index: 1,
+            width: 100,
+            height: 100,
+            textSize: 20,
+            showActionSheet: .constant(false))
+            .previewLayout(.sizeThatFits)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

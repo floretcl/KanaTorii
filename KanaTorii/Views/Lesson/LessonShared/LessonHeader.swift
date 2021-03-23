@@ -9,8 +9,11 @@ import SwiftUI
 
 struct LessonHeader: View {
     @Environment(\.presentationMode) var presentation
+    
     @ObservedObject var currentLesson: Lesson
+    
     var heightDevice: CGFloat
+    
     var body: some View {
         HStack {
             Button(action: {

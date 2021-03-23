@@ -17,6 +17,7 @@ struct Guide: View {
             return kana.fileNameKatakanaWithLineOrder
         }
     }
+    
     var body: some View {
         Image(imageFileName)
             .resizable()

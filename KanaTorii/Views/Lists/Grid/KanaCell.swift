@@ -111,8 +111,10 @@ struct KanaCell_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             KanaCell(kanaForList: kanasForList[10], kanaType: .hiragana, widthDevice: 320)
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
                 .previewLayout(.sizeThatFits)
             KanaCell(kanaForList: kanasForList[13], kanaType: .katakana, widthDevice: 320)
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
         }

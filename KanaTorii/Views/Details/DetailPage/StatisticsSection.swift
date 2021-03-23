@@ -84,6 +84,7 @@ struct StatisticsSection: View {
 struct StatisticsSection_Previews: PreviewProvider {
     static var previews: some View {
         StatisticsSection(kanaLabel: "あ", sizeText: 20, widthDevice: 350, heightDevice: 800)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .previewLayout(.sizeThatFits)
     }
 }

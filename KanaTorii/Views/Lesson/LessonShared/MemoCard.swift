@@ -9,12 +9,12 @@ import SwiftUI
 
 struct MemoCard: View {
     @ObservedObject var currentLesson: Lesson
+    var fileNameLinesImage: String {
+        return getLinesImageFilename(romaji: currentLesson.currentRomaji, kanaType: currentLesson.kanaType)
+    }
+    
     var widthDevice: CGFloat
     var heightDevice: CGFloat
-    var kana: Kana = Kana.default
-    var fileNameLinesImage: String {
-        return getLinesImageFilename(kana: kana,romaji: currentLesson.currentRomaji, kanaType: currentLesson.kanaType)
-    }
     
     var body: some View {
         if currentLesson.mode == .reading {
@@ -66,8 +66,9 @@ struct MemoCard: View {
             )
         }
     }
-    func getLinesImageFilename(kana: Kana,romaji: String, kanaType: String) -> String {
-        return kana.getLinesImageFilename(romaji: romaji, kanaType: kanaType == "hiragana" ? .hiragana : .katakana)
+    
+    func getLinesImageFilename(romaji: String, kanaType: String) -> String {
+        return Kana.getLinesImageFilename(romaji: romaji, kanaType: kanaType == "hiragana" ? .hiragana : .katakana)
     }
 }
 

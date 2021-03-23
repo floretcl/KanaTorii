@@ -1,5 +1,5 @@
 //
-//  QuizMCQRomajiToKana.swift
+//  QuizMCQ.swift
 //  KanaTorii
 //
 //  Created by Clément FLORET on 22/02/2021.
@@ -7,13 +7,23 @@
 
 import SwiftUI
 
-struct QuizMCQRomajiToKana: View {
+struct QuizMCQ: View {
     @Environment(\.presentationMode) var presentation
+    
     @ObservedObject var quiz: Quiz
-    @State var showActionSheet: Bool = false
-    @Binding var showScore: Bool
+    var label: String {
+        if quiz.translationDirection == .toRomaji {
+            return quiz.currentKana
+        } else {
+            return quiz.currentName
+        }
+    }
+    
     let itemsCellIphone = GridItem(.fixed(90))
     let itemsCellIpad = GridItem(.fixed(160))
+    
+    @State var showActionSheet: Bool = false
+    @Binding var showScore: Bool
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -26,11 +36,11 @@ struct QuizMCQRomajiToKana: View {
                         Spacer()
                         VStack {
                             TitleQuizMCQ(heightDevice: heightDevice)
-                            Text(quiz.currentName)
+                            Text(label)
                                 .font(.system(size: heightDevice/10))
                                 .padding(heightDevice/35)
                             Spacer()
-                            SuggestionsQuiz(quiz: quiz, showActionSheet: $showActionSheet, items: itemsCellIpad, spacing: 30, width: 125, height: 125, textSize: heightDevice/24)
+                            SuggestionsQuiz(quiz: quiz, items: itemsCellIpad, spacing: 30, width: 125, height: 125, textSize: heightDevice/24, showActionSheet: $showActionSheet)
                                 .padding(.bottom, heightDevice/8)
                         }
                         Spacer()
@@ -62,10 +72,10 @@ struct QuizMCQRomajiToKana: View {
                         Spacer()
                         VStack {
                             TitleQuizMCQ(heightDevice: heightDevice)
-                            Text(quiz.currentName)
+                            Text(label)
                                 .font(.system(size: heightDevice/9))
                             Spacer()
-                            SuggestionsQuiz(quiz: quiz, showActionSheet: $showActionSheet, items: itemsCellIphone, spacing: 20, width: 80, height: 80, textSize: widthDevice/15)
+                            SuggestionsQuiz(quiz: quiz, items: itemsCellIphone, spacing: 20, width: 80, height: 80, textSize: widthDevice/15, showActionSheet: $showActionSheet)
                                 .padding(.bottom, heightDevice/10)
                         }
                         Spacer()
@@ -89,22 +99,23 @@ struct QuizMCQRomajiToKana: View {
                 )
             })
         }
-
     }
 }
 
-struct QuizMCQRomajiToKana_Previews: PreviewProvider {
+struct QuizMCQ_Previews: PreviewProvider {
     static var previews: some View {
-        QuizMCQRomajiToKana(
-            quiz: Quiz(
-                quickQuiz: false,
-                difficulty: .easy,
-                direction: .toKana,
-                hiragana: false,
-                katakana: true,
-                kanaSection: .gojuon,
-                nbQuestions: 10.0),
-            showScore: .constant(false)
-        )
+        Group {
+            QuizMCQ(
+                quiz: Quiz(
+                    quickQuiz: false,
+                    difficulty: .easy,
+                    direction: .toRomaji,
+                    hiragana: true,
+                    katakana: false,
+                    kanaSection: .all,
+                    nbQuestions: 10.0),
+                showScore: .constant(false)
+            )
+        }
     }
 }

@@ -9,12 +9,14 @@ import SwiftUI
 
 struct SuggestionsQuiz: View {
     @ObservedObject var quiz: Quiz
-    @Binding var showActionSheet: Bool
+    
     var items: GridItem
     var spacing: CGFloat
     var width: CGFloat
     var height: CGFloat
     var textSize: CGFloat
+    
+    @Binding var showActionSheet: Bool
     
     var body: some View {
         LazyVGrid(
@@ -25,10 +27,11 @@ struct SuggestionsQuiz: View {
                 ForEach(0..<quiz.suggestions!.count) { index in
                     SuggestionCellQuiz(
                         quiz: quiz,
-                        showActionSheet: $showActionSheet,
                         index: index,
                         width: width,
-                        height: height, textSize: textSize)
+                        height: height,
+                        textSize: textSize,
+                        showActionSheet: $showActionSheet)
                 }
             }
         )
@@ -46,12 +49,12 @@ struct SuggestionsQuiz_Previews: PreviewProvider {
                 katakana: false,
                 kanaSection: .all,
                 nbQuestions: 10.0),
-            showActionSheet: .constant(false),
             items: GridItem(.fixed(110)),
             spacing: 30,
             width: 90,
             height: 90,
-            textSize: 30)
+            textSize: 30,
+            showActionSheet: .constant(false))
             .previewLayout(.sizeThatFits)
     }
 }

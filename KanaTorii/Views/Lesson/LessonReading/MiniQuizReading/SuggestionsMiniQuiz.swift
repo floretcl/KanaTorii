@@ -1,5 +1,5 @@
 //
-//  SuggestionsTestQuiz.swift
+//  SuggestionsMiniQuiz.swift
 //  KanaTorii
 //
 //  Created by Clément FLORET on 27/02/2021.
@@ -7,15 +7,19 @@
 
 import SwiftUI
 
-struct SuggestionsTestQuiz: View {
+struct SuggestionsMiniQuiz: View {
+    // Core data
     @Environment(\.managedObjectContext) private var viewContext
-    @ObservedObject var quizForTest: QuizForTest
-    @Binding var showActionSheet: Bool
+    
+    @ObservedObject var miniQuiz: MiniQuiz
+    
     var items: GridItem
     var spacing: CGFloat
     var width: CGFloat
     var height: CGFloat
     var textSize: CGFloat
+    
+    @Binding var showActionSheet: Bool
     
     var body: some View {
         LazyVGrid(
@@ -23,33 +27,36 @@ struct SuggestionsTestQuiz: View {
             alignment: .center,
             spacing: spacing,
             content: {
-                ForEach(0..<quizForTest.suggestions!.count) { index in
-                    SuggestionCellTestQuiz(
-                        quizForTest: quizForTest,
-                        showActionSheet: $showActionSheet,
+                ForEach(0..<miniQuiz.suggestions!.count) { index in
+                    SuggestionCellMiniQuiz(
+                        miniQuiz: miniQuiz,
                         index: index,
                         width: width,
-                        height: height, textSize: textSize).environment(\.managedObjectContext, self.viewContext)
+                        height: height,
+                        textSize: textSize,
+                        showActionSheet: $showActionSheet)
+                        .environment(\.managedObjectContext, self.viewContext)
                 }
             }
         )
     }
 }
 
-struct SuggestionsTestQuiz_Previews: PreviewProvider {
+struct SuggestionsMiniQuiz_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionsTestQuiz(
-            quizForTest: QuizForTest(
+        SuggestionsMiniQuiz(
+            miniQuiz: MiniQuiz(
                 type: .hiragana,
                 kanas: ["あ","い","う","え","お"],
                 romajis: ["a","i","u","e","o"],
                 draw: false),
-            showActionSheet: .constant(false),
             items: GridItem(.fixed(120)),
             spacing: 30,
             width: 100,
             height: 100,
-            textSize: 30)
+            textSize: 30,
+            showActionSheet: .constant(false))
             .previewLayout(.sizeThatFits)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

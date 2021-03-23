@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct QuizsView: View {
+    // User Defaults
     @ObservedObject var userSettings = UserSettings()
     @ObservedObject var scoreData = Score()
+    
     @State var pickerMode: Int = 1
     @State var pickerDifficulty: Int = 1
     @State var pickerDirection: Int = 1
     @State var pickerKanaType: Int = 1
     @State var pickerKanaSection: String = "all"
-    @State var showScore: Bool = false
-    @State var quizIsDone: Bool = false
-    let minimumValue: String = "10"
-    let maximumValue: String = "40"
     var quickQuiz: Bool {
         if pickerMode == 2 {
             return true
@@ -51,11 +49,16 @@ struct QuizsView: View {
             return .all
         }
     }
+    let minimumValue: String = "10"
+    let maximumValue: String = "40"
+    
+    @State var showScore: Bool = false
+    @State var quizIsDone: Bool = false
     
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             GeometryReader(content: { geometry in
-                let widthDevice = geometry.size.width
+                let heightDevice = geometry.size.height
                 NavigationView {
                     VStack {
                         Form {
@@ -187,18 +190,54 @@ struct QuizsView: View {
                                     NavigationLink(
                                         destination: VStack{
                                             if pickerDifficulty == 1 && pickerDirection == 1 {
-                                                QuizMCQKanaToRomaji(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                                QuizMCQ(
+                                                    quiz: Quiz(
+                                                        quickQuiz: quickQuiz,
+                                                        difficulty: .easy,
+                                                        direction: .toRomaji,
+                                                        hiragana: hiragana,
+                                                        katakana: katakana,
+                                                        kanaSection: kanaSection,
+                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                    showScore: $showScore).navigationBarHidden(true)
                                             } else if pickerDifficulty == 1 && pickerDirection == 2 {
-                                                QuizMCQRomajiToKana(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                                QuizMCQ(
+                                                    quiz: Quiz(
+                                                        quickQuiz: quickQuiz,
+                                                        difficulty: .easy,
+                                                        direction: .toKana,
+                                                        hiragana: hiragana,
+                                                        katakana: katakana,
+                                                        kanaSection: kanaSection,
+                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                    showScore: $showScore).navigationBarHidden(true)
                                             } else if pickerDifficulty == 2 && pickerDirection == 1 {
-                                                QuizKeyboard(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                                QuizKeyboard(
+                                                    quiz: Quiz(
+                                                        quickQuiz: quickQuiz,
+                                                        difficulty: .hard,
+                                                        direction: .toRomaji,
+                                                        hiragana: hiragana,
+                                                        katakana: katakana,
+                                                        kanaSection: kanaSection,
+                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                    showScore: $showScore).navigationBarHidden(true)
                                             } else {
-                                                QuizWriting(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                                QuizWriting(
+                                                    quiz: Quiz(
+                                                        quickQuiz: quickQuiz,
+                                                        difficulty: .hard,
+                                                        direction: .toKana,
+                                                        hiragana: hiragana,
+                                                        katakana: katakana,
+                                                        kanaSection: kanaSection,
+                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                    showScore: $showScore).navigationBarHidden(true)
                                             }
                                         },
                                         label: {
                                             Text("Start")
-                                                .font(.system(size: widthDevice/33))
+                                                .font(.system(size: heightDevice/40))
                                                 .foregroundColor(.accentColor)
                                         }).padding(.vertical, 10)
                                 }.sheet(
@@ -213,18 +252,16 @@ struct QuizsView: View {
                                 Spacer()
                             }
                         }
-                        
                     }
                     .navigationBarTitle("Quiz", displayMode: .inline)
                     .padding(.horizontal, 100)
-                    //.background(Color(.secondarySystemBackground))
                 }.navigationViewStyle(StackNavigationViewStyle())
             }).onAppear(perform: {
                 userSettings.quickQuizNbQuestions = UserDefaults.standard.object(forKey: "quick-quiz-nb-questions") as? Double ?? 10.0
             })
         } else {
             GeometryReader(content: { geometry in
-                let widthDevice = geometry.size.width
+                let heightDevice = geometry.size.height
                 NavigationView {
                     VStack {
                         Form {
@@ -342,8 +379,8 @@ struct QuizsView: View {
                                             onEditingChanged: {_ in
                                                 hapticFeedback(style: .soft)
                                             },
-                                            minimumValueLabel: Text("10"),
-                                            maximumValueLabel: Text("40"))
+                                            minimumValueLabel: Text(minimumValue),
+                                            maximumValueLabel: Text(maximumValue))
                                             {
                                             Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
                                             }
@@ -356,18 +393,54 @@ struct QuizsView: View {
                                     NavigationLink(
                                         destination: VStack{
                                             if pickerDifficulty == 1 && pickerDirection == 1 {
-                                                QuizMCQKanaToRomaji(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                                QuizMCQ(
+                                                    quiz: Quiz(
+                                                        quickQuiz: quickQuiz,
+                                                        difficulty: .easy,
+                                                        direction: .toRomaji,
+                                                        hiragana: hiragana,
+                                                        katakana: katakana,
+                                                        kanaSection: kanaSection,
+                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                    showScore: $showScore).navigationBarHidden(true)
                                             } else if pickerDifficulty == 1 && pickerDirection == 2 {
-                                                QuizMCQRomajiToKana(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .easy, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                                QuizMCQ(
+                                                    quiz: Quiz(
+                                                        quickQuiz: quickQuiz,
+                                                        difficulty: .easy,
+                                                        direction: .toKana,
+                                                        hiragana: hiragana,
+                                                        katakana: katakana,
+                                                        kanaSection: kanaSection,
+                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                    showScore: $showScore).navigationBarHidden(true)
                                             } else if pickerDifficulty == 2 && pickerDirection == 1 {
-                                                QuizKeyboard(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toRomaji, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                                QuizKeyboard(
+                                                    quiz: Quiz(
+                                                        quickQuiz: quickQuiz,
+                                                        difficulty: .hard,
+                                                        direction: .toRomaji,
+                                                        hiragana: hiragana,
+                                                        katakana: katakana,
+                                                        kanaSection: kanaSection,
+                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                    showScore: $showScore).navigationBarHidden(true)
                                             } else {
-                                                QuizWriting(quiz: Quiz(quickQuiz: quickQuiz, difficulty: .hard, direction: .toKana, hiragana: hiragana, katakana: katakana, kanaSection: kanaSection, nbQuestions: userSettings.quickQuizNbQuestions), showScore: $showScore).navigationBarHidden(true)
+                                                QuizWriting(
+                                                    quiz: Quiz(
+                                                        quickQuiz: quickQuiz,
+                                                        difficulty: .hard,
+                                                        direction: .toKana,
+                                                        hiragana: hiragana,
+                                                        katakana: katakana,
+                                                        kanaSection: kanaSection,
+                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                    showScore: $showScore).navigationBarHidden(true)
                                             }
                                         },
                                         label: {
                                             Text("Start")
-                                                .font(.system(size: widthDevice/20))
+                                                .font(.system(size: heightDevice/40))
                                                 .foregroundColor(.accentColor)
                                         }).padding(.vertical, 5)
                                 }.sheet(
@@ -390,6 +463,7 @@ struct QuizsView: View {
             })
         }
     }
+    
     private func resetScore() {
         scoreData.nbCorrectAnswers = 0
     }

@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContinueButtonQuiz: View {
     @ObservedObject var currentLesson: Lesson
-    @Binding var showQuiz: Bool
+    
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
+    
+    @Binding var showQuiz: Bool
     
     var body: some View {
         Button(action: {
@@ -39,10 +41,10 @@ struct ContinueButtonQuiz_Previews: PreviewProvider {
                 kanaType: "hiragana",
                 kanas: ["あ","い","う","え","お"],
                 romajis: ["a","i","u","e","o"]),
-            showQuiz: .constant(false),
             widthDevice: 320,
             heightDevice: 830,
-            textSize: 20)
+            textSize: 20,
+            showQuiz: .constant(false))
             .previewLayout(.sizeThatFits)
     }
 }

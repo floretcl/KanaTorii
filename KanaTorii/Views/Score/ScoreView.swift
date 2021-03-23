@@ -43,7 +43,6 @@ struct ScoreView: View {
                     .aspectRatio(contentMode: .fill)
             )
         }).edgesIgnoringSafeArea(.all)
-        
     }
 }
 

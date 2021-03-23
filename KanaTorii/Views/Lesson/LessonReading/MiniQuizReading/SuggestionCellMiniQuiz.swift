@@ -1,42 +1,46 @@
 //
-//  SuggestionCellQuiz.swift
+//  SuggestionCellMiniQuiz.swift
 //  KanaTorii
 //
-//  Created by Clément FLORET on 24/02/2021.
+//  Created by Clément FLORET on 27/02/2021.
 //
 
 import SwiftUI
 
-struct SuggestionCellQuiz: View {
+struct SuggestionCellMiniQuiz: View {
+    // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    @ObservedObject var quiz: Quiz
-    @Binding var showActionSheet: Bool
-    @State var testDone: Bool = false
+    
+    @ObservedObject var miniQuiz: MiniQuiz
+    
     var index: Int
     var width: CGFloat
     var height: CGFloat
     var textSize: CGFloat
     var color: Color {
-        if quiz.testAnswer(with: quiz.suggestions![index]) && quiz.testDone {
+        if miniQuiz.testAnswer(with: miniQuiz.suggestions![index]) && miniQuiz.testDone {
             return Color("AnswerGreen")
-        } else if quiz.testAnswer(with: quiz.suggestions![index]) == false && quiz.correctAnswer == false && quiz.testDone {
+        } else if miniQuiz.testAnswer(with: miniQuiz.suggestions![index]) == false && miniQuiz.correctAnswer == false && miniQuiz.testDone {
             return Color("AnswerRed")
         } else {
             return Color(UIColor.systemBackground)
         }
     }
     
+    @State var testDone: Bool = false
+    @Binding var showActionSheet: Bool
+    
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
-            quiz.answerCurrentQuestion(with: quiz.suggestions![index])
-            addItemToCoreData(correctAnswer: quiz.correctAnswer)
+            miniQuiz.answerCurrentQuestion(with: miniQuiz.suggestions![index])
+            addItemToCoreData(correctAnswer: miniQuiz.correctAnswer)
             showActionSheet.toggle()
         }, label: {
-            Text(quiz.suggestions![index])
+            Text(miniQuiz.suggestions![index])
                 .font(.system(size: textSize))
                 .foregroundColor(.primary)
                 .frame(width: width, height: height, alignment: .center)
@@ -52,7 +56,7 @@ struct SuggestionCellQuiz: View {
     private func addItemToCoreData(correctAnswer: Bool) {
         var same: Bool = false
         for stat in statKana {
-            if quiz.currentKana == stat.kana {
+            if miniQuiz.currentKana == stat.kana {
                 if correctAnswer {
                     stat.nbCorrectAnswers += Float(1)
                 }
@@ -69,8 +73,8 @@ struct SuggestionCellQuiz: View {
         }
         if same == false {
             let newStat = StatKana(context: viewContext)
-            newStat.kana = quiz.currentKana
-            newStat.romaji = quiz.currentRomaji
+            newStat.kana = miniQuiz.currentKana
+            newStat.romaji = miniQuiz.currentRomaji
             if correctAnswer {
                 newStat.nbCorrectAnswers = Float(1)
             }
@@ -86,22 +90,18 @@ struct SuggestionCellQuiz: View {
     }
 }
 
-struct SuggestionCellQuiz_Previews: PreviewProvider {
+struct SuggestionCellMiniQuiz_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionCellQuiz(
-                        quiz: Quiz(
-                            quickQuiz: false,
-                            difficulty: .easy,
-                            direction: .toRomaji,
-                            hiragana: true,
-                            katakana: false,
-                            kanaSection: .all,
-                            nbQuestions: 10.0),
-                       showActionSheet: .constant(false),
-                       index: 1,
-                       width: 100,
-                       height: 100,
-            textSize: 20)
-            .previewLayout(.sizeThatFits)
+        SuggestionCellMiniQuiz(miniQuiz: MiniQuiz(
+                                    type: .hiragana,
+                                    kanas: ["あ","い","う","え","お"],
+                                romajis: ["a","i","u","e","o"],
+                                draw: false),
+                               index: 1,
+                               width: 100,
+                               height: 100,
+                               textSize: 20,
+                               showActionSheet: .constant(false))
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

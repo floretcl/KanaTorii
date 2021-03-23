@@ -75,12 +75,7 @@ struct SettingsForm: View {
                             message: Text("Progress of lessons and statistics will be deleted"),
                             primaryButton: .destructive(Text("Delete"),
                                                         action: {
-                                                            statKana.forEach { stat in
-                                                                viewContext.delete(stat)
-                                                            }
-                                                            statLesson.forEach { stat in
-                                                                viewContext.delete(stat)
-                                                            }
+                                                            deleteAllItems()
                                                         }),
                             secondaryButton: .cancel()
                         )
@@ -103,10 +98,27 @@ struct SettingsForm: View {
             }
         }
     }
+    
+    private func deleteAllItems() {
+        statKana.forEach { stat in
+            viewContext.delete(stat)
+        }
+        statLesson.forEach { stat in
+            viewContext.delete(stat)
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            print(error)
+            //let nsError = error as NSError
+            //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
 }
 
 struct SettingsForm_Previews: PreviewProvider {
     static var previews: some View {
         SettingsForm()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

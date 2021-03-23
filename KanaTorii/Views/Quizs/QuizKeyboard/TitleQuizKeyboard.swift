@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TitleQuizKeyboard: View {
     @ObservedObject var quiz: Quiz
+    
     var heightDevice: CGFloat
     
     var body: some View {

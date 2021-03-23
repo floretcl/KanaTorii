@@ -17,7 +17,8 @@ struct ContinueNavLink: View {
         if lesson.type == "Reading" || lesson.type == "Lecture" {
             VStack {
                 NavigationLink(
-                    destination: LessonMemoReading(currentLesson: Lesson(
+                    destination:
+                        LessonMemoReading(currentLesson: Lesson(
                             name: "\(lesson.title) | \(lesson.type)",
                             mode: .reading,
                             kanaType: lesson.kanaTypeString,
@@ -25,20 +26,15 @@ struct ContinueNavLink: View {
                             romajis: lesson.romaji))
                         .environment(\.managedObjectContext, self.viewContext),
                     label: {
-                        Text("Continue")
-                            .font(.system(size: heightDevice/40))
-                            .padding(.horizontal, widthDevice/8)
-                            .padding(.vertical, heightDevice/50)
-                            .foregroundColor(.white)
-                            .background(Color.orange)
-                            .clipShape(Capsule())
+                        ContinueText(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40)
                     }
                 )
             }
         } else {
             VStack {
                 NavigationLink(
-                    destination: LessonMemoWriting(currentLesson: Lesson(
+                    destination:
+                        LessonMemoWriting(currentLesson: Lesson(
                             name: "\(lesson.title) | \(lesson.type)",
                             mode: .writing,
                             kanaType: lesson.kanaTypeString,
@@ -46,13 +42,7 @@ struct ContinueNavLink: View {
                             romajis: lesson.romaji))
                         .environment(\.managedObjectContext, self.viewContext),
                     label: {
-                        Text("Continue")
-                            .font(.system(size: heightDevice/40))
-                            .padding(.horizontal, widthDevice/8)
-                            .padding(.vertical, heightDevice/50)
-                            .foregroundColor(.white)
-                            .background(Color.orange)
-                            .clipShape(Capsule())
+                        ContinueText(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40)
                     }
                 )
             }
@@ -64,6 +54,7 @@ struct ContinueNavLink_Previews: PreviewProvider {
     static var lessons = ModelData().lessons
     static var previews: some View {
         ContinueNavLink(lesson: lessons[0], widthDevice: 300, heightDevice: 600)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .previewLayout(.sizeThatFits)
     }
 }

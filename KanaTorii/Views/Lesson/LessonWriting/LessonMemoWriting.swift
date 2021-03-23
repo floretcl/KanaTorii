@@ -8,128 +8,59 @@
 import SwiftUI
 
 struct LessonMemoWriting: View {
-    @Environment(\.presentationMode) private var presentation
+    // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
         animation: .default) var statLesson: FetchedResults<StatLesson>
+    
+    @Environment(\.presentationMode) private var presentation
+    
     @ObservedObject var currentLesson: Lesson
+    
     @State var showTest: Bool = false
     @State var showQuiz: Bool = false
     @State var showScore: Bool = false
     
     var body: some View {
-        if UIDevice.current.localizedModel == "iPad" {
-            GeometryReader(content: { geometry in
-                let heightDevice = geometry.size.height
-                let widthDevice = geometry.size.width
-                VStack {
-                    LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
-                        .padding(.top, 5)
-                    HStack {
-                        Spacer()
-                        VStack {
-                            TitleLessonWriting(heightDevice: heightDevice)
+        GeometryReader(content: { geometry in
+            let heightDevice = geometry.size.height
+            let widthDevice = geometry.size.width
+            VStack {
+                LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
+                    .padding(.top, 5)
+                HStack {
+                    Spacer()
+                    VStack {
+                        TitleLessonWriting(heightDevice: heightDevice)
+                        if UIDevice.current.localizedModel == "iPad" {
                             MemoCard(
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
                                 heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/12)
                                 .padding(.horizontal, widthDevice/4)
-                            Spacer()
-                            ZStack {
-                                ContinueButtonTest(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                .padding(.bottom, heightDevice/20)
-                                .fullScreenCover(
-                                    isPresented: $showTest,
-                                    onDismiss: {
-                                        if currentLesson.state == .end {
-                                            currentLesson.reset()
-                                            self.presentation.wrappedValue.dismiss()
-                                        }
-                                    },
-                                    content: {
-                                        TestWriting(
-                                            currentLesson: currentLesson,
-                                            test: TestDrawing(
-                                                type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
-                                                kana: currentLesson.currentKana,
-                                                romaji: currentLesson.currentRomaji),
-                                                showQuiz: $showQuiz)
-                                })
-                                if currentLesson.currentPart == .quiz {
-                                    ContinueButtonQuiz(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                    .padding(.bottom, heightDevice/20)
-                                    .fullScreenCover(
-                                        isPresented: $showQuiz,
-                                        onDismiss: {
-                                            currentLesson.newPart()
-                                            showScore.toggle()
-                                            if currentLesson.state == .end {
-                                                currentLesson.reset()
-                                                self.presentation.wrappedValue.dismiss()
-                                            }
-                                        },
-                                        content: {
-                                        QuizForTestWriting(
-                                            currentLesson: currentLesson,
-                                            quizForTest: QuizForTest(
-                                                type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
-                                                kanas: currentLesson.kanas,
-                                                romajis: currentLesson.romajis, draw: true))
-                                            .environment(\.managedObjectContext, self.viewContext)
-                                    })
-                                } else if currentLesson.currentPart == .score {
-                                    ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
-                                    .padding(.bottom, heightDevice/20)
-                                    .sheet(
-                                        isPresented: $showScore,
-                                        onDismiss: {
-                                            addItemToCoreData()
-                                            currentLesson.reset()
-                                            self.presentation.wrappedValue.dismiss()
-                                        },
-                                        content: {
-                                            ScoreView()
-                                    })
-                                }
-                            }
-                        }
-                        Spacer()
-                    }
-                }
-                .navigationBarTitle(currentLesson.name)
-            }).background(Color(UIColor.secondarySystemBackground))
-        } else {
-            GeometryReader(content: { geometry in
-                let heightDevice = geometry.size.height
-                let widthDevice = geometry.size.width
-                VStack {
-                    LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
-                        .padding(.top, 5)
-                    HStack {
-                        Spacer()
-                        VStack {
-                            TitleLessonWriting(heightDevice: heightDevice)
+                        } else {
                             MemoCard(
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
                                 heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/50)
                                 .padding(.horizontal, widthDevice/4.5)
-                            Spacer()
-                            ZStack {
-                                ContinueButtonTest(currentLesson: currentLesson, showTest: $showTest, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
-                                .padding(.bottom, heightDevice/20)
-                                .fullScreenCover(
-                                    isPresented: $showTest,
-                                    onDismiss: {
-                                        if currentLesson.state == .end {
-                                            currentLesson.reset()
-                                            self.presentation.wrappedValue.dismiss()
-                                        }
-                                    },
-                                    content: {
+                        }
+                        Spacer()
+                        ZStack {
+                            ContinueButtonTest(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showTest: $showTest)
+                            .padding(.bottom, heightDevice/20)
+                            .fullScreenCover(
+                                isPresented: $showTest,
+                                onDismiss: {
+                                    if currentLesson.state == .end {
+                                        currentLesson.reset()
+                                        self.presentation.wrappedValue.dismiss()
+                                    }
+                                },
+                                content: {
                                     TestWriting(
                                         currentLesson: currentLesson,
                                         test: TestDrawing(
@@ -137,51 +68,50 @@ struct LessonMemoWriting: View {
                                             kana: currentLesson.currentKana,
                                             romaji: currentLesson.currentRomaji),
                                             showQuiz: $showQuiz)
-                                })
-                                if currentLesson.currentPart == .quiz {
-                                    ContinueButtonQuiz(currentLesson: currentLesson, showQuiz: $showQuiz, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
-                                    .padding(.bottom, heightDevice/20)
-                                    .fullScreenCover(
-                                        isPresented: $showQuiz,
-                                        onDismiss: {
-                                            currentLesson.newPart()
-                                            showScore.toggle()
-                                            if currentLesson.state == .end {
-                                                currentLesson.reset()
-                                                self.presentation.wrappedValue.dismiss()
-                                            }
-                                        },
-                                        content: {
-                                        QuizForTestWriting(
-                                            currentLesson: currentLesson,
-                                            quizForTest: QuizForTest(
-                                                type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
-                                                kanas: currentLesson.kanas,
-                                                romajis: currentLesson.romajis, draw: true))
-                                            .environment(\.managedObjectContext, self.viewContext)
-                                    })
-                                } else if currentLesson.currentPart == .score {
-                                    ContinueButtonScore(currentLesson: currentLesson, showScore: $showScore, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
-                                    .padding(.bottom, heightDevice/20)
-                                    .sheet(
-                                        isPresented: $showScore,
-                                        onDismiss: {
-                                            addItemToCoreData()
+                            })
+                            if currentLesson.currentPart == .quiz {
+                                ContinueButtonQuiz(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showQuiz: $showQuiz)
+                                .padding(.bottom, heightDevice/20)
+                                .fullScreenCover(
+                                    isPresented: $showQuiz,
+                                    onDismiss: {
+                                        currentLesson.newPart()
+                                        showScore.toggle()
+                                        if currentLesson.state == .end {
                                             currentLesson.reset()
                                             self.presentation.wrappedValue.dismiss()
-                                        },
-                                        content: {
-                                            ScoreView()
-                                    })
-                                }
+                                        }
+                                    },
+                                    content: {
+                                    MiniQuizWriting(
+                                        currentLesson: currentLesson,
+                                        miniQuiz: MiniQuiz(
+                                            type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
+                                            kanas: currentLesson.kanas,
+                                            romajis: currentLesson.romajis, draw: true))
+                                        .environment(\.managedObjectContext, self.viewContext)
+                                })
+                            } else if currentLesson.currentPart == .score {
+                                ContinueButtonScore(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showScore: $showScore)
+                                .padding(.bottom, heightDevice/20)
+                                .sheet(
+                                    isPresented: $showScore,
+                                    onDismiss: {
+                                        addItemToCoreData()
+                                        currentLesson.reset()
+                                        self.presentation.wrappedValue.dismiss()
+                                    },
+                                    content: {
+                                        ScoreView()
+                                })
                             }
                         }
-                        Spacer()
                     }
+                    Spacer()
                 }
-                .navigationBarTitle(currentLesson.name)
-            }).background(Color(UIColor.secondarySystemBackground))
-        }
+            }
+            .navigationBarTitle(currentLesson.name)
+        }).background(Color(UIColor.secondarySystemBackground))
     }
     private func addItemToCoreData() {
         var same: Bool = false

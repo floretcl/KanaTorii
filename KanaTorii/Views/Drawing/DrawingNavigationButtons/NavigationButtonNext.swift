@@ -14,23 +14,14 @@ struct NavigationButtonNext: View {
     var width: CGFloat
     var height: CGFloat
     var body: some View {
-        if inversed != true {
-            Label("Next", systemImage: systemImage)
-                .font(.system(size: sizeText))
-                .foregroundColor(.white)
-                .frame(minWidth: 80, maxWidth: width, minHeight: 20, maxHeight: height, alignment: .center)
-                .background(Color.orange)
-                .cornerRadius(30.0)
-                .padding(.horizontal, 6)
-        } else {
-            Label("Next", systemImage: systemImage)
-                .font(.system(size: sizeText))
-                .foregroundColor(.white)
-                .frame(minWidth: 80, maxWidth: width, minHeight: 20, maxHeight: height, alignment: .center)
-                .background(Color.orange)
-                .cornerRadius(30.0)
-                .padding(.horizontal, 6)
-        }
+        Label("Next", systemImage: systemImage)
+            .labelStyle(InversedLabel())
+            .font(.system(size: sizeText))
+            .foregroundColor(.white)
+            .frame(minWidth: 80, maxWidth: width, minHeight: 20, maxHeight: height, alignment: .center)
+            .background(Color.orange)
+            .cornerRadius(30.0)
+            .padding(.horizontal, 6)
     }
 }
 

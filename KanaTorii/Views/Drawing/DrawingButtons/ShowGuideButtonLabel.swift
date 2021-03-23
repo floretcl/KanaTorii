@@ -11,6 +11,7 @@ struct ShowGuideButtonLabel: View {
     var sizeText: CGFloat
     var width: CGFloat
     var height: CGFloat
+    
     var body: some View {
         Text("Show guide")
             .font(.system(size: self.sizeText))

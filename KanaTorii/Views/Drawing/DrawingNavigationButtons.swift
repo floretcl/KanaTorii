@@ -9,14 +9,11 @@ import SwiftUI
 
 struct DrawingNavigationButtons: View {
     @EnvironmentObject var modelData: ModelData
-    @Binding var drawings: [Drawing]
-    @Binding var kana: Kana
-    var sizeText: CGFloat
-    var width: CGFloat
-    var height: CGFloat
     var kanas: [Kana] {
         return modelData.kanas
     }
+    
+    @Binding var kana: Kana
     private var previousKana: Kana {
         var index = kana.id
         if index != 0 {
@@ -31,6 +28,13 @@ struct DrawingNavigationButtons: View {
         }
         return kanas[index]
     }
+    
+    @Binding var drawings: [Drawing]
+    var sizeText: CGFloat
+    var width: CGFloat
+    var height: CGFloat
+    
+    
     
     var body: some View {
         HStack {
@@ -48,7 +52,7 @@ struct DrawingNavigationButtons: View {
                 drawings = [Drawing]()
                 kana = nextKana
             }, label: {
-                NavigationButtonNext(systemImage: "chevron.right", sizeText: sizeText, inversed: false, width: width, height: height)
+                NavigationButtonNext(systemImage: "chevron.right", sizeText: sizeText, inversed: true, width: width, height: height)
             }).padding(.horizontal, 10)
             Spacer()
         }
@@ -58,6 +62,6 @@ struct DrawingNavigationButtons: View {
 struct DrawingNavigationButtons_Previews: PreviewProvider {
     static let modelData = ModelData()
     static var previews: some View {
-        DrawingNavigationButtons(drawings: .constant([Drawing]()), kana: .constant(modelData.kanas[100]), sizeText: 20, width: 130, height: 60)
+        DrawingNavigationButtons(kana: .constant(modelData.kanas[100]), drawings: .constant([Drawing]()), sizeText: 20, width: 130, height: 60)
     }
 }

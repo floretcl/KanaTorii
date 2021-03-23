@@ -9,53 +9,47 @@ import SwiftUI
 
 struct DrawView: View {
     @State var kana: Kana
-    @State var showGuide: Bool = true
+    var kanaType: String
     @State var drawing: Drawing = Drawing()
     @State var drawings: [Drawing] = [Drawing]()
     @State var image: UIImage = UIImage()
-    var kanaType: String
     var secondaryBackgroundColor: Color = Color(UIColor.secondarySystemBackground)
-    let emptyKana: Kana = Kana.default
+    @State var showGuide: Bool = true
     
     var body: some View {
         GeometryReader(content: { geometry in
             let heightDevice = geometry.size.height
             let widthDevice = geometry.size.width
+                VStack {
+                    if UIDevice.current.localizedModel == "iPad" {
+                        SheetHeaderDraw(paddingLeading: 80)
+                    } else {
+                        SheetHeaderDraw(paddingLeading: 20)
+                    }
+                    TitleDraw(kana: kana, kanaType: kanaType, sizeText: heightDevice/30)
+                        .padding(.top, heightDevice/20)
+                    Spacer()
+                    DrawingPad(kana: kana, kanaType: kanaType, drawing: $drawing, drawings: $drawings, image: $image, lineWidth: 15, showGuide: showGuide)
+                        .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
+                        .padding(.all, heightDevice/40)
+                    if UIDevice.current.localizedModel == "iPad" {
+                        DrawingButtons(drawings: $drawings, showGuide: $showGuide, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
+                        Spacer()
+                        DrawingNavigationButtons(kana: $kana, drawings: $drawings, sizeText: widthDevice/33, width: widthDevice/4, height: heightDevice/20)
+                            .padding(.all, heightDevice/60)
+                            .padding(.bottom, heightDevice/40)
+                    } else {
+                        DrawingButtons(drawings: $drawings, showGuide: $showGuide, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
+                        Spacer()
+                        DrawingNavigationButtons(kana: $kana, drawings: $drawings, sizeText: widthDevice/20, width: widthDevice/2.5, height: heightDevice/16)
+                            .padding(.all, heightDevice/60)
+                        Spacer()
+                    }
+                }
+                .background(secondaryBackgroundColor)
+                .edgesIgnoringSafeArea(.bottom)
             if UIDevice.current.localizedModel == "iPad" {
-                VStack {
-                    SheetHeaderDraw(systemImage: "hand.draw", paddingLeading: 20)
-                    TitleDraw(kanaType: kanaType, kana: kana, sizeText: heightDevice/30)
-                        .padding(.top, heightDevice/20)
-                    Spacer()
-                    DrawingPad(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: 15, kana: kana, kanaType: kanaType, showGuide: showGuide)
-                        .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
-                        .padding(.all, heightDevice/40)
-                    DrawingButtons(drawings: $drawings, showGuide: $showGuide, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
-                    Spacer()
-                    DrawingNavigationButtons(drawings: $drawings, kana: $kana, sizeText: widthDevice/33, width: widthDevice/4, height: heightDevice/20)
-                        .padding(.all, heightDevice/60)
-                        .padding(.bottom, heightDevice/40)
-                }
-                .background(secondaryBackgroundColor)
-                .edgesIgnoringSafeArea(.bottom)
                 Spacer()
-            } else {
-                VStack {
-                    SheetHeaderDraw(systemImage: "hand.draw", paddingLeading: 20)
-                    TitleDraw(kanaType: kanaType, kana: kana, sizeText: heightDevice/30)
-                        .padding(.top, heightDevice/20)
-                    Spacer()
-                    DrawingPad(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/40, kana: kana, kanaType: kanaType, showGuide: showGuide)
-                        .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
-                        .padding(.all, heightDevice/40)
-                    DrawingButtons(drawings: $drawings, showGuide: $showGuide, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
-                    Spacer()
-                    DrawingNavigationButtons(drawings: $drawings, kana: $kana, sizeText: widthDevice/20, width: widthDevice/2.5, height: heightDevice/16)
-                        .padding(.all, heightDevice/60)
-                    Spacer()
-                }
-                .background(secondaryBackgroundColor)
-                .edgesIgnoringSafeArea(.bottom)
             }
         })
     }

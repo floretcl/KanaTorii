@@ -9,17 +9,19 @@ import SwiftUI
 
 struct ContinueButtonScore: View {
     @ObservedObject var currentLesson: Lesson
-    @Binding var showScore: Bool
+    
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
+    
+    @Binding var showScore: Bool
     
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
             showScore.toggle()
         }, label: {
-            Text("Show score")
+            Text("Score")
                 .font(.system(size: textSize))
                 .padding(.horizontal, widthDevice/8)
                 .padding(.vertical, heightDevice/50)
@@ -39,10 +41,10 @@ struct ContinueButtonScore_Previews: PreviewProvider {
                 kanaType: "hiragana",
                 kanas: ["あ","い","う","え","お"],
                 romajis: ["a","i","u","e","o"]),
-            showScore: .constant(false),
             widthDevice: 320,
             heightDevice: 830,
-            textSize: 20)
+            textSize: 20,
+            showScore: .constant(false))
             .previewLayout(.sizeThatFits)
     }
 }

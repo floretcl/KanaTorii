@@ -1,5 +1,5 @@
 //
-//  TitleQuizForTestWriting.swift
+//  TitleMiniQuizWriting.swift
 //  KanaTorii
 //
 //  Created by Clément FLORET on 10/03/2021.
@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct TitleQuizForTestWriting: View {
-    @ObservedObject var quizForTest: QuizForTest
+struct TitleMiniQuizWriting: View {
+    @ObservedObject var miniQuiz: MiniQuiz
     var kanaType: String
+    
     var heightDevice: CGFloat
     
     var body: some View {
-        Text("Draw \(kanaType.capitalized) for \(quizForTest.currentRomaji.capitalized)")
+        Text("Draw \(kanaType.capitalized) for \(miniQuiz.currentRomaji.capitalized)")
             .font(.system(size: heightDevice/35))
             .fontWeight(.semibold)
             .foregroundColor(.accentColor)
@@ -22,10 +23,10 @@ struct TitleQuizForTestWriting: View {
     }
 }
 
-struct TitleQuizForTestWriting_Previews: PreviewProvider {
+struct TitleMiniQuizWriting_Previews: PreviewProvider {
     static var previews: some View {
-        TitleQuizForTestWriting(
-            quizForTest: QuizForTest(
+        TitleMiniQuizWriting(
+            miniQuiz: MiniQuiz(
                 type: .hiragana,
                 kanas: ["あ","い","う","え","お"],
                 romajis: ["a","i","u","e","o"],

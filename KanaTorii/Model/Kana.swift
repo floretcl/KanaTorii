@@ -23,9 +23,8 @@ struct Kana: Hashable, Codable, Identifiable {
         case hiragana
         case katakana
     }
-    static let `default` = Kana(id: -1, name: "", romaji: "", hiragana: "", katakana: "", isGojuon: false, isDakuonHandakuon: false, isYoon: false, fileNameHiraganaWithLineOrder: "", fileNameKatakanaWithLineOrder: "")
 
-    func readTextInJapanese(text: String) {
+    static func readTextInJapanese(text: String) {
         let synthesizer = AVSpeechSynthesizer()
         let audioSession = AVAudioSession.sharedInstance()
             do {
@@ -64,7 +63,7 @@ struct Kana: Hashable, Codable, Identifiable {
         }
         return idKana
     }
-    func getLinesImageFilename(romaji: String, kanaType: KanaType) -> String {
+    static func getLinesImageFilename(romaji: String, kanaType: KanaType) -> String {
         let modelData = ModelData()
         var kanas: [Kana] {
             return modelData.kanas

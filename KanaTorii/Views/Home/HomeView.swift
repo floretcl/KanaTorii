@@ -58,6 +58,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             HomeView()
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }

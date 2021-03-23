@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct DrawingButtonsTest: View {
+    @ObservedObject var test: TestDrawing
+    
     @Binding var drawings: [Drawing]
     @Binding var showGuide: Bool
-    @ObservedObject var test: TestDrawing
+    
     var sizeText: CGFloat
     var width: CGFloat
     var height: CGFloat
@@ -43,9 +45,9 @@ struct DrawingButtonsTest: View {
 struct DrawingButtonsTest_Previews: PreviewProvider {
     static var previews: some View {
         DrawingButtonsTest(
+            test: TestDrawing(type: .hiragana, kana: "あ", romaji: "a"),
             drawings: .constant([Drawing]()),
             showGuide: .constant(true),
-            test: TestDrawing(type: .hiragana, kana: "あ", romaji: "a"),
             sizeText: 20,
             width: 130,
             height: 60

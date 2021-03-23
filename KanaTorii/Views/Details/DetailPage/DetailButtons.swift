@@ -17,7 +17,7 @@ struct DetailButtons: View {
         HStack {
             Button(action: {
                 hapticFeedback(style: .soft)
-                kana.readTextInJapanese(text: kanaLabel)
+                Kana.readTextInJapanese(text: kanaLabel)
             }, label: {
                 Label("Listen", systemImage: "speaker.wave.2")
                     .font(.system(size: sizeText))

@@ -35,7 +35,7 @@ class Lesson: ObservableObject {
         case reading
         case writing
     }
-    var parts: [LessonPart] {
+    private var parts: [LessonPart] {
         let memo = LessonPart.memo
         let test = LessonPart.test
         let quiz = LessonPart.quiz
@@ -53,7 +53,7 @@ class Lesson: ObservableObject {
     var currentPart: LessonPart {
         return parts[currentPartIndex]
     }
-    var nextPart: LessonPart {
+    private var nextPart: LessonPart {
         return parts[currentPartIndex + 1]
     }
     var currentKana: String {
@@ -111,29 +111,5 @@ class Lesson: ObservableObject {
         self.numberOfQuiz = 0
         self.numberOfScore = 0
         self.kanaIndex = 0
-    }
-    func readTextInJapanese(text: String) {
-        let synthesizer = AVSpeechSynthesizer()
-        let audioSession = AVAudioSession.sharedInstance()
-            do {
-                try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
-                try audioSession.setMode(AVAudioSession.Mode.default)
-                try audioSession.setActive(true)
-                try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
-            } catch {
-                fatalError("Error with AVaudiosession")
-            }
-        if synthesizer.isSpeaking {
-            synthesizer.stopSpeaking(at: .immediate)
-        } else {
-            let utterance = AVSpeechUtterance(string: text)
-            utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
-            utterance.rate = 0.1
-            utterance.pitchMultiplier = 1
-            utterance.volume = 1
-            DispatchQueue.main.async {
-                synthesizer.speak(utterance)
-            }
-        }
     }
 }

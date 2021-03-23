@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct LessonRow: View {
+    // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
         animation: .default) var statLesson: FetchedResults<StatLesson>
+    
     var lesson: LessonForList
     var color: Color {
         var done: Bool = false
@@ -52,8 +54,10 @@ struct LessonRow_Previews: PreviewProvider {
     static var lessons = ModelData().lessons
     static var previews: some View {
         LessonRow(lesson: lessons[0])
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .previewLayout(.sizeThatFits)
         LessonRow(lesson: lessons[100])
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .previewLayout(.sizeThatFits)
     }
 }

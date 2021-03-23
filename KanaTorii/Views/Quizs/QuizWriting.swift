@@ -10,88 +10,36 @@ import SwiftUI
 struct QuizWriting: View {
     @Environment(\.presentationMode) var presentation
     @ObservedObject var quiz: Quiz
-    @State var showActionSheet: Bool = false
+    
+    
     @State var drawing: Drawing = Drawing()
     @State var drawings: [Drawing] = [Drawing]()
     @State var image: UIImage = UIImage()
+    
     @Binding var showScore: Bool
-    private var kanaType: String {
-        if quiz.hiragana {
-            return "hiragana"
-        } else {
-            return "katakana"
-        }
-    }
+    @State var showActionSheet: Bool = false
     
     var body: some View {
-        if UIDevice.current.localizedModel == "iPad" {
-            GeometryReader(content: { geometry in
-                let widthDevice = geometry.size.width
-                let heightDevice = geometry.size.height
+        GeometryReader(content: { geometry in
+            let widthDevice = geometry.size.width
+            let heightDevice = geometry.size.height
+            if UIDevice.current.localizedModel == "iPad" {
                 VStack {
                     QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
                         .padding(.top, 5)
-                    HStack {
-                        Spacer()
-                        VStack {
-                            TitleQuizWriting(quiz: quiz, kanaType: kanaType, heightDevice: heightDevice)
-                            Spacer()
-                            DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: 15)
-                                .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
-                                .padding(.all, heightDevice/40)
-                            DrawingButtonQuiz(drawings: $drawings, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
-                            Spacer()
-                            ContinueButtonQuizDrawing(quiz: quiz, showActionSheet: $showActionSheet, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33)
-                                .padding(.bottom, heightDevice/20)
-                        }
-                        Spacer()
-                    }
+                    BodyQuizWriting(
+                        quiz: quiz,
+                        drawing: $drawing,
+                        drawings: $drawings,
+                        image: $image,
+                        widthDevice: widthDevice,
+                        heightDevice: heightDevice,
+                        showActionSheet: $showActionSheet)
                 }.background(Color(UIColor.secondarySystemBackground))
-                //.navigationBarTitle()
-            })
-            .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "),
-                      message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
-                      dismissButton: .default(Text("Continue"), action: {
-                        if quiz.state == .play {
-                            quiz.nextQuestion()
-                            drawings = [Drawing]()
-                        } else {
-                            showScore.toggle()
-                            presentation.wrappedValue.dismiss()
-                        }
-                    })
-                )
-            })
-        } else {
-            GeometryReader(content: { geometry in
-                let widthDevice = geometry.size.width
-                let heightDevice = geometry.size.height
-                VStack {
-                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
-                        .padding(.top, 5)
-                    HStack {
-                        Spacer()
-                        VStack {
-                            TitleQuizWriting(quiz: quiz, kanaType: kanaType, heightDevice: heightDevice)
-                            DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/40)
-                                .frame(minWidth: 220, idealWidth: 300, maxWidth: 600, minHeight: 220, idealHeight: 300, maxHeight: 400, alignment: .center)
-                                .padding(.all, heightDevice/40)
-                            DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
-                            Spacer()
-                            ContinueButtonQuizDrawing(quiz: quiz, showActionSheet: $showActionSheet, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20)
-                                .padding(.bottom, heightDevice/20)
-                        }
-                        Spacer()
-                    }
-                }.background(Color(UIColor.secondarySystemBackground))
-                //.navigationBarTitle()
-            })
-            .actionSheet(isPresented: $showActionSheet, content: {
-                ActionSheet(
-                    title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
-                    buttons: [
-                        .default(Text("Continue"), action: {
+                .alert(isPresented: $showActionSheet, content: {
+                    Alert(title: Text("Your result: "),
+                          message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
+                          dismissButton: .default(Text("Continue"), action: {
                             if quiz.state == .play {
                                 quiz.nextQuestion()
                                 drawings = [Drawing]()
@@ -100,10 +48,39 @@ struct QuizWriting: View {
                                 presentation.wrappedValue.dismiss()
                             }
                         })
-                    ]
-                )
-            })
-        }
+                    )
+                })
+            } else {
+                VStack {
+                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
+                        .padding(.top, 5)
+                    BodyQuizWriting(
+                        quiz: quiz,
+                        drawing: $drawing,
+                        drawings: $drawings,
+                        image: $image,
+                        widthDevice: widthDevice,
+                        heightDevice: heightDevice,
+                        showActionSheet: $showActionSheet)
+                }.background(Color(UIColor.secondarySystemBackground))
+                .actionSheet(isPresented: $showActionSheet, content: {
+                    ActionSheet(
+                        title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
+                        buttons: [
+                            .default(Text("Continue"), action: {
+                                if quiz.state == .play {
+                                    quiz.nextQuestion()
+                                    drawings = [Drawing]()
+                                } else {
+                                    showScore.toggle()
+                                    presentation.wrappedValue.dismiss()
+                                }
+                            })
+                        ]
+                    )
+                })
+            }
+        })
     }
 }
 
