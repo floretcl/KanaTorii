@@ -645,8 +645,8 @@
 		7E3E438625CB432300B2F5AC /* Quizs */ = {
 			isa = PBXGroup;
 			children = (
-				7EBF6DCE25E7F5F40077F4D2 /* QuizHeader.swift */,
 				7E8BAB0725F3FCC300205949 /* QuizsView.swift */,
+				7EBF6DCE25E7F5F40077F4D2 /* QuizHeader.swift */,
 				7E3FE92A25E3FE2E00AB398D /* QuizMCQ.swift */,
 				7E335B3125E6BE26004EC2C9 /* QuizMCQ */,
 				7E3FE93725E3FE8700AB398D /* QuizKeyboard.swift */,

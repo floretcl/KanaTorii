@@ -29,9 +29,10 @@ struct SheetHeaderDraw: View {
                 presentation.wrappedValue.dismiss()
             }, label: {
                 Label("Close", systemImage: "xmark.circle.fill")
+                    .font(.body)
                     .imageScale(.large)
             })
-            .padding()
+            .padding(10)
         }
         .background(Color("Green"))
         .foregroundColor(.white)

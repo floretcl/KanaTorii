@@ -84,6 +84,7 @@ class Lesson: ObservableObject {
         self.numberOfScore = 0
         self.kanaIndex = 0
     }
+    
     func newPart() {
         if currentPartIndex + 1 < totalParts {
             currentPartIndex += 1
@@ -100,16 +101,18 @@ class Lesson: ObservableObject {
             lessonFinished()
         }
     }
+    
     func lessonFinished() {
         state = .end
     }
+    
     func reset() {
-        self.state = .play
-        self.currentPartIndex = 0
-        self.numberOfMemo = 0
-        self.numberOfTest = 0
-        self.numberOfQuiz = 0
-        self.numberOfScore = 0
-        self.kanaIndex = 0
+        state = .play
+        currentPartIndex = 0
+        numberOfMemo = 0
+        numberOfTest = 0
+        numberOfQuiz = 0
+        numberOfScore = 0
+        kanaIndex = 0
     }
 }

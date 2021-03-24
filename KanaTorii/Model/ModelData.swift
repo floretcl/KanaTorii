@@ -24,6 +24,7 @@ final class ModelData: ObservableObject {
         kanas.filter { $0.isYoon }
     }
 }
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 

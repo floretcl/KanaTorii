@@ -15,20 +15,22 @@ struct LessonForList: Hashable, Codable, Identifiable {
     var romaji: [String]
     var text: String
     var isHiragana: Bool {
-        if title.contains("Hiragana") {
+        if self.title.contains("Hiragana") {
             return true
         } else {
             return false
         }
     }
+    
     var isKatakana: Bool {
-        if title.contains("Katakana") {
+        if self.title.contains("Katakana") {
             return true
         } else {
             return false
         }
     }
+    
     var kanaTypeString: String {
-        return isHiragana ? "hiragana" : "katakana"
+        return self.isHiragana ? "hiragana" : "katakana"
     }
 }

@@ -68,6 +68,9 @@ struct LessonMemoReading: View {
                             if currentLesson.currentPart == .quiz {
                                 ContinueButtonQuiz(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showQuiz: $showQuiz)
                                 .padding(.bottom, heightDevice/20)
+//                                .alert(isPresented: $showQuiz, content: {
+//                                    Alert(title: Text("Let's starta short quiz with the kanas"))
+//                                })
                                 .fullScreenCover(
                                     isPresented: $showQuiz,
                                     onDismiss: {

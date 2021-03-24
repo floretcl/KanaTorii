@@ -48,6 +48,7 @@ struct Kana: Hashable, Codable, Identifiable {
             }
         }
     }
+    
     static func getIdKana(name: String) -> Int {
         let modelData = ModelData()
         var kanas: [Kana] {
@@ -63,6 +64,7 @@ struct Kana: Hashable, Codable, Identifiable {
         }
         return idKana
     }
+    
     static func getLinesImageFilename(romaji: String, kanaType: KanaType) -> String {
         let modelData = ModelData()
         var kanas: [Kana] {
@@ -78,5 +80,4 @@ struct Kana: Hashable, Codable, Identifiable {
         }
         return linesImageFilename
     }
-    
 }

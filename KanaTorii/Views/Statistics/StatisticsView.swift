@@ -16,18 +16,28 @@ struct StatisticsView: View {
 
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
-            List {
-                ForEach(statKana) { kana in
-                    StatRow(kana: kana)
+            VStack {
+                NavigationView {
+                    Form {
+                        List {
+                            ForEach(statKana) { kana in
+                                StatRow(kana: kana)
+                            }
+                            .onDelete(perform: deleteItems)
+                        }
+                    }.navigationBarTitle("Statistics")
                 }
-                .onDelete(perform: deleteItems)
-            }.padding(.horizontal, 150)
+                .padding(.horizontal, 100)
+                .navigationViewStyle(StackNavigationViewStyle())
+            }.background(Color(UIColor.secondarySystemBackground))
         } else {
-            List {
-                ForEach(statKana) { kana in
-                    StatRow(kana: kana)
-                }
-                .onDelete(perform: deleteItems)
+            NavigationView {
+                List {
+                    ForEach(statKana) { kana in
+                        StatRow(kana: kana)
+                    }
+                    .onDelete(perform: deleteItems)
+                }.navigationBarTitle("Statistics")
             }
         }
     }

@@ -18,8 +18,8 @@ class Test: ObservableObject {
     private var currentIndex: Int
     private var numberOfTestsPerformed: Int
     @Published var testDone: Bool
-    let nbSuggestionIf5possibility: Int = 4
-    let nbSuggestionIf3possibility: Int = 3
+    private let nbSuggestionIf5possibility: Int = 4
+    private let nbSuggestionIf3possibility: Int = 3
     enum KanaType {
         case hiragana
         case katakana
@@ -73,6 +73,7 @@ class Test: ObservableObject {
         self.numberOfTestsPerformed = 0
         self.suggestions = []
         self.testDone = false
+        
         suggestions = getSuggestions()
     }
     
@@ -89,6 +90,7 @@ class Test: ObservableObject {
         }
         testDone = true
     }
+    
     func testAnswer(with answer: String) -> Bool {
         if answer.lowercased() == currentSolution.lowercased() {
             return true
@@ -96,6 +98,7 @@ class Test: ObservableObject {
             return false
         }
     }
+    
     func nextQuestion() {
         numberOfTestsPerformed += 1
         if numberOfTestsPerformed == 2 {
@@ -104,13 +107,16 @@ class Test: ObservableObject {
         resetStateAnswer()
         suggestions = getSuggestions()
     }
+    
     private func resetStateAnswer() {
         correctAnswer = false
         testDone = false
     }
+    
     private func testEnd() {
         state = .end
     }
+    
     private func getSuggestions() -> [String] {
         var characteresArray: [String]
         var characteresString: String
@@ -138,6 +144,7 @@ class Test: ObservableObject {
         }
         return randomArray.shuffled()
     }
+    
     private func playSound(sound: String, ext: String) {
         if let soundURL = Bundle.main.url(forResource: sound, withExtension: ext) {
             var mySound: SystemSoundID = 0

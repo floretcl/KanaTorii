@@ -19,7 +19,7 @@ struct KanaForList: Hashable, Codable, Identifiable {
     var fileNameHiraganaWithLineOrder: String
     var fileNameKatakanaWithLineOrder: String
     var isKana: Bool {
-        if name != "" {
+        if self.name != "" {
             return true
         } else {
             return false

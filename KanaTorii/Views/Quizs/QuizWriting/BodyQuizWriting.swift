@@ -38,7 +38,6 @@ struct BodyQuizWriting: View {
                         .padding(.all, heightDevice/40)
                     DrawingButtonQuiz(drawings: $drawings, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
                 } else {
-                    TitleQuizWriting(quiz: quiz, kanaType: kanaType, heightDevice: heightDevice)
                     DrawingPadQuiz(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/40)
                         .frame(minWidth: 220, idealWidth: 300, maxWidth: 600, minHeight: 220, idealHeight: 300, maxHeight: 400, alignment: .center)
                         .padding(.all, heightDevice/40)
@@ -46,6 +45,7 @@ struct BodyQuizWriting: View {
                 }
                 Spacer()
                 ContinueButtonQuizDrawing(quiz: quiz, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
+                    .padding(.bottom, 25)
             }
             Spacer()
         }

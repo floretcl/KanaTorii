@@ -16,7 +16,7 @@ struct SettingsView: View {
                 SettingsForm()
                     .padding(.horizontal, 100)
                 Spacer()
-            }
+            }.background(Color(UIColor.secondarySystemBackground))
         } else {
             VStack {
                 SheetHeaderSettings(paddingLeading: 20)

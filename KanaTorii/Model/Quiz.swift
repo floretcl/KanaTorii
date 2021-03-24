@@ -10,23 +10,23 @@ import AudioToolbox
 import SwiftUI
 
 class Quiz: ObservableObject {
-    var modelData = ModelData()
-    var scoreData = Score()
+    private var modelData = ModelData()
+    private var scoreData = Score()
     private var hiraganaRecognizer: HiraganaRecognizer?
     private var katakanaRecognizer: KatakanaRecognizer?
-    var quickQuiz: Bool
-    var difficulty: Difficulty
+    private var quickQuiz: Bool
+    private var difficulty: Difficulty
     var translationDirection: Direction
     var hiragana: Bool
     var katakana: Bool
-    var kanaSection: KanaSection
-    var nbQuestions: Double
+    private var kanaSection: KanaSection
+    private var nbQuestions: Double
     @Published var state: State
-    var score: Int
+    private var score: Int
     @Published var testDone: Bool
     @Published var correctAnswer: Bool
-    var currentIndex: Int
-    let numberOfSuggestions: Int = 9
+    private var currentIndex: Int
+    private let numberOfSuggestions: Int = 9
     @Published var suggestions: [String]?
     @Published var kanas: [Kana] = []
     enum Difficulty {
@@ -97,27 +97,26 @@ class Quiz: ObservableObject {
         self.testDone = false
         self.correctAnswer = false
         self.currentIndex = 0
-        if quickQuiz {
-            self.kanas = getRandomKana()
+        if self.quickQuiz {
+            kanas = getRandomKana()
         } else {
-            switch kanaSection {
+            switch self.kanaSection {
             case .all:
-                self.kanas = modelData.kanas.shuffled()
+                kanas = modelData.kanas.shuffled()
             case .gojuon:
-                self.kanas = modelData.gojuons.shuffled()
+                kanas = modelData.gojuons.shuffled()
             case .handakuon:
-                self.kanas = modelData.handakuons.shuffled()
+                kanas = modelData.handakuons.shuffled()
             case .yoon:
-                self.kanas = modelData.yoons.shuffled()
+                kanas = modelData.yoons.shuffled()
             }
         }
-        if difficulty == .easy {
+        if self.difficulty == .easy {
             suggestions = getSuggestions()
         } else if difficulty == .hard && translationDirection == .toKana {
             initializeConfiguration()
         }
     }
-    
     
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
@@ -137,6 +136,7 @@ class Quiz: ObservableObject {
         }
         saveScore()
     }
+    
     func testAnswer(with answer: String) -> Bool {
         if answer.lowercased() == currentSolution.lowercased() || answer.lowercased() == currentSolutionIfRomaji.lowercased() {
             return true
@@ -144,6 +144,7 @@ class Quiz: ObservableObject {
             return false
         }
     }
+    
     func nextQuestion() {
         if currentIndex < kanas.count {
             currentIndex += 1
@@ -153,17 +154,21 @@ class Quiz: ObservableObject {
             suggestions = getSuggestions()
         }
     }
+    
     private func resetStateAnswer() {
         correctAnswer = false
         testDone = false
     }
+    
     private func quizEnd() {
         state = .end
     }
+    
     private func saveScore() {
         scoreData.nbCorrectAnswers = score
         scoreData.nbTotalQuestions = numberTotalKana
     }
+    
     private func getRandomKana() -> [Kana] {
         let kanas: [Kana] = modelData.kanas.shuffled()
         var randomArray: [Kana] = []
@@ -172,6 +177,7 @@ class Quiz: ObservableObject {
         }
         return randomArray
     }
+    
     private func getSuggestions() -> [String] {
         let currentKanaElement: Kana = kanas[currentIndex]
         var randomArrayElement: [Kana] = []
@@ -202,6 +208,7 @@ class Quiz: ObservableObject {
         }
         return randomArray.shuffled()
     }
+    
     private func playSound(sound: String, ext: String) {
         if let soundURL = Bundle.main.url(forResource: sound, withExtension: ext) {
             var mySound: SystemSoundID = 0
@@ -210,6 +217,8 @@ class Quiz: ObservableObject {
             AudioServicesPlaySystemSound(mySound);
         }
     }
+    
+    // Initialize for CoreML Model use
     private func initializeConfiguration() {
         if hiragana {
             do {
@@ -225,6 +234,8 @@ class Quiz: ObservableObject {
             }
         }
     }
+    
+    // Return prediction from CoreML Model
     func classLabel(forImage: UIImage) -> String? {
         var prediction: String
         guard let cGImage = forImage.cgImage else {

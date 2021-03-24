@@ -95,9 +95,9 @@ class MiniQuiz: ObservableObject {
         self.suggestions = []
         
         if kanas.count == 5 {
-            self.arrayIndex = [0,1,2,3,4].shuffled()
+            arrayIndex = [0,1,2,3,4].shuffled()
         } else {
-            self.arrayIndex = [0,1,2].shuffled()
+            arrayIndex = [0,1,2].shuffled()
         }
         
         if self.draw == false {
@@ -131,6 +131,7 @@ class MiniQuiz: ObservableObject {
         }
         saveScore()
     }
+    
     func testAnswer(with answer: String) -> Bool {
         if answer.lowercased() == currentSolution.lowercased() {
             return true
@@ -138,6 +139,7 @@ class MiniQuiz: ObservableObject {
             return false
         }
     }
+    
     func nextQuestion() {
         if currentIndex == kanas.count - 1 && cycle == 2 {
             currentIndex = 0
@@ -148,21 +150,26 @@ class MiniQuiz: ObservableObject {
         suggestions = getSuggestions()
         Kana.readTextInJapanese(text: currentKana)
     }
+    
     private func resetStateAnswer() {
         correctAnswer = false
         testDone = false
     }
+    
     private func quizEnd() {
         state = .end
     }
+    
     private func saveScore() {
         scoreData.nbCorrectAnswers = score
         scoreData.nbTotalQuestions = numberTotalKana * cycle
     }
+    
     private func resetScore() {
         scoreData.nbCorrectAnswers = 0
         scoreData.nbTotalQuestions = numberTotalKana
     }
+    
     private func getSuggestions() -> [String] {
         var characteresArray: [String]
         var characteresString: String
@@ -190,6 +197,7 @@ class MiniQuiz: ObservableObject {
         }
         return randomArray.shuffled()
     }
+    
     private func playSound(sound: String, ext: String) {
         if let soundURL = Bundle.main.url(forResource: sound, withExtension: ext) {
             var mySound: SystemSoundID = 0
@@ -198,6 +206,8 @@ class MiniQuiz: ObservableObject {
             AudioServicesPlaySystemSound(mySound);
         }
     }
+    
+    // Initialize for CoreML Model use
     private func initializeConfiguration() {
         if type == .hiragana {
             do {
@@ -213,6 +223,8 @@ class MiniQuiz: ObservableObject {
             }
         }
     }
+    
+    // Return prediction form right CoreML Model
     func classLabel(forImage: UIImage) -> String? {
         var prediction: String
         guard let cGImage = forImage.cgImage else {

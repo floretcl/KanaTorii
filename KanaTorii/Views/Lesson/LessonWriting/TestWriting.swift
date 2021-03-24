@@ -47,7 +47,7 @@ struct TestWriting: View {
                                 .padding(.all, heightDevice/40)
                             DrawingButtonsTest(test: test, drawings: $drawings, showGuide: $showGuide, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
                             Spacer()
-                            ContinueButtonTestDrawing(test: test, showGuide: $showGuide, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/33, showActionSheet: $showActionSheet)
+                            ContinueButtonTestDrawing(test: test, showGuide: $showGuide, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
                                 .padding(.bottom, heightDevice/20)
                         }
                         Spacer()
@@ -85,7 +85,7 @@ struct TestWriting: View {
                                 .padding(.all, heightDevice/40)
                             DrawingButtonsTest(test: test, drawings: $drawings, showGuide: $showGuide, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
                             Spacer()
-                            ContinueButtonTestDrawing(test: test, showGuide: $showGuide, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: widthDevice/20, showActionSheet: $showActionSheet)
+                            ContinueButtonTestDrawing(test: test, showGuide: $showGuide, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
                                 .padding(.bottom, heightDevice/20)
                         }
                         Spacer()

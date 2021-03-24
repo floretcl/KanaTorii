@@ -58,7 +58,6 @@ struct QuizsView: View {
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             GeometryReader(content: { geometry in
-                let heightDevice = geometry.size.height
                 NavigationView {
                     VStack {
                         Form {
@@ -237,7 +236,6 @@ struct QuizsView: View {
                                         },
                                         label: {
                                             Text("Start")
-                                                .font(.system(size: heightDevice/40))
                                                 .foregroundColor(.accentColor)
                                         }).padding(.vertical, 10)
                                 }.sheet(
@@ -251,17 +249,16 @@ struct QuizsView: View {
                                 )
                                 Spacer()
                             }
-                        }
+                        }.padding(.horizontal, 100)
                     }
                     .navigationBarTitle("Quiz", displayMode: .inline)
-                    .padding(.horizontal, 100)
+                    .background(Color(UIColor.secondarySystemBackground))
                 }.navigationViewStyle(StackNavigationViewStyle())
             }).onAppear(perform: {
                 userSettings.quickQuizNbQuestions = UserDefaults.standard.object(forKey: "quick-quiz-nb-questions") as? Double ?? 10.0
             })
         } else {
             GeometryReader(content: { geometry in
-                let heightDevice = geometry.size.height
                 NavigationView {
                     VStack {
                         Form {
@@ -440,7 +437,6 @@ struct QuizsView: View {
                                         },
                                         label: {
                                             Text("Start")
-                                                .font(.system(size: heightDevice/40))
                                                 .foregroundColor(.accentColor)
                                         }).padding(.vertical, 5)
                                 }.sheet(
