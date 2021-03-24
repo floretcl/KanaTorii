@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TitleTestWriting: View {
-    @ObservedObject var test: TestDrawing
+    @StateObject var test: TestDrawing
     var kanaType: String
     
     var heightDevice: CGFloat

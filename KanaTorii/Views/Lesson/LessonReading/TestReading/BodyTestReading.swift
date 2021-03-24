@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct BodyTestReading: View {
-    @ObservedObject var currentLesson: Lesson
-    @ObservedObject var test: Test
+    @StateObject var currentLesson: Lesson
+    @StateObject var test: Test
     private var label: String {
         if test.translationDirection == .toKana {
             return test.currentRomaji
@@ -62,7 +62,6 @@ struct BodyTestReading: View {
                                 width: 100,
                                 height: 100,
                                 showActionSheet: $showActionSheet)
-                                .padding(.bottom, heightDevice/8)
                                 .padding(.bottom, heightDevice/10)
                         }
                     }

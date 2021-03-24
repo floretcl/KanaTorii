@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TitleMiniQuizWriting: View {
-    @ObservedObject var miniQuiz: MiniQuiz
+    @StateObject var miniQuiz: MiniQuiz
     var kanaType: String
     
     var heightDevice: CGFloat

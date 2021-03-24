@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContinueButtonScore: View {
-    @ObservedObject var currentLesson: Lesson
+    @StateObject var currentLesson: Lesson
     
     var widthDevice: CGFloat
     var heightDevice: CGFloat

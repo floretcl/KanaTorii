@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TitleQuizKeyboard: View {
-    @ObservedObject var quiz: Quiz
+    @StateObject var quiz: Quiz
     
     var heightDevice: CGFloat
     

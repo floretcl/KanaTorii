@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MemoCard: View {
-    @ObservedObject var currentLesson: Lesson
+    @StateObject var currentLesson: Lesson
     var fileNameLinesImage: String {
         return getLinesImageFilename(romaji: currentLesson.currentRomaji, kanaType: currentLesson.kanaType)
     }

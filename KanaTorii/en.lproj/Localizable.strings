@@ -51,7 +51,7 @@
 "Notification will arrive on time" = "Notification will arrive on time";
 "Number of questions: %lld" = "Number of questions: %lld";
 "Orange" = "Orange";
-"Part %@ / %@" = "Part %@ / %@";
+"%@ Part %lld / %lld" = "%@ Part %lld / %lld";
 "Practice drawing %@: %@" = "Practice drawing %@: %@";
 "Previous" = "Previous";
 "Primary" = "Primary";

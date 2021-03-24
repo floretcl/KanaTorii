@@ -27,7 +27,7 @@ struct SheetHeaderSettings: View {
             .shadow(color: Color.black, radius: 4, x: 0.0, y: 2.0)
             Spacer()
             Button(action: {
-                presentation.wrappedValue.dismiss()
+                self.presentation.wrappedValue.dismiss()
             }, label: {
                 Label("Close", systemImage: "xmark.circle.fill")
                     .font(.body)

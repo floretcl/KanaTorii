@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SoundButton: View {
-    @ObservedObject var currentLesson: Lesson
+    @StateObject var currentLesson: Lesson
     
     var body: some View {
         Button(action: {

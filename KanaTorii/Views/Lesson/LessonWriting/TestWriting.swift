@@ -11,8 +11,8 @@ import CoreML
 struct TestWriting: View {
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var currentLesson: Lesson
-    @ObservedObject var test: TestDrawing
+    @StateObject var currentLesson: Lesson
+    @StateObject var test: TestDrawing
     private var kanaType: String {
         if test.type == .hiragana {
             return "hiragana"
@@ -65,7 +65,7 @@ struct TestWriting: View {
                         if currentLesson.currentPart == .quiz {
                             showQuiz.toggle()
                         }
-                        presentation.wrappedValue.dismiss()
+                        self.presentation.wrappedValue.dismiss()
                     })
                 )
             })
@@ -104,7 +104,7 @@ struct TestWriting: View {
                             if currentLesson.currentPart == .quiz {
                                 showQuiz.toggle()
                             }
-                            presentation.wrappedValue.dismiss()
+                            self.presentation.wrappedValue.dismiss()
                         })
                     ]
                 )

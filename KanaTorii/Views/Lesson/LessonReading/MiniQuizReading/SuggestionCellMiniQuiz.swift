@@ -14,7 +14,7 @@ struct SuggestionCellMiniQuiz: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
     
-    @ObservedObject var miniQuiz: MiniQuiz
+    @StateObject var miniQuiz: MiniQuiz
     
     var index: Int
     var width: CGFloat

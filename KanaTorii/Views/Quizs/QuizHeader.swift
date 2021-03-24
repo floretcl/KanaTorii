@@ -10,7 +10,7 @@ import SwiftUI
 struct QuizHeader: View {
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var quiz: Quiz
+    @StateObject var quiz: Quiz
     @Binding var showScore: Bool
     var heightDevice: CGFloat
     
@@ -18,7 +18,7 @@ struct QuizHeader: View {
         HStack {
             Button(action: {
                 showScore.toggle()
-                presentation.wrappedValue.dismiss()
+                self.presentation.wrappedValue.dismiss()
             }, label: {
                 Image(systemName: "multiply")
                     .font(.title)

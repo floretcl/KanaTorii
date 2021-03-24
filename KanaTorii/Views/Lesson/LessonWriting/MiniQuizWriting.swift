@@ -14,8 +14,8 @@ struct MiniQuizWriting: View {
     
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var currentLesson: Lesson
-    @ObservedObject var miniQuiz: MiniQuiz
+    @StateObject var currentLesson: Lesson
+    @StateObject var miniQuiz: MiniQuiz
     private var kanaType: String {
         if miniQuiz.type == .hiragana {
             return "hiragana"
@@ -66,7 +66,7 @@ struct MiniQuizWriting: View {
                         if miniQuiz.state == .play {
                             miniQuiz.nextQuestion()
                         } else {
-                            presentation.wrappedValue.dismiss()
+                            self.presentation.wrappedValue.dismiss()
                         }
                     })
                 )
@@ -106,7 +106,7 @@ struct MiniQuizWriting: View {
                             if miniQuiz.state == .play {
                                 miniQuiz.nextQuestion()
                             } else {
-                                presentation.wrappedValue.dismiss()
+                                self.presentation.wrappedValue.dismiss()
                             }
                         })
                     ]

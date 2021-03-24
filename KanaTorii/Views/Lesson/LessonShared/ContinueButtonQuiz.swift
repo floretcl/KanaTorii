@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContinueButtonQuiz: View {
-    @ObservedObject var currentLesson: Lesson
+    @StateObject var currentLesson: Lesson
     
     var widthDevice: CGFloat
     var heightDevice: CGFloat
@@ -21,7 +21,7 @@ struct ContinueButtonQuiz: View {
             hapticFeedback(style: .soft)
             showQuiz.toggle()
         }, label: {
-            Text("Quiz")
+            Text("Start a quick Quiz")
                 .font(.system(size: textSize))
                 .padding(.horizontal, widthDevice/8)
                 .padding(.vertical, heightDevice/50)

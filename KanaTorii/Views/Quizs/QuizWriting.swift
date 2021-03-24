@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuizWriting: View {
     @Environment(\.presentationMode) var presentation
-    @ObservedObject var quiz: Quiz
+    @StateObject var quiz: Quiz
     
     
     @State var drawing: Drawing = Drawing()
@@ -45,7 +45,7 @@ struct QuizWriting: View {
                                 drawings = [Drawing]()
                             } else {
                                 showScore.toggle()
-                                presentation.wrappedValue.dismiss()
+                                self.presentation.wrappedValue.dismiss()
                             }
                         })
                     )
@@ -73,7 +73,7 @@ struct QuizWriting: View {
                                     drawings = [Drawing]()
                                 } else {
                                     showScore.toggle()
-                                    presentation.wrappedValue.dismiss()
+                                    self.presentation.wrappedValue.dismiss()
                                 }
                             })
                         ]

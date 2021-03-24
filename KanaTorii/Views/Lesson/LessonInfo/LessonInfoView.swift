@@ -26,7 +26,7 @@ struct LessonInfoView: View {
         .navigationBarTitle("Lesson \(lesson.id + 1)", displayMode: .inline)
         .onAppear(perform: {
             if lessonAlreadyStart {
-                presentation.wrappedValue.dismiss()
+                self.presentation.wrappedValue.dismiss()
             }
         })
     }

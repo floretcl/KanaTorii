@@ -24,6 +24,7 @@ struct ContinueNavLink: View {
                             kanaType: lesson.kanaTypeString,
                             kanas: lesson.kanas,
                             romajis: lesson.romaji))
+                        .navigationBarHidden(true)
                         .environment(\.managedObjectContext, self.viewContext),
                     label: {
                         ContinueText(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40)
@@ -40,6 +41,7 @@ struct ContinueNavLink: View {
                             kanaType: lesson.kanaTypeString,
                             kanas: lesson.kanas,
                             romajis: lesson.romaji))
+                        .navigationBarHidden(true)
                         .environment(\.managedObjectContext, self.viewContext),
                     label: {
                         ContinueText(widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40)

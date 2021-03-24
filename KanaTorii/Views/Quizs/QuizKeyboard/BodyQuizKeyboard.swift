@@ -16,7 +16,7 @@ struct BodyQuizKeyboard: View {
     
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var quiz: Quiz
+    @StateObject var quiz: Quiz
     @Binding var text: String
     
     @Binding var showActionSheet: Bool
@@ -62,7 +62,7 @@ struct BodyQuizKeyboard: View {
                                     text = ""
                                 } else {
                                     showScore.toggle()
-                                    presentation.wrappedValue.dismiss()
+                                    self.presentation.wrappedValue.dismiss()
                                 }
                             })
                         )

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SuggestionsQuiz: View {
-    @ObservedObject var quiz: Quiz
+    @StateObject var quiz: Quiz
     
     var items: GridItem
     var spacing: CGFloat

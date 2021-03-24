@@ -10,8 +10,8 @@ import SwiftUI
 struct MiniQuizReading: View {
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var currentLesson: Lesson
-    @ObservedObject var miniQuiz: MiniQuiz
+    @StateObject var currentLesson: Lesson
+    @StateObject var miniQuiz: MiniQuiz
     
     @State var showActionSheet: Bool = false
     @State var showMessage: Bool = false
@@ -26,7 +26,7 @@ struct MiniQuizReading: View {
                         if miniQuiz.state == .play {
                             miniQuiz.nextQuestion()
                         } else {
-                            presentation.wrappedValue.dismiss()
+                            self.presentation.wrappedValue.dismiss()
                         }
                     })
                 )
@@ -41,7 +41,7 @@ struct MiniQuizReading: View {
                             if miniQuiz.state == .play {
                                 miniQuiz.nextQuestion()
                             } else {
-                                presentation.wrappedValue.dismiss()
+                                self.presentation.wrappedValue.dismiss()
                             }
                         })
                     ]

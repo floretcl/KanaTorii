@@ -11,8 +11,8 @@ struct BodyMiniQuizReading: View {
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     
-    @ObservedObject var currentLesson: Lesson
-    @ObservedObject var miniQuiz: MiniQuiz
+    @StateObject var currentLesson: Lesson
+    @StateObject var miniQuiz: MiniQuiz
     
     private var label: String {
         if miniQuiz.translationDirection == .toKana {

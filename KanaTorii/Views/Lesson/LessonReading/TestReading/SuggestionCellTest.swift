@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SuggestionCellTest: View {
-    @ObservedObject var test: Test
+    @StateObject var test: Test
     @State var testDone: Bool = false
     
     var index: Int

@@ -10,7 +10,7 @@ import SwiftUI
 struct QuizMCQ: View {
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var quiz: Quiz
+    @StateObject var quiz: Quiz
     var label: String {
         if quiz.translationDirection == .toRomaji {
             return quiz.currentKana
@@ -56,7 +56,7 @@ struct QuizMCQ: View {
                             quiz.nextQuestion()
                         } else {
                             showScore.toggle()
-                            presentation.wrappedValue.dismiss()
+                            self.presentation.wrappedValue.dismiss()
                         }
                     })
                 )
@@ -92,7 +92,7 @@ struct QuizMCQ: View {
                                 quiz.nextQuestion()
                             } else {
                                 showScore.toggle()
-                                presentation.wrappedValue.dismiss()
+                                self.presentation.wrappedValue.dismiss()
                             }
                         })
                     ]

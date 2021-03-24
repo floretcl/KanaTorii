@@ -16,7 +16,7 @@ struct LessonMemoWriting: View {
     
     @Environment(\.presentationMode) private var presentation
     
-    @ObservedObject var currentLesson: Lesson
+    @StateObject var currentLesson: Lesson
     
     @State var showTest: Bool = false
     @State var showQuiz: Bool = false
@@ -50,26 +50,27 @@ struct LessonMemoWriting: View {
                         }
                         Spacer()
                         ZStack {
-                            ContinueButtonTest(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showTest: $showTest)
-                            .padding(.bottom, heightDevice/20)
-                            .fullScreenCover(
-                                isPresented: $showTest,
-                                onDismiss: {
-                                    if currentLesson.state == .end {
-                                        currentLesson.reset()
-                                        self.presentation.wrappedValue.dismiss()
-                                    }
-                                },
-                                content: {
-                                    TestWriting(
-                                        currentLesson: currentLesson,
-                                        test: TestDrawing(
-                                            type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
-                                            kana: currentLesson.currentKana,
-                                            romaji: currentLesson.currentRomaji),
-                                            showQuiz: $showQuiz)
-                            })
-                            if currentLesson.currentPart == .quiz {
+                            if currentLesson.currentPart != .quiz && currentLesson.currentPart != .score {
+                                ContinueButtonTest(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showTest: $showTest)
+                                .padding(.bottom, heightDevice/20)
+                                .fullScreenCover(
+                                    isPresented: $showTest,
+                                    onDismiss: {
+                                        if currentLesson.state == .end {
+                                            currentLesson.reset()
+                                            self.presentation.wrappedValue.dismiss()
+                                        }
+                                    },
+                                    content: {
+                                        TestWriting(
+                                            currentLesson: currentLesson,
+                                            test: TestDrawing(
+                                                type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
+                                                kana: currentLesson.currentKana,
+                                                romaji: currentLesson.currentRomaji),
+                                                showQuiz: $showQuiz)
+                                })
+                            } else if currentLesson.currentPart == .quiz {
                                 ContinueButtonQuiz(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showQuiz: $showQuiz)
                                 .padding(.bottom, heightDevice/20)
                                 .fullScreenCover(
@@ -110,7 +111,7 @@ struct LessonMemoWriting: View {
                     Spacer()
                 }
             }
-            .navigationBarTitle(currentLesson.name)
+//            .navigationBarTitle(currentLesson.name)
         }).background(Color(UIColor.secondarySystemBackground))
     }
     private func addItemToCoreData() {

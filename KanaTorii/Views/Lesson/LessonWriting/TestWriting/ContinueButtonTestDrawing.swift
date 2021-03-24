@@ -10,7 +10,7 @@ import SwiftUI
 struct ContinueButtonTestDrawing: View {
     @Environment(\.colorScheme) var colorScheme
     
-    @ObservedObject var test: TestDrawing
+    @StateObject var test: TestDrawing
     
     @Binding var showGuide: Bool
     @Binding var drawings: [Drawing]

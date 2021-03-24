@@ -16,7 +16,7 @@ struct ContinueButtonMiniQuizDrawing: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    @ObservedObject var miniQuiz: MiniQuiz
+    @StateObject var miniQuiz: MiniQuiz
     @Binding var drawings: [Drawing]
     @Binding var image: UIImage
     

@@ -11,7 +11,7 @@ struct SuggestionsMiniQuiz: View {
     // Core data
     @Environment(\.managedObjectContext) private var viewContext
     
-    @ObservedObject var miniQuiz: MiniQuiz
+    @StateObject var miniQuiz: MiniQuiz
     
     var items: GridItem
     var spacing: CGFloat

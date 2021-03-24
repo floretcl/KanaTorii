@@ -10,8 +10,8 @@ import SwiftUI
 struct TestReading: View {
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var currentLesson: Lesson
-    @ObservedObject var test: Test
+    @StateObject var currentLesson: Lesson
+    @StateObject var test: Test
     
     @Binding var showQuiz: Bool
     
@@ -31,7 +31,7 @@ struct TestReading: View {
                         if currentLesson.currentPart == .quiz {
                             showQuiz.toggle()
                         }
-                        presentation.wrappedValue.dismiss()
+                        self.presentation.wrappedValue.dismiss()
                     }
                     test.nextQuestion()
                     })
@@ -50,7 +50,7 @@ struct TestReading: View {
                                 if currentLesson.currentPart == .quiz {
                                     showQuiz.toggle()
                                 }
-                                presentation.wrappedValue.dismiss()
+                                self.presentation.wrappedValue.dismiss()
                             }
                             test.nextQuestion()
                         })

@@ -10,7 +10,7 @@ import SwiftUI
 struct LessonHeader: View {
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var currentLesson: Lesson
+    @StateObject var currentLesson: Lesson
     
     var heightDevice: CGFloat
     
@@ -18,15 +18,21 @@ struct LessonHeader: View {
         HStack {
             Button(action: {
                 currentLesson.lessonFinished()
-                presentation.wrappedValue.dismiss()
+                self.presentation.wrappedValue.dismiss()
             }, label: {
                 Image(systemName: "multiply")
                     .font(.title)
                     .padding(.leading, 10)
             })
             VStack {
-                Text("Part \(currentLesson.currentPartNumber) / \(currentLesson.totalParts)"  )
-                    .padding(.top, heightDevice/100)
+                if UIDevice.current.localizedModel == "iPad" {
+                    Text("\(currentLesson.name) Part \(currentLesson.currentPartNumber) / \(currentLesson.totalParts)")
+                        .padding(.top, heightDevice/100)
+                } else {
+                    Text("\(String(currentLesson.name.prefix(8))) Part \(currentLesson.currentPartNumber) / \(currentLesson.totalParts)")
+                        .padding(.top, heightDevice/100)
+                }
+                
                 ProgressView(value: currentLesson.currentProgression)
                     .padding(.horizontal)
                     .padding(.bottom, heightDevice/50)

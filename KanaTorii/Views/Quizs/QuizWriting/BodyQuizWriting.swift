@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BodyQuizWriting: View {
-    @ObservedObject var quiz: Quiz
+    @StateObject var quiz: Quiz
     private var kanaType: String {
         if quiz.hiragana {
             return "hiragana"

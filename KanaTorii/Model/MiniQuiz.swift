@@ -10,24 +10,24 @@ import AVFoundation
 import SwiftUI
 
 class MiniQuiz: ObservableObject {
-    var scoreData = Score()
+    private var scoreData = Score()
     private var hiraganaRecognizer: HiraganaRecognizer?
     private var katakanaRecognizer: KatakanaRecognizer?
-    var draw: Bool
+    private var draw: Bool
     var type: KanaType
-    var kanas: [String]
-    var romajis: [String]
+    private var kanas: [String]
+    private var romajis: [String]
     @Published var state: State
-    var score: Int
-    var arrayIndex: Array<Int>
-    var cycle: Int
+    private var score: Int
+    private var arrayIndex: Array<Int>
+    private var cycle: Int
     @Published var testDone: Bool
     @Published var correctAnswer: Bool
-    var currentIndex: Int
+    private var currentIndex: Int
     @Published var suggestions: [String]?
-    var randomNumberGenerator = SystemRandomNumberGenerator()
-    let nbSuggestionIf5possibility: Int = 4
-    let nbSuggestionIf3possibility: Int = 3
+    private var randomNumberGenerator = SystemRandomNumberGenerator()
+    private let nbSuggestionIf5possibility: Int = 4
+    private let nbSuggestionIf3possibility: Int = 3
     enum KanaType {
         case hiragana
         case katakana
@@ -109,6 +109,7 @@ class MiniQuiz: ObservableObject {
         resetScore()
         
         Kana.readTextInJapanese(text: currentKana)
+        print("initialisation")
     }
     
     func answerCurrentQuestion(with answer: String) {
@@ -147,7 +148,9 @@ class MiniQuiz: ObservableObject {
             currentIndex += 1
         }
         resetStateAnswer()
-        suggestions = getSuggestions()
+        if self.draw == false {
+            suggestions = getSuggestions()
+        }
         Kana.readTextInJapanese(text: currentKana)
     }
     

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuizKeyboard: View {
 
-    @ObservedObject var quiz: Quiz
+    @StateObject var quiz: Quiz
     @State var text: String = ""
     
     @State var showActionSheet: Bool = false

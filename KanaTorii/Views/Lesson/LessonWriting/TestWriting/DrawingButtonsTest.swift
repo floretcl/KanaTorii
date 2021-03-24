@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DrawingButtonsTest: View {
-    @ObservedObject var test: TestDrawing
+    @StateObject var test: TestDrawing
     
     @Binding var drawings: [Drawing]
     @Binding var showGuide: Bool
