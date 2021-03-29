@@ -32,7 +32,7 @@ struct ReminderView: View {
                     hapticFeedback(style: .soft)
                     let hour = calendar.component(.hour, from: date)
                     let minute = calendar.component(.minute, from: date)
-                    self.localNotification.sendNotification(title: "Kana Torii", subtitle: nil, body: "It's time to learn new kanas, がんばってください! (Ganbattekudasai!)", weekday: selectedWeekDay, hour: hour, minute: minute)
+                    self.localNotification.sendNotification(title: "Kana Torii", subtitle: nil, body: "It's time to learn new kanas, がんばって! (Cheer up!)", weekday: selectedWeekDay, hour: hour, minute: minute)
                     showFootnote.toggle()
                 }, label: {
                     Text("Validate")

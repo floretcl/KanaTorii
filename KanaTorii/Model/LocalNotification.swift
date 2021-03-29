@@ -36,9 +36,10 @@ class LocalNotification: ObservableObject {
         date.hour = hour
         date.minute = minute
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
         let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
         
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }

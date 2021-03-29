@@ -33,7 +33,7 @@
 "Introduction" = "Introduction";
 "Introduction to Kana" = "Introduction aux Kanas";
 "Introduction text" = "Lorsque l’on commence l’apprentissage du Japonais, la première étape pour comprendre et écrire en japonais est d’apprendre et de retenir les \"Kana\".\n\nLes Kana sont composés de deux syllabaires, qui représentent l’ensemble des sons de la langue: \"les Hiragana\" et  les \"Katakana\". Ces deux systèmes d’écritures sont un peu les \"Alphabets\" Japonais. Chaque son a deux écritures, soit en hiragana pour les mots japonais (si l’on n’utilise pas les Kanji), soit en katakana pour les mots d’origine étrangère.\n\nDans ces deux systèmes d’écritures il y a de nombreux caractères mais les plus utilisés sont au nombre de 104 : les \"Gojuon\" (46 caractères simples), les \"Dakuon\" (20 caractères) et \"Handakuon\" (5 caractères) dérivés de caractères simples, et enfin les \"Yoon\" (33 caractères) composés de deux caractères simples.\n\nPour apprendre les kana il n'y a pas de secret, il faut les apprendre par coeur !";
-"It's time to learn new kanas, がんばってください! (Ganbattekudasai!)" = "Il est temps d'apprendre de nouveaux Kana, がんばってください! (Ganbattekudasai!)";
+"It's time to learn new kanas, がんばって! (Cheer up!)" = "Il est temps d'apprendre de nouveaux Kana, がんばって! (Courage!)";
 "Katakana Drawing" = "Écriture de Katakana";
 "Katakana Reading" = "Lecture de Katakana";
 "Keyboard and drawing" = "Clavier et Écriture";
