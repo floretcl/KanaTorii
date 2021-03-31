@@ -1,0 +1,34 @@
+{
+  "products" : [
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : true,
+      "internalID" : "45FB7CB7",
+      "localizations" : [
+        {
+          "description" : "Access to all lessons",
+          "displayName" : "+100 lessons",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Accès à toutes les leçons",
+          "displayName" : "+100 leçons",
+          "locale" : "fr"
+        }
+      ],
+      "productID" : "fr.clementfloret.kanatorii.IAP.lessons",
+      "referenceName" : "+100 lessons",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 0
+  }
+}

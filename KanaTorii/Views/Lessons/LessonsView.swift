@@ -21,6 +21,5 @@ struct LessonsView: View {
 struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
         LessonsView()
-            .environmentObject(ModelData())
     }
 }

@@ -54,12 +54,15 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+                .environmentObject(StoreManager())
                 .environmentObject(ModelData())
                 .preferredColorScheme(.dark)
             ContentView()
+                .environmentObject(StoreManager())
                 .environmentObject(ModelData())
                 .previewDevice("iPod touch (7th generation)")
             ContentView()
+                .environmentObject(StoreManager())
                 .environmentObject(ModelData())
                 .preferredColorScheme(.light)
                 .previewDevice("iPad Pro (12.9-inch) (4th generation)")

@@ -14,6 +14,9 @@ final class ModelData: ObservableObject {
     var lessons: [LessonForList] = load("lessonData.json")
     var weekdays: [Weekday] = load("weekdays.json")
     
+    var freeLessons: [LessonForList] {
+        lessons.filter { $0.id < 20 }
+    }
     var gojuons: [Kana] {
         kanas.filter { $0.isGojuon }
     }

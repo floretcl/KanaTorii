@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -114,6 +114,10 @@
 		7E60022925EA931800231C40 /* SuggestionsMiniQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E60022825EA931800231C40 /* SuggestionsMiniQuiz.swift */; };
 		7E60022E25EA933C00231C40 /* SuggestionCellMiniQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E60022D25EA933C00231C40 /* SuggestionCellMiniQuiz.swift */; };
 		7E60023A25EAB41700231C40 /* ContinueButtonMiniQuizDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E60023925EAB41700231C40 /* ContinueButtonMiniQuizDrawing.swift */; };
+		7E647573261228C1005507E0 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E647572261228C1005507E0 /* StoreManager.swift */; };
+		7E64757C26125731005507E0 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 7E64757B26125731005507E0 /* SwiftKeychainWrapper */; };
+		7E647581261257AA005507E0 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 7E647580261257AA005507E0 /* Configuration.storekit */; };
+		7E7F642926122385007C8C70 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7F642826122385007C8C70 /* StoreKit.framework */; };
 		7E863A2125CC5E9E00D3570E /* SuggestionCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E863A2025CC5E9E00D3570E /* SuggestionCellTest.swift */; };
 		7E89855325E16A2000C4900B /* ContinueButtonTestDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89855225E16A2000C4900B /* ContinueButtonTestDrawing.swift */; };
 		7E8BAB0825F3FCC300205949 /* QuizsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8BAB0725F3FCC300205949 /* QuizsView.swift */; };
@@ -286,6 +290,9 @@
 		7E60022825EA931800231C40 /* SuggestionsMiniQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsMiniQuiz.swift; sourceTree = "<group>"; };
 		7E60022D25EA933C00231C40 /* SuggestionCellMiniQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellMiniQuiz.swift; sourceTree = "<group>"; };
 		7E60023925EAB41700231C40 /* ContinueButtonMiniQuizDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonMiniQuizDrawing.swift; sourceTree = "<group>"; };
+		7E647572261228C1005507E0 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		7E647580261257AA005507E0 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		7E7F642826122385007C8C70 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7E863A2025CC5E9E00D3570E /* SuggestionCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellTest.swift; sourceTree = "<group>"; };
 		7E89855225E16A2000C4900B /* ContinueButtonTestDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTestDrawing.swift; sourceTree = "<group>"; };
 		7E8BAB0725F3FCC300205949 /* QuizsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizsView.swift; sourceTree = "<group>"; };
@@ -330,6 +337,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E64757C26125731005507E0 /* SwiftKeychainWrapper in Frameworks */,
+				7E7F642926122385007C8C70 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +699,8 @@
 				7E45E35F25DAD94D009B9A16 /* Extensions.swift */,
 				7E3E425C25CB2C7C00B2F5AC /* KanaTorii.xcdatamodeld */,
 				7E51761A25F28B3700FFDFF6 /* LocalNotification.swift */,
+				7E647572261228C1005507E0 /* StoreManager.swift */,
+				7E647580261257AA005507E0 /* Configuration.storekit */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -820,6 +831,7 @@
 		7EC7084125F660AF00013F38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E7F642826122385007C8C70 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -866,6 +878,9 @@
 			dependencies = (
 			);
 			name = KanaTorii;
+			packageProductDependencies = (
+				7E64757B26125731005507E0 /* SwiftKeychainWrapper */,
+			);
 			productName = KanaTorii;
 			productReference = 7E3E424E25CB2C7C00B2F5AC /* KanaTorii.app */;
 			productType = "com.apple.product-type.application";
@@ -938,6 +953,9 @@
 				fr,
 			);
 			mainGroup = 7E3E424525CB2C7C00B2F5AC;
+			packageReferences = (
+				7E64757A26125731005507E0 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = 7E3E424F25CB2C7C00B2F5AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -963,6 +981,7 @@
 				7E3F061A25F7E12B000FE9EE /* kanaForListData.json in Resources */,
 				7E3E43AF25CB44CF00B2F5AC /* YuMincho.ttc in Resources */,
 				7E3F062625F7E17F000FE9EE /* lessonData.json in Resources */,
+				7E647581261257AA005507E0 /* Configuration.storekit in Resources */,
 				7E3E43AE25CB44CF00B2F5AC /* Wrong Beep.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1057,6 +1076,7 @@
 				7EBF6DC725E7F57E0077F4D2 /* TitleQuizMCQ.swift in Sources */,
 				7E3E425E25CB2C7C00B2F5AC /* KanaTorii.xcdatamodeld in Sources */,
 				7E89855325E16A2000C4900B /* ContinueButtonTestDrawing.swift in Sources */,
+				7E647573261228C1005507E0 /* StoreManager.swift in Sources */,
 				7E3E431725CB35B800B2F5AC /* Grid.swift in Sources */,
 				7EF9804125D9796300634116 /* DetailButtons.swift in Sources */,
 				7ECFBBD22608EFF7003EC368 /* LessonInfo.swift in Sources */,
@@ -1317,7 +1337,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.3;
+				MARKETING_VERSION = 2.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1342,7 +1362,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.3;
+				MARKETING_VERSION = 2.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1474,6 +1494,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7E64757A26125731005507E0 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7E64757B26125731005507E0 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E64757A26125731005507E0 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7E3E425C25CB2C7C00B2F5AC /* KanaTorii.xcdatamodeld */ = {
