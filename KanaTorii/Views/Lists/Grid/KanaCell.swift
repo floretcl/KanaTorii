@@ -15,7 +15,7 @@ struct KanaCell: View {
         animation: .default) var statKana: FetchedResults<StatKana>
     
     // User Defaults
-    @ObservedObject var userSettings = UserSettings()
+    @AppStorage var colorsInTables: Bool
     
     var kanaForList: KanaForList
     var kanaType: Kana.KanaType
@@ -27,7 +27,7 @@ struct KanaCell: View {
         }
     }
     private var color: Color {
-        if userSettings.colorsInTables {
+        if colorsInTables {
             for stat in statKana {
                 if self.label == stat.kana {
                     return getProgressViewColor(nbCorrectAnswers: stat.nbCorrectAnswers, nbTotalAnswers: stat.nbTotalAnswers)
@@ -76,9 +76,6 @@ struct KanaCell: View {
                 }
             }
         )
-        .onAppear(perform: {
-            userSettings.colorsInTables = UserDefaults.standard.object(forKey: "colors-in-tables") as? Bool ?? true
-        })
     }
     
     func getId() -> Int {
@@ -110,10 +107,10 @@ struct KanaCell_Previews: PreviewProvider {
     static var kanasForList = ModelData().kanasForList
     static var previews: some View {
         Group {
-            KanaCell(kanaForList: kanasForList[10], kanaType: .hiragana, widthDevice: 320)
+            KanaCell(colorsInTables: .init(wrappedValue: true, "colors-in-tables"), kanaForList: kanasForList[10], kanaType: .hiragana, widthDevice: 320)
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
                 .previewLayout(.sizeThatFits)
-            KanaCell(kanaForList: kanasForList[13], kanaType: .katakana, widthDevice: 320)
+            KanaCell(colorsInTables: .init(wrappedValue: false, "colors-in-tables"), kanaForList: kanasForList[13], kanaType: .katakana, widthDevice: 320)
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
