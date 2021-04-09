@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Grid: View {
+    // User Defaults
+    @AppStorage var colorsInTables: Bool
+    
     var kanaType: Kana.KanaType
     var heightDevice: CGFloat
     var widthDevice: CGFloat
@@ -16,13 +19,13 @@ struct Grid: View {
         ScrollView(.vertical, showsIndicators: true, content: {
             VStack {
                 Section(header: CustomSection(label: "Gojuon").padding(.bottom, heightDevice/40)) {
-                    GojuonGrid(kanaType: kanaType, widthDevice: widthDevice)
+                    GojuonGrid(colorsInTables: _colorsInTables, kanaType: kanaType, widthDevice: widthDevice)
                 }
                 Section(header: CustomSection(label: "Dakuon & Handakuon").padding(.bottom, heightDevice/40)) {
-                    DakuonHandakuonGrid(kanaType: kanaType, widthDevice: widthDevice)
+                    DakuonHandakuonGrid(colorsInTables: _colorsInTables, kanaType: kanaType, widthDevice: widthDevice)
                 }
                 Section(header: CustomSection(label: "Yoon").padding(.bottom, heightDevice/40)) {
-                    YoonGrid(kanaType: kanaType, widthDevice: widthDevice)
+                    YoonGrid(colorsInTables: _colorsInTables, kanaType: kanaType, widthDevice: widthDevice)
                 }
             }
         })
@@ -31,7 +34,7 @@ struct Grid: View {
 
 struct Grid_Previews: PreviewProvider {
     static var previews: some View {
-        Grid(kanaType: .hiragana, heightDevice: 800, widthDevice: 350)
+        Grid(colorsInTables: .init(wrappedValue: true, "colors-in-tables"), kanaType: .hiragana, heightDevice: 800, widthDevice: 350)
             .environmentObject(ModelData())
     }
 }

@@ -17,15 +17,19 @@ struct ContentView: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("Green"))], for: .normal)
     }
     
+    // User Defaults
+    @AppStorage("colors-in-tables") var colorsInTables: Bool = true
+    @AppStorage("quick-quiz-nb-questions") var quickQuizNbQuestions: Double = 10.0
+    
     var body: some View {
         TabView(selection: $tabViewSelectedItem,
             content: {
-                HomeView()
+                HomeView(colorsInTables: _colorsInTables, quickQuizNbQuestions: _quickQuizNbQuestions)
                     .tabItem {
                         Text("Home")
                         Image(systemName: "house")
                     }.tag(1)
-                ListsView()
+                ListsView(colorsInTables: _colorsInTables)
                     .tabItem {
                         Text("Lists")
                         Image(systemName: "list.triangle")
@@ -35,7 +39,7 @@ struct ContentView: View {
                         Text("Lessons")
                         Image(systemName: "book")
                     }.tag(3)
-                QuizsView()
+                QuizsView(quickQuizNbQuestions: _quickQuizNbQuestions)
                     .tabItem {
                         Text("Quiz")
                         Image(systemName: "questionmark.circle")

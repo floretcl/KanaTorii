@@ -18,7 +18,8 @@ struct SettingsForm: View {
         animation: .default) var statLesson: FetchedResults<StatLesson>
     
     // User Defaults
-    @ObservedObject var userSettings = UserSettings()
+    @AppStorage var colorsInTables: Bool
+    @AppStorage var quickQuizNbQuestions: Double
     
     //App Version
     var appVersion: String? {
@@ -32,7 +33,7 @@ struct SettingsForm: View {
     var body: some View {
         Form {
             Section(header: Text("CHARACTER CHARTS")) {
-                Toggle("Statistics colors in tables", isOn: $userSettings.colorsInTables)
+                Toggle("Statistics colors in tables", isOn: $colorsInTables)
                 HStack {
                     Text("Primary").foregroundColor(.primary)
                     Text("Red").foregroundColor(.red)
@@ -43,9 +44,9 @@ struct SettingsForm: View {
             }
             Section(header: Text("QUICK QUIZ")) {
                 VStack {
-                    Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
+                    Text("Number of questions: \(Int(quickQuizNbQuestions))")
                     Slider(
-                        value: $userSettings.quickQuizNbQuestions,
+                        value: $quickQuizNbQuestions,
                         in: 10...40,
                         step: 5,
                         onEditingChanged: {_ in
@@ -54,7 +55,7 @@ struct SettingsForm: View {
                         minimumValueLabel: Text(minimumValue),
                         maximumValueLabel: Text(maximumValue))
                         {
-                        Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
+                        Text("Number of questions: \(Int(quickQuizNbQuestions))")
                     }
                 }
             }
@@ -118,7 +119,7 @@ struct SettingsForm: View {
 
 struct SettingsForm_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsForm()
+        SettingsForm(colorsInTables: .init(wrappedValue: true, "colors-in-tables"), quickQuizNbQuestions: .init(wrappedValue: 10.0, "quick-quiz-nb-questions"))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

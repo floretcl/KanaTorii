@@ -13,6 +13,9 @@ struct DakuonHandakuonGrid: View {
         return modelData.kanasForList
     }
     
+    // User Defaults
+    @AppStorage var colorsInTables: Bool
+    
     let limitGojuon: Int = 55
     let limitDakuonHandakuon: Int = 80
     let itemsCell = GridItem(.flexible(minimum: 30, maximum: 130))
@@ -28,7 +31,7 @@ struct DakuonHandakuonGrid: View {
                 spacing: widthDevice/20,
                 content: {
                     ForEach(limitGojuon..<limitDakuonHandakuon) { index in
-                        KanaCell(kanaForList: kanasForList[index], kanaType: self.kanaType, widthDevice: widthDevice)
+                        KanaCell(colorsInTables: _colorsInTables, kanaForList: kanasForList[index], kanaType: self.kanaType, widthDevice: widthDevice)
                     }
             })
             .padding(.top, 20)
@@ -40,7 +43,7 @@ struct DakuonHandakuonGrid: View {
 
 struct DakuonHandakuonGrid_Previews: PreviewProvider {
     static var previews: some View {
-        DakuonHandakuonGrid(kanaType: .hiragana, widthDevice: 400)
+        DakuonHandakuonGrid(colorsInTables: .init(wrappedValue: true, "colors-in-tables"), kanaType: .hiragana, widthDevice: 400)
             .environmentObject(ModelData())
     }
 }

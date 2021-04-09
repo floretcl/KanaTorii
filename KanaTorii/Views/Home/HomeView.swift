@@ -11,6 +11,10 @@ struct HomeView: View {
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     
+    // User Defaults
+    @AppStorage var colorsInTables: Bool
+    @AppStorage var quickQuizNbQuestions: Double
+    
     @State var showShare = false
     @State var showSettings = false
     @State var showIntroduction = false
@@ -45,7 +49,7 @@ struct HomeView: View {
                     trailing:
                         ButtonSettings(showSettings: $showSettings)
                             .fullScreenCover(isPresented: $showSettings, content: {
-                                SettingsView().environment(\.managedObjectContext, self.viewContext)
+                                SettingsView(colorsInTables: _colorsInTables, quickQuizNbQuestions: _quickQuizNbQuestions).environment(\.managedObjectContext, self.viewContext)
                             })
                 )
             }
@@ -57,7 +61,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeView()
+            HomeView(colorsInTables: .init(wrappedValue: true, "colors-in-tables"), quickQuizNbQuestions: .init(wrappedValue: 10.0, "quick-quiz-nb-questions"))
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }

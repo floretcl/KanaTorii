@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuizsView: View {
     // User Defaults
-    @ObservedObject var userSettings = UserSettings()
+    @AppStorage var quickQuizNbQuestions: Double
     @ObservedObject var scoreData = Score()
     
     @State var pickerMode: Int = 1
@@ -167,9 +167,9 @@ struct QuizsView: View {
                             } else {
                                 Section(header: Text("QUICK QUIZ")) {
                                     VStack {
-                                        Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
+                                        Text("Number of questions: \(Int(quickQuizNbQuestions))")
                                         Slider(
-                                            value: $userSettings.quickQuizNbQuestions,
+                                            value: $quickQuizNbQuestions,
                                             in: 10...40,
                                             step: 5,
                                             onEditingChanged: { _ in
@@ -178,7 +178,7 @@ struct QuizsView: View {
                                             minimumValueLabel: Text(minimumValue),
                                             maximumValueLabel: Text(maximumValue))
                                             {
-                                            Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
+                                            Text("Number of questions: \(Int(quickQuizNbQuestions))")
                                             }
                                     }
                                 }
@@ -197,7 +197,7 @@ struct QuizsView: View {
                                                         hiragana: hiragana,
                                                         katakana: katakana,
                                                         kanaSection: kanaSection,
-                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                        nbQuestions: quickQuizNbQuestions),
                                                     showScore: $showScore).navigationBarHidden(true)
                                             } else if pickerDifficulty == 1 && pickerDirection == 2 {
                                                 QuizMCQ(
@@ -208,7 +208,7 @@ struct QuizsView: View {
                                                         hiragana: hiragana,
                                                         katakana: katakana,
                                                         kanaSection: kanaSection,
-                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                        nbQuestions: quickQuizNbQuestions),
                                                     showScore: $showScore).navigationBarHidden(true)
                                             } else if pickerDifficulty == 2 && pickerDirection == 1 {
                                                 QuizKeyboard(
@@ -219,7 +219,7 @@ struct QuizsView: View {
                                                         hiragana: hiragana,
                                                         katakana: katakana,
                                                         kanaSection: kanaSection,
-                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                        nbQuestions: quickQuizNbQuestions),
                                                     showScore: $showScore).navigationBarHidden(true)
                                             } else {
                                                 QuizWriting(
@@ -230,7 +230,7 @@ struct QuizsView: View {
                                                         hiragana: hiragana,
                                                         katakana: katakana,
                                                         kanaSection: kanaSection,
-                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                        nbQuestions: quickQuizNbQuestions),
                                                     showScore: $showScore).navigationBarHidden(true)
                                             }
                                         },
@@ -254,8 +254,6 @@ struct QuizsView: View {
                     .navigationBarTitle("Quiz", displayMode: .inline)
                     .background(Color(UIColor.secondarySystemBackground))
                 }.navigationViewStyle(StackNavigationViewStyle())
-            }).onAppear(perform: {
-                userSettings.quickQuizNbQuestions = UserDefaults.standard.object(forKey: "quick-quiz-nb-questions") as? Double ?? 10.0
             })
         } else {
             GeometryReader(content: { geometry in
@@ -368,9 +366,9 @@ struct QuizsView: View {
                             } else {
                                 Section(header: Text("QUICK QUIZ")) {
                                     VStack {
-                                        Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
+                                        Text("Number of questions: \(Int(quickQuizNbQuestions))")
                                         Slider(
-                                            value: $userSettings.quickQuizNbQuestions,
+                                            value: $quickQuizNbQuestions,
                                             in: 10...40,
                                             step: 5,
                                             onEditingChanged: {_ in
@@ -379,7 +377,7 @@ struct QuizsView: View {
                                             minimumValueLabel: Text(minimumValue),
                                             maximumValueLabel: Text(maximumValue))
                                             {
-                                            Text("Number of questions: \(Int(userSettings.quickQuizNbQuestions))")
+                                            Text("Number of questions: \(Int(quickQuizNbQuestions))")
                                             }
                                     }
                                 }
@@ -398,7 +396,7 @@ struct QuizsView: View {
                                                         hiragana: hiragana,
                                                         katakana: katakana,
                                                         kanaSection: kanaSection,
-                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                        nbQuestions: quickQuizNbQuestions),
                                                     showScore: $showScore).navigationBarHidden(true)
                                             } else if pickerDifficulty == 1 && pickerDirection == 2 {
                                                 QuizMCQ(
@@ -409,7 +407,7 @@ struct QuizsView: View {
                                                         hiragana: hiragana,
                                                         katakana: katakana,
                                                         kanaSection: kanaSection,
-                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                        nbQuestions: quickQuizNbQuestions),
                                                     showScore: $showScore).navigationBarHidden(true)
                                             } else if pickerDifficulty == 2 && pickerDirection == 1 {
                                                 QuizKeyboard(
@@ -420,7 +418,7 @@ struct QuizsView: View {
                                                         hiragana: hiragana,
                                                         katakana: katakana,
                                                         kanaSection: kanaSection,
-                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                        nbQuestions: quickQuizNbQuestions),
                                                     showScore: $showScore).navigationBarHidden(true)
                                             } else {
                                                 QuizWriting(
@@ -431,7 +429,7 @@ struct QuizsView: View {
                                                         hiragana: hiragana,
                                                         katakana: katakana,
                                                         kanaSection: kanaSection,
-                                                        nbQuestions: userSettings.quickQuizNbQuestions),
+                                                        nbQuestions: quickQuizNbQuestions),
                                                     showScore: $showScore).navigationBarHidden(true)
                                             }
                                         },
@@ -454,8 +452,6 @@ struct QuizsView: View {
                     }
                     .navigationBarTitle("Quiz", displayMode: .inline)
                 }.navigationViewStyle(StackNavigationViewStyle())
-            }).onAppear(perform: {
-                userSettings.quickQuizNbQuestions = UserDefaults.standard.object(forKey: "quick-quiz-nb-questions") as? Double ?? 10.0
             })
         }
     }
@@ -468,7 +464,7 @@ struct QuizsView: View {
 struct QuizsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            QuizsView()
+            QuizsView(quickQuizNbQuestions: .init(wrappedValue: 10.0, "quick-quiz-nb-questions"))
         }
     }
 }

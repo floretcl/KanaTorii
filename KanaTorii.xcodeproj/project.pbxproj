@@ -104,7 +104,6 @@
 		7E410B6225D1B56600CABEE1 /* TestWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E410B6125D1B56600CABEE1 /* TestWriting.swift */; };
 		7E410B7225D1B8C400CABEE1 /* TestDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E410B7125D1B8C400CABEE1 /* TestDrawing.swift */; };
 		7E45E36025DAD94D009B9A16 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E45E35F25DAD94D009B9A16 /* Extensions.swift */; };
-		7E4AE9F525ED7C4A00FDFDC6 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4AE9F425ED7C4A00FDFDC6 /* UserSettings.swift */; };
 		7E4AEA0025ED9F3300FDFDC6 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4AE9FF25ED9F3300FDFDC6 /* Score.swift */; };
 		7E51761B25F28B3700FFDFF6 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E51761A25F28B3700FFDFF6 /* LocalNotification.swift */; };
 		7E51762125F28F6C00FFDFF6 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E51762025F28F6C00FFDFF6 /* ReminderView.swift */; };
@@ -279,7 +278,6 @@
 		7E410B6125D1B56600CABEE1 /* TestWriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWriting.swift; sourceTree = "<group>"; };
 		7E410B7125D1B8C400CABEE1 /* TestDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDrawing.swift; sourceTree = "<group>"; };
 		7E45E35F25DAD94D009B9A16 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		7E4AE9F425ED7C4A00FDFDC6 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		7E4AE9FF25ED9F3300FDFDC6 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		7E51761625F28A1700FFDFF6 /* KanaTorii.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanaTorii.entitlements; sourceTree = "<group>"; };
 		7E51761A25F28B3700FFDFF6 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
@@ -693,7 +691,6 @@
 				7E3E43AA25CB44CF00B2F5AC /* KatakanaRecognizer.mlmodel */,
 				7E049CAD25DECD0300C9324D /* HiraganaClassifier.mlmodel */,
 				7E049CA825DECCFC00C9324D /* KatakanaClassifier.mlmodel */,
-				7E4AE9F425ED7C4A00FDFDC6 /* UserSettings.swift */,
 				7E3E425A25CB2C7C00B2F5AC /* Persistence.swift */,
 				7E3F6A7325D6FD0600F22669 /* ImageProcessor.swift */,
 				7E45E35F25DAD94D009B9A16 /* Extensions.swift */,
@@ -1041,7 +1038,6 @@
 				7E3E430B25CB358200B2F5AC /* GreenSegmentedControl.swift in Sources */,
 				7E51762125F28F6C00FFDFF6 /* ReminderView.swift in Sources */,
 				7E232E75260A6E4C0004B29F /* StatRow.swift in Sources */,
-				7E4AE9F525ED7C4A00FDFDC6 /* UserSettings.swift in Sources */,
 				7E4AEA0025ED9F3300FDFDC6 /* Score.swift in Sources */,
 				7E3E42F225CB345A00B2F5AC /* ActivityView.swift in Sources */,
 				7E3E435C25CB36F900B2F5AC /* LessonsView.swift in Sources */,
@@ -1337,7 +1333,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.4;
+				MARKETING_VERSION = 2.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1362,7 +1358,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.4;
+				MARKETING_VERSION = 2.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

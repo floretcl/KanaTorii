@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ListsView: View {
+    // User Defaults
+    @AppStorage var colorsInTables: Bool
+    
     @State var pickerSelection: String = "hiragana"
     private var kanaType: Kana.KanaType {
         if pickerSelection == "hiragana" {
@@ -23,7 +26,7 @@ struct ListsView: View {
             let heightDevice = geometry.size.height
             NavigationView(content: {
                 VStack {
-                    Grid(kanaType: kanaType, heightDevice: heightDevice, widthDevice: widthDevice)
+                    Grid(colorsInTables: _colorsInTables, kanaType: kanaType, heightDevice: heightDevice, widthDevice: widthDevice)
                     HStack {
                         Spacer()
                         GreenSegmentedControl(pickerSelection: $pickerSelection)
@@ -43,7 +46,7 @@ struct ListsView: View {
 struct ListsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ListsView()
+            ListsView(colorsInTables: .init(wrappedValue: true, "colors-in-tables"))
                 .environmentObject(ModelData())
         }
     }
