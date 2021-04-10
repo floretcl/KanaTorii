@@ -21,11 +21,14 @@ struct SettingsForm: View {
     @AppStorage var colorsInTables: Bool
     @AppStorage var quickQuizNbQuestions: Double
     
+    @ObservedObject var localNotification = LocalNotification()
+    
     //App Version
     var appVersion: String? {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     }
     
+    @State var showAlertStopNotifications: Bool = false
     @State var showAlertResetData: Bool = false
     let minimumValue: String = "10"
     let maximumValue: String = "40"
@@ -83,6 +86,31 @@ struct SettingsForm: View {
                     })
                 }
             }
+            Section(header: Text("NOTIFICATIONS")) {
+                HStack {
+                    Text("Stop current notifications")
+                    Spacer()
+                    Button("Stop") {
+                        showAlertStopNotifications.toggle()
+                        hapticFeedback(style: .medium)
+                    }.padding(.all, 12.0)
+                    .foregroundColor(.white)
+                    .background(Color.red)
+                    .cornerRadius(8)
+                    .alert(isPresented: $showAlertStopNotifications, content: {
+                        Alert(
+                            title: Text("Stop current notifications"),
+                            message: Text("Scheduled notifications will no longer be displayed"),
+                            primaryButton: .destructive(Text("Stop"),
+                                                        action: {
+                                                            self.localNotification.stopNotification()
+                                                        }),
+                            secondaryButton: .cancel()
+                        )
+                    })
+                }
+            }
+            
             Section(header: Text("ABOUT"), footer: Text("Kana Torii © 2021 Clément Floret")) {
                 HStack {
                     Text("Version")

@@ -20,6 +20,7 @@ class LocalNotification: ObservableObject {
             }
         }
     }
+    
     func sendNotification(title: String, subtitle: String?, body: String, weekday: Int?, hour: Int?, minute: Int?) {
         
         let content = UNMutableNotificationContent()
@@ -41,5 +42,8 @@ class LocalNotification: ObservableObject {
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    func stopNotification() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }
