@@ -48,6 +48,7 @@
 "Mode" = "Mode";
 "Multiple choice questions" = "Questions à choix multiples";
 "Next" = "Suivant";
+"NOTIFICATIONS" = "NOTIFICATIONS";
 "Notification will arrive on time" = "La notification arrivera à temps";
 "Number of questions: %lld" = "Nombres de questions: %lld";
 "Orange" = "Orange";
@@ -67,6 +68,7 @@
 "Right answer" = "Bonne réponse";
 "Right answer: %@" = "Bonne réponse: %@";
 "Romaji :" = "Romaji :";
+"Scheduled notifications will no longer be displayed" = "Les Notifications prévues ne seront pas affichées";
 "Selection" = "Sélection";
 "Settings" = "Réglages";
 "Share" = "Partager";
@@ -76,6 +78,8 @@
 "Start a lesson right now by clicking on 'lessons' at the top left" = "Commence une leçon tout de suite en cliquant sur \"leçons\" en haut à gauche de l'écran";
 "Statistics" = "Statistiques";
 "Statistics colors in tables" = "Couleurs de statistique dans les tableaux";
+"Stop" = "Arreter";
+"Stop current notifications" = "Arreter les notifications en cours";
 "Validate" = "Valider";
 "Version" = "Version";
 "Weekday" = "Jour de la semaine";

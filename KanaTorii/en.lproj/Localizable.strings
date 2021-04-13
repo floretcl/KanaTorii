@@ -48,6 +48,7 @@
 "Mode" = "Mode";
 "Multiple choice questions" = "Multiple choice questions";
 "Next" = "Next";
+"NOTIFICATIONS" = "NOTIFICATIONS";
 "Notification will arrive on time" = "Notification will arrive on time";
 "Number of questions: %lld" = "Number of questions: %lld";
 "Orange" = "Orange";
@@ -67,6 +68,7 @@
 "Right answer" = "Right answer";
 "Right answer: %@" = "Right answer: %@";
 "Romaji :" = "Romaji :";
+"Scheduled notifications will no longer be displayed" = "Scheduled notifications will no longer be displayed";
 "Selection" = "Selection";
 "Settings" = "Settings";
 "Share" = "Partager";
@@ -76,6 +78,8 @@
 "Start a lesson right now by clicking on 'lessons' at the top left" = "Start a lesson right now by clicking on 'lessons' at the top left";
 "Statistics" = "Statistics";
 "Statistics colors in tables" = "Statistics colors in tables";
+"Stop" = "Stop";
+"Stop current notifications" = "Stop current notifications";
 "Validate" = "Validate";
 "Version" = "Version";
 "Weekday" = "Weekday";
