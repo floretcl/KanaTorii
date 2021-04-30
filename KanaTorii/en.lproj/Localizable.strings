@@ -13,6 +13,7 @@
 "About" = "About";
 "About Kana Torii" = "About Kana Torii";
 "About text" = "This application aims to help you in learning Japanese Kana.\n/nFor that, to make the task easier there is in this application a section \"Lessons\". It allows you to learn step by step to recognize hiragana and katakana. I advise you to repeat them as many times as necessary.\n\nFor an overview, you can go to the \"Lists\" section, see a character, know its writing, listen to its pronunciation and practice writing it.\n\nFinally a \"Quiz\" section will allow you to master the Kana by training in a varied and efficient way.";
+"Buy +100 lessons %@" = "Buy +100 lessons %@";
 "CHARACTER CHARTS" = "CHARACTER CHARTS";
 "Close" = "Close";
 "Continue" = "Continue";
@@ -64,6 +65,7 @@
 "Red" = "Red";
 "Reset" = "Reset";
 "Reset all datas" = "Reset all datas";
+"Restore" = "Restore";
 "Reminder" = "Reminder";
 "Right answer" = "Right answer";
 "Right answer: %@" = "Right answer: %@";
