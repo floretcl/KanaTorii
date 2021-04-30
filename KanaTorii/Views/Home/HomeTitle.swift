@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeTitle: View {
     var sizeText: CGFloat
-    
+
     var body: some View {
         Text("Kana Torii")
             .font(.system(size: sizeText))

@@ -12,17 +12,17 @@ struct MemoCard: View {
     var fileNameLinesImage: String {
         return getLinesImageFilename(romaji: currentLesson.currentRomaji, kanaType: currentLesson.kanaType)
     }
-    
+
     var widthDevice: CGFloat
     var heightDevice: CGFloat
-    
+
     var body: some View {
         if currentLesson.mode == .reading {
             VStack {
                 Text(currentLesson.kanaType)
                     .font(.system(size: heightDevice/25))
                     .padding(.bottom, heightDevice/60)
-                
+
                     Text(currentLesson.currentKana)
                         .font(.custom("YuMincho", size: heightDevice/8))
                 HStack {
@@ -66,7 +66,7 @@ struct MemoCard: View {
             )
         }
     }
-    
+
     func getLinesImageFilename(romaji: String, kanaType: String) -> String {
         return Kana.getLinesImageFilename(romaji: romaji, kanaType: kanaType == "hiragana" ? .hiragana : .katakana)
     }
@@ -79,19 +79,19 @@ struct MemoCard_Previews: PreviewProvider {
                         name: "Lesson 1 Hiragana a i u e o | Reading",
                         mode: .reading,
                         kanaType: "hiragana",
-                        kanas: ["あ","い","う","え","お"],
-                        romajis: ["a","i","u","e","o"]),
+                        kanas: ["あ", "い", "う", "え", "お"],
+                        romajis: ["a", "i", "u", "e", "o"]),
                      widthDevice: 400,
                  heightDevice: 800)
             MemoCard(currentLesson: Lesson(
                         name: "Lesson 1 Hiragana a i u e o | Writing",
                         mode: .writing,
                         kanaType: "hiragana",
-                        kanas: ["あ","い","う","え","お"],
-                        romajis: ["a","i","u","e","o"]),
+                        kanas: ["あ", "い", "う", "え", "お"],
+                        romajis: ["a", "i", "u", "e", "o"]),
                      widthDevice: 400,
                      heightDevice: 800)
         }
-            
+
     }
 }

@@ -15,7 +15,7 @@ struct DrawingPad: View {
     @Binding var image: UIImage
     var lineWidth: CGFloat
     var showGuide: Bool
-    
+
     var body: some View {
         ZStack {
             RoundedRectangle(

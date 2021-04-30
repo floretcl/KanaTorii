@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScoreView: View {
     @ObservedObject var score = Score()
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width

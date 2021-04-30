@@ -13,7 +13,7 @@ struct GuideTest: View {
     var imageFileName: String {
         return getLinesImageFilename(romaji: romaji, kanaType: kanaType)
     }
-    
+
     var body: some View {
         Image(imageFileName)
             .resizable()

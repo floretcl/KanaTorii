@@ -13,7 +13,7 @@ struct NavigationButtonPrevious: View {
     var inversed: Bool
     var width: CGFloat
     var height: CGFloat
-    
+
     var body: some View {
         Label("Previous", systemImage: systemImage)
             .font(.system(size: sizeText))

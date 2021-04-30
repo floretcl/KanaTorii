@@ -13,10 +13,10 @@ struct SuggestionCellQuiz: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    
+
     @StateObject var quiz: Quiz
     @State var testDone: Bool = false
-    
+
     var index: Int
     var width: CGFloat
     var height: CGFloat
@@ -30,9 +30,9 @@ struct SuggestionCellQuiz: View {
             return Color(UIColor.systemBackground)
         }
     }
-    
+
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
@@ -65,8 +65,8 @@ struct SuggestionCellQuiz: View {
                     try viewContext.save()
                 } catch {
                     print(error)
-                    //let nsError = error as NSError
-                    //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    // let nsError = error as NSError
+                    // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
                 same = true
             }
@@ -83,8 +83,8 @@ struct SuggestionCellQuiz: View {
                 try viewContext.save()
             } catch {
                 print(error)
-                //let nsError = error as NSError
-                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // let nsError = error as NSError
+                // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

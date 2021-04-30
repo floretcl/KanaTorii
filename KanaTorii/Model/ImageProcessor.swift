@@ -11,29 +11,36 @@ import CoreImage
 import UIKit
 
 struct ImageProcessor {
-    static func pixelBuffer(forImage image:CGImage) -> CVPixelBuffer? {
-        
+    static func pixelBuffer(forImage image: CGImage) -> CVPixelBuffer? {
+
         let frameSize = CGSize(width: image.width, height: image.height)
-        
-        var pixelBuffer:CVPixelBuffer? = nil
-        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(frameSize.width), Int(frameSize.height), kCVPixelFormatType_32BGRA , nil, &pixelBuffer)
-        
+
+        var pixelBuffer: CVPixelBuffer?
+        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(frameSize.width), Int(frameSize.height), kCVPixelFormatType_32BGRA, nil, &pixelBuffer)
+
         if status != kCVReturnSuccess {
             return nil
         }
-        
+
         CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags.init(rawValue: 0))
         let data = CVPixelBufferGetBaseAddress(pixelBuffer!)
         let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.premultipliedFirst.rawValue)
-        let context = CGContext(data: data, width: Int(frameSize.width), height: Int(frameSize.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: rgbColorSpace, bitmapInfo: bitmapInfo.rawValue)
-        
+        let context = CGContext(
+            data: data,
+            width: Int(frameSize.width),
+            height: Int(frameSize.height),
+            bitsPerComponent: 8,
+            bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!),
+            space: rgbColorSpace,
+            bitmapInfo: bitmapInfo.rawValue)
+
         context?.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
         CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
-        
+
         return pixelBuffer
     }
-    
+
     static func invertColorsImage(uiimage: UIImage) -> UIImage? {
         var newImage: UIImage = UIImage()
         if let cGImage = uiimage.cgImage {
@@ -47,12 +54,12 @@ struct ImageProcessor {
         }
         return newImage
     }
-    
+
     static func convertCGImageToCIImage(image: CGImage) -> CIImage! {
         let ciImage = CIImage(cgImage: image)
         return ciImage
     }
-    
+
     static func convertCIImageToCGImage(image: CIImage) -> CGImage! {
         let context = CIContext(options: nil)
         return context.createCGImage(image, from: image.extent)

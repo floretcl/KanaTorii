@@ -27,7 +27,7 @@ struct DetailPage: View {
         return getLinesOrderImage(kana: kana)
     }
     @State var showDrawingView = false
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
@@ -95,15 +95,15 @@ struct DetailPage: View {
             .edgesIgnoringSafeArea(.top)
         })
     }
-    
+
     private func getLinesOrderImage(kana: Kana) -> String {
         return ifHiragana(get: kana.fileNameHiraganaWithLineOrder, elseGet: kana.fileNameKatakanaWithLineOrder)
     }
-    
+
     private func getKanaLabel(kana: Kana) -> String {
         return ifHiragana(get: kana.hiragana, elseGet: kana.katakana)
     }
-    
+
     private func ifHiragana(get: String, elseGet: String) -> String {
         if kanaType == .hiragana {
             return get

@@ -13,10 +13,10 @@ struct KanaCell: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.kana, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    
+
     // User Defaults
     @AppStorage var colorsInTables: Bool
-    
+
     var kanaForList: KanaForList
     var kanaType: Kana.KanaType
     private var label: String {
@@ -37,7 +37,7 @@ struct KanaCell: View {
         return .primary
     }
     var widthDevice: CGFloat
-    
+
     var body: some View {
         NavigationLink(
             destination: DetailsView(
@@ -77,16 +77,16 @@ struct KanaCell: View {
             }
         )
     }
-    
+
     func getId() -> Int {
         if kanaForList.isKana {
             return Kana.getIdKana(name: kanaForList.name)
         }
         return 0
     }
-    
+
     private func getProgressViewColor(nbCorrectAnswers: Float, nbTotalAnswers: Float) -> Color {
-        switch ((nbCorrectAnswers / nbTotalAnswers) * 100.0) {
+        switch (nbCorrectAnswers / nbTotalAnswers) * 100.0 {
         case 0..<20:
             return .primary
         case 20..<40:

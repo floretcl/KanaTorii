@@ -62,7 +62,7 @@ class Test: ObservableObject {
             return currentKana
         }
     }
-    
+
     init(type: KanaType, kanas: [String], romajis: [String], currentIndex: Int) {
         self.type = type
         self.kanas = kanas
@@ -73,10 +73,10 @@ class Test: ObservableObject {
         self.numberOfTestsPerformed = 0
         self.suggestions = []
         self.testDone = false
-        
+
         suggestions = getSuggestions()
     }
-    
+
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
             let isCorrectAnswer = testAnswer(with: answer)
@@ -90,7 +90,7 @@ class Test: ObservableObject {
         }
         testDone = true
     }
-    
+
     func testAnswer(with answer: String) -> Bool {
         if answer.lowercased() == currentSolution.lowercased() {
             return true
@@ -98,7 +98,7 @@ class Test: ObservableObject {
             return false
         }
     }
-    
+
     func nextQuestion() {
         numberOfTestsPerformed += 1
         if numberOfTestsPerformed == 2 {
@@ -107,16 +107,16 @@ class Test: ObservableObject {
         resetStateAnswer()
         suggestions = getSuggestions()
     }
-    
+
     private func resetStateAnswer() {
         correctAnswer = false
         testDone = false
     }
-    
+
     private func testEnd() {
         state = .end
     }
-    
+
     private func getSuggestions() -> [String] {
         var characteresArray: [String]
         var characteresString: String
@@ -131,7 +131,7 @@ class Test: ObservableObject {
         var randomString: String
         randomArray.append(characteresString)
         for _ in 1..<numberOfSuggestions {
-            var same : Bool = true
+            var same: Bool = true
             repeat {
                 randomString = characteresArray.randomElement()!
                 if randomArray.contains(randomString) {
@@ -144,13 +144,13 @@ class Test: ObservableObject {
         }
         return randomArray.shuffled()
     }
-    
+
     private func playSound(sound: String, ext: String) {
         if let soundURL = Bundle.main.url(forResource: sound, withExtension: ext) {
             var mySound: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
             // Play
-            AudioServicesPlaySystemSound(mySound);
+            AudioServicesPlaySystemSound(mySound)
         }
     }
 }

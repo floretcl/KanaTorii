@@ -12,9 +12,9 @@ struct StatRow: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    
+
     var kana: StatKana
-    
+
     var body: some View {
         HStack {
             if UIDevice.current.localizedModel == "iPad" {
@@ -47,11 +47,11 @@ struct StatRow: View {
             }
         }
     }
-    
+
     private func getPercentage(nbCorrectAnswers: Float, nbTotalAnswers: Float) -> Float {
         return (nbCorrectAnswers / nbTotalAnswers) * 100.0
     }
-    
+
     private func getProgressViewColor(nbCorrectAnswers: Float, nbTotalAnswers: Float) -> Color {
         switch getPercentage(nbCorrectAnswers: nbCorrectAnswers, nbTotalAnswers: nbTotalAnswers) {
         case 0..<20:

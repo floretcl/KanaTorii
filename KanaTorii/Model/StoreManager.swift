@@ -12,9 +12,9 @@ import SwiftKeychainWrapper
 class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     @Published var products = [SKProduct]()
     @Published var transactionState: SKPaymentTransactionState?
-    
+
     private var productsRequest: SKProductsRequest!
-    
+
     func getProducts(productIDs: [String]) {
         print("Start requesting products ...")
         productsRequest?.cancel()
@@ -22,11 +22,11 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         productsRequest?.delegate = self
         productsRequest?.start()
     }
-    
+
     func request(_ request: SKRequest, didFailWithError error: Error) {
       print("Failed getting products: \(error)")
     }
-    
+
     func purchaseProduct(product: SKProduct) {
         if SKPaymentQueue.canMakePayments() {
             let payment = SKPayment(product: product)
@@ -35,12 +35,12 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
             print("User can't make payment.")
         }
     }
-    
+
     func restoreProducts() {
         print("Restoring products ...")
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
-    
+
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         print("Did receive response")
         if !response.products.isEmpty {
@@ -54,7 +54,7 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
                 print("Invalid identifiers found: \(invalidIdentifier)")
         }
     }
-    
+
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {

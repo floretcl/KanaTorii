@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TitleQuizKeyboard: View {
     @StateObject var quiz: Quiz
-    
+
     var heightDevice: CGFloat
-    
+
     var body: some View {
         Text("Write the Romaji for \(quiz.currentKana.capitalized)")
             .font(.system(size: heightDevice/35))

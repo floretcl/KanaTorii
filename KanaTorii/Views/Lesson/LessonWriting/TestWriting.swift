@@ -10,7 +10,7 @@ import CoreML
 
 struct TestWriting: View {
     @Environment(\.presentationMode) var presentation
-    
+
     @StateObject var currentLesson: Lesson
     @StateObject var test: TestDrawing
     private var kanaType: String {
@@ -20,15 +20,15 @@ struct TestWriting: View {
             return "katakana"
         }
     }
-    
+
     @State var drawing: Drawing = Drawing()
     @State var drawings: [Drawing] = [Drawing]()
     @State var image: UIImage = UIImage()
     @State var showGuide: Bool = true
-    
+
     @Binding var showQuiz: Bool
     @State var showActionSheet: Bool = false
-    
+
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             GeometryReader(content: { geometry in
@@ -47,7 +47,15 @@ struct TestWriting: View {
                                 .padding(.all, heightDevice/40)
                             DrawingButtonsTest(test: test, drawings: $drawings, showGuide: $showGuide, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
                             Spacer()
-                            ContinueButtonTestDrawing(test: test, showGuide: $showGuide, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
+                            ContinueButtonTestDrawing(
+                                test: test,
+                                showGuide: $showGuide,
+                                drawings: $drawings,
+                                image: $image,
+                                widthDevice: widthDevice,
+                                heightDevice: heightDevice,
+                                textSize: heightDevice/40,
+                                showActionSheet: $showActionSheet)
                                 .padding(.bottom, heightDevice/20)
                         }
                         Spacer()
@@ -85,7 +93,15 @@ struct TestWriting: View {
                                 .padding(.all, heightDevice/40)
                             DrawingButtonsTest(test: test, drawings: $drawings, showGuide: $showGuide, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
                             Spacer()
-                            ContinueButtonTestDrawing(test: test, showGuide: $showGuide, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
+                            ContinueButtonTestDrawing(
+                                test: test,
+                                showGuide: $showGuide,
+                                drawings: $drawings,
+                                image: $image,
+                                widthDevice: widthDevice,
+                                heightDevice: heightDevice,
+                                textSize: heightDevice/40,
+                                showActionSheet: $showActionSheet)
                                 .padding(.bottom, heightDevice/20)
                         }
                         Spacer()
@@ -120,8 +136,8 @@ struct TestWriting_Previews: PreviewProvider {
                 currentLesson: Lesson(
                     name: "Lesson 1 Hiragana a i u e o | Reading",
                     mode: .reading,
-                    kanaType: "hiragana", kanas: ["あ","い","う","え","お"],
-                    romajis: ["a","i","u","e","o"]),
+                    kanaType: "hiragana", kanas: ["あ", "い", "う", "え", "お"],
+                    romajis: ["a", "i", "u", "e", "o"]),
                 test: TestDrawing(type: .hiragana, kana: "あ", romaji: "a"),
                 showQuiz: .constant(false)
             )

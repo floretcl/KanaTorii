@@ -9,11 +9,11 @@ import SwiftUI
 
 struct LessonHeader: View {
     @Environment(\.presentationMode) var presentation
-    
+
     @StateObject var currentLesson: Lesson
-    
+
     var heightDevice: CGFloat
-    
+
     var body: some View {
         HStack {
             Button(action: {
@@ -32,7 +32,7 @@ struct LessonHeader: View {
                     Text("\(String(currentLesson.name.prefix(8))) Part \(currentLesson.currentPartNumber) / \(currentLesson.totalParts)")
                         .padding(.top, heightDevice/100)
                 }
-                
+
                 ProgressView(value: currentLesson.currentProgression)
                     .padding(.horizontal)
                     .padding(.bottom, heightDevice/50)
@@ -48,8 +48,8 @@ struct LessonHeader_Previews: PreviewProvider {
                 name: "Lesson 1 Hiragana a i u e o | Reading",
                 mode: .reading,
                 kanaType: "hiragana",
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"]), heightDevice: 600)
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"]), heightDevice: 600)
             .previewLayout(.sizeThatFits)
     }
 }

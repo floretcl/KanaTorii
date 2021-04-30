@@ -13,7 +13,7 @@ struct LessonRow: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
         animation: .default) var statLesson: FetchedResults<StatLesson>
-    
+
     var lesson: LessonForList
     var color: Color {
         var done: Bool = false
@@ -26,9 +26,9 @@ struct LessonRow: View {
         }
         return done ? .green : .accentColor
     }
-    
+
     var body: some View {
-        HStack{
+        HStack {
             ZStack {
                 Circle()
                     .foregroundColor(color)

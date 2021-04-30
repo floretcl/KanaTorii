@@ -9,18 +9,18 @@ import SwiftUI
 
 struct SuggestionsQuiz: View {
     @StateObject var quiz: Quiz
-    
+
     var items: GridItem
     var spacing: CGFloat
     var width: CGFloat
     var height: CGFloat
     var textSize: CGFloat
-    
+
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         LazyVGrid(
-            columns: [items,items,items],
+            columns: [items, items, items],
             alignment: .center,
             spacing: spacing,
             content: {

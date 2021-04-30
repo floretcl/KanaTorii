@@ -13,7 +13,7 @@ struct DrawingButtons: View {
     var sizeText: CGFloat
     var width: CGFloat
     var height: CGFloat
-    
+
     var body: some View {
         HStack {
             Spacer()
@@ -39,6 +39,6 @@ struct DrawingButtons: View {
 struct DrawingButtons_Previews: PreviewProvider {
     static var previews: some View {
         DrawingButtons(drawings: .constant([Drawing]()), showGuide: .constant(true), sizeText: 20, width: 130, height: 60)
-            
+
     }
 }

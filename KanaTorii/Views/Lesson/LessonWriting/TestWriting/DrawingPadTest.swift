@@ -12,11 +12,11 @@ struct DrawingPadTest: View {
     @Binding var drawings: [Drawing]
     @Binding var image: UIImage
     var lineWidth: CGFloat
-    
+
     var romaji: String
     var kanaType: String
     var showGuide: Bool
-    
+
     var body: some View {
         ZStack {
             RoundedRectangle(

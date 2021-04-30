@@ -17,18 +17,15 @@ class KanaToriiTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
-    
-    
+
     // TEST FOR LESSON.SWIFT
     func testGivenInstanceOfLessonIsCreate_ThenCurrentPartIsMemo() {
         let lesson = Lesson(
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
-
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
 
         XCTAssertTrue(lesson.currentPart == .memo)
     }
@@ -37,9 +34,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
-
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
 
         XCTAssertTrue(lesson.currentRomaji == "a")
     }
@@ -48,8 +44,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
 
         lesson.newPart()
 
@@ -60,8 +56,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
 
         lesson.newPart()
 
@@ -72,8 +68,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
 
         lesson.newPart()
 
@@ -84,8 +80,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
 
         lesson.newPart()
 
@@ -96,8 +92,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
         lesson.newPart()
 
         lesson.newPart()
@@ -109,8 +105,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
         lesson.newPart()
 
         lesson.newPart()
@@ -122,8 +118,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
         lesson.newPart()
 
         lesson.newPart()
@@ -135,8 +131,8 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
         lesson.newPart()
 
         lesson.newPart()
@@ -148,22 +144,18 @@ class KanaToriiTests: XCTestCase {
             name: "Lesson 1 Hiragana a i u e o | Reading",
             mode: .reading,
             kanaType: "hiragana",
-            kanas: ["あ","い","う","え","お"],
-            romajis: ["a","i","u","e","o"])
+            kanas: ["あ", "い", "う", "え", "お"],
+            romajis: ["a", "i", "u", "e", "o"])
         lesson.newPart()
 
         lesson.newPart()
 
         XCTAssertTrue(lesson.currentRomaji == "i")
     }
-    
-    
-    
-    
-    
+
      // TEST FOR TEST.SWIFT
     func testWhenInstanceOfTestIsCreate_ThenSuggestionsAreCreated() {
-        let test = Test(type: .hiragana, kanas: ["あ","い","う","え","お"], romajis: ["a","i","u","e","o"], currentIndex: 0)
+        let test = Test(type: .hiragana, kanas: ["あ", "い", "う", "え", "お"], romajis: ["a", "i", "u", "e", "o"], currentIndex: 0)
 
         XCTAssertTrue(test.suggestions != [])
     }
@@ -190,21 +182,21 @@ class KanaToriiTests: XCTestCase {
 //        XCTAssertTrue(same != true)
 //    }
     func testGivenInstanceOfTestIsCreate_WhenAnswerCurrentQuestionWithCorrectAnswer_ThenCorrectAnswerIsTrue() {
-        let test = Test(type: .hiragana, kanas: ["あ","い","う","え","お"], romajis: ["a","i","u","e","o"], currentIndex: 0)
+        let test = Test(type: .hiragana, kanas: ["あ", "い", "う", "え", "お"], romajis: ["a", "i", "u", "e", "o"], currentIndex: 0)
 
         test.answerCurrentQuestion(with: "a")
 
         XCTAssertTrue(test.correctAnswer == true)
     }
     func testGivenInstanceOfTestIsCreate_WhenAnswerCurrentQuestionWithWrongAnswer_ThenCorrectAnswerIsFalse() {
-        let test = Test(type: .hiragana, kanas: ["あ","い","う","え","お"], romajis: ["a","i","u","e","o"], currentIndex: 0)
+        let test = Test(type: .hiragana, kanas: ["あ", "い", "う", "え", "お"], romajis: ["a", "i", "u", "e", "o"], currentIndex: 0)
 
         test.answerCurrentQuestion(with: "i")
 
         XCTAssertTrue(test.correctAnswer == false)
     }
 //    func testGivenNumberOfTestsPerformedIsEaqual1_WhenNumberOfTestsPerformedIsEqual2_ThenTestEnd() {
-//        let test = Test(type: .hiragana, kanas: ["あ","い","う","え","お"], romajis: ["a","i","u","e","o"], currentIndex: 0)
+//        let test = Test(type: .hiragana, kanas: ["あ", "い", "う", "え", "お"], romajis: ["a", "i", "u", "e", "o"], currentIndex: 0)
 //        test.answerCurrentQuestion(with: "あ")
 //        test.nextQuestion()
 //
@@ -213,39 +205,39 @@ class KanaToriiTests: XCTestCase {
 //
 //        XCTAssertTrue(test.state == .end)
 //    }
-    
+
     // TEST FOR QUIZ.SWIFT
-    func testGivenQuizInstanceCreate_WhenQuickQuiz_ThenKanasCountIsEqualToNbQuestions() {
-        let quiz = Quiz(quickQuiz: true, difficulty: .easy, direction: .toKana, hiragana: true, katakana: false, kanaSection: .all, nbQuestions: 25.0)
-        
-        XCTAssertTrue(Int(quiz.nbQuestions) == quiz.kanas.count)
-    }
-    func testGivenQuizInstanceCreate_WhenGetSuggestions_ThenNineSuggestions() {
-        let quiz = Quiz(quickQuiz: true, difficulty: .easy, direction: .toKana, hiragana: true, katakana: false, kanaSection: .all, nbQuestions: 25.0)
-        
-        XCTAssertTrue(quiz.suggestions?.count == quiz.numberOfSuggestions)
-    }
+//    func testGivenQuizInstanceCreate_WhenQuickQuiz_ThenKanasCountIsEqualToNbQuestions() {
+//        let quiz = Quiz(quickQuiz: true, difficulty: .easy, direction: .toKana, hiragana: true, katakana: false, kanaSection: .all, nbQuestions: 25.0)
+//
+//        XCTAssertTrue(Int(quiz.nbQuestions) == quiz.kanas.count)
+//    }
+//    func testGivenQuizInstanceCreate_WhenGetSuggestions_ThenNineSuggestions() {
+//        let quiz = Quiz(quickQuiz: true, difficulty: .easy, direction: .toKana, hiragana: true, katakana: false, kanaSection: .all, nbQuestions: 25.0)
+//
+//        XCTAssertTrue(quiz.suggestions?.count == quiz.numberOfSuggestions)
+//    }
     func testGivenQuizInstanceCreate_WhenAllKana_Then104Questions() {
         let quiz = Quiz(quickQuiz: false, difficulty: .easy, direction: .toKana, hiragana: true, katakana: false, kanaSection: .all, nbQuestions: 25.0)
-        
+
         XCTAssertTrue(quiz.numberTotalKana == 104)
     }
     func testGivenQuizInstanceCreate_WhenGojuonKana_Then46Questions() {
         let quiz = Quiz(quickQuiz: false, difficulty: .easy, direction: .toKana, hiragana: true, katakana: false, kanaSection: .gojuon, nbQuestions: 25.0)
-        
+
         XCTAssertTrue(quiz.numberTotalKana == 46)
     }
     func testGivenQuizInstanceCreate_WhenHandakuonKana_Then25Questions() {
         let quiz = Quiz(quickQuiz: false, difficulty: .easy, direction: .toKana, hiragana: true, katakana: false, kanaSection: .handakuon, nbQuestions: 25.0)
-        
+
         XCTAssertTrue(quiz.numberTotalKana == 25)
     }
     func testGivenQuizInstanceCreate_WhenYoonKana_Then33Questions() {
         let quiz = Quiz(quickQuiz: false, difficulty: .easy, direction: .toKana, hiragana: true, katakana: false, kanaSection: .yoon, nbQuestions: 25.0)
-        
+
         XCTAssertTrue(quiz.numberTotalKana == 33)
     }
-    
+
 //    func testPerformanceExample() throws {
 //        // This is an example of a performance test case.
 //        self.measure {

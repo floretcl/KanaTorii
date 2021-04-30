@@ -9,13 +9,13 @@ import SwiftUI
 
 struct MiniQuizReading: View {
     @Environment(\.presentationMode) var presentation
-    
+
     @StateObject var currentLesson: Lesson
     @StateObject var miniQuiz: MiniQuiz
-    
+
     @State var showActionSheet: Bool = false
     @State var showMessage: Bool = false
-    
+
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             BodyMiniQuizReading(currentLesson: currentLesson, miniQuiz: miniQuiz, showActionSheet: $showActionSheet)
@@ -57,12 +57,12 @@ struct MiniQuizReading_Previews: PreviewProvider {
             currentLesson: Lesson(
                 name: "Lesson 1 Hiragana a i u e o | Reading",
                 mode: .reading,
-                kanaType: "hiragana", kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"]),
+                kanaType: "hiragana", kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"]),
             miniQuiz: MiniQuiz(
                 type: .hiragana,
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"],
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"],
                 draw: false)
         )
     }

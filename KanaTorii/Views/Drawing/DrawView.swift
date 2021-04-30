@@ -15,7 +15,7 @@ struct DrawView: View {
     @State var image: UIImage = UIImage()
     var secondaryBackgroundColor: Color = Color(UIColor.secondarySystemBackground)
     @State var showGuide: Bool = true
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let heightDevice = geometry.size.height

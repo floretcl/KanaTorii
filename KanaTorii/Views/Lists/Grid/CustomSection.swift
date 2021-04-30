@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomSection: View {
     var label: String
-    
+
     var body: some View {
         HStack {
             Spacer()

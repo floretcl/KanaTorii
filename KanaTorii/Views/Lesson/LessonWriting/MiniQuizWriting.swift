@@ -11,9 +11,9 @@ import CoreML
 struct MiniQuizWriting: View {
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     @Environment(\.presentationMode) var presentation
-    
+
     @StateObject var currentLesson: Lesson
     @StateObject var miniQuiz: MiniQuiz
     private var kanaType: String {
@@ -23,13 +23,13 @@ struct MiniQuizWriting: View {
             return "katakana"
         }
     }
-    
+
     @State var drawing: Drawing = Drawing()
     @State var drawings: [Drawing] = [Drawing]()
     @State var image: UIImage = UIImage()
-    
+
     @State var showActionSheet: Bool = false
-    
+
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             GeometryReader(content: { geometry in
@@ -48,7 +48,14 @@ struct MiniQuizWriting: View {
                                 .padding(.all, heightDevice/40)
                             DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/35, width: widthDevice/6, height: heightDevice/22)
                             Spacer()
-                            ContinueButtonMiniQuizDrawing(miniQuiz: miniQuiz, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
+                            ContinueButtonMiniQuizDrawing(
+                                miniQuiz: miniQuiz,
+                                drawings: $drawings,
+                                image: $image,
+                                widthDevice: widthDevice,
+                                heightDevice: heightDevice,
+                                textSize: heightDevice/40,
+                                showActionSheet: $showActionSheet)
                                 .environment(\.managedObjectContext, self.viewContext)
                                 .padding(.bottom, heightDevice/20)
                         }
@@ -87,7 +94,14 @@ struct MiniQuizWriting: View {
                                 .padding(.all, heightDevice/40)
                             DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
                             Spacer()
-                            ContinueButtonMiniQuizDrawing(miniQuiz: miniQuiz, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
+                            ContinueButtonMiniQuizDrawing(
+                                miniQuiz: miniQuiz,
+                                drawings: $drawings,
+                                image: $image,
+                                widthDevice: widthDevice,
+                                heightDevice: heightDevice,
+                                textSize: heightDevice/40,
+                                showActionSheet: $showActionSheet)
                                 .environment(\.managedObjectContext, self.viewContext)
                                 .padding(.bottom, heightDevice/20)
                         }
@@ -122,14 +136,13 @@ struct MiniQuizWriting_Previews: PreviewProvider {
             currentLesson: Lesson(
                 name: "Lesson 1 Hiragana a i u e o | Reading",
                 mode: .reading,
-                kanaType: "hiragana", kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"]),
+                kanaType: "hiragana", kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"]),
             miniQuiz: MiniQuiz(
                 type: .hiragana,
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"],
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"],
                 draw: true)
-                
         )
     }
 }

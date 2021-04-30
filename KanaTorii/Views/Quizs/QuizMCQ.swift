@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuizMCQ: View {
     @Environment(\.presentationMode) var presentation
-    
+
     @StateObject var quiz: Quiz
     var label: String {
         if quiz.translationDirection == .toRomaji {
@@ -18,13 +18,13 @@ struct QuizMCQ: View {
             return quiz.currentName
         }
     }
-    
+
     let itemsCellIphone = GridItem(.fixed(90))
     let itemsCellIpad = GridItem(.fixed(160))
-    
+
     @State var showActionSheet: Bool = false
     @Binding var showScore: Bool
-    
+
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             GeometryReader(content: { geometry in
@@ -46,7 +46,7 @@ struct QuizMCQ: View {
                         Spacer()
                     }
                 }.background(Color(UIColor.secondarySystemBackground))
-                //.navigationBarTitle()
+                // .navigationBarTitle()
             })
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "),
@@ -81,7 +81,7 @@ struct QuizMCQ: View {
                         Spacer()
                     }
                 }.background(Color(UIColor.secondarySystemBackground))
-                //.navigationBarTitle()
+                // .navigationBarTitle()
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(

@@ -10,7 +10,7 @@ import SwiftUI
 struct LessonInfo: View {
     var lesson: LessonForList
     @State var lessonAlreadyStart: Bool = false
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let heightDevice = geometry.size.height

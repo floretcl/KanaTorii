@@ -10,7 +10,7 @@ import SwiftUI
 
 class LocalNotification: ObservableObject {
     var notifications = [Notification]()
-    
+
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
             if granted == true && error == nil {
@@ -20,26 +20,26 @@ class LocalNotification: ObservableObject {
             }
         }
     }
-    
+
     func sendNotification(title: String, subtitle: String?, body: String, weekday: Int?, hour: Int?, minute: Int?) {
-        
+
         let content = UNMutableNotificationContent()
         content.title = title
         if let subtitle = subtitle {
             content.subtitle = subtitle
         }
         content.body = body
-        
+
         var date = DateComponents()
         if weekday != 0 {
             date.weekday = weekday
         }
         date.hour = hour
         date.minute = minute
-        
+
         let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
         let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
-        
+
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }

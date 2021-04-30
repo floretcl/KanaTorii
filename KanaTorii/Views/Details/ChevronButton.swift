@@ -12,9 +12,9 @@ struct ChevronButton: View {
     var kanas: [Kana] {
         return modelData.kanas
     }
-    
+
     @Binding var currentPage: Int
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let heightDevice = geometry.size.height

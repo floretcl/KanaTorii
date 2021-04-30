@@ -11,7 +11,7 @@ struct SettingsView: View {
     // User Defaults
     @AppStorage var colorsInTables: Bool
     @AppStorage var quickQuizNbQuestions: Double
-    
+
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             VStack {

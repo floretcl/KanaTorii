@@ -10,7 +10,7 @@ import SwiftUI
 struct Chevron: View {
     var label: String
     var heightDevice: CGFloat
-    
+
     var body: some View {
         Image(systemName: label)
             .font(.largeTitle)

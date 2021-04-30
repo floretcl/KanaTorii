@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SheetHeaderAbout: View {
     @Environment(\.presentationMode) var presentation
-    
+
     var paddingLeading: CGFloat
-    
+
     var body: some View {
         HStack {
             Group {

@@ -13,14 +13,14 @@ struct LessonMemoReading: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
         animation: .default) var statLesson: FetchedResults<StatLesson>
-    
+
     @Environment(\.presentationMode) private var presentation
-    
+
     @StateObject var currentLesson: Lesson
     @State var showTest: Bool = false
     @State var showQuiz: Bool = false
     @State var showScore: Bool = false
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let heightDevice = geometry.size.height
@@ -67,8 +67,7 @@ struct LessonMemoReading: View {
                                                     currentIndex: currentLesson.kanaIndex),
                                                 showQuiz: $showQuiz)
                                         })
-                                }
-                                else if currentLesson.currentPart == .quiz {
+                                } else if currentLesson.currentPart == .quiz {
                                     ContinueButtonQuiz(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showQuiz: $showQuiz)
                                     .padding(.bottom, heightDevice/20)
                                     .fullScreenCover(
@@ -116,7 +115,7 @@ struct LessonMemoReading: View {
 //            .navigationBarTitle(currentLesson.name)
         }).background(Color(UIColor.secondarySystemBackground))
     }
-    
+
     private func addItemToCoreData() {
         var same: Bool = false
         for stat in statLesson {
@@ -132,8 +131,8 @@ struct LessonMemoReading: View {
                 try viewContext.save()
             } catch {
                 print(error)
-                //let nsError = error as NSError
-                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // let nsError = error as NSError
+                // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
@@ -147,8 +146,8 @@ struct LessonMemoReading_Previews: PreviewProvider {
                     name: "Lesson 1 Hiragana a i u e o | Reading",
                     mode: .reading,
                     kanaType: "hiragana",
-                    kanas: ["あ","い","う","え","お"],
-                    romajis: ["a","i","u","e","o"])
+                    kanas: ["あ", "い", "う", "え", "お"],
+                    romajis: ["a", "i", "u", "e", "o"])
             )
         }
     }

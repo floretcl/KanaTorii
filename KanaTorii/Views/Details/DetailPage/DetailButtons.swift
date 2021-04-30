@@ -12,7 +12,7 @@ struct DetailButtons: View {
     var kanaLabel: String
     var sizeText: CGFloat
     @Binding var showDrawingView: Bool
-    
+
     var body: some View {
         HStack {
             Button(action: {

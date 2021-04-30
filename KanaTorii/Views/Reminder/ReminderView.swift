@@ -14,12 +14,12 @@ struct ReminderView: View {
     @State var date: Date = Date()
     @State var calendar = Calendar.current
     @State var selectedWeekDay: Int = 0
-    var weekdays : [Weekday] {
+    var weekdays: [Weekday] {
         return modelData.weekdays
     }
-    
+
     var body: some View {
-        
+
         NavigationView {
             Form(content: {
                 Picker("Weekday", selection: $selectedWeekDay) {
@@ -27,12 +27,18 @@ struct ReminderView: View {
                         Text(self.weekdays[$0].name)
                     }
                 }
-                DatePicker("Hour:", selection: $date, displayedComponents: [.hourAndMinute,])
+                DatePicker("Hour:", selection: $date, displayedComponents: [.hourAndMinute ])
                 Button(action: {
                     hapticFeedback(style: .soft)
                     let hour = calendar.component(.hour, from: date)
                     let minute = calendar.component(.minute, from: date)
-                    self.localNotification.sendNotification(title: "Kana Torii", subtitle: nil, body: "It's time to learn new kanas, がんばって! (Cheer up!)", weekday: selectedWeekDay, hour: hour, minute: minute)
+                    self.localNotification.sendNotification(
+                        title: "Kana Torii",
+                        subtitle: nil,
+                        body: "It's time to learn new kanas, がんばって! (Cheer up!)",
+                        weekday: selectedWeekDay,
+                        hour: hour,
+                        minute: minute)
                     showFootnote.toggle()
                 }, label: {
                     Text("Validate")

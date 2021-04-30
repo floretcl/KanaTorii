@@ -10,11 +10,11 @@ import SwiftUI
 struct Grid: View {
     // User Defaults
     @AppStorage var colorsInTables: Bool
-    
+
     var kanaType: Kana.KanaType
     var heightDevice: CGFloat
     var widthDevice: CGFloat
-    
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: true, content: {
             VStack {

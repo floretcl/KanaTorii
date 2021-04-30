@@ -12,7 +12,7 @@ struct DrawingPadQuiz: View {
     @Binding var drawings: [Drawing]
     @Binding var image: UIImage
     var lineWidth: CGFloat
-    
+
     var body: some View {
         ZStack {
             RoundedRectangle(

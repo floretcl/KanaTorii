@@ -10,7 +10,7 @@ import SwiftUI
 struct LessonInfoText: View {
     var lesson: LessonForList
     var heightDevice: CGFloat
-    
+
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             VStack(alignment: .leading, spacing: 2, content: {

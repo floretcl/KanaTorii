@@ -19,7 +19,7 @@ class MiniQuiz: ObservableObject {
     private var romajis: [String]
     @Published var state: State
     private var score: Int
-    private var arrayIndex: Array<Int>
+    private var arrayIndex: [Int]
     private var cycle: Int
     @Published var testDone: Bool
     @Published var correctAnswer: Bool
@@ -80,7 +80,7 @@ class MiniQuiz: ObservableObject {
     var currentProgression: Double {
         return (Double(currentIndex)) / Double(kanas.count)
     }
-    
+
     init(type: KanaType, kanas: [String], romajis: [String], draw: Bool) {
         self.draw = draw
         self.type = type
@@ -93,25 +93,25 @@ class MiniQuiz: ObservableObject {
         self.correctAnswer = false
         self.currentIndex = 0
         self.suggestions = []
-        
+
         if kanas.count == 5 {
-            arrayIndex = [0,1,2,3,4].shuffled()
+            arrayIndex = [0, 1, 2, 3, 4].shuffled()
         } else {
-            arrayIndex = [0,1,2].shuffled()
+            arrayIndex = [0, 1, 2].shuffled()
         }
-        
+
         if self.draw == false {
             suggestions = getSuggestions()
         } else {
             initializeConfiguration()
         }
-        
+
         resetScore()
-        
+
         Kana.readTextInJapanese(text: currentKana)
         print("initialisation")
     }
-    
+
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
             let isCorrectAnswer = testAnswer(with: answer)
@@ -132,7 +132,7 @@ class MiniQuiz: ObservableObject {
         }
         saveScore()
     }
-    
+
     func testAnswer(with answer: String) -> Bool {
         if answer.lowercased() == currentSolution.lowercased() {
             return true
@@ -140,7 +140,7 @@ class MiniQuiz: ObservableObject {
             return false
         }
     }
-    
+
     func nextQuestion() {
         if currentIndex == kanas.count - 1 && cycle == 2 {
             currentIndex = 0
@@ -153,26 +153,26 @@ class MiniQuiz: ObservableObject {
         }
         Kana.readTextInJapanese(text: currentKana)
     }
-    
+
     private func resetStateAnswer() {
         correctAnswer = false
         testDone = false
     }
-    
+
     private func quizEnd() {
         state = .end
     }
-    
+
     private func saveScore() {
         scoreData.nbCorrectAnswers = score
         scoreData.nbTotalQuestions = numberTotalKana * cycle
     }
-    
+
     private func resetScore() {
         scoreData.nbCorrectAnswers = 0
         scoreData.nbTotalQuestions = numberTotalKana
     }
-    
+
     private func getSuggestions() -> [String] {
         var characteresArray: [String]
         var characteresString: String
@@ -187,7 +187,7 @@ class MiniQuiz: ObservableObject {
         var randomString: String
         randomArray.append(characteresString)
         for _ in 1..<numberOfSuggestions {
-            var same : Bool = true
+            var same: Bool = true
             repeat {
                 randomString = characteresArray.randomElement()!
                 if randomArray.contains(randomString) {
@@ -200,16 +200,16 @@ class MiniQuiz: ObservableObject {
         }
         return randomArray.shuffled()
     }
-    
+
     private func playSound(sound: String, ext: String) {
         if let soundURL = Bundle.main.url(forResource: sound, withExtension: ext) {
             var mySound: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
             // Play
-            AudioServicesPlaySystemSound(mySound);
+            AudioServicesPlaySystemSound(mySound)
         }
     }
-    
+
     // Initialize for CoreML Model use
     private func initializeConfiguration() {
         if type == .hiragana {
@@ -226,7 +226,7 @@ class MiniQuiz: ObservableObject {
             }
         }
     }
-    
+
     // Return prediction form right CoreML Model
     func classLabel(forImage: UIImage) -> String? {
         var prediction: String

@@ -12,7 +12,7 @@ struct HomeView: View {
     @State var showSettings = false
     @State var showIntroduction = false
     @State var showAbout = false
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width

@@ -11,7 +11,7 @@ struct IntroductionView: View {
     var secondarySystemBackgroundColor: Color {
         return Color(UIColor.secondarySystemBackground)
     }
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width

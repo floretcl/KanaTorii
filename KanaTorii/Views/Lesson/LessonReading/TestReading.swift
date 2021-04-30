@@ -9,15 +9,15 @@ import SwiftUI
 
 struct TestReading: View {
     @Environment(\.presentationMode) var presentation
-    
+
     @StateObject var currentLesson: Lesson
     @StateObject var test: Test
-    
+
     @Binding var showQuiz: Bool
-    
+
     @State var showActionSheet: Bool = false
     @State var numberOfDisplayActionSheet: Int = 0
-    
+
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             BodyTestReading(currentLesson: currentLesson, test: test, showActionSheet: $showActionSheet)
@@ -69,12 +69,12 @@ struct TestReading_Previews: PreviewProvider {
                 currentLesson: Lesson(
                     name: "Lesson 1 Hiragana a i u e o | Reading",
                     mode: .reading,
-                    kanaType: "hiragana", kanas: ["あ","い","う","え","お"],
-                    romajis: ["a","i","u","e","o"]),
+                    kanaType: "hiragana", kanas: ["あ", "い", "う", "え", "お"],
+                    romajis: ["a", "i", "u", "e", "o"]),
                 test: Test(
                     type: .hiragana,
-                    kanas: ["あ","い","う","え","お"],
-                    romajis: ["a","i","u","e","o"],
+                    kanas: ["あ", "い", "う", "え", "お"],
+                    romajis: ["a", "i", "u", "e", "o"],
                     currentIndex: 0),
                 showQuiz: .constant(false)
             )

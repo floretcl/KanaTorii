@@ -10,20 +10,20 @@ import SwiftUI
 struct SuggestionsMiniQuiz: View {
     // Core data
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     @StateObject var miniQuiz: MiniQuiz
-    
+
     var items: GridItem
     var spacing: CGFloat
     var width: CGFloat
     var height: CGFloat
     var textSize: CGFloat
-    
+
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         LazyVGrid(
-            columns: [items,items],
+            columns: [items, items],
             alignment: .center,
             spacing: spacing,
             content: {
@@ -47,8 +47,8 @@ struct SuggestionsMiniQuiz_Previews: PreviewProvider {
         SuggestionsMiniQuiz(
             miniQuiz: MiniQuiz(
                 type: .hiragana,
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"],
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"],
                 draw: false),
             items: GridItem(.fixed(120)),
             spacing: 30,

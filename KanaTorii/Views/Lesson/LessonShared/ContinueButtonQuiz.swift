@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContinueButtonQuiz: View {
     @StateObject var currentLesson: Lesson
-    
+
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
-    
+
     @Binding var showQuiz: Bool
-    
+
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
@@ -39,8 +39,8 @@ struct ContinueButtonQuiz_Previews: PreviewProvider {
                 name: "Lesson 1 Hiragana a i u e o | Reading",
                 mode: .reading,
                 kanaType: "hiragana",
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"]),
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"]),
             widthDevice: 320,
             heightDevice: 830,
             textSize: 20,

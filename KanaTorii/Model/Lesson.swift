@@ -41,11 +41,11 @@ class Lesson: ObservableObject {
         let quiz = LessonPart.quiz
         let score = LessonPart.score
         if kanas.count == 5 {
-            return [memo,test,memo,test,memo,test,memo,test,memo,test,quiz,score]
+            return [memo, test, memo, test, memo, test, memo, test, memo, test, quiz, score]
         } else {
-            return [memo,test,memo,test,memo,test,quiz,score]
+            return [memo, test, memo, test, memo, test, quiz, score]
         }
-        
+
     }
     var totalParts: Int {
         return parts.count
@@ -68,8 +68,7 @@ class Lesson: ObservableObject {
     var currentProgression: Double {
         return (Double(currentPartNumber)) / Double(parts.count)
     }
-    
-    
+
     init(name: String, mode: Mode, kanaType: String, kanas: [String], romajis: [String]) {
         self.name = name
         self.mode = mode
@@ -84,7 +83,7 @@ class Lesson: ObservableObject {
         self.numberOfScore = 0
         self.kanaIndex = 0
     }
-    
+
     func newPart() {
         if currentPartIndex + 1 < totalParts {
             currentPartIndex += 1
@@ -101,11 +100,11 @@ class Lesson: ObservableObject {
             lessonFinished()
         }
     }
-    
+
     func lessonFinished() {
         state = .end
     }
-    
+
     func reset() {
         state = .play
         currentPartIndex = 0

@@ -20,7 +20,7 @@ struct FlashCard: View {
         }
     }
     var heightDevice: CGFloat
-    
+
     var body: some View {
         HStack {
             Spacer()

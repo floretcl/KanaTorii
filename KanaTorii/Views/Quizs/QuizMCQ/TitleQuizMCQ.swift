@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TitleQuizMCQ: View {
     var heightDevice: CGFloat
-    
+
     var body: some View {
         Text("Find correct answer")
             .font(.system(size: heightDevice/35))

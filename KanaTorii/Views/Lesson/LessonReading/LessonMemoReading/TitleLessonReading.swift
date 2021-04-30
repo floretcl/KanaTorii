@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TitleLessonReading: View {
     var heightDevice: CGFloat
-    
+
     var body: some View {
         Text("Memorize the shape and pronunciation of this kana")
             .font(.system(size: heightDevice/35))

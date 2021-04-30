@@ -13,9 +13,9 @@ struct SuggestionCellMiniQuiz: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    
+
     @StateObject var miniQuiz: MiniQuiz
-    
+
     var index: Int
     var width: CGFloat
     var height: CGFloat
@@ -29,10 +29,10 @@ struct SuggestionCellMiniQuiz: View {
             return Color(UIColor.systemBackground)
         }
     }
-    
+
     @State var testDone: Bool = false
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
@@ -65,8 +65,8 @@ struct SuggestionCellMiniQuiz: View {
                     try viewContext.save()
                 } catch {
                     print(error)
-                    //let nsError = error as NSError
-                    //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    // let nsError = error as NSError
+                    // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
                 same = true
             }
@@ -83,8 +83,8 @@ struct SuggestionCellMiniQuiz: View {
                 try viewContext.save()
             } catch {
                 print(error)
-                //let nsError = error as NSError
-                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // let nsError = error as NSError
+                // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
@@ -94,8 +94,8 @@ struct SuggestionCellMiniQuiz_Previews: PreviewProvider {
     static var previews: some View {
         SuggestionCellMiniQuiz(miniQuiz: MiniQuiz(
                                     type: .hiragana,
-                                    kanas: ["あ","い","う","え","お"],
-                                romajis: ["a","i","u","e","o"],
+                                    kanas: ["あ", "い", "う", "え", "お"],
+                                romajis: ["a", "i", "u", "e", "o"],
                                 draw: false),
                                index: 1,
                                width: 100,

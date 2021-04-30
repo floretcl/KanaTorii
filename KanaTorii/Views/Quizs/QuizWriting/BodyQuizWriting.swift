@@ -16,16 +16,16 @@ struct BodyQuizWriting: View {
             return "katakana"
         }
     }
-    
+
     @Binding var drawing: Drawing
     @Binding var drawings: [Drawing]
     @Binding var image: UIImage
-    
+
     var widthDevice: CGFloat
     var heightDevice: CGFloat
-    
+
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         HStack {
             Spacer()
@@ -44,7 +44,14 @@ struct BodyQuizWriting: View {
                     DrawingButtonQuiz(drawings: $drawings, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
                 }
                 Spacer()
-                ContinueButtonQuizDrawing(quiz: quiz, drawings: $drawings, image: $image, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showActionSheet: $showActionSheet)
+                ContinueButtonQuizDrawing(
+                    quiz: quiz,
+                    drawings: $drawings,
+                    image: $image,
+                    widthDevice: widthDevice,
+                    heightDevice: heightDevice,
+                    textSize: heightDevice/40,
+                    showActionSheet: $showActionSheet)
                     .padding(.bottom, 25)
             }
             Spacer()

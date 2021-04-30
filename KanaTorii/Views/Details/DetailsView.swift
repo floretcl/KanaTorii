@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailsView<Page: View>: View {
     var pages: [Page]
     @State var currentPage: Int
-    
+
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             PageViewController(pages: pages, currentPage: $currentPage)

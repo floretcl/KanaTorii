@@ -13,15 +13,15 @@ struct LessonMemoWriting: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
         animation: .default) var statLesson: FetchedResults<StatLesson>
-    
+
     @Environment(\.presentationMode) private var presentation
-    
+
     @StateObject var currentLesson: Lesson
-    
+
     @State var showTest: Bool = false
     @State var showQuiz: Bool = false
     @State var showScore: Bool = false
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let heightDevice = geometry.size.height
@@ -51,7 +51,12 @@ struct LessonMemoWriting: View {
                         Spacer()
                         ZStack {
                             if currentLesson.currentPart != .quiz && currentLesson.currentPart != .score {
-                                ContinueButtonTest(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showTest: $showTest)
+                                ContinueButtonTest(
+                                    currentLesson: currentLesson,
+                                    widthDevice: widthDevice,
+                                    heightDevice: heightDevice,
+                                    textSize: heightDevice/40,
+                                    showTest: $showTest)
                                 .padding(.bottom, heightDevice/20)
                                 .fullScreenCover(
                                     isPresented: $showTest,
@@ -71,7 +76,12 @@ struct LessonMemoWriting: View {
                                                 showQuiz: $showQuiz)
                                 })
                             } else if currentLesson.currentPart == .quiz {
-                                ContinueButtonQuiz(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showQuiz: $showQuiz)
+                                ContinueButtonQuiz(
+                                    currentLesson: currentLesson,
+                                    widthDevice: widthDevice,
+                                    heightDevice: heightDevice,
+                                    textSize: heightDevice/40,
+                                    showQuiz: $showQuiz)
                                 .padding(.bottom, heightDevice/20)
                                 .fullScreenCover(
                                     isPresented: $showQuiz,
@@ -93,7 +103,12 @@ struct LessonMemoWriting: View {
                                         .environment(\.managedObjectContext, self.viewContext)
                                 })
                             } else if currentLesson.currentPart == .score {
-                                ContinueButtonScore(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showScore: $showScore)
+                                ContinueButtonScore(
+                                    currentLesson: currentLesson,
+                                    widthDevice: widthDevice,
+                                    heightDevice: heightDevice,
+                                    textSize: heightDevice/40,
+                                    showScore: $showScore)
                                 .padding(.bottom, heightDevice/20)
                                 .sheet(
                                     isPresented: $showScore,
@@ -129,8 +144,8 @@ struct LessonMemoWriting: View {
                 try viewContext.save()
             } catch {
                 print(error)
-                //let nsError = error as NSError
-                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
@@ -144,8 +159,8 @@ struct LessonMemoWriting_Previews: PreviewProvider {
                     name: "Lesson 1 Hiragana a i u e o | Writing",
                     mode: .writing,
                     kanaType: "hiragana",
-                    kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"])
+                    kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"])
             )
         }
     }

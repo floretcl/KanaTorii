@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeBackground: View {
     var transparentColor: Color = Color.black.opacity(0)
-    
+
     var body: some View {
         VStack {
             LinearGradient(

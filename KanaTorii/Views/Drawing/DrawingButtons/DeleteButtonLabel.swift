@@ -11,7 +11,7 @@ struct DeleteButtonLabel: View {
     var sizeText: CGFloat
     var width: CGFloat
     var height: CGFloat
-    
+
     var body: some View {
         Label("Delete", systemImage: "trash")
             .font(.system(size: self.sizeText))

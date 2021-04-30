@@ -13,18 +13,18 @@ struct BodyQuizKeyboard: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    
+
     @Environment(\.presentationMode) var presentation
-    
+
     @StateObject var quiz: Quiz
     @Binding var text: String
-    
+
     @Binding var showActionSheet: Bool
     @Binding var showScore: Bool
-    
+
     @Binding var widthDeviceSaved: CGFloat
     @Binding var heightDeviceSaved: CGFloat
-    
+
     var body: some View {
         VStack {
             QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDeviceSaved)
@@ -42,7 +42,7 @@ struct BodyQuizKeyboard: View {
                             .font(.system(size: heightDeviceSaved/5))
                     }
                     HStack {
-                        TextField("Enter your answer", text: $text) { Boolean in
+                        TextField("Enter your answer", text: $text) { _ in
                         } onCommit: {
                             quiz.answerCurrentQuestion(with: text)
                             addItemToCoreData(correctAnswer: quiz.correctAnswer)
@@ -73,7 +73,7 @@ struct BodyQuizKeyboard: View {
             }
         }
     }
-    
+
     private func addItemToCoreData(correctAnswer: Bool) {
         var same: Bool = false
         for stat in statKana {
@@ -86,8 +86,8 @@ struct BodyQuizKeyboard: View {
                     try viewContext.save()
                 } catch {
                     print(error)
-                    //let nsError = error as NSError
-                    //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    // let nsError = error as NSError
+                    // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
                 same = true
             }
@@ -104,8 +104,8 @@ struct BodyQuizKeyboard: View {
                 try viewContext.save()
             } catch {
                 print(error)
-                //let nsError = error as NSError
-                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // let nsError = error as NSError
+                // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

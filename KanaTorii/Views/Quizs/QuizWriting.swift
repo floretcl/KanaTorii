@@ -10,15 +10,14 @@ import SwiftUI
 struct QuizWriting: View {
     @Environment(\.presentationMode) var presentation
     @StateObject var quiz: Quiz
-    
-    
+
     @State var drawing: Drawing = Drawing()
     @State var drawings: [Drawing] = [Drawing]()
     @State var image: UIImage = UIImage()
-    
+
     @Binding var showScore: Bool
     @State var showActionSheet: Bool = false
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width

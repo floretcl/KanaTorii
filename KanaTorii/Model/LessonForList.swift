@@ -21,7 +21,7 @@ struct LessonForList: Hashable, Codable, Identifiable {
             return false
         }
     }
-    
+
     var isKatakana: Bool {
         if self.title.contains("Katakana") {
             return true
@@ -29,7 +29,7 @@ struct LessonForList: Hashable, Codable, Identifiable {
             return false
         }
     }
-    
+
     var kanaTypeString: String {
         return self.isHiragana ? "hiragana" : "katakana"
     }

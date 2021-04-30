@@ -13,25 +13,25 @@ struct ContinueButtonMiniQuizDrawing: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    
+
     @Environment(\.colorScheme) var colorScheme
-    
+
     @StateObject var miniQuiz: MiniQuiz
     @Binding var drawings: [Drawing]
     @Binding var image: UIImage
-    
+
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
-    
+
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
             let answer = getPrediction(uiimage: image)
             image = UIImage()
-            //print(answer)
+            // print(answer)
             miniQuiz.answerCurrentQuestion(with: answer)
             addItemToCoreData(correctAnswer: miniQuiz.correctAnswer)
             showActionSheet.toggle()
@@ -45,23 +45,23 @@ struct ContinueButtonMiniQuizDrawing: View {
                 .clipShape(Capsule())
         })
     }
-    
+
     func getPrediction(uiimage: UIImage) -> String {
         var imageView: UIImage?
         var prediction: String = ""
-                
+
         if colorScheme == .dark {
             imageView = ImageProcessor.invertColorsImage(uiimage: uiimage)
         } else {
             imageView = uiimage
         }
-        
+
         if let classLbl = miniQuiz.classLabel(forImage: imageView!) {
             prediction = classLbl
         }
         return prediction
     }
-    
+
     private func addItemToCoreData(correctAnswer: Bool) {
         var same: Bool = false
         for stat in statKana {
@@ -74,8 +74,8 @@ struct ContinueButtonMiniQuizDrawing: View {
                     try viewContext.save()
                 } catch {
                     print(error)
-                    //let nsError = error as NSError
-                    //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    // let nsError = error as NSError
+                    // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
                 same = true
             }
@@ -92,8 +92,8 @@ struct ContinueButtonMiniQuizDrawing: View {
                 try viewContext.save()
             } catch {
                 print(error)
-                //let nsError = error as NSError
-                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // let nsError = error as NSError
+                // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
@@ -104,8 +104,8 @@ struct ContinueButtonMiniQuizDrawing_Previews: PreviewProvider {
         ContinueButtonMiniQuizDrawing(
             miniQuiz: MiniQuiz(
                 type: .hiragana,
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"],
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"],
                 draw: true),
             drawings: .constant([Drawing]()),
             image: .constant(UIImage()),

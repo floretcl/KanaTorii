@@ -10,7 +10,7 @@ import SwiftUI
 struct SuggestionCellTest: View {
     @StateObject var test: Test
     @State var testDone: Bool = false
-    
+
     var index: Int
     var width: CGFloat
     var height: CGFloat
@@ -24,9 +24,9 @@ struct SuggestionCellTest: View {
             return Color(UIColor.systemBackground)
         }
     }
-    
+
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
@@ -53,8 +53,8 @@ struct SuggestionCellTest_Previews: PreviewProvider {
         SuggestionCellTest(
             test: Test(
                     type: .hiragana,
-                    kanas: ["あ","い","う","え","お"],
-                    romajis: ["a","i","u","e","o"],
+                    kanas: ["あ", "い", "う", "え", "お"],
+                    romajis: ["a", "i", "u", "e", "o"],
                     currentIndex: 0),
             index: 1,
             width: 100,

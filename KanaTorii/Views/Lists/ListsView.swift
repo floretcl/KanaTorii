@@ -10,7 +10,7 @@ import SwiftUI
 struct ListsView: View {
     // User Defaults
     @AppStorage var colorsInTables: Bool
-    
+
     @State var pickerSelection: String = "hiragana"
     private var kanaType: Kana.KanaType {
         if pickerSelection == "hiragana" {
@@ -19,7 +19,7 @@ struct ListsView: View {
             return .katakana
         }
     }
-    
+
     var body: some View {
         GeometryReader { geometry in
             let widthDevice = geometry.size.width

@@ -21,6 +21,6 @@ struct DrawingGrid: View {
 struct DrawingGrid_Previews: PreviewProvider {
     static var previews: some View {
         DrawingGrid()
-            
+
     }
 }

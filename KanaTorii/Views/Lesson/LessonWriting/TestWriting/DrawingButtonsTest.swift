@@ -9,14 +9,14 @@ import SwiftUI
 
 struct DrawingButtonsTest: View {
     @StateObject var test: TestDrawing
-    
+
     @Binding var drawings: [Drawing]
     @Binding var showGuide: Bool
-    
+
     var sizeText: CGFloat
     var width: CGFloat
     var height: CGFloat
-    
+
     var body: some View {
         HStack {
             if test.numberOfTestsPerformed == 0 {

@@ -10,9 +10,9 @@ import SwiftUI
 struct TitleQuizWriting: View {
     @StateObject var quiz: Quiz
     var kanaType: String
-    
+
     var heightDevice: CGFloat
-    
+
     var body: some View {
         Text("Draw \(kanaType.capitalized) for \(quiz.currentName.capitalized)")
             .font(.system(size: heightDevice/35))

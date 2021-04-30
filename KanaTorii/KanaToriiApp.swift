@@ -13,12 +13,12 @@ struct KanaToriiApp: App {
     @StateObject var storeManager = StoreManager()
     @StateObject var modelData = ModelData()
     let persistenceController = PersistenceController.shared
-    
+
     let productIDs = [
             // +100 lesssons
             "fr.clementfloret.kanatorii.IAP.lessons"
     ]
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()

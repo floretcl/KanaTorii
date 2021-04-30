@@ -10,16 +10,16 @@ import SwiftUI
 struct HomeView: View {
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     // User Defaults
     @AppStorage var colorsInTables: Bool
     @AppStorage var quickQuizNbQuestions: Double
-    
+
     @State var showShare = false
     @State var showSettings = false
     @State var showIntroduction = false
     @State var showAbout = false
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width

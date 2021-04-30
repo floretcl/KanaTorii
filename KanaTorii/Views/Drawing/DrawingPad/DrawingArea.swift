@@ -13,7 +13,7 @@ struct Drawing: Identifiable {
   var path = Path()
   var points: [CGPoint] = []
   var color: Color = .primary
-  
+
   mutating func addLine(to point: CGPoint, color: Color) {
     if path.isEmpty {
       path.move(to: point)
@@ -31,7 +31,7 @@ struct DrawingArea: View {
     @Binding var image: UIImage
     @State var color: Color
     @State var lineWidth: CGFloat
-    
+
     var body: some View {
         GeometryReader { geometry in
             let heightDevice = geometry.size.height
@@ -51,7 +51,7 @@ struct DrawingArea: View {
                                                      color: color)
                         }
                     })
-                    .onEnded({ stroke in
+                    .onEnded({ _ in
                         if !self.drawing.path.isEmpty {
                           self.paths.append(self.drawing)
                         }

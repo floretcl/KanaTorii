@@ -14,12 +14,12 @@ struct GojuonGrid: View {
     }
     // User Defaults
     @AppStorage var colorsInTables: Bool
-    
+
     let limitGojuon: Int = 51
     let itemsCell = GridItem(.flexible(minimum: 30, maximum: 130))
     var kanaType: Kana.KanaType
     var widthDevice: CGFloat
-    
+
     var body: some View {
         HStack {
             Spacer()

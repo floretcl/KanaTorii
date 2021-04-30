@@ -9,25 +9,25 @@ import SwiftUI
 
 struct ContinueButtonTestDrawing: View {
     @Environment(\.colorScheme) var colorScheme
-    
+
     @StateObject var test: TestDrawing
-    
+
     @Binding var showGuide: Bool
     @Binding var drawings: [Drawing]
     @Binding var image: UIImage
-   
+
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
 
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)
             let answer = getPrediction(uiimage: image)
             image = UIImage()
-            //print(answer)
+            // print(answer)
             if test.numberOfTestsPerformed == 0 {
                 showGuide = false
                 drawings = [Drawing]()
@@ -46,17 +46,17 @@ struct ContinueButtonTestDrawing: View {
                 .clipShape(Capsule())
         })
     }
-    
+
     func getPrediction(uiimage: UIImage) -> String {
         var imageView: UIImage?
         var prediction: String = ""
-                
+
         if colorScheme == .dark {
             imageView = ImageProcessor.invertColorsImage(uiimage: uiimage)
         } else {
             imageView = uiimage
         }
-        
+
         if let classLbl = test.classLabel(forImage: imageView!) {
             prediction = classLbl
         }

@@ -13,7 +13,7 @@ final class ModelData: ObservableObject {
     var kanas: [Kana] = load("kanaData.json")
     var lessons: [LessonForList] = load("lessonData.json")
     var weekdays: [Weekday] = load("weekdays.json")
-    
+
     var freeLessons: [LessonForList] {
         lessons.filter { $0.id < 20 }
     }

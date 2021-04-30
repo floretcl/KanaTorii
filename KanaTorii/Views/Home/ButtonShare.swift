@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonShare: View {
     @Binding var showShare: Bool
-    
+
     var body: some View {
         Button(action: {
             hapticFeedback(style: .soft)

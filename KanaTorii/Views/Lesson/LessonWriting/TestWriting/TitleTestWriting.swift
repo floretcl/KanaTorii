@@ -10,9 +10,9 @@ import SwiftUI
 struct TitleTestWriting: View {
     @StateObject var test: TestDrawing
     var kanaType: String
-    
+
     var heightDevice: CGFloat
-    
+
     var body: some View {
         Text("Practice drawing \(kanaType.capitalized): \(test.romaji.capitalized)")
             .font(.system(size: heightDevice/35))

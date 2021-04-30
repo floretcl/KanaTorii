@@ -39,8 +39,7 @@ class TestDrawing: ObservableObject {
             return Mode.test
         }
     }
-    
-    
+
     init(type: KanaType, kana: String, romaji: String) {
         self.type = type
         self.kana = kana
@@ -49,10 +48,10 @@ class TestDrawing: ObservableObject {
         self.numberOfTestsPerformed = 0
         self.correctDrawing = false
         self.testDone = false
-        
+
         initializeConfiguration()
     }
-    
+
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
             let iscorrectDrawing = testAnswer(with: answer)
@@ -66,7 +65,7 @@ class TestDrawing: ObservableObject {
         }
         testDone = true
     }
-    
+
     private func testAnswer(with answer: String) -> Bool {
         if answer.lowercased() == kana.lowercased() {
             return true
@@ -74,7 +73,7 @@ class TestDrawing: ObservableObject {
             return false
         }
     }
-    
+
     func nextQuestion() {
         numberOfTestsPerformed += 1
         if numberOfTestsPerformed == 2 {
@@ -82,25 +81,25 @@ class TestDrawing: ObservableObject {
         }
         resetStateAnswer()
     }
-    
+
     private func resetStateAnswer() {
         correctDrawing = false
         testDone = false
     }
-    
+
     private func testEnd() {
         state = .end
     }
-    
+
     private func playSound(sound: String, ext: String) {
         if let soundURL = Bundle.main.url(forResource: sound, withExtension: ext) {
             var mySound: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
             // Play
-            AudioServicesPlaySystemSound(mySound);
+            AudioServicesPlaySystemSound(mySound)
         }
     }
-    
+
     // Initialize for CoreML Model use
     private func initializeConfiguration() {
         if type == .hiragana {
@@ -117,7 +116,7 @@ class TestDrawing: ObservableObject {
             }
         }
     }
-    
+
     // Return prediction form right CoreML Model
     func classLabel(forImage: UIImage) -> String? {
         var prediction: String

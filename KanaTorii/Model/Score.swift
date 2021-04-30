@@ -18,7 +18,7 @@ class Score: ObservableObject {
             UserDefaults.standard.set(nbTotalQuestions, forKey: "nb-total-questions")
         }
     }
-    
+
     init() {
         self.nbCorrectAnswers = UserDefaults.standard.object(forKey: "nb-correct-answers") as? Int ?? 0
         self.nbTotalQuestions = UserDefaults.standard.object(forKey: "nb-total-questions") as? Int ?? 0

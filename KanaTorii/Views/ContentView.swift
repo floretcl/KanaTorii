@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @State var tabViewSelectedItem: Int = 1
-    
+
     // For Segmented Control Colors
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("Green"))
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("Green"))], for: .normal)
     }
-    
+
     // User Defaults
     @AppStorage("colors-in-tables") var colorsInTables: Bool = true
     @AppStorage("quick-quiz-nb-questions") var quickQuizNbQuestions: Double = 10.0
-    
+
     var body: some View {
         TabView(selection: $tabViewSelectedItem,
             content: {

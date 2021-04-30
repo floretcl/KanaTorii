@@ -12,6 +12,8 @@
 		7E090BA725D1C12700FF35F4 /* GuideTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E090BA625D1C12700FF35F4 /* GuideTest.swift */; };
 		7E0954A925D9A5BF00A58AFF /* TitleLessonReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0954A825D9A5BF00A58AFF /* TitleLessonReading.swift */; };
 		7E0954AE25D9A63F00A58AFF /* SoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0954AD25D9A63F00A58AFF /* SoundButton.swift */; };
+		7E125B5B263C4EBA0074043F /* QuizsViewIpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E125B5A263C4EBA0074043F /* QuizsViewIpad.swift */; };
+		7E125B5D263C4F150074043F /* QuizsViewIphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E125B5C263C4F150074043F /* QuizsViewIphone.swift */; };
 		7E1878A525D95742001DEA8E /* DrawingPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1878A425D95742001DEA8E /* DrawingPad.swift */; };
 		7E1878B725D964FF001DEA8E /* DrawingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1878B625D964FF001DEA8E /* DrawingButtons.swift */; };
 		7E21A34D25E049A90073A3EF /* SuggestionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A34C25E049A80073A3EF /* SuggestionsTest.swift */; };
@@ -178,6 +180,8 @@
 		7E090BA625D1C12700FF35F4 /* GuideTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTest.swift; sourceTree = "<group>"; };
 		7E0954A825D9A5BF00A58AFF /* TitleLessonReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLessonReading.swift; sourceTree = "<group>"; };
 		7E0954AD25D9A63F00A58AFF /* SoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundButton.swift; sourceTree = "<group>"; };
+		7E125B5A263C4EBA0074043F /* QuizsViewIpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizsViewIpad.swift; sourceTree = "<group>"; };
+		7E125B5C263C4F150074043F /* QuizsViewIphone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizsViewIphone.swift; sourceTree = "<group>"; };
 		7E1878A425D95742001DEA8E /* DrawingPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPad.swift; sourceTree = "<group>"; };
 		7E1878B625D964FF001DEA8E /* DrawingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButtons.swift; sourceTree = "<group>"; };
 		7E21A34C25E049A80073A3EF /* SuggestionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTest.swift; sourceTree = "<group>"; };
@@ -653,6 +657,8 @@
 			isa = PBXGroup;
 			children = (
 				7E8BAB0725F3FCC300205949 /* QuizsView.swift */,
+				7E125B5A263C4EBA0074043F /* QuizsViewIpad.swift */,
+				7E125B5C263C4F150074043F /* QuizsViewIphone.swift */,
 				7EBF6DCE25E7F5F40077F4D2 /* QuizHeader.swift */,
 				7E3FE92A25E3FE2E00AB398D /* QuizMCQ.swift */,
 				7E335B3125E6BE26004EC2C9 /* QuizMCQ */,
@@ -869,6 +875,7 @@
 				7E3E424A25CB2C7C00B2F5AC /* Sources */,
 				7E3E424B25CB2C7C00B2F5AC /* Frameworks */,
 				7E3E424C25CB2C7C00B2F5AC /* Resources */,
+				7E125B59263C4B420074043F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -999,6 +1006,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7E125B59263C4B420074043F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7E3E424A25CB2C7C00B2F5AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1029,6 +1056,7 @@
 				7E3E437625CB420400B2F5AC /* LessonMemoWriting.swift in Sources */,
 				7E3E431B25CB35B800B2F5AC /* GojuonGrid.swift in Sources */,
 				7E60022925EA931800231C40 /* SuggestionsMiniQuiz.swift in Sources */,
+				7E125B5D263C4F150074043F /* QuizsViewIphone.swift in Sources */,
 				7E3E437F25CB42DF00B2F5AC /* LessonHeader.swift in Sources */,
 				7E45E36025DAD94D009B9A16 /* Extensions.swift in Sources */,
 				7E3E432925CB361D00B2F5AC /* Chevron.swift in Sources */,
@@ -1099,6 +1127,7 @@
 				7EF5EAAD25F9548D003D498B /* TitleQuizKeyboard.swift in Sources */,
 				7E3E42E225CB343300B2F5AC /* ContentView.swift in Sources */,
 				7EBF6DD825E7FEEB0077F4D2 /* DrawingPadQuiz.swift in Sources */,
+				7E125B5B263C4EBA0074043F /* QuizsViewIpad.swift in Sources */,
 				7E25672F25FBBE5C005B71A8 /* Weekday.swift in Sources */,
 				7EF5EA6B25F933BA003D498B /* SheetHeaderDraw.swift in Sources */,
 				7EED308325F92D7B00B2C5F1 /* HomeButtonIntroduction.swift in Sources */,

@@ -11,13 +11,13 @@ struct QuizKeyboard: View {
 
     @StateObject var quiz: Quiz
     @State var text: String = ""
-    
+
     @State var showActionSheet: Bool = false
     @Binding var showScore: Bool
-    
+
     @State var widthDeviceSaved: CGFloat = 0
     @State var heightDeviceSaved: CGFloat = 0
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
@@ -31,12 +31,12 @@ struct QuizKeyboard: View {
                     widthDeviceSaved: $widthDeviceSaved,
                     heightDeviceSaved: $heightDeviceSaved)
                 .background(Color(UIColor.secondarySystemBackground))
-                //.navigationBarTitle()
+                // .navigationBarTitle()
                 .onAppear(perform: {
                     widthDeviceSaved = widthDevice
                     heightDeviceSaved = heightDevice
                 })
-            
+
             } else {
                 BodyQuizKeyboard(
                     quiz: quiz,
@@ -46,7 +46,7 @@ struct QuizKeyboard: View {
                     widthDeviceSaved: $widthDeviceSaved,
                     heightDeviceSaved: $heightDeviceSaved)
                 .background(Color(UIColor.secondarySystemBackground))
-                //.navigationBarTitle()
+                // .navigationBarTitle()
                 .edgesIgnoringSafeArea(.bottom)
                 .onAppear(perform: {
                     widthDeviceSaved = widthDevice

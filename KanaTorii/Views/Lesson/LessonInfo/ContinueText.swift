@@ -11,7 +11,7 @@ struct ContinueText: View {
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
-    
+
     var body: some View {
         Text("Continue")
             .font(.system(size: textSize))

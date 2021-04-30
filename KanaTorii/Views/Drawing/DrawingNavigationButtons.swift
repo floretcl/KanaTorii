@@ -12,7 +12,7 @@ struct DrawingNavigationButtons: View {
     var kanas: [Kana] {
         return modelData.kanas
     }
-    
+
     @Binding var kana: Kana
     private var previousKana: Kana {
         var index = kana.id
@@ -28,14 +28,12 @@ struct DrawingNavigationButtons: View {
         }
         return kanas[index]
     }
-    
+
     @Binding var drawings: [Drawing]
     var sizeText: CGFloat
     var width: CGFloat
     var height: CGFloat
-    
-    
-    
+
     var body: some View {
         HStack {
             Spacer()

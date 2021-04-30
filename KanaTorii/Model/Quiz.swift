@@ -83,7 +83,7 @@ class Quiz: ObservableObject {
     var currentProgression: Double {
         return (Double(currentQuestion)) / Double(kanas.count)
     }
-    
+
     init(quickQuiz: Bool, difficulty: Difficulty, direction: Direction, hiragana: Bool, katakana: Bool, kanaSection: KanaSection, nbQuestions: Double) {
         self.quickQuiz = quickQuiz
         self.difficulty = difficulty
@@ -117,7 +117,7 @@ class Quiz: ObservableObject {
             initializeConfiguration()
         }
     }
-    
+
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
             let isCorrectAnswer = testAnswer(with: answer)
@@ -136,7 +136,7 @@ class Quiz: ObservableObject {
         }
         saveScore()
     }
-    
+
     func testAnswer(with answer: String) -> Bool {
         if answer.lowercased() == currentSolution.lowercased() || answer.lowercased() == currentSolutionIfRomaji.lowercased() {
             return true
@@ -144,7 +144,7 @@ class Quiz: ObservableObject {
             return false
         }
     }
-    
+
     func nextQuestion() {
         if currentIndex < kanas.count {
             currentIndex += 1
@@ -154,39 +154,39 @@ class Quiz: ObservableObject {
             suggestions = getSuggestions()
         }
     }
-    
+
     private func resetStateAnswer() {
         correctAnswer = false
         testDone = false
     }
-    
+
     private func quizEnd() {
         state = .end
     }
-    
+
     private func saveScore() {
         scoreData.nbCorrectAnswers = score
         scoreData.nbTotalQuestions = numberTotalKana
     }
-    
+
     private func getRandomKana() -> [Kana] {
         let kanas: [Kana] = modelData.kanas.shuffled()
         var randomArray: [Kana] = []
-        for i in 0..<Int(nbQuestions) {
-            randomArray.append(kanas[i])
+        for iteration in 0..<Int(nbQuestions) {
+            randomArray.append(kanas[iteration])
         }
         return randomArray
     }
-    
+
     private func getSuggestions() -> [String] {
         let currentKanaElement: Kana = kanas[currentIndex]
         var randomArrayElement: [Kana] = []
         var randomElement: Kana
         var randomArray: [String] = []
-        
+
         randomArrayElement.append(currentKanaElement)
         for _ in 1..<numberOfSuggestions {
-            var same : Bool = true
+            var same: Bool = true
             repeat {
                 randomElement = kanas.randomElement()!
                 if randomArrayElement.contains(randomElement) {
@@ -208,16 +208,16 @@ class Quiz: ObservableObject {
         }
         return randomArray.shuffled()
     }
-    
+
     private func playSound(sound: String, ext: String) {
         if let soundURL = Bundle.main.url(forResource: sound, withExtension: ext) {
             var mySound: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
             // Play
-            AudioServicesPlaySystemSound(mySound);
+            AudioServicesPlaySystemSound(mySound)
         }
     }
-    
+
     // Initialize for CoreML Model use
     private func initializeConfiguration() {
         if hiragana {
@@ -234,7 +234,7 @@ class Quiz: ObservableObject {
             }
         }
     }
-    
+
     // Return prediction from CoreML Model
     func classLabel(forImage: UIImage) -> String? {
         var prediction: String

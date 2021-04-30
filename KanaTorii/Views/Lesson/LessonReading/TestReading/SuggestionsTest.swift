@@ -14,12 +14,12 @@ struct SuggestionsTest: View {
     var textSize: CGFloat
     var width: CGFloat
     var height: CGFloat
-    
+
     @Binding var showActionSheet: Bool
-    
+
     var body: some View {
         LazyVGrid(
-            columns: [items,items],
+            columns: [items, items],
             alignment: .center,
             spacing: spacing,
             content: {
@@ -42,8 +42,8 @@ struct SuggestionsTest_Previews: PreviewProvider {
         SuggestionsTest(
             test: Test(
                 type: .hiragana,
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"],
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"],
                 currentIndex: 0),
             items: GridItem(.fixed(120)),
             spacing: 30,

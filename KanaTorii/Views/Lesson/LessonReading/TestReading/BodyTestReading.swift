@@ -17,12 +17,12 @@ struct BodyTestReading: View {
             return test.currentKana
         }
     }
-    
+
     @Binding var showActionSheet: Bool
-    
+
     let itemsCellIphone = GridItem(.fixed(120))
     let itemsCellIpad = GridItem(.fixed(200))
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
@@ -80,12 +80,12 @@ struct BodyTestReading_Previews: PreviewProvider {
             currentLesson: Lesson(
                             name: "Lesson 1 Hiragana a i u e o | Reading",
                             mode: .reading,
-                            kanaType: "hiragana", kanas: ["あ","い","う","え","お"],
-                            romajis: ["a","i","u","e","o"]),
+                            kanaType: "hiragana", kanas: ["あ", "い", "う", "え", "お"],
+                            romajis: ["a", "i", "u", "e", "o"]),
             test: Test(
                 type: .hiragana,
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"],
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"],
                 currentIndex: 0),
             showActionSheet: .constant(false))
     }

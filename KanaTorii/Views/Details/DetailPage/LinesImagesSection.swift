@@ -12,7 +12,7 @@ struct LinesImagesSection: View {
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var sizeText: CGFloat
-    
+
     var body: some View {
         VStack {
             Text("Line writing order")

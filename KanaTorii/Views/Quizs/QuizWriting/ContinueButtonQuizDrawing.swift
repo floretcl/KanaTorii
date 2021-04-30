@@ -13,18 +13,18 @@ struct ContinueButtonQuizDrawing: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.kana, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    
+
     @Environment(\.colorScheme) var colorScheme
-    
+
     @StateObject var quiz: Quiz
-    
+
     @Binding var drawings: [Drawing]
     @Binding var image: UIImage
-    
+
     var widthDevice: CGFloat
     var heightDevice: CGFloat
     var textSize: CGFloat
-    
+
     @Binding var showActionSheet: Bool
 
     var body: some View {
@@ -32,7 +32,7 @@ struct ContinueButtonQuizDrawing: View {
             hapticFeedback(style: .soft)
             let answer = getPrediction(uiimage: image)
             image = UIImage()
-            //print(answer)
+            // print(answer)
             quiz.answerCurrentQuestion(with: answer)
             addItemToCoreData(correctAnswer: quiz.correctAnswer)
             showActionSheet.toggle()
@@ -40,23 +40,23 @@ struct ContinueButtonQuizDrawing: View {
             ContinueText(widthDevice: widthDevice, heightDevice: heightDevice, textSize: textSize)
         })
     }
-    
+
     func getPrediction(uiimage: UIImage) -> String {
         var imageView: UIImage?
         var prediction: String = ""
-                
+
         if colorScheme == .dark {
             imageView = ImageProcessor.invertColorsImage(uiimage: uiimage)
         } else {
             imageView = uiimage
         }
-        
+
         if let classLbl = quiz.classLabel(forImage: imageView!) {
             prediction = classLbl
         }
         return prediction
     }
-    
+
     private func addItemToCoreData(correctAnswer: Bool) {
         var same: Bool = false
         for stat in statKana {
@@ -69,8 +69,8 @@ struct ContinueButtonQuizDrawing: View {
                     try viewContext.save()
                 } catch {
                     print(error)
-                    //let nsError = error as NSError
-                    //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    // let nsError = error as NSError
+                    // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
                 same = true
             }
@@ -87,8 +87,8 @@ struct ContinueButtonQuizDrawing: View {
                 try viewContext.save()
             } catch {
                 print(error)
-                //let nsError = error as NSError
-                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // let nsError = error as NSError
+                // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

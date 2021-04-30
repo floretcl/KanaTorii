@@ -41,7 +41,7 @@ struct StatisticsView: View {
             }
         }
     }
-    
+
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { statKana[$0] }.forEach(viewContext.delete)
@@ -49,8 +49,8 @@ struct StatisticsView: View {
                 try viewContext.save()
             } catch {
                 print(error)
-                //let nsError = error as NSError
-                //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // let nsError = error as NSError
+                // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

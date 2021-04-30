@@ -13,7 +13,7 @@ struct StatisticsSection: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
-    
+
     var kanaLabel: String
     private var nbCorrectAnswers: Float {
         for stat in statKana {
@@ -57,7 +57,7 @@ struct StatisticsSection: View {
     var sizeText: CGFloat
     var widthDevice: CGFloat
     var heightDevice: CGFloat
-    
+
     var body: some View {
         VStack {
             ProgressView(

@@ -10,10 +10,10 @@ import SwiftUI
 struct LessonInfoView: View {
     @Environment(\.presentationMode) private var presentation
     @Environment(\.colorScheme) var colorScheme
-    
+
     var lesson: LessonForList
     @State var lessonAlreadyStart: Bool = false
-    
+
     var body: some View {
         VStack {
             if colorScheme == .light {

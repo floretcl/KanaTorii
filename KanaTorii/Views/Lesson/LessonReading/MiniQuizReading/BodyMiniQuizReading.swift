@@ -10,10 +10,10 @@ import SwiftUI
 struct BodyMiniQuizReading: View {
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     @StateObject var currentLesson: Lesson
     @StateObject var miniQuiz: MiniQuiz
-    
+
     private var label: String {
         if miniQuiz.translationDirection == .toKana {
             return miniQuiz.currentRomaji
@@ -21,12 +21,12 @@ struct BodyMiniQuizReading: View {
             return miniQuiz.currentKana
         }
     }
-    
+
     @Binding var showActionSheet: Bool
-    
+
     let itemsCellIphone = GridItem(.fixed(120))
     let itemsCellIpad = GridItem(.fixed(200))
-    
+
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
@@ -72,12 +72,12 @@ struct BodyMiniQuizReading_Previews: PreviewProvider {
             currentLesson: Lesson(
                 name: "Lesson 1 Hiragana a i u e o | Reading",
                 mode: .reading,
-                kanaType: "hiragana", kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"]),
+                kanaType: "hiragana", kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"]),
             miniQuiz: MiniQuiz(
                 type: .hiragana,
-                kanas: ["あ","い","う","え","お"],
-                romajis: ["a","i","u","e","o"],
+                kanas: ["あ", "い", "う", "え", "お"],
+                romajis: ["a", "i", "u", "e", "o"],
                 draw: false),
             showActionSheet: .constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

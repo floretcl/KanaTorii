@@ -12,16 +12,16 @@ struct DakuonHandakuonGrid: View {
     var kanasForList: [KanaForList] {
         return modelData.kanasForList
     }
-    
+
     // User Defaults
     @AppStorage var colorsInTables: Bool
-    
+
     let limitGojuon: Int = 55
     let limitDakuonHandakuon: Int = 80
     let itemsCell = GridItem(.flexible(minimum: 30, maximum: 130))
     var kanaType: Kana.KanaType
     var widthDevice: CGFloat
-    
+
     var body: some View {
         HStack {
             Spacer()

@@ -13,7 +13,7 @@ struct HomeButtons: View {
     var width: CGFloat
     var heightPadding: CGFloat
     var sizeText: CGFloat
-    
+
     var body: some View {
         VStack {
             Button(action: {

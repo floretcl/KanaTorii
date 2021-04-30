@@ -16,23 +16,23 @@ struct SettingsForm: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatLesson.name, ascending: true)],
         animation: .default) var statLesson: FetchedResults<StatLesson>
-    
+
     // User Defaults
     @AppStorage var colorsInTables: Bool
     @AppStorage var quickQuizNbQuestions: Double
-    
+
     @ObservedObject var localNotification = LocalNotification()
-    
-    //App Version
+
+    // App Version
     var appVersion: String? {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     }
-    
+
     @State var showAlertStopNotifications: Bool = false
     @State var showAlertResetData: Bool = false
     let minimumValue: String = "10"
     let maximumValue: String = "40"
-    
+
     var body: some View {
         Form {
             Section(header: Text("CHARACTER CHARTS")) {
@@ -56,8 +56,7 @@ struct SettingsForm: View {
                             hapticFeedback(style: .soft)
                         },
                         minimumValueLabel: Text(minimumValue),
-                        maximumValueLabel: Text(maximumValue))
-                        {
+                        maximumValueLabel: Text(maximumValue)) {
                         Text("Number of questions: \(Int(quickQuizNbQuestions))")
                     }
                 }
@@ -110,7 +109,7 @@ struct SettingsForm: View {
                     })
                 }
             }
-            
+
             Section(header: Text("ABOUT"), footer: Text("Kana Torii © 2021 Clément Floret")) {
                 HStack {
                     Text("Version")
@@ -127,7 +126,7 @@ struct SettingsForm: View {
             }
         }
     }
-    
+
     private func deleteAllItems() {
         statKana.forEach { stat in
             viewContext.delete(stat)
@@ -139,8 +138,8 @@ struct SettingsForm: View {
             try viewContext.save()
         } catch {
             print(error)
-            //let nsError = error as NSError
-            //fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            // let nsError = error as NSError
+            // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
 }

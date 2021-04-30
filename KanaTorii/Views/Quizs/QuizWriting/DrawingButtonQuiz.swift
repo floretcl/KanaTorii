@@ -9,11 +9,11 @@ import SwiftUI
 
 struct DrawingButtonQuiz: View {
     @Binding var drawings: [Drawing]
-    
+
     var sizeText: CGFloat
     var width: CGFloat
     var height: CGFloat
-    
+
     var body: some View {
         HStack {
             Spacer()

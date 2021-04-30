@@ -9,11 +9,11 @@ import SwiftUI
 
 struct QuizHeader: View {
     @Environment(\.presentationMode) var presentation
-    
+
     @StateObject var quiz: Quiz
     @Binding var showScore: Bool
     var heightDevice: CGFloat
-    
+
     var body: some View {
         HStack {
             Button(action: {
