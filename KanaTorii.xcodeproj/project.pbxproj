@@ -16,6 +16,7 @@
 		7E125B5D263C4F150074043F /* QuizsViewIphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E125B5C263C4F150074043F /* QuizsViewIphone.swift */; };
 		7E1878A525D95742001DEA8E /* DrawingPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1878A425D95742001DEA8E /* DrawingPad.swift */; };
 		7E1878B725D964FF001DEA8E /* DrawingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1878B625D964FF001DEA8E /* DrawingButtons.swift */; };
+		7E1DB4AF26541B4600FC3BC4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1DB4AE26541B4600FC3BC4 /* Launch Screen.storyboard */; };
 		7E21A34D25E049A90073A3EF /* SuggestionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A34C25E049A80073A3EF /* SuggestionsTest.swift */; };
 		7E21A35825E04D940073A3EF /* DrawingButtonsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A35725E04D940073A3EF /* DrawingButtonsTest.swift */; };
 		7E232E6B260A5A0F0004B29F /* BodyQuizKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E232E6A260A5A0F0004B29F /* BodyQuizKeyboard.swift */; };
@@ -184,6 +185,7 @@
 		7E125B5C263C4F150074043F /* QuizsViewIphone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizsViewIphone.swift; sourceTree = "<group>"; };
 		7E1878A425D95742001DEA8E /* DrawingPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPad.swift; sourceTree = "<group>"; };
 		7E1878B625D964FF001DEA8E /* DrawingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButtons.swift; sourceTree = "<group>"; };
+		7E1DB4AE26541B4600FC3BC4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7E21A34C25E049A80073A3EF /* SuggestionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTest.swift; sourceTree = "<group>"; };
 		7E21A35725E04D940073A3EF /* DrawingButtonsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingButtonsTest.swift; sourceTree = "<group>"; };
 		7E232E6A260A5A0F0004B29F /* BodyQuizKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyQuizKeyboard.swift; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 				7E3E439225CB43FB00B2F5AC /* Model */,
 				7E3E43A225CB449500B2F5AC /* Resources */,
 				7E3E425525CB2C7C00B2F5AC /* Assets.xcassets */,
+				7E1DB4AE26541B4600FC3BC4 /* Launch Screen.storyboard */,
 				7E3E425F25CB2C7C00B2F5AC /* Info.plist */,
 				7EC7085725F6625F00013F38 /* Localizable.strings */,
 				7E3E425725CB2C7C00B2F5AC /* Preview Content */,
@@ -982,6 +985,7 @@
 				7E3E425625CB2C7C00B2F5AC /* Assets.xcassets in Resources */,
 				7E3F061F25F7E15E000FE9EE /* kanaData.json in Resources */,
 				7EC7085525F6625F00013F38 /* Localizable.strings in Resources */,
+				7E1DB4AF26541B4600FC3BC4 /* Launch Screen.storyboard in Resources */,
 				7E3F061A25F7E12B000FE9EE /* kanaForListData.json in Resources */,
 				7E3E43AF25CB44CF00B2F5AC /* YuMincho.ttc in Resources */,
 				7E3F062625F7E17F000FE9EE /* lessonData.json in Resources */,
