@@ -16,28 +16,44 @@ struct StatisticsView: View {
 
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
-            VStack {
+            if statKanaIsEmpty() == true {
                 NavigationView {
-                    Form {
-                        List {
-                            ForEach(statKana) { kana in
-                                StatRow(kana: kana)
-                            }
-                            .onDelete(perform: deleteItems)
-                        }
-                    }.navigationBarTitle("Statistics")
+                    EmptyStatisticView()
+                        .navigationBarTitle("Statistics")
                 }
                 .padding(.horizontal, 100)
                 .navigationViewStyle(StackNavigationViewStyle())
-            }.background(Color(UIColor.secondarySystemBackground))
+            } else {
+                VStack {
+                    NavigationView {
+                        Form {
+                            List {
+                                ForEach(statKana) { kana in
+                                    StatRow(kana: kana)
+                                }
+                                .onDelete(perform: deleteItems)
+                            }
+                        }.navigationBarTitle("Statistics")
+                    }
+                    .padding(.horizontal, 100)
+                    .navigationViewStyle(StackNavigationViewStyle())
+                }
+                .background(Color(UIColor.secondarySystemBackground))
+                .edgesIgnoringSafeArea(.all)
+            }
         } else {
             NavigationView {
-                List {
-                    ForEach(statKana) { kana in
-                        StatRow(kana: kana)
-                    }
-                    .onDelete(perform: deleteItems)
-                }.navigationBarTitle("Statistics")
+                if statKanaIsEmpty() == true {
+                    EmptyStatisticView()
+                        .navigationBarTitle("Statistics")
+                } else {
+                    List {
+                        ForEach(statKana) { kana in
+                            StatRow(kana: kana)
+                        }
+                        .onDelete(perform: deleteItems)
+                    }.navigationBarTitle("Statistics")
+                }
             }
         }
     }
@@ -53,6 +69,16 @@ struct StatisticsView: View {
                 // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+
+    private func statKanaIsEmpty() -> Bool {
+        var empty: Bool = true
+        for stat in statKana {
+            if stat.nbTotalAnswers != 0 {
+                empty = false
+            }
+        }
+        return empty
     }
 }
 

@@ -116,6 +116,7 @@ struct LessonsNavigationView: View {
                         .font(.title)
                         .foregroundColor(.gray)
                         .padding(.bottom, 100)
+                        .padding(.horizontal, 100)
                 }
             }
         }

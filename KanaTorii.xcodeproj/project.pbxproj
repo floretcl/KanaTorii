@@ -142,6 +142,7 @@
 		7ED04E3725D96F3200686D48 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED04E3625D96F3200686D48 /* HomeButtons.swift */; };
 		7EED307E25F92D3D00B2C5F1 /* HomeButtonAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EED307D25F92D3D00B2C5F1 /* HomeButtonAbout.swift */; };
 		7EED308325F92D7B00B2C5F1 /* HomeButtonIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EED308225F92D7B00B2C5F1 /* HomeButtonIntroduction.swift */; };
+		7EF09E27268C9CB300890454 /* EmptyStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF09E26268C9CB300890454 /* EmptyStatisticView.swift */; };
 		7EF5EA5825F92FBF003D498B /* SheetHeaderSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EA5725F92FBF003D498B /* SheetHeaderSettings.swift */; };
 		7EF5EA6025F92FDB003D498B /* SheetHeaderAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EA5F25F92FDB003D498B /* SheetHeaderAbout.swift */; };
 		7EF5EA6B25F933BA003D498B /* SheetHeaderDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EA6A25F933BA003D498B /* SheetHeaderDraw.swift */; };
@@ -318,6 +319,7 @@
 		7ED04E3625D96F3200686D48 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
 		7EED307D25F92D3D00B2C5F1 /* HomeButtonAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonAbout.swift; sourceTree = "<group>"; };
 		7EED308225F92D7B00B2C5F1 /* HomeButtonIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonIntroduction.swift; sourceTree = "<group>"; };
+		7EF09E26268C9CB300890454 /* EmptyStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticView.swift; sourceTree = "<group>"; };
 		7EF5EA5725F92FBF003D498B /* SheetHeaderSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeaderSettings.swift; sourceTree = "<group>"; };
 		7EF5EA5F25F92FDB003D498B /* SheetHeaderAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeaderAbout.swift; sourceTree = "<group>"; };
 		7EF5EA6A25F933BA003D498B /* SheetHeaderDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeaderDraw.swift; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 			children = (
 				7E3E438D25CB435F00B2F5AC /* StatisticsView.swift */,
 				7E232E74260A6E4C0004B29F /* StatRow.swift */,
+				7EF09E26268C9CB300890454 /* EmptyStatisticView.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -1106,6 +1109,7 @@
 				7EB76680268C8FF2003CC75B /* KatakanaRecognizer.mlmodel in Sources */,
 				7EF5EAA525F94BBA003D498B /* TitleMiniQuizWriting.swift in Sources */,
 				7E0954AE25D9A63F00A58AFF /* SoundButton.swift in Sources */,
+				7EF09E27268C9CB300890454 /* EmptyStatisticView.swift in Sources */,
 				7E3E439925CB446100B2F5AC /* Kana.swift in Sources */,
 				7EBF6DE025E7FF200077F4D2 /* DrawingButtonQuiz.swift in Sources */,
 				7E3E432625CB361D00B2F5AC /* ChevronButton.swift in Sources */,
@@ -1360,7 +1364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.6;
+				MARKETING_VERSION = 2.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1385,7 +1389,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.6;
+				MARKETING_VERSION = 2.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

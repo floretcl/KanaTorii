@@ -15,14 +15,16 @@ struct StatisticsSection: View {
         animation: .default) var statKana: FetchedResults<StatKana>
 
     var kanaLabel: String
+
     private var nbCorrectAnswers: Float {
-        for stat in statKana {
-            if self.kanaLabel == stat.kana {
-                return stat.nbCorrectAnswers
+            for stat in statKana {
+                if self.kanaLabel == stat.kana {
+                    return stat.nbCorrectAnswers
+                }
             }
+            return 0
         }
-        return 0
-    }
+
     private var nbTotalAnswers: Float {
         for stat in statKana {
             if self.kanaLabel == stat.kana {

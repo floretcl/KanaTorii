@@ -51,6 +51,7 @@
 "Next" = "Next";
 "NOTIFICATIONS" = "NOTIFICATIONS";
 "Notification will arrive on time" = "Notification will arrive on time";
+"No statistics to display" = "No statistics to display";
 "Number of questions: %lld" = "Number of questions: %lld";
 "Orange" = "Orange";
 "%@ Part %lld / %lld" = "%@ Part %lld / %lld";

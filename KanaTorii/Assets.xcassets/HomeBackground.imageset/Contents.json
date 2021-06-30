@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bruce-tang-84NebriUEis-unsplash.png",
+      "filename" : "HomeBackground.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bruce-tang-84NebriUEis-unsplash@2x.png",
+      "filename" : "HomeBackground@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bruce-tang-84NebriUEis-unsplash@3x.png",
+      "filename" : "HomeBackground@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
