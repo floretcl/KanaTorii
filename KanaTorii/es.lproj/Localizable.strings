@@ -1,0 +1,96 @@
+/* 
+  Localizable.strings
+  KanaTorii
+
+  Created by Clément FLORET on 08/03/2021.
+  
+*/
+
+"%lld Corrects / %lld Answers" = "%lld / %lld";
+"%@ charts" = "%@ tabla";
+"All" = "Todos";
+"ABOUT" = "Informaciones";
+"About" = "Acerca de";
+"About Kana Torii" = "Acerca de Kana Torii";
+"About text" = "This application aims to help you in learning Japanese Kana.\n/nFor that, to make the task easier there is in this application a section \"Lessons\". It allows you to learn step by step to recognize hiragana and katakana. I advise you to repeat them as many times as necessary.\n\nFor an overview, you can go to the \"Lists\" section, see a character, know its writing, listen to its pronunciation and practice writing it.\n\nFinally a \"Quiz\" section will allow you to master the Kana by training in a varied and efficient way.";
+"Buy +100 lessons %@" = "Buy +100 lessons %@";
+"CHARACTER CHARTS" = "CHARACTER CHARTS";
+"Close" = "Close";
+"Continue" = "Continue";
+"Corrects answers: " = "Corrects answers: ";
+"DATA" = "DATA";
+"Delete" = "Delete";
+"Difficulty" = "Difficulty";
+"Draw %@ for %@" = "Draw %@ for %@";
+"Easy" = "Easy";
+"Enter your answer" = "Enter your answer";
+"Find correct answer" = "Find correct answer";
+"Green" = "Green";
+"Hard" = "Hard";
+"Hiragana Drawing" = "Hiragana Drawing";
+"Hiragana Reading" = "Hiragana Reading";
+"Home" = "Home";
+"Hour:" = "Hour:";
+"Introduction" = "Introduction";
+"Introduction to Kana" = "Introduction to Kana";
+"Introduction text" = "When starting to learn Japanese, the first step in understanding and writing in Japanese is to learn and remember \"Kana\".\n\nKana are made up of two syllabaries, which represent the set of sounds of the language: the \"Hiragana\" and the \"Katakana\". These two writing systems are a bit like the Japanese \"Alphabets\". Each sound has two scripts, either in Hiragana for Japanese words (if Kanji is not used) or in Katakana for words of foreign origin.\n\nIn these two writing systems there are many characters but the most used are 104: the \"Gojuon\" (46 single characters), the \"Dakuon\" (20 characters) and \"Handakuon\" (5 characters) derived from characters simple, and finally the \"Yoon\" (33 characters) composed of two single characters.\n\nTo learn the kana there is no secret, you have to learn them by heart!";
+"It's time to learn new kanas, がんばって! (Cheer up!)" = "It's time to learn new kanas, がんばって! (Cheer up!)";
+"Katakana Drawing" = "Katakana Drawing";
+"Katakana Reading" = "Katakana Reading";
+"Keyboard and drawing" = "Keyboard and drawing";
+"Learn Hiragana and Katakana\n in a simple and effective way" = "Learn Hiragana and Katakana\n in a simple and effective way";
+"Lessons" = "Lessons";
+"Lesson %lld" = "Lesson %lld";
+"Line writing order" = "Line writing order";
+"Listen" = "Listen";
+"Lists" = "Lists";
+"Memorize the shape and pronunciation of this kana" = "Memorize the shape and pronunciation of this kana";
+"Memorize the writing order of the lines and the shape of this kana" = "Memorize the writing order of the lines and the shape of this kana";
+"Mode" = "Mode";
+"Multiple choice questions" = "Multiple choice questions";
+"Next" = "Next";
+"NOTIFICATIONS" = "NOTIFICATIONS";
+"Notification will arrive on time" = "Notification will arrive on time";
+"No statistics to display" = "No statistics to display";
+"Number of questions: %lld" = "Number of questions: %lld";
+"Orange" = "Orange";
+"%@ Part %lld / %lld" = "%@ Part %lld / %lld";
+"Practice drawing %@: %@" = "Practice drawing %@: %@";
+"Previous" = "Previous";
+"Primary" = "Primary";
+"Progress of lessons and statistics will be deleted" = "Progress of lessons and statistics will be deleted";
+"QUICK QUIZ" = "QUICK QUIZ";
+"Quick quiz" = "Quick quiz";
+"Quiz" = "Quiz";
+"Quiz Mode" = "Quiz Mode";
+"Red" = "Red";
+"Reset" = "Reset";
+"Reset all datas" = "Reset all datas";
+"Restore" = "Restore";
+"Reminder" = "Reminder";
+"Right answer" = "Right answer";
+"Right answer: %@" = "Right answer: %@";
+"Romaji :" = "Romaji :";
+"Scheduled notifications will no longer be displayed" = "Scheduled notifications will no longer be displayed";
+"Selection" = "Selection";
+"Settings" = "Settings";
+"Share" = "Partager";
+"Show Score" = "Show Score";
+"Show guide" = "Show guide";
+"Start" = "Start";
+"Start a lesson right now by clicking on 'lessons' at the top left" = "Start a lesson right now by clicking on 'lessons' at the top left";
+"Statistics" = "Statistics";
+"Statistics colors in tables" = "Statistics colors in tables";
+"Stop" = "Stop";
+"Stop current notifications" = "Stop current notifications";
+"Validate" = "Validate";
+"Version" = "Version";
+"Weekday" = "Weekday";
+"Write" = "Write";
+"Write the Romaji for %@" = "Write the Romaji for %@";
+"Writing" = "Writing";
+"Wrong answer: %@" = "Wrong answer: %@";
+"Yellow" = "Yellow";
+"Your score : " = "Your score : ";
+"Your result: " = "Your result: ";
+
