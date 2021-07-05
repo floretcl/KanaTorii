@@ -52,7 +52,7 @@
 		7E3E431A25CB35B800B2F5AC /* DakuonHandakuonGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E431425CB35B800B2F5AC /* DakuonHandakuonGrid.swift */; };
 		7E3E431B25CB35B800B2F5AC /* GojuonGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E431525CB35B800B2F5AC /* GojuonGrid.swift */; };
 		7E3E431C25CB35B800B2F5AC /* KanaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E431625CB35B800B2F5AC /* KanaCell.swift */; };
-		7E3E432625CB361D00B2F5AC /* ChevronButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E432125CB361C00B2F5AC /* ChevronButton.swift */; };
+		7E3E432625CB361D00B2F5AC /* Chevrons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E432125CB361C00B2F5AC /* Chevrons.swift */; };
 		7E3E432725CB361D00B2F5AC /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E432225CB361C00B2F5AC /* DetailsView.swift */; };
 		7E3E432825CB361D00B2F5AC /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E432325CB361D00B2F5AC /* PageControl.swift */; };
 		7E3E432925CB361D00B2F5AC /* Chevron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E432425CB361D00B2F5AC /* Chevron.swift */; };
@@ -227,7 +227,7 @@
 		7E3E431425CB35B800B2F5AC /* DakuonHandakuonGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DakuonHandakuonGrid.swift; sourceTree = "<group>"; };
 		7E3E431525CB35B800B2F5AC /* GojuonGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GojuonGrid.swift; sourceTree = "<group>"; };
 		7E3E431625CB35B800B2F5AC /* KanaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanaCell.swift; sourceTree = "<group>"; };
-		7E3E432125CB361C00B2F5AC /* ChevronButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChevronButton.swift; sourceTree = "<group>"; };
+		7E3E432125CB361C00B2F5AC /* Chevrons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chevrons.swift; sourceTree = "<group>"; };
 		7E3E432225CB361C00B2F5AC /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		7E3E432325CB361D00B2F5AC /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		7E3E432425CB361D00B2F5AC /* Chevron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chevron.swift; sourceTree = "<group>"; };
@@ -317,6 +317,9 @@
 		7ECFBBDB2608FEA7003EC368 /* BodyTestReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTestReading.swift; sourceTree = "<group>"; };
 		7ECFBBE326090361003EC368 /* BodyMiniQuizReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMiniQuizReading.swift; sourceTree = "<group>"; };
 		7ED04E3625D96F3200686D48 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
+		7EDFD345269201810060AD9C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/lessonData.json; sourceTree = "<group>"; };
+		7EDFD346269201830060AD9C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/weekdays.json; sourceTree = "<group>"; };
+		7EDFD347269201840060AD9C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7EED307D25F92D3D00B2C5F1 /* HomeButtonAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonAbout.swift; sourceTree = "<group>"; };
 		7EED308225F92D7B00B2C5F1 /* HomeButtonIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonIntroduction.swift; sourceTree = "<group>"; };
 		7EF09E26268C9CB300890454 /* EmptyStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticView.swift; sourceTree = "<group>"; };
@@ -558,7 +561,7 @@
 				7E3E432225CB361C00B2F5AC /* DetailsView.swift */,
 				7E3E432525CB361D00B2F5AC /* PageViewController.swift */,
 				7E3E432325CB361D00B2F5AC /* PageControl.swift */,
-				7E3E432125CB361C00B2F5AC /* ChevronButton.swift */,
+				7E3E432125CB361C00B2F5AC /* Chevrons.swift */,
 				7E27AB4A25D9757F00D10EC1 /* ChevronButton */,
 				7E3E433325CB366400B2F5AC /* DetailPage.swift */,
 				7E3E432E25CB363700B2F5AC /* DetailPage */,
@@ -955,6 +958,7 @@
 				en,
 				Base,
 				fr,
+				es,
 			);
 			mainGroup = 7E3E424525CB2C7C00B2F5AC;
 			packageReferences = (
@@ -1112,7 +1116,7 @@
 				7EF09E27268C9CB300890454 /* EmptyStatisticView.swift in Sources */,
 				7E3E439925CB446100B2F5AC /* Kana.swift in Sources */,
 				7EBF6DE025E7FF200077F4D2 /* DrawingButtonQuiz.swift in Sources */,
-				7E3E432625CB361D00B2F5AC /* ChevronButton.swift in Sources */,
+				7E3E432625CB361D00B2F5AC /* Chevrons.swift in Sources */,
 				7E3E439E25CB446100B2F5AC /* KanaForList.swift in Sources */,
 				7E3E434925CB369900B2F5AC /* InversedLabel.swift in Sources */,
 				7EF5EA5825F92FBF003D498B /* SheetHeaderSettings.swift in Sources */,
@@ -1204,6 +1208,7 @@
 			children = (
 				7E25672825FBBDDD005B71A8 /* en */,
 				7E25672D25FBBDE1005B71A8 /* fr */,
+				7EDFD346269201830060AD9C /* es */,
 			);
 			name = weekdays.json;
 			sourceTree = "<group>";
@@ -1213,6 +1218,7 @@
 			children = (
 				7E3F062725F7E17F000FE9EE /* en */,
 				7E3F062C25F7E182000FE9EE /* fr */,
+				7EDFD345269201810060AD9C /* es */,
 			);
 			name = lessonData.json;
 			sourceTree = "<group>";
@@ -1222,6 +1228,7 @@
 			children = (
 				7EC7085625F6625F00013F38 /* en */,
 				7EC7085B25F6626300013F38 /* fr */,
+				7EDFD347269201840060AD9C /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1364,7 +1371,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.7;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1389,7 +1396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.7;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

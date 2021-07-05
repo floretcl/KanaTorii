@@ -16,7 +16,7 @@ struct DetailsView<Page: View>: View {
             PageViewController(pages: pages, currentPage: $currentPage)
                 .edgesIgnoringSafeArea(.all)
             PageControl(numberOfPages: pages.count, currentPage: $currentPage)
-            ChevronButton(currentPage: $currentPage)
+            Chevrons()
         }
     }
 }

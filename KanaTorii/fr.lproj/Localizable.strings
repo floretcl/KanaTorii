@@ -14,11 +14,11 @@
 "About Kana Torii" = "À propos de Kana Torii";
 "About text" = "Cette application a pour but de vous aider dans l'apprentissage des Kana Japonais.\n\nPour cela, pour rendre la tâche plus facile il y a dans cette application une section \"Leçons\". Elle permet d'apprendre pas à pas à reconnaître les hiragana puis les katakana. Je vous conseille de les répéter autant de fois que nécessaire.\n\nPour un vision d'ensemble, vous pouvez aller dans la section \"Listes\", visualiser un caractère, connaître son écriture, écouter sa prononciation et vous entrainez à l'écrire.\n\nEnfin une section \"Quiz\" vous permettra de maîtrisez les Kana en vous entraînant de manière variée et efficace.";
 "Buy +100 lessons %@" = "Acheter +100 leçons %@";
-"CHARACTER CHARTS" = "TABLEAU DES HIRAGANA";
+"CHARACTER CHARTS" = "TABLEAUX DE CARACTÈRES";
 "Close" = "Fermer";
 "Continue" = "Continuer";
 "Corrects answers: " = "Bonnes réponses: ";
-"DATA" = "DONNEES";
+"DATA" = "DONNÉES";
 "Delete" = "Effacer";
 "Difficulty" = "Difficulté";
 "Draw %@ for %@" = "Écrit le %@ pour %@";
@@ -51,7 +51,7 @@
 "Next" = "Suivant";
 "NOTIFICATIONS" = "NOTIFICATIONS";
 "No statistics to display" = "Pas de statistiques à afficher";
-"Notification will arrive on time" = "La notification arrivera à temps";
+"Notification will arrive on time" = "La notification arrivera à temps !";
 "Number of questions: %lld" = "Nombres de questions: %lld";
 "Orange" = "Orange";
 "%@ Part %lld / %lld" = "%@ Partie %lld / %lld";
@@ -71,7 +71,7 @@
 "Right answer" = "Bonne réponse";
 "Right answer: %@" = "Bonne réponse: %@";
 "Romaji :" = "Romaji :";
-"Scheduled notifications will no longer be displayed" = "Les Notifications prévues ne seront pas affichées";
+"Scheduled notifications will no longer be displayed" = "Les Notifications prévues ne seront plus affichées";
 "Selection" = "Sélection";
 "Settings" = "Réglages";
 "Share" = "Partager";

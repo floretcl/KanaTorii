@@ -19,7 +19,6 @@ struct ReminderView: View {
     }
 
     var body: some View {
-
         NavigationView {
             Form(content: {
                 Picker("Weekday", selection: $selectedWeekDay) {

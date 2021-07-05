@@ -24,7 +24,6 @@ struct LessonsNavigationView: View {
             return "\(lessonProduct.price)"
         }
     }
-
     @EnvironmentObject var modelData: ModelData
     var freeLessons: [LessonForList] {
         return modelData.freeLessons
@@ -32,7 +31,6 @@ struct LessonsNavigationView: View {
     var lessons: [LessonForList] {
         return modelData.lessons
     }
-
     @State var showReminder: Bool = false
 
     var body: some View {
@@ -67,7 +65,8 @@ struct LessonsNavigationView: View {
                                 .padding(.bottom, 10.0)
                         }).sheet(isPresented: $showReminder, content: {
                             ReminderView()
-                    }))
+                        })
+                    )
                 } else {
                     Button(action: {
                         storeManager.purchaseProduct(product: lessonProduct)
