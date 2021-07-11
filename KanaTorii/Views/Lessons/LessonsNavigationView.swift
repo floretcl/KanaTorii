@@ -36,7 +36,7 @@ struct LessonsNavigationView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if KeychainWrapper.standard.bool(forKey: lessonProduct.productIdentifier) ?? false {
+                if getProduct() {
                     List(lessons) { lesson in
                         NavigationLink(
                             destination: LessonInfoView(lesson: lesson),
@@ -70,10 +70,11 @@ struct LessonsNavigationView: View {
                 } else {
                     Button(action: {
                         storeManager.purchaseProduct(product: lessonProduct)
-                    }) {
-                        Text("Buy +100 lessons \(price)")
+                    }, label: {
+                        Text("Buy +100 lessons")
+                            .font(.headline)
                             .foregroundColor(.blue)
-                    }
+                    })
                     List(freeLessons) { lesson in
                         NavigationLink(
                             destination: LessonInfoView(lesson: lesson),
@@ -119,6 +120,12 @@ struct LessonsNavigationView: View {
                 }
             }
         }
+    }
+    private func getProduct() -> Bool {
+        guard let product = KeychainWrapper.standard.bool(forKey: lessonProduct.productIdentifier) else {
+            return false
+        }
+        return product
     }
 }
 

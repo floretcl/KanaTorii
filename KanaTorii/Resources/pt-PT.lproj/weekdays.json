@@ -4,23 +4,23 @@
         "id": 0
     },
     {
-        "name": "Lunes",
+        "name": "Segunda",
         "id": 1
     },
     {
-        "name": "Martes",
+        "name": "Terça",
         "id": 2
     },
     {
-        "name": "Miércoles",
+        "name": "Quarta",
         "id": 3
     },
     {
-        "name": "Jueves",
+        "name": "Quinta",
         "id": 4
     },
     {
-        "name": "Viernes",
+        "name": "Sexta",
         "id": 5
     },
     {

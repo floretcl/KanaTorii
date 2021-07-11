@@ -1,0 +1,834 @@
+[
+    {
+        "title": "Lição 1 : Hiragana a i u e o",
+        "type": "Leitura",
+        "kanas": ["あ","い","う","え","お"],
+        "romaji": ["a","i","u","e","o"],
+        "text": "Bem-vindo, vamos começar a aprender Kana com Hiragana.\nVamos começar com os primeiros 5 caracteres de Hiragana \"simple\" (Gojuon): あ い う え お",
+        "id": 0
+    },
+    {
+        "title": "Lição 2 : Hiragana a i u e o",
+        "type": "Escrita",
+        "kanas": ["あ","い","う","え","お"],
+        "romaji": ["a","i","u","e","o"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: あ　い　う　え　お",
+        "id": 1
+    },
+    {
+        "title": "Lição 3 : Hiragana ka ki ku ke ko",
+        "type": "Leitura",
+        "kanas": ["か","き","く","け","こ"],
+        "romaji": ["ka","ki","ku","ke","ko"],
+        "text": "Da última vez que vimos os primeiros 5 caracteres, vamos passar para os próximos 5: か き く け こ",
+        "id": 2
+    },
+    {
+        "title": "Lição 4 : Hiragana ka ki ku ke ko",
+        "type": "Escrita",
+        "kanas": ["か","き","く","け","こ"],
+        "romaji": ["ka","ki","ku","ke","ko"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: か き く け こ",
+        "id": 3
+    },
+    {
+        "title": "Lição 5 : Hiragana sa shi su se so",
+        "type": "Leitura",
+        "kanas": ["さ","し","す","せ","そ"],
+        "romaji": ["sa","shi","su","se","so"],
+        "text": "Você se lembra dos primeiros 10 caracteres? Continuamos com os seguintes 5 Hiragana: さ し す せ そ",
+        "id": 4
+    },
+    {
+        "title": "Lição 6 : Hiragana sa shi su se so",
+        "type": "Escrita",
+        "kanas": ["さ","し","す","せ","そ"],
+        "romaji": ["sa","shi","su","se","so"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: さ し す せ そ",
+        "id": 5
+    },
+    {
+        "title": "Lição 7 : Hiragana ta chi tsu te to",
+        "type": "Leitura",
+        "kanas": ["た","ち","つ","て","と"],
+        "romaji": ["ta","chi","tsu","te","to"],
+        "text": "Já aprendemos 15 caracteres Hiragana. Vamos continuar com mais 5 Hiragana: た ち つ て と",
+        "id": 6
+    },
+    {
+        "title": "Lição 8 : Hiragana ta chi tsu te to",
+        "type": "Escrita",
+        "kanas": ["た","ち","つ","て","と"],
+        "romaji": ["ta","chi","tsu","te","to"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: た ち つ て と",
+        "id": 7
+    },
+    {
+        "title": "Lição 9 : Hiragana na ni nu ne no",
+        "type": "Leitura",
+        "kanas": ["な","に","ぬ","ね","の"],
+        "romaji": ["na","ni","nu","ne","no"],
+        "text": "Você se lembra dos primeiros 20 Hiragana? Se não, não hesite em revisar. Vamos continuar com 5 novos caracteres: な に ぬ ね の",
+        "id": 8
+    },
+    {
+        "title": "Lição 10 : Hiragana na ni nu ne no",
+        "type": "Escrita",
+        "kanas": ["な","に","ぬ","ね","の"],
+        "romaji": ["na","ni","nu","ne","no"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: な に ぬ ね の",
+        "id": 9
+    },
+    {
+        "title": "Lição 11 : Hiragana ha hi fu he ho",
+        "type": "Leitura",
+        "kanas": ["は","ひ","ふ","へ","ほ"],
+        "romaji": ["ha","hi","fu","he","ho"],
+        "text": "Já vimos mais da metade dos 46 Hiragana de base (Gojuon). Não se esqueça de revisar! Aqui estão os 5 caracteres a seguir: は ひ ふ ​​へ ほ",
+        "id": 10
+    },
+    {
+        "title": "Lição 12 : Hiragana ha hi fu he ho",
+        "type": "Escrita",
+        "kanas": ["は","ひ","ふ","へ","ほ"],
+        "romaji": ["ha","hi","fu","he","ho"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: は ひ ふ へ ほ",
+        "id": 11
+    },
+    {
+        "title": "Lição 13 : Hiragana ma mi mu me mo",
+        "type": "Leitura",
+        "kanas": ["ま","み","む","め","も"],
+        "romaji": ["ma","mi","mu","me","mo"],
+        "text": "Coragem! Aqui estão 5 novos caracteres: ま み む め も",
+        "id": 12
+    },
+    {
+        "title": "Lição 14 : Hiragana ma mi mu me mo",
+        "type": "Escrita",
+        "kanas": ["ま","み","む","め","も"],
+        "romaji": ["ma","mi","mu","me","mo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ま み む め も",
+        "id": 13
+    },
+    {
+        "title": "Lição 15 : Hiragana ya yu yo",
+        "type": "Leitura",
+        "kanas": ["や","ゆ","よ"],
+        "romaji": ["ya","yu","yo"],
+        "text": "Desta vez, há apenas três Hiragana, vamos ver juntos nesta lição: や ゆ よ",
+        "id": 14
+    },
+    {
+        "title": "Lição 16 : Hiragana ya yu yo",
+        "type": "Escrita",
+        "kanas": ["や","ゆ","よ"],
+        "romaji": ["ya","yu","yo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: や ゆ よ",
+        "id": 15
+    },
+    {
+        "title": "Lição 17 : Hiragana ra ri ru re ro",
+        "type": "Leitura",
+        "kanas": ["ら","り","る","れ","ろ"],
+        "romaji": ["ra","ri","ru","re","ro"],
+        "text": "Você aprendeu muito com Hiragana! Vamos continuar com os seguintes Hiragana: ら り る れ ろ",
+        "id": 16
+    },
+    {
+        "title": "Lição 18 : Hiragana ra ri ru re ro",
+        "type": "Escrita",
+        "kanas": ["ら","り","る","れ","ろ"],
+        "romaji": ["ra","ri","ru","re","ro"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ら り る れ ろ",
+        "id": 17
+    },
+    {
+        "title": "Lição 19 : Hiragana wa (w)o n",
+        "type": "Leitura",
+        "kanas": ["わ","を","ん"],
+        "romaji": ["wa","wo","n"],
+        "text": "Aqui estão os últimos 3 caracteres simples de Hiragana (Gojuon): わ を ん",
+        "id": 18
+    },
+    {
+        "title": "Lição 20 : Hiragana wa (w)o n",
+        "type": "Escrita",
+        "kanas": ["わ","を","ん"],
+        "romaji": ["wa","wo","n"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: わ を ん",
+        "id": 19
+    },
+    {
+        "title": "Lição 21 : Hiragana ga gi gu ge go",
+        "type": "Leitura",
+        "kanas": ["が","ぎ","ぐ","げ","ご"],
+        "romaji": ["ga","gi","gu","ge","go"],
+        "text": "Terminamos com os Gojuon. Vamos continuar com os primeiros 5 caracteres dos Dakuon.\nEsses caracteres são derivados dos Hiragana básicos com dois pequenos traços chamados Dakuten.\nDesta vez k- torna-se g-: が ぎ ぐ げ ご",
+        "id": 20
+    },
+    {
+        "title": "Lição 22 : Hiragana ga gi gu ge go",
+        "type": "Escrita",
+        "kanas": ["が","ぎ","ぐ","げ","ご"],
+        "romaji": ["ga","gi","gu","ge","go"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: が ぎ ぐ げ ご",
+        "id": 21
+    },
+    {
+        "title": "Lição 23 : Hiragana za ji zu ze zo",
+        "type": "Leitura",
+        "kanas": ["ざ","じ","ず","ぜ","ぞ"],
+        "romaji": ["za","ji","zu","ze","zo"],
+        "text": "Vamos continuar com mais 5 Hiragana.\nDesta vez s- torna-se z-: ざ じ ず ぜ ぞ",
+        "id": 22
+    },
+    {
+        "title": "Lição 24 : Hiragana za ji zu ze zo",
+        "type": "Escrita",
+        "kanas": ["ざ","じ","ず","ぜ","ぞ"],
+        "romaji": ["za","ji","zu","ze","zo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ざ じ ず ぜ ぞ",
+        "id": 23
+    },
+    {
+        "title": "Lição 25 : Hiragana da ji zu de do",
+        "type": "Leitura",
+        "kanas": ["だ","ぢ","づ","で","ど"],
+        "romaji": ["da","ji","zu","de","do"],
+        "text": "Você aprendeu 10 caracteres (Han)dakuon, vamos continuar com 5 novos caracteres.\nDesta vez t- torna-se d -.\nTenha cuidado com じ(ji) e ぢ(ji). E também para ず(zu) e づ(zu). ぢ(ji) e づ(zu) existem, mas são menos usados: だ ぢ づ で ど",
+        "id": 24
+    },
+    {
+        "title": "Lição 26 : Hiragana da ji zu de do",
+        "type": "Escrita",
+        "kanas": ["だ","ぢ","づ","で","ど"],
+        "romaji": ["da","ji","zu","de","do"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: だ ぢ づ で ど",
+        "id": 25
+    },
+    {
+        "title": "Lição 27 : Hiragana ba bi bu be bo",
+        "type": "Leitura",
+        "kanas": ["ば","び","ぶ","べ","ぼ"],
+        "romaji": ["ba","bi","bu","be","bo"],
+        "text": "Tudo bem, aqui estão os próximos 5 Hiragana.\nDesta vez h- torna-se b- com os Dakuten: ば び ぶ べ ぼ",
+        "id": 26
+    },
+    {
+        "title": "Lição 28 : Hiragana ba bi bu be bo",
+        "type": "Escrita",
+        "kanas": ["ば","び","ぶ","べ","ぼ"],
+        "romaji": ["ba","bi","bu","be","bo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ば び ぶ べ ぼ",
+        "id": 27
+    },
+    {
+        "title": "Lição 29 : Hiragana pa pi pu pe po",
+        "type": "Leitura",
+        "kanas": ["ぱ","ぴ","ぷ","ぺ","ぽ"],
+        "romaji": ["pa","pi","pu","pe","po"],
+        "text": "Você aprendeu os Dakuon, agora aqui estão os Handakuon.\nEsses caracteres são derivados dos Hiragana básicos com um pequeno círculo chamado Handakuten.\nDesta vez o h- torna-se p-: ぱ ぴ ぷ ぺ ぽ",
+        "id": 28
+    },
+    {
+        "title": "Lição 30 : Hiragana pa pi pu pe po",
+        "type": "Escrita",
+        "kanas": ["ぱ","ぴ","ぷ","ぺ","ぽ"],
+        "romaji": ["pa","pi","pu","pe","po"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ぱ ぴ ぷ ぺ ぽ",
+        "id": 29
+    },
+    {
+        "title": "Lição 31 : Hiragana kya kyu kyo",
+        "type": "Leitura",
+        "kanas": ["きゃ","きゅ","きょ"],
+        "romaji": ["kya","kyu","kyo"],
+        "text": "Agora vamos ver os Hiragana composto por dois caracteres (Yoon).\nEssas são associações de caractere com os Hiragana や(ya), ゆ(yu) e よ(yo): きゃ きゅ きょ",
+        "id": 30
+    },
+    {
+        "title": "Lição 32 : Hiragana kya kyu kyo",
+        "type": "Escrita",
+        "kanas": ["きゃ","きゅ","きょ"],
+        "romaji": ["kya","kyu","kyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: きゃ　きゅ　きょ",
+        "id": 31
+    },
+    {
+        "title": "Lição 33 : Hiragana sha shu sho",
+        "type": "Leitura",
+        "kanas": ["しゃ","しゅ","しょ"],
+        "romaji": ["sha","shu","sho"],
+        "text": "Nova lição, novos caraceteres.\nAqui estão mais 3 hiragana para aprender.\nEstas são associações de hiragana し(shi) com や(ya), ゆ(yu) e よ(yo): しゃ しゅ しょ",
+        "id": 32
+    },
+    {
+        "title": "Lição 34 : Hiragana sha shu sho",
+        "type": "Escrita",
+        "kanas": ["しゃ","しゅ","しょ"],
+        "romaji": ["sha","shu","sho"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: しゃ しゅ しょ",
+        "id": 33
+    },
+    {
+        "title": "Lição 35 : Hiragana cha chu cho",
+        "type": "Leitura",
+        "kanas": ["ちゃ","ちゅ","ちょ"],
+        "romaji": ["cha","chu","cho"],
+        "text": "Você se lembra dos Hiragana anterior? Aqui estão mais 3 caracteres.\nEstas são associações de Hiragana ち(chi) com や(ya), ゆ(yu) e よ(yo): ちゃ ちゅ ちょ",
+        "id": 34
+    },
+    {
+        "title": "Lição 36 : Hiragana cha chu cho",
+        "type": "Escrita",
+        "kanas": ["ちゃ","ちゅ","ちょ"],
+        "romaji": ["cha","chu","cho"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ちゃ ちゅ ちょ",
+        "id": 35
+    },
+    {
+        "title": "Lição 37 : Hiragana nya nyu nyo",
+        "type": "Leitura",
+        "kanas": ["にゃ","にゅ","にょ"],
+        "romaji": ["nya","nyu","nyo"],
+        "text": "Vamos continuar aprendendo novos Hiragana! Aqui estão os próximos caracteres.\nEstas são associações de Hiragana に(ni) com や(ya), ゆ(yu) e よ(yo): にゃ にゅ にょ",
+        "id": 36
+    },
+    {
+        "title": "Lição 38 : Hiragana nya nyu nyo",
+        "type": "Escrita",
+        "kanas": ["にゃ","にゅ","にょ"],
+        "romaji": ["nya","nyu","nyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: にゃ にゅ にょ",
+        "id": 37
+    },
+    {
+        "title": "Lição 39 : Hiragana hya hyu hyo",
+        "type": "Leitura",
+        "kanas": ["ひゃ","ひゅ","ひょ"],
+        "romaji": ["hya","hyu","hyo"],
+        "text": "Você já aprendeu 12 Yoon. Continue com os seguintes Hiragana.\nEstas são associações de Hiragana ひ(hi) com や(ya), ゆ(yu) e よ(yo): ひゃ ひゅ ひょ",
+        "id": 38
+    },
+    {
+        "title": "Lição 40 : Hiragana hya hyu hyo",
+        "type": "Escrita",
+        "kanas": ["ひゃ","ひゅ","ひょ"],
+        "romaji": ["hya","hyu","hyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ひゃ ひゅ ひょ",
+        "id": 39
+    },
+    {
+        "title": "Lição 41 : Hiragana mya myu myo",
+        "type": "Leitura",
+        "kanas": ["みゃ","みゅ","みょ"],
+        "romaji": ["mya","myu","myo"],
+        "text": "Vamos continuar assim!\nAqui estão os próximos caracteres, eles são associações de Hiragana ひ (hi) com や(ya), ゆ(yu) e よ(yo): みゃ みゅ みょ",
+        "id": 40
+    },
+    {
+        "title": "Lição 42 : Hiragana mya myu myo",
+        "type": "Escrita",
+        "kanas": ["みゃ","みゅ","みょ"],
+        "romaji": ["mya","myu","myo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: みゃ みゅ みょ",
+        "id": 41
+    },
+    {
+        "title": "Lição 43 : Hiragana rya ryu ryo",
+        "type": "Leitura",
+        "kanas": ["りゃ","りゅ","りょ"],
+        "romaji": ["rya","ryu","ryo"],
+        "text": "Vamos continuar aprendendo o Hiragana! Aqui estão os 3 novos caracteres.\nEstas são associações de Hiragana り(ri) com や(ya), ゆ(yu) e よ(yo): りゃ りゅ りょ",
+        "id": 42
+    },
+    {
+        "title": "Lição 44 : Hiragana rya ryu ryo",
+        "type": "Escrita",
+        "kanas": ["りゃ","りゅ","りょ"],
+        "romaji": ["rya","ryu","ryo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: りゃ りゅ りょ",
+        "id": 43
+    },
+    {
+        "title": "Lição 45 : Hiragana gya gyu gyo",
+        "type": "Leitura",
+        "kanas": ["ぎゃ","ぎゅ","ぎょ"],
+        "romaji": ["gya","gyu","gyo"],
+        "text": "Você aprendeu 21 Yoon, continue assim!\nEstas são associações de Hiragana ぎ(gi) com Hiragana や(ya), ゆ(yu) e よ(yo): ぎゃ ぎゅ ぎょ",
+        "id": 44
+    },
+    {
+        "title": "Lição 46 : Hiragana gya gyu gyo",
+        "type": "Escrita",
+        "kanas": ["ぎゃ","ぎゅ","ぎょ"],
+        "romaji": ["gya","gyu","gyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ぎゃ ぎゅ ぎょ",
+        "id": 45
+    },
+    {
+        "title": "Lição 47 : Hiragana ja ju jo",
+        "type": "Leitura",
+        "kanas": ["じゃ","じゅ","じょ"],
+        "romaji": ["ja","ju","jo"],
+        "text": "Nova lição, novos caracteres.\nAqui estão os seguintes, eles são associações de Hiragana じ(ji) com Hiragana や(ya), ゆ(yu) e よ(yo): じゃ じゅ じょ",
+        "id": 46
+    },
+    {
+        "title": "Lição 48 : Hiragana ja ju jo",
+        "type": "Escrita",
+        "kanas": ["じゃ","じゅ","じょ"],
+        "romaji": ["ja","ju","jo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: じゃ じゅ じょ",
+        "id": 47
+    },
+    {
+        "title": "Lição 49 : Hiragana bya byu byo",
+        "type": "Leitura",
+        "kanas": ["びゃ","びゅ","びょ"],
+        "romaji": ["bya","byu","byo"],
+        "text": "Você quase viu todos os Hiragana. Continuamos com os próximos 3 caracteres.\nEstas são associações de Hiragana び(bi) com や(ya), ゆ(yu) e よ(yo): びゃ びゅ びょ",
+        "id": 48
+    },
+    {
+        "title": "Lição 50 : Hiragana bya byu byo",
+        "type": "Escrita",
+        "kanas": ["びゃ","びゅ","びょ"],
+        "romaji": ["bya","byu","byo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: びゃ びゅ びょ",
+        "id": 49
+    },
+    {
+        "title": "Lição 51 : Hiragana pya pyu pyo",
+        "type": "Leitura",
+        "kanas": ["ぴゃ","ぴゅ","ぴょ"],
+        "romaji": ["pya","pyu","pyo"],
+        "text": "Aqui estão o último Yoon e os últimos Hiragana.\nEstas são associações dos Hiragana ぴ(pi) com や(ya), ゆ(yu) e よ(yo): ぴゃ ぴゅ ぴょ",
+        "id": 50
+    },
+    {
+        "title": "Lição 52 : Hiragana pya pyu pyo",
+        "type": "Escrita",
+        "kanas": ["ぴゃ","ぴゅ","ぴょ"],
+        "romaji": ["pya","pyu","pyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior, então você pode fazer quiz sobre o Hiragana para praticar: ぴゃ ぴゅ ぴょ",
+        "id": 51
+    },
+    {
+        "title": "Lição 53 : Katakana a i u e o",
+        "type": "Leitura",
+        "kanas": ["ア","イ","ウ","エ","オ"],
+        "romaji": ["a","i","u","e","o"],
+        "text": "Oi ! Com esta lição, continuaremos a aprender Kana com Katakana.\nVamos começar com os primeiros 5 caracteres de Katakana \"simples\" (Gojuon): ア イ ウ エ オ",
+        "id": 52
+    },
+    {
+        "title": "Lição 54 : Katakana a i u e o",
+        "type": "Escrita",
+        "kanas": ["ア","イ","ウ","エ","オ"],
+        "romaji": ["a","i","u","e","o"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ア イ ウ エ オ",
+        "id": 53
+    },
+    {
+        "title": "Lição 55 : Katakana ka ki ku ke ko",
+        "type": "Leitura",
+        "kanas": ["カ","キ","ク","ケ","コ"],
+        "romaji": ["ka","ki","ku","ke","ko"],
+        "text": "Da última vez que vimos os primeiros 5 caracteres, vamos passar para os próximos 5: カ キ ク ケ コ",
+        "id": 54
+    },
+    {
+        "title": "Lição 56 : Katakana ka ki ku ke ko",
+        "type": "Escrita",
+        "kanas": ["カ","キ","ク","ケ","コ"],
+        "romaji": ["ka","ki","ku","ke","ko"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: カ キ ク ケ コ",
+        "id": 55
+    },
+    {
+        "title": "Lição 57 : Katakana sa shi su se so",
+        "type": "Leitura",
+        "kanas": ["サ","シ","ス","セ","ソ"],
+        "romaji": ["sa","shi","su","se","so"],
+        "text": "Você se lembra dos primeiros 10 caracteres? Continuamos com os 5 caracteres a seguir: サ シ ス セ ソ",
+        "id": 56
+    },
+    {
+        "title": "Lição 58 : Katakana sa shi su se so",
+        "type": "Escrita",
+        "kanas": ["サ","シ","ス","セ","ソ"],
+        "romaji": ["sa","shi","su","se","so"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: サ シ ス セ ソ",
+        "id": 57
+    },
+    {
+        "title": "Lição 59 : Katakana ta chi tsu te to",
+        "type": "Leitura",
+        "kanas": ["タ","チ","ツ","テ","ト"],
+        "romaji": ["ta","chi","tsu","te","to"],
+        "text": "Já aprendemos 15 caracteres Katakana. Vamos continuar com mais 5 caracteres: タ チ ツ テ ト",
+        "id": 58
+    },
+    {
+        "title": "Lição 60 : Katakana ta chi tsu te to",
+        "type": "Escrita",
+        "kanas": ["タ","チ","ツ","テ","ト"],
+        "romaji": ["ta","chi","tsu","te","to"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: タ チ ツ テ ト",
+        "id": 59
+    },
+    {
+        "title": "Lição 61 : Katakana na ni nu ne no",
+        "type": "Leitura",
+        "kanas": ["ナ","ニ","ヌ","ネ","ノ"],
+        "romaji": ["na","ni","nu","ne","no"],
+        "text": "Você se lembra dos primeiros 20 caracteres? Se não, não hesite em revisar. Vamos continuar com 5 novos Katakana: ナ ニ ヌ ネ ノ",
+        "id": 60
+    },
+    {
+        "title": "Lição 62 : Katakana na ni nu ne no",
+        "type": "Escrita",
+        "kanas": ["ナ","ニ","ヌ","ネ","ノ"],
+        "romaji": ["na","ni","nu","ne","no"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ナ ニ ヌ ネ ノ",
+        "id": 61
+    },
+    {
+        "title": "Lição 63 : Katakana ha hi fu he ho",
+        "type": "Leitura",
+        "kanas": ["ハ","ヒ","フ","ヘ","ホ"],
+        "romaji": ["ha","hi","fu","he","ho"],
+        "text": "Já vimos mais da metade dos 46 Katakana básicos (Gojuon). Não se esqueça de revisar! Aqui estão os 5 caracteres a seguir: ハ ヒ フ ヘ ホ",
+        "id": 62
+    },
+    {
+        "title": "Lição 64 : Katakana ha hi fu he ho",
+        "type": "Escrita",
+        "kanas": ["ハ","ヒ","フ","ヘ","ホ"],
+        "romaji": ["ha","hi","fu","he","ho"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ハ ヒ フ ヘ ホ",
+        "id": 63
+    },
+    {
+        "title": "Lição 65 : Katakana ma mi mu me mo",
+        "type": "Leitura",
+        "kanas": ["マ","ミ","ム","メ","モ"],
+        "romaji": ["ma","mi","mu","me","mo"],
+        "text": "Coragem! Aqui estão 5 novos caracteres: マ ミ ム メ モ",
+        "id": 64
+    },
+    {
+        "title": "Lição 66 : Katakana ma mi mu me mo",
+        "type": "Escrita",
+        "kanas": ["マ","ミ","ム","メ","モ"],
+        "romaji": ["ma","mi","mu","me","mo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: マ ミ ム メ モ",
+        "id": 65
+    },
+    {
+        "title": "Lição 67 : Katakana ya yu yo",
+        "type": "Leitura",
+        "kanas": ["ヤ","ユ","ヨ"],
+        "romaji": ["ya","yu","yo"],
+        "text": "Desta vez, existem apenas 3 caracteres, vamos ver isso juntos nesta lição: ヤ ユ ヨ",
+        "id": 66
+    },
+    {
+        "title": "Lição 68 : Katakana ya yu yo",
+        "type": "Escrita",
+        "kanas": ["ヤ","ユ","ヨ"],
+        "romaji": ["ya","yu","yo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ヤ ユ ヨ",
+        "id": 67
+    },
+    {
+        "title": "Lição 69 : Katakana ra ri ru re ro",
+        "type": "Leitura",
+        "kanas": ["ラ","リ","ル","レ","ロ"],
+        "romaji": ["ra","ri","ru","re","ro"],
+        "text": "Você aprendeu muito com o Katakana! Vamos continuar com os seguintes Katakana que começam com 'r': ラ リ ル レ ロ",
+        "id": 68
+    },
+    {
+        "title": "Lição 70 : Katakana ra ri ru re ro",
+        "type": "Escrita",
+        "kanas": ["ラ","リ","ル","レ","ロ"],
+        "romaji": ["ra","ri","ru","re","ro"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ラ リ ル レ ロ",
+        "id": 69
+    },
+    {
+        "title": "Lição 71 : Katakana wa (w)o n",
+        "type": "Leitura",
+        "kanas": ["ワ","ヲ","ン"],
+        "romaji": ["wa","(w)o","n"],
+        "text": "Aqui estão os últimos 3 caracteres simples de Katakana (Gojuon): ワ ヲ ン",
+        "id": 70
+    },
+    {
+        "title": "Lição 72 : Katakana wa (w)o n",
+        "type": "Escrita",
+        "kanas": ["ワ","ヲ","ン"],
+        "romaji": ["wa","(w)o","n"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ワ ヲ ン",
+        "id": 71
+    },
+    {
+        "title": "Lição 73 : Katakana ga gi gu ge go",
+        "type": "Leitura",
+        "kanas": ["ガ","ギ","グ","ゲ","ゴ"],
+        "romaji": ["ga","gi","gu","ge","go"],
+        "text": "Terminamos com os Gojuon. Vamos continuar com os primeiros 5 caracteres dos Dakuon.\nComo um lembrete, esses caracteres são derivados dos Katakana básicos com dois pequenos traços chamados Dakuten.\nDesta vez k- torna-se g-: ガ ギ グ ゲ ゴ",
+        "id": 72
+    },
+    {
+        "title": "Lição 74 : Katakana ga gi gu ge go",
+        "type": "Escrita",
+        "kanas": ["ガ","ギ","グ","ゲ","ゴ"],
+        "romaji": ["ga","gi","gu","ge","go"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ガ ギ グ ゲ ゴ",
+        "id": 73
+    },
+    {
+        "title": "Lição 75 : Katakana za ji zu ze zo",
+        "type": "Leitura",
+        "kanas": ["ザ","ジ","ズ","ゼ","ゾ"],
+        "romaji": ["za","ji","zu","ze","zo"],
+        "text": "Vamos continuar com mais 5 Katakana.\nDesta vez s- torna-se z-: ザ ジ ズ ゼ ゾ",
+        "id": 74
+    },
+    {
+        "title": "Lição 76 : Katakana za ji zu ze zo",
+        "type": "Escrita",
+        "kanas": ["ザ","ジ","ズ","ゼ","ゾ"],
+        "romaji": ["za","ji","zu","ze","zo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ザ ジ ズ ゼ ゾ",
+        "id": 75
+    },
+    {
+        "title": "Lição 77 : Katakana da ji zu de do",
+        "type": "Leitura",
+        "kanas": ["ダ","ヂ","ヅ","デ","ド"],
+        "romaji": ["da","ji","zu","de","do"],
+        "text": "Você aprendeu 10 caracteres Dakuon, vamos continuar com 5 novos caracteres.\nDesta vez t- torna-se d -.\nPreste atenção a ジ(ji) e ヂ(ji). E também em ズ(zu) e ヅ(zu), eles existem, mas são menos usados: ダ ヂ ヅ デ ド",
+        "id": 76
+    },
+    {
+        "title": "Lição 78 : Katakana da ji zu de do",
+        "type": "Escrita",
+        "kanas": ["ダ","ヂ","ヅ","デ","ド"],
+        "romaji": ["da","ji","zu","de","do"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ダ ヂ ヅ デ ド",
+        "id": 77
+    },
+    {
+        "title": "Lição 79 : Katakana ba bi bu be bo",
+        "type": "Leitura",
+        "kanas": ["バ","ビ","ブ","ベ","ボ"],
+        "romaji": ["ba","bi","bu","be","bo"],
+        "text": "Muito bem. Lembre-se de revisar de vez em quando todo o Kana que você aprendeu. Aqui estão os próximos 5 Katakana.\nDesta vez h- torna-se b- com o Dakuten: バ ビ ブ ベ ボ",
+        "id": 78
+    },
+    {
+        "title": "Lição 80 : Katakana ba bi bu be bo",
+        "type": "Escrita",
+        "kanas": ["バ","ビ","ブ","ベ","ボ"],
+        "romaji": ["ba","bi","bu","be","bo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: バ ビ ブ ベ ボ",
+        "id": 79
+    },
+    {
+        "title": "Lição 81 : Katakana pa pi pu pe po",
+        "type": "Leitura",
+        "kanas": ["パ","ピ","プ","ペ","ポ"],
+        "romaji": ["pa","pi","pu","pe","po"],
+        "text": "Você aprendeu os Dakuon, agora aqui estão os Handakuon.\nComo um lembrete, esses caracteres são derivados dos Katakana básicos com um pequeno círculo chamado Handakuten.\nDesta vez o h- torna-se p-: パ ピ プ ペ ポ",
+        "id": 80
+    },
+    {
+        "title": "Lição 82 : Katakana pa pi pu pe po",
+        "type": "Escrita",
+        "kanas": ["パ","ピ","プ","ペ","ポ"],
+        "romaji": ["pa","pi","pu","pe","po"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: パ ピ プ ペ ポ",
+        "id": 81
+    },
+    {
+        "title": "Lição 83 : Katakana kya kyu kyo",
+        "type": "Leitura",
+        "kanas": ["キャ","キュ","キョ"],
+        "romaji": ["kya","kyu","kyo"],
+        "text": "Vejamos agora os Katakana compostos por dois caracteres (Yoon).\nEstas são associações dos Katakana キ(ki) com os Katakana ヤ(ya), ユ(yu) e ヨ(yo): キャ キュ キョ",
+        "id": 82
+    },
+    {
+        "title": "Lição 84 : Katakana kya kyu kyo",
+        "type": "Escrita",
+        "kanas": ["キャ","キュ","キョ"],
+        "romaji": ["kya","kyu","kyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: キャ キュ キョ",
+        "id": 83
+    },
+    {
+        "title": "Lição 85 : Katakana sha shu sho",
+        "type": "Leitura",
+        "kanas": ["シャ","シュ","ショ"],
+        "romaji": ["sha","shu","sho"],
+        "text": "Nova lição, novos caracteres.\nAqui estão mais 3 Katakana para aprender.\nEstas são associações de Katakana シ(shi) com ヤ(ya), ユ(yu) e ヨ(yo): シャ シュ ショ",
+        "id": 84
+    },
+    {
+        "title": "Lição 86 : Katakana sha shu sho",
+        "type": "Escrita",
+        "kanas": ["シャ","シュ","ショ"],
+        "romaji": ["sha","shu","sho"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: シャ シュ ショ",
+        "id": 85
+    },
+    {
+        "title": "Lição 87 : Katakana cha chu cho",
+        "type": "Leitura",
+        "kanas": ["チャ","チュ","チョ"],
+        "romaji": ["cha","chu","cho"],
+        "text": "Você se lembra dos Katakana anteriores? Aqui estão mais 3 caracteres.\nEstas são associações de Katakana チ(chi) com ヤ(ya), ユ(yu) e ヨ(yo): チャ チュ チョ",
+        "id": 86
+    },
+    {
+        "title": "Lição 88 : Katakana cha chu cho",
+        "type": "Escrita",
+        "kanas": ["チャ","チュ","チョ"],
+        "romaji": ["cha","chu","cho"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: チャ チュ チョ",
+        "id": 87
+    },
+    {
+        "title": "Lição 89 : Katakana nya nyu nyo",
+        "type": "Leitura",
+        "kanas": ["ニャ","ニュ","ニョ"],
+        "romaji": ["nya","nyu","nyo"],
+        "text": "Vamos continuar aprendendo novos Katakana! Aqui estão os próximos caracteres.\nEstas são associações de Katakana ニ(ni) com Katakana ヤ(ya), ユ(yu) e ヨ(yo): ニャ ニュ ニョ",
+        "id": 88
+    },
+    {
+        "title": "Lição 90 : Katakana nya nyu nyo",
+        "type": "Escrita",
+        "kanas": ["ニャ","ニュ","ニョ"],
+        "romaji": ["nya","nyu","nyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ニャ ニュ ニョ",
+        "id": 89
+    },
+    {
+        "title": "Lição 91 : Katakana hya hyu hyo",
+        "type": "Leitura",
+        "kanas": ["ヒャ","ヒュ","ヒョ"],
+        "romaji": ["hya","hyu","hyo"],
+        "text": "Você já aprendeu 12 Yoon. Continue com os seguintes Katakana.\nEstas são associações de ヒ(hi) com Katakana ヤ(ya), ユ(yu) e ヨ(yo): ヒャ ヒュ ヒョ",
+        "id": 90
+    },
+    {
+        "title": "Lição 92 : Katakana hya hyu hyo",
+        "type": "Escrita",
+        "kanas": ["ヒャ","ヒュ","ヒョ"],
+        "romaji": ["hya","hyu","hyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ヒャ ヒュ ヒョ",
+        "id": 91
+    },
+    {
+        "title": "Lição 93 : Katakana mya myu myo",
+        "type": "Leitura",
+        "kanas": ["ミャ","ミュ","ミョ"],
+        "romaji": ["mya","myu","myo"],
+        "text": "Mantem!\nAqui estão os próximos caracteres, eles são associações de Katakana ミ(mi) com Katakana ヤ(ya), ユ(yu) e ヨ(yo): ミャ ミュ ミョ",
+        "id": 92
+    },
+    {
+        "title": "Lição 94 : Katakana mya myu myo",
+        "type": "Escrita",
+        "kanas": ["ミャ","ミュ","ミョ"],
+        "romaji": ["mya","myu","myo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ミャ ミュ ミョ",
+        "id": 93
+    },
+    {
+        "title": "Lição 95 : Katakana rya ryu ryo",
+        "type": "Leitura",
+        "kanas": ["リャ","リュ","リョ"],
+        "romaji": ["rya","ryu","ryo"],
+        "text": "Vamos continuar aprendendo o Katakana! Aqui estão os 3 novos caracteres.\nEstas são associações de Katakana リ(ri) com ヤ(ya), ユ(yu) e ヨ(yo): リャ リュ リョ",
+        "id": 94
+    },
+    {
+        "title": "Lição 96 : Katakana rya ryu ryo",
+        "type": "Escrita",
+        "kanas": ["リャ","リュ","リョ"],
+        "romaji": ["rya","ryu","ryo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: リャ リュ リョ",
+        "id": 95
+    },
+    {
+        "title": "Lição 97 : Katakana gya gyu gyo",
+        "type": "Leitura",
+        "kanas": ["ギャ","ギュ","ギョ"],
+        "romaji": ["gya","gyu","gyo"],
+        "text": "Você aprendeu 21 Yoon, continue assim!\nestas são associações de Katakana ギ(gi) com Katakana ヤ(ya), ユ(yu) e ヨ(yo): ギャ ギュ ギョ",
+        "id": 96
+    },
+    {
+        "title": "Lição 98 : Katakana gya gyu gyo",
+        "type": "Escrita",
+        "kanas": ["ギャ","ギュ","ギョ"],
+        "romaji": ["gya","gyu","gyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ギャ ギュ ギョ",
+        "id": 97
+    },
+    {
+        "title": "Lição 99 : Katakana ja ju jo",
+        "type": "Leitura",
+        "kanas": ["ジャ","ジュ","ジョ"],
+        "romaji": ["ja","ju","jo"],
+        "text": "Nova lição.\nAqui estão as seguintes, são associações de Katakana ジ(ji) com ヤ(ya), ユ(yu) e ヨ(yo): ジャ ジュ ジョ",
+        "id": 98
+    },
+    {
+        "title": "Lição 100 : Katakana ja ju jo",
+        "type": "Escrita",
+        "kanas": ["ジャ","ジュ","ジョ"],
+        "romaji": ["ja","ju","jo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ジャ ジュ ジョ",
+        "id": 99
+    },
+    {
+        "title": "Lição 101 : Katakana bya byu byo",
+        "type": "Leitura",
+        "kanas": ["ビャ","ビュ","ビョ"],
+        "romaji": ["bya","byu","byo"],
+        "text": "Você quase viu todos os Katakana. Continuamos com os próximos 3 caracteres.\nEstas são associações de Katakana ビ(bi) com ヤ(ya), ユ(yu) e ヨ(yo): ビャ ビュ ビョ",
+        "id": 100
+    },
+    {
+        "title": "Lição 102 : Katakana bya byu byo",
+        "type": "Escrita",
+        "kanas": ["ビャ","ビュ","ビョ"],
+        "romaji": ["bya","byu","byo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior: ビャ ビュ ビョ",
+        "id": 101
+    },
+    {
+        "title": "Lição 103 : Katakana pya pyu pyo",
+        "type": "Leitura",
+        "kanas": ["ピャ","ピュ","ピョ"],
+        "romaji": ["pya","pyu","pyo"],
+        "text": "Aqui estão os últimos Yoon e os últimos Katakana.\nEstas são associações de ピ(pi) com ヤ(ya), ユ(yu) e ヨ(yo): ピャ ピュ ピョ",
+        "id": 102
+    },
+    {
+        "title": "Lição 104 : Katakana pya pyu pyo",
+        "type": "Escrita",
+        "kanas": ["ピャ","ピュ","ピョ"],
+        "romaji": ["pya","pyu","pyo"],
+        "text": "Nesta lição, veremos a escrita dos caracteres da lição anterior, então você pode fazer todos os testes que quiser até ter dominado todos os Kana usuais da língua japonesa: ピャ ピュ ピョ",
+        "id": 103
+    }
+]

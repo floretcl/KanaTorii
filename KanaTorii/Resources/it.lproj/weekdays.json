@@ -1,34 +1,34 @@
 [
     {
-        "name": "Todos",
+        "name": "Tutti",
         "id": 0
     },
     {
-        "name": "Lunes",
+        "name": "Lunedì",
         "id": 1
     },
     {
-        "name": "Martes",
+        "name": "Martedì",
         "id": 2
     },
     {
-        "name": "Miércoles",
+        "name": "Mercoledì",
         "id": 3
     },
     {
-        "name": "Jueves",
+        "name": "Giovedì",
         "id": 4
     },
     {
-        "name": "Viernes",
+        "name": "Venerdì",
         "id": 5
     },
     {
-        "name": "Sábado",
+        "name": "Sabato",
         "id": 6
     },
     {
-        "name": "Domingo",
+        "name": "Domenica",
         "id": 7
     },
 ]

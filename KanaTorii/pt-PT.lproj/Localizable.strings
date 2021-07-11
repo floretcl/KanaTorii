@@ -1,0 +1,97 @@
+/* 
+  Localizable.strings
+  KanaTorii
+
+  Created by Clément FLORET on 08/03/2021.
+  
+*/
+
+"%lld Corrects / %lld Answers" = "%lld / %lld";
+"%@ charts" = "Tabelas de %@";
+"All" = "Todos";
+"ABOUT" = "ACERCA";
+"About" = "Acerca";
+"About Kana Torii" = "Acerca de Kana Torii";
+"About text" = "Este aplicativo tem como objetivo ajudá-lo no aprendizado do japonês Kana.\n\nPara tornar a tarefa mais fácil existe neste aplicativo uma seção \"Lições\". Ele permite que você aprenda passo a passo a reconhecer os Hiragana e depois os Katakana. Aconselho a repeti-los quantas vezes forem necessárias.\n\nPara uma visão geral, você pode ir à seção \"Listas\", visualizar um caractere, saber sua escrita, ouvir sua pronúncia e pratique escrevendo. 'Escrever.\n\nFinalmente, uma seção de \"Quiz\" permitirá que você domine os Kana treinando de uma forma variada e eficiente.";
+"Buy +100 lessons %@" = "Compre +100 lições %@";
+"CHARACTER CHARTS" = "TABELAS DE CARACTERES";
+"Close" = "Fechar";
+"Continue" = "Continuar";
+"Corrects answers: " = "Respostas corretas: ";
+"DATA" = "DADOS";
+"Delete" = "Apagar";
+"Difficulty" = "Dificuldade";
+"Draw %@ for %@" = "Escreva o %@ para %@";
+"Easy" = "Fácil";
+"Enter your answer" = "Digite sua resposta";
+"Find correct answer" = "Encontre a boa resposta";
+"Green" = "Verde";
+"Hard" = "Difícil";
+"Hiragana Drawing" = "Escrita Hiragana";
+"Hiragana Reading" = "Leitura de Hiragana";
+"Home" = "Início";
+"Hour:" = "Hora:";
+"Introduction" = "Introdução";
+"Introduction to Kana" = "Introdução ao Kana";
+"Introduction text" = "Ao começar a aprender Japonês, o primeiro passo para entender e escrever em japonês é aprender e lembrar os \"Kana\".\n\nOs Kana são compostos por dois silabários, que representam o todo. Sons da língua: os \"Hiragana\" e os \"Katakana\". Esses dois sistemas de escrita são um pouco como os \"Alfabetos\" japoneses. Cada som tem dois scripts, seja em hiragana para palavras japonesas (se não usarmos Kanji), ou em katakana para palavras de origem estrangeira.\n\nNesses dois sistemas de escrita existem muitos caracteres, mas os mais usados ​​são 104: o \"Gojuon\" (46 caracteres únicos), os \"Dakuon\" (20 caracteres) e \"Handakuon\" (5 caracteres) derivados de caracteres únicos, e finalmente os \"Yoon\" (33 caracteres) compostos por dois caracteres simples.\n\nPara aprender kana, não há segredo, você tem que decorá-los!";
+"It's time to learn new kanas, がんばって! (Cheer up!)" = "É hora de aprender alguns novos Kana, がんばって! (Coragem!)";
+"Katakana Drawing" = "Escrita Katakana";
+"Katakana Reading" = "Leitura de Katakana";
+"Keyboard and drawing" = "Teclado e escrita";
+"Learn Hiragana and Katakana\n in a simple and effective way" = "Aprenda Hiragana e Katakana \n a maneira fácil e eficaz";
+"Lessons" = "Lições";
+"Lesson %lld" = "Lição %lld";
+"Line writing order" = "A ordem de escrita das linhas";
+"Listen" = "Ouço";
+"Lists" = "Listas";
+"Memorize the shape and pronunciation of this kana" = "Memorize a forma e a pronúncia deste kana";
+"Memorize the writing order of the lines and the shape of this kana" = "Memorize a ordem de escrita das linhas e a forma deste kana";
+"Mode" = "Modo";
+"Multiple choice questions" = "Questões de múltipla escolha";
+"Next" = "Segue";
+"NOTIFICATIONS" = "NOTIFICAÇÕES";
+"Notification will arrive on time" = "Sem estatísticas para exibir";
+"No statistics to display" = "A notificação chegará a tempo!";
+"Number of questions: %lld" = "Número de perguntas: %lld";
+"Orange" = "Laranja";
+"%@ Part %lld / %lld" = "%@ Parte %lld / %lld";
+"Practice drawing %@: %@" = "Pratique escrever %@: %@";
+"Previous" = "Anterior";
+"Primary" = "Preto/Branco";
+"Progress of lessons and statistics will be deleted" = "O progresso da lições e as estatísticas serão excluídos";
+"QUICK QUIZ" = "QUIZ RÁPIDO";
+"Quick quiz" = "Quiz rápido";
+"Quiz" = "Quiz";
+"Quiz Mode" = "Modo de Quiz";
+"Red" = "Vermelho";
+"Reset" = "Reinitiar";
+"Reset all datas" = "Reiniciar todos os dados";
+"Restore" = "Restaurar";
+"Reminder" = "Lembretes";
+"Right answer" = "Resposta correta";
+"Right answer: %@" = "Resposta correta: %@";
+"Romaji :" = "Romaji :";
+"Scheduled notifications will no longer be displayed" = "Notificações programadas não serão mais exibidas";
+"Selection" = "Seleção";
+"Settings" = "Configurações";
+"Share" = "Compartilhar";
+"Show Score" = "Ver pontuação";
+"Show guide" = "Mostrar guia";
+"Start" = "Começar";
+"Start a lesson right now by clicking on 'lessons' at the top left" = "Comece uma lição imediatamente clicando em \"lições\" no canto superior esquerdo da tela";
+"Statistics" = "Estatisticas";
+"Statistics colors in tables" = "Cores estatísticas nas tabelas";
+"Stop" = "Pare";
+"Stop current notifications" = "Pare as notificações atuais";
+"Validate" = "Validar";
+"Version" = "Versão";
+"Weekday" = "Dia da semana";
+"Write" = "Escrever";
+"Write the Romaji for %@" = "Escreva o Romaji para %@";
+"Writing" = "Escrevendo";
+"Wrong answer: %@" = "Resposta errada: %@";
+"Wrong answer" = "Resposta errada";
+"Yellow" = "Amarelo";
+"Your score : " = "Sua pontuação: ";
+"Your result: " = "Resultado: ";
+

@@ -36,7 +36,7 @@
         "type": "Lecture",
         "kanas": ["さ","し","す","せ","そ"],
         "romaji": ["sa","shi","su","se","so"],
-        "text": "Te rappelles-tu des 10 premiers caractères? On continue avec les 5 caractères suivants: さ し す せ そ",
+        "text": "Te rappelles-tu des 10 premiers caractères? On continue avec les 5 Hiragana suivants: さ し す せ そ",
         "id": 4
     },
     {
@@ -68,7 +68,7 @@
         "type": "Lecture",
         "kanas": ["な","に","ぬ","ね","の"],
         "romaji": ["na","ni","nu","ne","no"],
-        "text": "Te rappelles-tu des 20 premiers caractères? Si ce n'est pas le cas n'hésite pas à réviser. Continuons avec 5 nouveaux caractères: な に ぬ ね の",
+        "text": "Te rappelles-tu des 20 premiers Hiragana? Si ce n'est pas le cas n'hésite pas à réviser. Continuons avec 5 nouveaux caractères: な に ぬ ね の",
         "id": 8
     },
     {
@@ -116,7 +116,7 @@
         "type": "Lecture",
         "kanas": ["や","ゆ","よ"],
         "romaji": ["ya","yu","yo"],
-        "text": "Cette fois il n'y a que trois caractères, voyons ça ensemble pour cette leçon: や ゆ よ",
+        "text": "Cette fois il n'y a que trois Hiragana, voyons ça ensemble pour cette leçon: や ゆ よ",
         "id": 14
     },
     {
@@ -180,7 +180,7 @@
         "type": "Lecture",
         "kanas": ["ざ","じ","ず","ぜ","ぞ"],
         "romaji": ["za","ji","zu","ze","zo"],
-        "text": "Continuons avec 5 Hiragana de plus.\n Ici s- devient z-: ざ じ ず ぜ ぞ",
+        "text": "Continuons avec 5 Hiragana de plus.\nIci s- devient z-: ざ じ ず ぜ ぞ",
         "id": 22
     },
     {
@@ -372,7 +372,7 @@
         "type": "Lecture",
         "kanas": ["じゃ","じゅ","じょ"],
         "romaji": ["ja","ju","jo"],
-        "text": "Nouvelle leçon, nouveau caractères.\nVoici les suivants, ce sont des associations du Hiragana じ(ji) avec les Hiragana や(ya), ゆ(yu) et よ(yo): じゃ じゅ じょ",
+        "text": "Nouvelle leçon, nouveaux caractères.\nVoici les suivants, ce sont des associations du Hiragana じ(ji) avec les Hiragana や(ya), ゆ(yu) et よ(yo): じゃ じゅ じょ",
         "id": 46
     },
     {
@@ -484,7 +484,7 @@
         "type": "Lecture",
         "kanas": ["ナ","ニ","ヌ","ネ","ノ"],
         "romaji": ["na","ni","nu","ne","no"],
-        "text": "Te rappelles-tu des 20 premiers caractères? Si ce n'est pas le cas n'hésite pas à réviser. Continuons avec 5 nouveaux caractères: ナ ニ ヌ ネ ノ",
+        "text": "Te rappelles-tu des 20 premiers caractères? Si ce n'est pas le cas n'hésite pas à réviser. Continuons avec 5 nouveaux Katakana: ナ ニ ヌ ネ ノ",
         "id": 60
     },
     {
@@ -532,7 +532,7 @@
         "type": "Lecture",
         "kanas": ["ヤ","ユ","ヨ"],
         "romaji": ["ya","yu","yo"],
-        "text": "Cette fois il n'y a que trois caractères, voyons ça ensemble pour cette leçon: ヤ ユ ヨ",
+        "text": "Cette fois il n'y a que 3 caractères, voyons ça ensemble pour cette leçon: ヤ ユ ヨ",
         "id": 66
     },
     {
@@ -548,7 +548,7 @@
         "type": "Lecture",
         "kanas": ["ラ","リ","ル","レ","ロ"],
         "romaji": ["ra","ri","ru","re","ro"],
-        "text": "Tu as appris pas mal de Katakana ! Continuons avec les Hiragana suivants qui commencent par 'r': ラ リ ル レ ロ",
+        "text": "Tu as appris pas mal de Katakana ! Continuons avec les Katakana suivants qui commencent par 'r': ラ リ ル レ ロ",
         "id": 68
     },
     {
@@ -580,7 +580,7 @@
         "type": "Lecture",
         "kanas": ["ガ","ギ","グ","ゲ","ゴ"],
         "romaji": ["ga","gi","gu","ge","go"],
-        "text": "Nous en avons fini avec les Gojuons. Continuons avec les 5 premiers caractères des Dakuon.\nPour rappel, ces caractères sont des dérivés des Katakana de base avec deux petits traits appelés Dakuten.\nIci k- devient g-:: ガ ギ グ ゲ ゴ",
+        "text": "Nous en avons fini avec les Gojuon. Continuons avec les 5 premiers caractères des Dakuon.\nPour rappel, ces caractères sont des dérivés des Katakana de base avec deux petits traits appelés Dakuten.\nIci k- devient g-: ガ ギ グ ゲ ゴ",
         "id": 72
     },
     {
@@ -596,7 +596,7 @@
         "type": "Lecture",
         "kanas": ["ザ","ジ","ズ","ゼ","ゾ"],
         "romaji": ["za","ji","zu","ze","zo"],
-        "text": "Continuons avec 5 Hiragana de plus.\n Ici s- devient z-: ザ ジ ズ ゼ ゾ",
+        "text": "Continuons avec 5 Katakana de plus.\nIci s- devient z-: ザ ジ ズ ゼ ゾ",
         "id": 74
     },
     {
@@ -612,7 +612,7 @@
         "type": "Lecture",
         "kanas": ["ダ","ヂ","ヅ","デ","ド"],
         "romaji": ["da","ji","zu","de","do"],
-        "text": "Tu as appris 10 caractères Dakuon, Continuons avec 5 nouveaux caractères.\n Ici t- devient d-.\nFais attention à ジ(ji) et ヂ(ji). Et aussi à ズ(zu) et ヅ(zu). Ces derniers existent mais sont moins utilisés: ダ ヂ ヅ デ ド",
+        "text": "Tu as appris 10 caractères Dakuon, Continuons avec 5 nouveaux caractères.\nIci t- devient d-.\nFais attention à ジ(ji) et ヂ(ji). Et aussi à ズ(zu) et ヅ(zu), ils existent mais sont moins utilisés: ダ ヂ ヅ デ ド",
         "id": 76
     },
     {
@@ -676,7 +676,7 @@
         "type": "Lecture",
         "kanas": ["シャ","シュ","ショ"],
         "romaji": ["sha","shu","sho"],
-        "text": "Nouvelle leçon, nouveau caractères.\nVoici 3 Hiragana de plus à apprendre.\nCe sont des associations du Katakana シ(shi) avec ヤ(ya), ユ(yu) et ヨ(yo): シャ シュ ショ",
+        "text": "Nouvelle leçon, nouveau caractères.\nVoici 3 Katakana de plus à apprendre.\nCe sont des associations du Katakana シ(shi) avec ヤ(ya), ユ(yu) et ヨ(yo): シャ シュ ショ",
         "id": 84
     },
     {
@@ -756,7 +756,7 @@
         "type": "Lecture",
         "kanas": ["リャ","リュ","リョ"],
         "romaji": ["rya","ryu","ryo"],
-        "text": "Continuons à apprendre les Hiragana ! Voici les 3 nouveaux caractères.\nCe sont des associations du Katakana リ(ri) avec ヤ(ya), ユ(yu) et ヨ(yo): リャ リュ リョ",
+        "text": "Continuons à apprendre les Katakana ! Voici les 3 nouveaux caractères.\nCe sont des associations du Katakana リ(ri) avec ヤ(ya), ユ(yu) et ヨ(yo): リャ リュ リョ",
         "id": 94
     },
     {
@@ -788,7 +788,7 @@
         "type": "Lecture",
         "kanas": ["ジャ","ジュ","ジョ"],
         "romaji": ["ja","ju","jo"],
-        "text": "Nouvelle leçon, nouveaux caractères.\nVoici les suivants, ce sont des associations du Katakana ジ(ji) avec ヤ(ya), ユ(yu) et ヨ(yo): ジャ ジュ ジョ",
+        "text": "Nouvelle leçon.\nVoici les suivants, ce sont des associations du Katakana ジ(ji) avec ヤ(ya), ユ(yu) et ヨ(yo): ジャ ジュ ジョ",
         "id": 98
     },
     {

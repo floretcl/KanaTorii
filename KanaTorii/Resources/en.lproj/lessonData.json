@@ -4,7 +4,7 @@
         "type": "Reading",
         "kanas": ["あ","い","う","え","お"],
         "romaji": ["a","i","u","e","o"],
-        "text": "Welcome, we are going to start learning the Kanas with the Hiragana.\nLet's start with the first 5 characters of 'simple' Hiragana (Gojuon): あ　い　う　え　お",
+        "text": "Welcome, we are going to start learning the Kana with the Hiragana.\nLet's start with the first 5 characters of 'simple' Hiragana (Gojuon): あ　い　う　え　お",
         "id": 0
     },
     {
@@ -36,7 +36,7 @@
         "type": "Reading",
         "kanas": ["さ","し","す","せ","そ"],
         "romaji": ["sa","shi","su","se","so"],
-        "text": "Do you remember the first 10 characters? Let's continue with 5 more characters: さ し す せ そ",
+        "text": "Do you remember the first 10 characters? Let's continue with 5 more Hiragana: さ し す せ そ",
         "id": 4
     },
     {
@@ -68,7 +68,7 @@
         "type": "Reading",
         "kanas": ["な","に","ぬ","ね","の"],
         "romaji": ["na","ni","nu","ne","no"],
-        "text": "Do you remember the first 20 characters of Hiragana? Let's continue with 5 more characters: な に ぬ ね の",
+        "text": "Do you remember the first 20 Hiragana? Here are 5 more caractères: な に ぬ ね の",
         "id": 8
     },
     {
@@ -116,7 +116,7 @@
         "type": "Reading",
         "kanas": ["や","ゆ","よ"],
         "romaji": ["ya","yu","yo"],
-        "text": "This time, there are only three characters, they starting with 'y'.\nLet's see that with this lesson: や ゆ よ",
+        "text": "This time, there are only three Hiragana, they starting with 'y'.\nLet's see that with this lesson: や ゆ よ",
         "id": 14
     },
     {
@@ -164,7 +164,7 @@
         "type": "Reading",
         "kanas": ["が","ぎ","ぐ","げ","ご"],
         "romaji": ["ga","gi","gu","ge","go"],
-        "text": "We are done with 'simple' Hiragana (Gojuon).\nContinue with the first 5 characters of ((Han)dakuon) Hiragana.\nIn addition they have two small lines (Dakuten) or a small circle (Handakuten).\nHere k- becomes g-: が ぎ ぐ げ ご",
+        "text": "We are done with 'simple' Hiragana (Gojuon).\nContinue with the first 5 characters of ((Han)dakuon) Hiragana.\nIn addition they have two small lines (Dakuten).\nHere k- becomes g-: が ぎ ぐ げ ご",
         "id": 20
     },
     {
@@ -180,7 +180,7 @@
         "type": "Reading",
         "kanas": ["ざ","じ","ず","ぜ","ぞ"],
         "romaji": ["za","ji","zu","ze","zo"],
-        "text": "Let's continue with 5 more (Han)dakuon characters.\nHere s- becomes z-: ざ じ ず ぜ ぞ",
+        "text": "Let's continue with 5 more (Han)dakuon characters.\nThis time s- becomes z-: ざ じ ず ぜ ぞ",
         "id": 22
     },
     {
@@ -196,7 +196,7 @@
         "type": "Reading",
         "kanas": ["だ","ぢ","づ","で","ど"],
         "romaji": ["da","ji","zu","de","do"],
-        "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nHere t- becomes d-.\nAlso, pay attention to じ(ji) and ぢ(ji). And also to ず(zu) and づ(zu): だ ぢ づ で ど",
+        "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nThis time t- becomes d-.\nAlso, pay attention to じ(ji) and ぢ(ji). And also to ず(zu) and づ(zu): だ ぢ づ で ど",
         "id": 24
     },
     {
@@ -212,7 +212,7 @@
         "type": "Reading",
         "kanas": ["ば","び","ぶ","べ","ぼ"],
         "romaji": ["ba","bi","bu","be","bo"],
-        "text": "Alright, let's continue with 5 new characters.\nHere h- becomes b- with 'Dakuten' (small lines): ば び ぶ べ ぼ",
+        "text": "Alright, let's continue with 5 new characters.\nThis time h- becomes b- with 'Dakuten' (small lines): ば び ぶ べ ぼ",
         "id": 26
     },
     {
@@ -228,7 +228,7 @@
         "type": "Reading",
         "kanas": ["ぱ","ぴ","ぷ","ぺ","ぽ"],
         "romaji": ["pa","pi","pu","pe","po"],
-        "text": "Here are the last 5 (Han)Dakuon Hiragana. Here the h- become p- with 'Handakuten' (small circle): ぱ ぴ ぷ ぺ ぽ",
+        "text": "Here are the last 5 (Han)Dakuon Hiragana. This time the h- become p- with 'Handakuten' (small circle): ぱ ぴ ぷ ぺ ぽ",
         "id": 28
     },
     {
@@ -436,8 +436,7 @@
         "type": "Reading",
         "kanas": ["カ","キ","ク","ケ","コ"],
         "romaji": ["ka","ki","ku","ke","ko"],
-        "text": "The last time we saw the first 5 letters of Katakana, we will now learn the next 5 characters: カ キ ク ケ コ
-        ",
+        "text": "The last time we saw the first 5 letters of Katakana, we will now learn the next 5 characters: カ キ ク ケ コ",
         "id": 54
     },
     {
@@ -485,7 +484,7 @@
         "type": "Reading",
         "kanas": ["ナ","ニ","ヌ","ネ","ノ"],
         "romaji": ["na","ni","nu","ne","no"],
-        "text": "Do you remember the first 20 characters of Katakana? If not, do not hesitate to revise. Let’s continue with 5 more characters: ナ ニ ヌ ネ ノ",
+        "text": "Do you remember the first 20 characters of Katakana? If not, do not hesitate to revise. Let’s continue with 5 more Kana: ナ ニ ヌ ネ ノ",
         "id": 60
     },
     {
@@ -533,7 +532,7 @@
         "type": "Reading",
         "kanas": ["ヤ","ユ","ヨ"],
         "romaji": ["ya","yu","yo"],
-        "text": "This time, three characters, they starting with 'y'.\nLet's see that with this lesson: ヤ ユ ヨ",
+        "text": "This time, 3 characters, they starting with 'y'.\nLet's see that with this lesson: ヤ ユ ヨ",
         "id": 66
     },
     {
@@ -613,7 +612,7 @@
         "type": "Reading",
         "kanas": ["ダ","ヂ","ヅ","デ","ド"],
         "romaji": ["da","ji","zu","de","do"],
-        "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nHere t- becomes d-.\nAlso, pay attention to ジ(ji) and ヂ(ji). And also to ズ(zu) and ヅ(zu): ダ ヂ ヅ デ ド",
+        "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nHere t- becomes d-.\nAlso, pay attention to ジ(ji) and ヂ(ji). And also to ズ(zu) and ヅ(zu), they exist but are less used: ダ ヂ ヅ デ ド",
         "id": 76
     },
     {
@@ -789,7 +788,7 @@
         "type": "Reading",
         "kanas": ["ジャ","ジュ","ジョ"],
         "romaji": ["ja","ju","jo"],
-        "text": "New lesson with new characters.\nThese, are associations of Katakana ジ(ji) with Katakana ヤ(ya), ユ(yu) and ヨ(yo): ジャ ジュ ジョ",
+        "text": "New lesson.\nThese, are associations of Katakana ジ(ji) with Katakana ヤ(ya), ユ(yu) and ヨ(yo): ジャ ジュ ジョ",
         "id": 98
     },
     {

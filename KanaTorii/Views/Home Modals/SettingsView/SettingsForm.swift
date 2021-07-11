@@ -38,11 +38,21 @@ struct SettingsForm: View {
             Section(header: Text("CHARACTER CHARTS")) {
                 Toggle("Statistics colors in tables", isOn: $colorsInTables)
                 HStack {
-                    Text("Primary").foregroundColor(.primary)
-                    Text("Red").foregroundColor(.red)
-                    Text("Orange").foregroundColor(.orange)
-                    Text("Yellow").foregroundColor(.yellow)
-                    Text("Green").foregroundColor(.green)
+                    Text("Primary")
+                        .font(.subheadline)
+                        .foregroundColor(.primary)
+                    Text("Red")
+                        .font(.subheadline)
+                        .foregroundColor(.red)
+                    Text("Orange")
+                        .font(.subheadline)
+                        .foregroundColor(.orange)
+                    Text("Yellow")
+                        .font(.subheadline)
+                        .foregroundColor(.yellow)
+                    Text("Green")
+                        .font(.subheadline)
+                        .foregroundColor(.green)
                 }
             }
             Section(header: Text("QUICK QUIZ")) {
