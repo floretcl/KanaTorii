@@ -15,7 +15,7 @@ struct SheetHeaderDraw: View {
         HStack {
             Group {
                 Image(systemName: "hand.draw")
-                    .font(.title)
+                    .font(.title2)
                     .padding(.leading, paddingLeading)
                     .padding(.horizontal, 7)
                 Text("Writing")

@@ -17,7 +17,6 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
 
     func getProducts(productIDs: [String]) {
         print("Start requesting products ...")
-        productsRequest?.cancel()
         productsRequest = SKProductsRequest(productIdentifiers: Set(productIDs))
         productsRequest?.delegate = self
         productsRequest?.start()

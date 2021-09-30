@@ -89,9 +89,6 @@ struct LessonMemoReading: View {
                                                 romajis: currentLesson.romajis, draw: false))
                                             .environment(\.managedObjectContext, self.viewContext)
                                     })
-    //                                .alert(isPresented: $showQuiz, content: {
-    //                                    Alert(title: Text("Let's starta short quiz with the kanas"))
-    //                                })
                                 } else if currentLesson.currentPart == .score {
                                     ContinueButtonScore(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showScore: $showScore)
                                     .padding(.bottom, heightDevice/20)
@@ -112,7 +109,6 @@ struct LessonMemoReading: View {
                     }
                 }
             }
-//            .navigationBarTitle(currentLesson.name)
         }).background(Color(UIColor.secondarySystemBackground))
     }
 

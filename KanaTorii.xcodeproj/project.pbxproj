@@ -125,8 +125,6 @@
 		7EA5EC3125D9A78F00A1FCF4 /* ContinueButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5EC3025D9A78F00A1FCF4 /* ContinueButtonTest.swift */; };
 		7EA5EC3F25D9A9B500A1FCF4 /* ContinueButtonQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5EC3E25D9A9B500A1FCF4 /* ContinueButtonQuiz.swift */; };
 		7EAA3BA025EACBE100A137E8 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3B9F25EACBE100A137E8 /* ScoreView.swift */; };
-		7EB7667E268C8FE7003CC75B /* HiraganaRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7667D268C8FE7003CC75B /* HiraganaRecognizer.mlmodel */; };
-		7EB76680268C8FF2003CC75B /* KatakanaRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7667F268C8FF2003CC75B /* KatakanaRecognizer.mlmodel */; };
 		7EBD6AD425F69251005FE0F4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD6AD325F69251005FE0F4 /* AboutView.swift */; };
 		7EBF6DC725E7F57E0077F4D2 /* TitleQuizMCQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF6DC625E7F57E0077F4D2 /* TitleQuizMCQ.swift */; };
 		7EBF6DCF25E7F5F40077F4D2 /* QuizHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF6DCE25E7F5F40077F4D2 /* QuizHeader.swift */; };
@@ -155,6 +153,8 @@
 		7EF5EAB225F954DD003D498B /* TitleQuizWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EAB125F954DD003D498B /* TitleQuizWriting.swift */; };
 		7EF8307E25EE985500874432 /* ContinueButtonScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8307D25EE985500874432 /* ContinueButtonScore.swift */; };
 		7EF9804125D9796300634116 /* DetailButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9804025D9796300634116 /* DetailButtons.swift */; };
+		7EFAC71127064ECF000DF539 /* KatakanaRecognizer.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAC71027064ECF000DF539 /* KatakanaRecognizer.mlpackage */; };
+		7EFAC71327064EE3000DF539 /* HiraganaRecognizer.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAC71227064EE3000DF539 /* HiraganaRecognizer.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,8 +307,6 @@
 		7EA5EC3025D9A78F00A1FCF4 /* ContinueButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTest.swift; sourceTree = "<group>"; };
 		7EA5EC3E25D9A9B500A1FCF4 /* ContinueButtonQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonQuiz.swift; sourceTree = "<group>"; };
 		7EAA3B9F25EACBE100A137E8 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
-		7EB7667D268C8FE7003CC75B /* HiraganaRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = HiraganaRecognizer.mlmodel; path = "../../../../Documents/dossier kana torii/model ML/hiragana/HiraganaRecognizer.mlmodel"; sourceTree = "<group>"; };
-		7EB7667F268C8FF2003CC75B /* KatakanaRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = KatakanaRecognizer.mlmodel; path = "../../../../Documents/dossier kana torii/model ML/katakana/KatakanaRecognizer.mlmodel"; sourceTree = "<group>"; };
 		7EBD6AD325F69251005FE0F4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		7EBF6DC625E7F57E0077F4D2 /* TitleQuizMCQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleQuizMCQ.swift; sourceTree = "<group>"; };
 		7EBF6DCE25E7F5F40077F4D2 /* QuizHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHeader.swift; sourceTree = "<group>"; };
@@ -341,6 +339,8 @@
 		7EF5EAB125F954DD003D498B /* TitleQuizWriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleQuizWriting.swift; sourceTree = "<group>"; };
 		7EF8307D25EE985500874432 /* ContinueButtonScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonScore.swift; sourceTree = "<group>"; };
 		7EF9804025D9796300634116 /* DetailButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButtons.swift; sourceTree = "<group>"; };
+		7EFAC71027064ECF000DF539 /* KatakanaRecognizer.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = KatakanaRecognizer.mlpackage; sourceTree = "<group>"; };
+		7EFAC71227064EE3000DF539 /* HiraganaRecognizer.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = HiraganaRecognizer.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -704,8 +704,8 @@
 				7E9B2B6925E41F1300481D71 /* Quiz.swift */,
 				7E4AE9FF25ED9F3300FDFDC6 /* Score.swift */,
 				7E25672E25FBBE5C005B71A8 /* Weekday.swift */,
-				7EB7667D268C8FE7003CC75B /* HiraganaRecognizer.mlmodel */,
-				7EB7667F268C8FF2003CC75B /* KatakanaRecognizer.mlmodel */,
+				7EFAC71227064EE3000DF539 /* HiraganaRecognizer.mlpackage */,
+				7EFAC71027064ECF000DF539 /* KatakanaRecognizer.mlpackage */,
 				7E3E425A25CB2C7C00B2F5AC /* Persistence.swift */,
 				7E3F6A7325D6FD0600F22669 /* ImageProcessor.swift */,
 				7E45E35F25DAD94D009B9A16 /* Extensions.swift */,
@@ -1035,7 +1035,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1051,6 +1052,7 @@
 				7EBF6DCF25E7F5F40077F4D2 /* QuizHeader.swift in Sources */,
 				7E3F6A7425D6FD0600F22669 /* ImageProcessor.swift in Sources */,
 				7E3E431A25CB35B800B2F5AC /* DakuonHandakuonGrid.swift in Sources */,
+				7EFAC71327064EE3000DF539 /* HiraganaRecognizer.mlpackage in Sources */,
 				7ECFBBCD2608ED4D003EC368 /* LessonsNavigationView.swift in Sources */,
 				7E3E435225CB369900B2F5AC /* DrawView.swift in Sources */,
 				7E3E436825CB38AC00B2F5AC /* ContinueNavLink.swift in Sources */,
@@ -1064,13 +1066,13 @@
 				7E3FE92B25E3FE2E00AB398D /* QuizMCQ.swift in Sources */,
 				7E3E435125CB369900B2F5AC /* Guide.swift in Sources */,
 				7ECFBBDC2608FEA7003EC368 /* BodyTestReading.swift in Sources */,
-				7EB7667E268C8FE7003CC75B /* HiraganaRecognizer.mlmodel in Sources */,
 				7E335B3B25E6BE55004EC2C9 /* SuggestionCellQuiz.swift in Sources */,
 				7E3E437625CB420400B2F5AC /* LessonMemoWriting.swift in Sources */,
 				7E3E431B25CB35B800B2F5AC /* GojuonGrid.swift in Sources */,
 				7E60022925EA931800231C40 /* SuggestionsMiniQuiz.swift in Sources */,
 				7E125B5D263C4F150074043F /* QuizsViewIphone.swift in Sources */,
 				7E3E437F25CB42DF00B2F5AC /* LessonHeader.swift in Sources */,
+				7EFAC71127064ECF000DF539 /* KatakanaRecognizer.mlpackage in Sources */,
 				7E45E36025DAD94D009B9A16 /* Extensions.swift in Sources */,
 				7E3E432925CB361D00B2F5AC /* Chevron.swift in Sources */,
 				7EF5EA7025F93B2A003D498B /* NavigationButtonNext.swift in Sources */,
@@ -1118,7 +1120,6 @@
 				7E232E6B260A5A0F0004B29F /* BodyQuizKeyboard.swift in Sources */,
 				7EAA3BA025EACBE100A137E8 /* ScoreView.swift in Sources */,
 				7E3E432825CB361D00B2F5AC /* PageControl.swift in Sources */,
-				7EB76680268C8FF2003CC75B /* KatakanaRecognizer.mlmodel in Sources */,
 				7EF5EAA525F94BBA003D498B /* TitleMiniQuizWriting.swift in Sources */,
 				7E0954AE25D9A63F00A58AFF /* SoundButton.swift in Sources */,
 				7EF09E27268C9CB300890454 /* EmptyStatisticView.swift in Sources */,
@@ -1375,7 +1376,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KanaTorii/KanaTorii.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KanaTorii/Preview Content\"";
 				DEVELOPMENT_TEAM = X56656LMAV;
 				ENABLE_PREVIEWS = YES;
@@ -1385,7 +1386,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1400,7 +1401,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KanaTorii/KanaTorii.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KanaTorii/Preview Content\"";
 				DEVELOPMENT_TEAM = X56656LMAV;
 				ENABLE_PREVIEWS = YES;
@@ -1410,7 +1411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.clementfloret.kanatorii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

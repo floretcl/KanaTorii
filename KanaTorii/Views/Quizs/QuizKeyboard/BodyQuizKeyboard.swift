@@ -31,7 +31,7 @@ struct BodyQuizKeyboard: View {
                 .padding(.top, 5)
             HStack {
                 Spacer()
-                VStack {
+                VStack(alignment: .center, spacing: 30) {
                     TitleQuizKeyboard(quiz: quiz, heightDevice: heightDeviceSaved)
                     if UIDevice.current.localizedModel == "iPad" {
                         Text(quiz.currentKana)

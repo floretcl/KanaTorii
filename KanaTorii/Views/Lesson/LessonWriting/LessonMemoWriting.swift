@@ -126,7 +126,6 @@ struct LessonMemoWriting: View {
                     Spacer()
                 }
             }
-//            .navigationBarTitle(currentLesson.name)
         }).background(Color(UIColor.secondarySystemBackground))
     }
     private func addItemToCoreData() {

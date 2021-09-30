@@ -21,18 +21,17 @@ struct MemoCard: View {
             VStack {
                 Text(currentLesson.kanaType)
                     .font(.system(size: heightDevice/25))
-                    .padding(.bottom, heightDevice/60)
-
-                    Text(currentLesson.currentKana)
-                        .font(.custom("YuMincho", size: heightDevice/8))
+                Text(currentLesson.currentKana)
+                    .font(.custom("YuMincho", size: heightDevice/8))
+                    .padding(.vertical, heightDevice/60)
                 HStack {
                     Text("Romaji :")
                         .font(.system(size: heightDevice/25))
                     Text(currentLesson.currentRomaji.capitalized)
                         .font(.system(size: heightDevice/22))
                         .fontWeight(.semibold)
-                }.padding(heightDevice/80)
-            }
+                }.padding(.bottom, heightDevice/90)
+            }.frame(width: widthDevice/1.8, height: heightDevice/3, alignment: .center)
             .background(
                 RoundedRectangle(cornerRadius: 4.0)
                     .frame(width: widthDevice/1.8, height: heightDevice/3, alignment: .center)

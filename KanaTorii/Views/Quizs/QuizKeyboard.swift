@@ -31,7 +31,6 @@ struct QuizKeyboard: View {
                     widthDeviceSaved: $widthDeviceSaved,
                     heightDeviceSaved: $heightDeviceSaved)
                 .background(Color(UIColor.secondarySystemBackground))
-                // .navigationBarTitle()
                 .onAppear(perform: {
                     widthDeviceSaved = widthDevice
                     heightDeviceSaved = heightDevice
@@ -46,7 +45,6 @@ struct QuizKeyboard: View {
                     widthDeviceSaved: $widthDeviceSaved,
                     heightDeviceSaved: $heightDeviceSaved)
                 .background(Color(UIColor.secondarySystemBackground))
-                // .navigationBarTitle()
                 .edgesIgnoringSafeArea(.bottom)
                 .onAppear(perform: {
                     widthDeviceSaved = widthDevice

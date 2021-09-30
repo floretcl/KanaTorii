@@ -16,7 +16,7 @@ struct SheetHeaderSettings: View {
         HStack {
             Group {
                 Image(systemName: "gearshape")
-                    .font(.title)
+                    .font(.title2)
                     .padding(.leading, paddingLeading)
                     .padding(.horizontal, 7)
                 Text("Settings")

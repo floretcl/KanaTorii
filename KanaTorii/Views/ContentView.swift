@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var tabViewSelectedItem: Int = 1
+    @State var tabViewSelectedItem: Int = 0
 
     // For Segmented Control Colors
     init() {
@@ -28,29 +28,35 @@ struct ContentView: View {
                     .tabItem {
                         Text("Home")
                         Image(systemName: "house")
-                    }.tag(1)
+                    }.tag(0)
                 ListsView(colorsInTables: _colorsInTables)
                     .tabItem {
                         Text("Lists")
+                            .foregroundColor(Color.black)
                         Image(systemName: "list.triangle")
-                    }.tag(2)
+                    }.tag(1)
                 LessonsView()
                     .tabItem {
                         Text("Lessons")
                         Image(systemName: "book")
-                    }.tag(3)
+                    }.tag(2)
                 QuizsView(quickQuizNbQuestions: _quickQuizNbQuestions)
                     .tabItem {
                         Text("Quiz")
                         Image(systemName: "questionmark.circle")
-                    }.tag(4)
+                    }.tag(3)
                 StatisticsView()
                     .tabItem {
                         Text("Statistics")
                         Image(systemName: "chart.bar.xaxis")
-                    }.tag(5)
+                    }.tag(4)
             }
-        )
+        ).onAppear {
+            if #available(iOS 15.0, *) {
+                let appearance = UITabBarAppearance()
+                UITabBar.appearance().scrollEdgeAppearance = appearance
+            }
+        }
     }
 }
 
@@ -58,18 +64,9 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-                .environmentObject(StoreManager())
-                .environmentObject(ModelData())
                 .preferredColorScheme(.dark)
-            ContentView()
                 .environmentObject(StoreManager())
                 .environmentObject(ModelData())
-                .previewDevice("iPod touch (7th generation)")
-            ContentView()
-                .environmentObject(StoreManager())
-                .environmentObject(ModelData())
-                .preferredColorScheme(.light)
-                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
         }
     }
 }
