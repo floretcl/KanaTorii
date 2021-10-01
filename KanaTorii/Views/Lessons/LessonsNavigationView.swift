@@ -10,10 +10,11 @@ import StoreKit
 import SwiftKeychainWrapper
 
 struct LessonsNavigationView: View {
-    @EnvironmentObject var storeManager: StoreManager
+    @StateObject var storeManager: StoreManager
     var lessonProduct: SKProduct {
         return storeManager.products[0]
     }
+    let productID = "fr.clementfloret.kanatorii.IAP.lessons"
     let formatter = NumberFormatter()
     var price: String {
         formatter.locale = lessonProduct.priceLocale
@@ -29,7 +30,7 @@ struct LessonsNavigationView: View {
         return modelData.freeLessons
     }
     var lessons: [LessonForList] {
-        return modelData.lessons
+        return modelData.lessons  
     }
     @State var showReminder: Bool = false
 
@@ -71,9 +72,12 @@ struct LessonsNavigationView: View {
                     Button(action: {
                         storeManager.purchaseProduct(product: lessonProduct)
                     }, label: {
-                        Text("Buy +100 lessons")
+                        Text("Buy 84 extra lessons \(price)")
                             .font(.headline)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.white)
+                            .padding(10)
+                            .background(Color.accentColor)
+                            .clipShape(Capsule())
                     })
                     List(freeLessons) { lesson in
                         NavigationLink(
@@ -87,16 +91,19 @@ struct LessonsNavigationView: View {
                         leading: Button(action: {
                             storeManager.restoreProducts()
                         }, label: {
+                            
                             Label("Restore", systemImage: "cart")
                                 .foregroundColor(Color.accentColor)
                                 .font(.title3)
                                 .padding(.bottom, 10.0)
+                            Text("Restore")
                         }),
                         trailing: Button(action: {
                             hapticFeedback(style: .soft)
                             showReminder.toggle()
                         },
                         label: {
+                            Text("Reminder")
                             Label("Reminder", systemImage: "clock.arrow.circlepath")
                                 .foregroundColor(Color.accentColor)
                                 .font(.title3)
@@ -108,7 +115,7 @@ struct LessonsNavigationView: View {
             }
             if UIDevice.current.localizedModel == "iPad" {
                 VStack {
-                    Image("Ema")
+                    Image("ema")
                         .resizable()
                         .frame(width: 300, height: 300, alignment: .center)
                         .clipShape(Circle())
@@ -122,7 +129,7 @@ struct LessonsNavigationView: View {
         }
     }
     private func getProduct() -> Bool {
-        guard let product = KeychainWrapper.standard.bool(forKey: lessonProduct.productIdentifier) else {
+        guard let product = KeychainWrapper.standard.bool(forKey: productID) else {
             return false
         }
         return product
@@ -131,7 +138,7 @@ struct LessonsNavigationView: View {
 
 struct LessonsNavigationView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonsNavigationView()
+        LessonsNavigationView(storeManager: StoreManager())
             .environmentObject(StoreManager())
             .environmentObject(ModelData())
     }

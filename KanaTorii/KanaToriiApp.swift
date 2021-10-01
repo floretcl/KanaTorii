@@ -7,6 +7,7 @@
 
 import SwiftUI
 import StoreKit
+import SwiftKeychainWrapper
 
 @main
 struct KanaToriiApp: App {
@@ -15,17 +16,18 @@ struct KanaToriiApp: App {
     let persistenceController = PersistenceController.shared
 
     let productIDs = [
-            // +100 lesssons
+            // 84 extra lesssons
             "fr.clementfloret.kanatorii.IAP.lessons"
     ]
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(storeManager: storeManager)
                 .environmentObject(storeManager)
                 .environmentObject(modelData)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .onAppear(perform: {
+                    KeychainWrapper.standard.set(false, forKey: productIDs[0])
                     SKPaymentQueue.default().add(storeManager)
                     storeManager.getProducts(productIDs: productIDs)
                 })

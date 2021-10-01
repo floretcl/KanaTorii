@@ -11,27 +11,27 @@
       "localizations" : [
         {
           "description" : "Access to all lessons",
-          "displayName" : "+100 lessons",
+          "displayName" : "84 extra lessons",
           "locale" : "en_US"
         },
         {
           "description" : "Accès à toutes les leçons",
-          "displayName" : "+100 leçons",
+          "displayName" : "84 leçons supplémentaires",
           "locale" : "fr"
         },
         {
           "description" : "Acesso a todas as liçoes",
-          "displayName" : "+100 liçoes",
+          "displayName" : "84 liçoes adicionais",
           "locale" : "pt_PT"
         },
         {
           "description" : "Acceso a todas las lecciones",
-          "displayName" : "+100 lecciones",
+          "displayName" : "84 lecciones adicionales",
           "locale" : "es_ES"
         },
         {
           "description" : "Accesso a tutte le lezioni",
-          "displayName" : "+100 lezioni",
+          "displayName" : "84 lezioni aggiuntive",
           "locale" : "it"
         }
       ],

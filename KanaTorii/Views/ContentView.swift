@@ -8,14 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var storeManager: StoreManager
+    
     @State var tabViewSelectedItem: Int = 0
-
-    // For Segmented Control Colors
-    init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("Green"))
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("Green"))], for: .normal)
-    }
 
     // User Defaults
     @AppStorage("colors-in-tables") var colorsInTables: Bool = true
@@ -35,7 +30,7 @@ struct ContentView: View {
                             .foregroundColor(Color.black)
                         Image(systemName: "list.triangle")
                     }.tag(1)
-                LessonsView()
+                LessonsView(storeManager: storeManager)
                     .tabItem {
                         Text("Lessons")
                         Image(systemName: "book")
@@ -63,7 +58,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            ContentView(storeManager: StoreManager())
                 .preferredColorScheme(.dark)
                 .environmentObject(StoreManager())
                 .environmentObject(ModelData())

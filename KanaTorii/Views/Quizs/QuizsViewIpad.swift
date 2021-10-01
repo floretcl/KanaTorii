@@ -250,7 +250,15 @@ struct QuizsViewIpad: View {
             }
             .navigationBarTitle("Quiz", displayMode: .inline)
             .background(Color(UIColor.secondarySystemBackground))
-        }.navigationViewStyle(StackNavigationViewStyle())
+            .edgesIgnoringSafeArea(.top)
+            
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("Green"))
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("Green"))], for: .normal)
+        }
     }
     private func resetScore() {
         scoreData.nbCorrectAnswers = 0
@@ -260,5 +268,6 @@ struct QuizsViewIpad: View {
 struct QuizsViewIpad_Previews: PreviewProvider {
     static var previews: some View {
         QuizsViewIpad(quickQuizNbQuestions: .init(wrappedValue: 10.0, "quick-quiz-nb-questions"))
+            .previewDevice("iPad (9th generation)")
     }
 }

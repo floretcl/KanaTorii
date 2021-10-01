@@ -39,7 +39,7 @@ struct BodyQuizKeyboard: View {
                             .padding(heightDeviceSaved/20)
                     } else {
                         Text(quiz.currentKana)
-                            .font(.system(size: heightDeviceSaved/5))
+                            .font(.system(size: heightDeviceSaved/7))
                     }
                     HStack {
                         TextField("Enter your answer", text: $text) { _ in
@@ -48,7 +48,6 @@ struct BodyQuizKeyboard: View {
                             addItemToCoreData(correctAnswer: quiz.correctAnswer)
                             showActionSheet.toggle()
                         }
-                        .padding(.vertical, heightDeviceSaved/25)
                         .padding(.horizontal, widthDeviceSaved/4)
                         .disableAutocorrection(true)
                         .textFieldStyle(RoundedBorderTextFieldStyle())

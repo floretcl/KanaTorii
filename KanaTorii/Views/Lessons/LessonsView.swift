@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct LessonsView: View {
+    @StateObject var storeManager: StoreManager
+
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
-            LessonsNavigationView()
+            LessonsNavigationView(storeManager: storeManager)
         } else {
-            LessonsNavigationView()
+            LessonsNavigationView(storeManager: storeManager)
                 .navigationViewStyle(StackNavigationViewStyle())
         }
     }
@@ -20,7 +22,7 @@ struct LessonsView: View {
 
 struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonsView()
+        LessonsView(storeManager: StoreManager())
             .environmentObject(StoreManager())
     }
 }

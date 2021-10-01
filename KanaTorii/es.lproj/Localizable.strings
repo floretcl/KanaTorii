@@ -13,7 +13,7 @@
 "About" = "Acerca de";
 "About Kana Torii" = "Acerca de Kana Torii";
 "About text" = "Esta aplicación tiene como objetivo ayudarlo a aprender japonés Kana.\n\nPara facilitar la tarea, hay en esta aplicación una sección \"Lecciones\". Te permite aprender paso a paso a reconocer los Hiragana y los Katakana. Te aconsejo que los repitas tantas veces como sea necesario.\n\nPara una descripción general, puedes ir a la sección \"Listas\", visualizar un caracteres, conocer su escritura, escuchar su pronunciación y practicarlo su escritura.\n\nFinalmente, una sección \"Prueba\" le permitirá dominar el Kana entrenando de una manera variada y eficiente.";
-"Buy +100 lessons %@" = "Comprar +100 lecciones %@";
+"Buy 84 extra lessons %@" = "Comprar 84 lecciones adicionales %@";
 "CHARACTER CHARTS" = "TABLAS DE CARACTERES";
 "Close" = "Cerrar";
 "Continue" = "Continuar";
