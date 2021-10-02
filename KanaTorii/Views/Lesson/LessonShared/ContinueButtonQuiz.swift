@@ -21,7 +21,7 @@ struct ContinueButtonQuiz: View {
             hapticFeedback(style: .soft)
             showQuiz.toggle()
         }, label: {
-            Text("Start a quick Quiz")
+            Text("Start a mini Quiz")
                 .font(.system(size: textSize))
                 .padding(.horizontal, widthDevice/8)
                 .padding(.vertical, heightDevice/50)

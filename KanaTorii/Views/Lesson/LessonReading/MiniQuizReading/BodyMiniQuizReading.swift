@@ -26,13 +26,18 @@ struct BodyMiniQuizReading: View {
 
     let itemsCellIphone = GridItem(.fixed(120))
     let itemsCellIpad = GridItem(.fixed(200))
+    
+    @Binding var lessonInfoMustClose: Bool
 
     var body: some View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
             let heightDevice = geometry.size.height
             VStack {
-                LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
+                LessonHeader(
+                    currentLesson: currentLesson,
+                    lessonInfoMustClose: $lessonInfoMustClose,
+                    heightDevice: heightDevice)
                     .padding(.top, 5)
                 HStack {
                     Spacer()
@@ -79,7 +84,8 @@ struct BodyMiniQuizReading_Previews: PreviewProvider {
                 kanas: ["あ", "い", "う", "え", "お"],
                 romajis: ["a", "i", "u", "e", "o"],
                 draw: false),
-            showActionSheet: .constant(false))
+            showActionSheet: .constant(false),
+            lessonInfoMustClose: .constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

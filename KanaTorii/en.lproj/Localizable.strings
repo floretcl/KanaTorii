@@ -55,6 +55,7 @@
 "Number of questions: %lld" = "Number of questions: %lld";
 "Orange" = "Orange";
 "%@ Part %lld / %lld" = "%@ Part %lld / %lld";
+"Part %lld / %lld" = "Part %lld / %lld";
 "Practice drawing %@: %@" = "Practice drawing %@: %@";
 "Previous" = "Previous";
 "Primary" = "Primary";
@@ -79,6 +80,7 @@
 "Show guide" = "Show guide";
 "Start" = "Start";
 "Start a lesson right now by clicking on 'lessons' at the top left" = "Start a lesson right now by clicking on 'lessons' at the top left";
+"Start a mini Quiz" = "Start a mini Quiz";
 "Statistics" = "Statistics";
 "Statistics colors in tables" = "Statistics colors in tables";
 "Stop" = "Stop";

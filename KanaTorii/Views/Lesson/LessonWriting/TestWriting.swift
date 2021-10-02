@@ -28,6 +28,8 @@ struct TestWriting: View {
 
     @Binding var showQuiz: Bool
     @State var showActionSheet: Bool = false
+    
+    @Binding var lessonInfoMustClose: Bool
 
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -35,7 +37,10 @@ struct TestWriting: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
+                    LessonHeader(
+                        currentLesson: currentLesson,
+                        lessonInfoMustClose: $lessonInfoMustClose,
+                        heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -82,7 +87,10 @@ struct TestWriting: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
+                    LessonHeader(
+                        currentLesson: currentLesson,
+                        lessonInfoMustClose: $lessonInfoMustClose,
+                        heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -139,7 +147,8 @@ struct TestWriting_Previews: PreviewProvider {
                     kanaType: "hiragana", kanas: ["あ", "い", "う", "え", "お"],
                     romajis: ["a", "i", "u", "e", "o"]),
                 test: TestDrawing(type: .hiragana, kana: "あ", romaji: "a"),
-                showQuiz: .constant(false)
+                showQuiz: .constant(false),
+                lessonInfoMustClose: .constant(false)
             )
         }
     }

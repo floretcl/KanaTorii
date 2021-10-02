@@ -151,7 +151,6 @@
 		7EF5EAA525F94BBA003D498B /* TitleMiniQuizWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EAA425F94BBA003D498B /* TitleMiniQuizWriting.swift */; };
 		7EF5EAAD25F9548D003D498B /* TitleQuizKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EAAC25F9548D003D498B /* TitleQuizKeyboard.swift */; };
 		7EF5EAB225F954DD003D498B /* TitleQuizWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EAB125F954DD003D498B /* TitleQuizWriting.swift */; };
-		7EF8307E25EE985500874432 /* ContinueButtonScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8307D25EE985500874432 /* ContinueButtonScore.swift */; };
 		7EF9804125D9796300634116 /* DetailButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9804025D9796300634116 /* DetailButtons.swift */; };
 		7EFAC71127064ECF000DF539 /* KatakanaRecognizer.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAC71027064ECF000DF539 /* KatakanaRecognizer.mlpackage */; };
 		7EFAC71327064EE3000DF539 /* HiraganaRecognizer.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAC71227064EE3000DF539 /* HiraganaRecognizer.mlpackage */; };
@@ -337,7 +336,6 @@
 		7EF5EAA425F94BBA003D498B /* TitleMiniQuizWriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMiniQuizWriting.swift; sourceTree = "<group>"; };
 		7EF5EAAC25F9548D003D498B /* TitleQuizKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleQuizKeyboard.swift; sourceTree = "<group>"; };
 		7EF5EAB125F954DD003D498B /* TitleQuizWriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleQuizWriting.swift; sourceTree = "<group>"; };
-		7EF8307D25EE985500874432 /* ContinueButtonScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonScore.swift; sourceTree = "<group>"; };
 		7EF9804025D9796300634116 /* DetailButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButtons.swift; sourceTree = "<group>"; };
 		7EFAC71027064ECF000DF539 /* KatakanaRecognizer.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = KatakanaRecognizer.mlpackage; sourceTree = "<group>"; };
 		7EFAC71227064EE3000DF539 /* HiraganaRecognizer.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = HiraganaRecognizer.mlpackage; sourceTree = "<group>"; };
@@ -658,7 +656,6 @@
 				7E3E437E25CB42DF00B2F5AC /* MemoCard.swift */,
 				7EA5EC3025D9A78F00A1FCF4 /* ContinueButtonTest.swift */,
 				7EA5EC3E25D9A9B500A1FCF4 /* ContinueButtonQuiz.swift */,
-				7EF8307D25EE985500874432 /* ContinueButtonScore.swift */,
 			);
 			path = LessonShared;
 			sourceTree = "<group>";
@@ -1164,7 +1161,6 @@
 				7E3E438E25CB435F00B2F5AC /* StatisticsView.swift in Sources */,
 				7EF5EAB225F954DD003D498B /* TitleQuizWriting.swift in Sources */,
 				7E3E435B25CB36F900B2F5AC /* LessonRow.swift in Sources */,
-				7EF8307E25EE985500874432 /* ContinueButtonScore.swift in Sources */,
 				7E3E433825CB366400B2F5AC /* DetailPage.swift in Sources */,
 				7EA5EC3125D9A78F00A1FCF4 /* ContinueButtonTest.swift in Sources */,
 				7EF5EA6025F92FDB003D498B /* SheetHeaderAbout.swift in Sources */,

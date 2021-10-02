@@ -12,13 +12,19 @@ struct MiniQuizReading: View {
 
     @StateObject var currentLesson: Lesson
     @StateObject var miniQuiz: MiniQuiz
-
+    
     @State var showActionSheet: Bool = false
     @State var showMessage: Bool = false
+    
+    @Binding var lessonInfoMustClose: Bool
 
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
-            BodyMiniQuizReading(currentLesson: currentLesson, miniQuiz: miniQuiz, showActionSheet: $showActionSheet)
+            BodyMiniQuizReading(
+                currentLesson: currentLesson,
+                miniQuiz: miniQuiz,
+                showActionSheet: $showActionSheet,
+                lessonInfoMustClose: $lessonInfoMustClose)
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "),
                       message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Wrong answer: \(miniQuiz.currentSolution.uppercased())"),
@@ -32,7 +38,11 @@ struct MiniQuizReading: View {
                 )
             })
         } else {
-            BodyMiniQuizReading(currentLesson: currentLesson, miniQuiz: miniQuiz, showActionSheet: $showActionSheet)
+            BodyMiniQuizReading(
+                currentLesson: currentLesson,
+                miniQuiz: miniQuiz,
+                showActionSheet: $showActionSheet,
+                lessonInfoMustClose: $lessonInfoMustClose)
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
                     title: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Wrong answer: \(miniQuiz.currentSolution.uppercased())"),
@@ -63,7 +73,8 @@ struct MiniQuizReading_Previews: PreviewProvider {
                 type: .hiragana,
                 kanas: ["あ", "い", "う", "え", "お"],
                 romajis: ["a", "i", "u", "e", "o"],
-                draw: false)
+                draw: false),
+            lessonInfoMustClose: .constant(false)
         )
     }
 }

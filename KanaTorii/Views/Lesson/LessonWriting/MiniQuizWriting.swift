@@ -29,6 +29,8 @@ struct MiniQuizWriting: View {
     @State var image: UIImage = UIImage()
 
     @State var showActionSheet: Bool = false
+    
+    @Binding var lessonInfoMustClose: Bool
 
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -36,7 +38,10 @@ struct MiniQuizWriting: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
+                    LessonHeader(
+                        currentLesson: currentLesson,
+                        lessonInfoMustClose: $lessonInfoMustClose,
+                        heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -83,7 +88,10 @@ struct MiniQuizWriting: View {
                 let widthDevice = geometry.size.width
                 let heightDevice = geometry.size.height
                 VStack {
-                    LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
+                    LessonHeader(
+                        currentLesson: currentLesson,
+                        lessonInfoMustClose: $lessonInfoMustClose,
+                        heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -142,7 +150,8 @@ struct MiniQuizWriting_Previews: PreviewProvider {
                 type: .hiragana,
                 kanas: ["あ", "い", "う", "え", "お"],
                 romajis: ["a", "i", "u", "e", "o"],
-                draw: true)
+                draw: true),
+            lessonInfoMustClose: .constant(false)
         )
     }
 }

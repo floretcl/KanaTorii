@@ -13,14 +13,18 @@ struct TestReading: View {
     @StateObject var currentLesson: Lesson
     @StateObject var test: Test
 
-    @Binding var showQuiz: Bool
-
     @State var showActionSheet: Bool = false
     @State var numberOfDisplayActionSheet: Int = 0
+    
+    @Binding var lessonInfoMustClose: Bool
 
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
-            BodyTestReading(currentLesson: currentLesson, test: test, showActionSheet: $showActionSheet)
+            BodyTestReading(
+                currentLesson: currentLesson,
+                test: test,
+                showActionSheet: $showActionSheet,
+                lessonInfoMustClose: $lessonInfoMustClose)
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "),
                       message: test.correctAnswer ? Text("Right answer: \(test.currentSolution.uppercased())") : Text("Wrong answer: \(test.currentSolution.uppercased())"),
@@ -28,9 +32,6 @@ struct TestReading: View {
                     numberOfDisplayActionSheet += 1
                     if numberOfDisplayActionSheet == 2 {
                         currentLesson.newPart()
-                        if currentLesson.currentPart == .quiz {
-                            showQuiz.toggle()
-                        }
                         self.presentation.wrappedValue.dismiss()
                     }
                     test.nextQuestion()
@@ -38,7 +39,11 @@ struct TestReading: View {
                 )
             })
         } else {
-            BodyTestReading(currentLesson: currentLesson, test: test, showActionSheet: $showActionSheet)
+            BodyTestReading(
+                currentLesson: currentLesson,
+                test: test,
+                showActionSheet: $showActionSheet,
+                lessonInfoMustClose: $lessonInfoMustClose)
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
                     title: test.correctAnswer ? Text("Right answer: \(test.currentSolution.uppercased())") : Text("Wrong answer: \(test.currentSolution.uppercased())"),
@@ -47,9 +52,6 @@ struct TestReading: View {
                             numberOfDisplayActionSheet += 1
                             if numberOfDisplayActionSheet == 2 {
                                 currentLesson.newPart()
-                                if currentLesson.currentPart == .quiz {
-                                    showQuiz.toggle()
-                                }
                                 self.presentation.wrappedValue.dismiss()
                             }
                             test.nextQuestion()
@@ -76,7 +78,7 @@ struct TestReading_Previews: PreviewProvider {
                     kanas: ["あ", "い", "う", "え", "お"],
                     romajis: ["a", "i", "u", "e", "o"],
                     currentIndex: 0),
-                showQuiz: .constant(false)
+                lessonInfoMustClose: .constant(false)
             )
         }
     }

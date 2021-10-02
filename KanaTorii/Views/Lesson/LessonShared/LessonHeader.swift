@@ -11,13 +11,15 @@ struct LessonHeader: View {
     @Environment(\.presentationMode) var presentation
 
     @StateObject var currentLesson: Lesson
-
+    @Binding var lessonInfoMustClose: Bool
+    
     var heightDevice: CGFloat
 
     var body: some View {
         HStack {
             Button(action: {
                 currentLesson.lessonFinished()
+                lessonInfoMustClose = true
                 self.presentation.wrappedValue.dismiss()
             }, label: {
                 Image(systemName: "multiply")
@@ -49,7 +51,9 @@ struct LessonHeader_Previews: PreviewProvider {
                 mode: .reading,
                 kanaType: "hiragana",
                 kanas: ["あ", "い", "う", "え", "お"],
-                romajis: ["a", "i", "u", "e", "o"]), heightDevice: 600)
+                romajis: ["a", "i", "u", "e", "o"]),
+            lessonInfoMustClose: .constant(false),
+            heightDevice: 600)
             .previewLayout(.sizeThatFits)
     }
 }

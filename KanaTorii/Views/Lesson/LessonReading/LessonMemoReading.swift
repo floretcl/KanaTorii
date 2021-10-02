@@ -19,7 +19,8 @@ struct LessonMemoReading: View {
     @StateObject var currentLesson: Lesson
     @State var showTest: Bool = false
     @State var showQuiz: Bool = false
-    @State var showScore: Bool = false
+    
+    @Binding var lessonInfoMustClose: Bool
 
     var body: some View {
         GeometryReader(content: { geometry in
@@ -27,7 +28,10 @@ struct LessonMemoReading: View {
             let widthDevice = geometry.size.width
             ZStack {
                 VStack {
-                    LessonHeader(currentLesson: currentLesson, heightDevice: heightDevice)
+                    LessonHeader(
+                        currentLesson: currentLesson,
+                        lessonInfoMustClose: $lessonInfoMustClose,
+                        heightDevice: heightDevice)
                         .padding(.top, 5)
                     HStack {
                         Spacer()
@@ -65,7 +69,7 @@ struct LessonMemoReading: View {
                                                     kanas: currentLesson.kanas,
                                                     romajis: currentLesson.romajis,
                                                     currentIndex: currentLesson.kanaIndex),
-                                                showQuiz: $showQuiz)
+                                                lessonInfoMustClose: $lessonInfoMustClose)
                                         })
                                 } else if currentLesson.currentPart == .quiz {
                                     ContinueButtonQuiz(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showQuiz: $showQuiz)
@@ -74,9 +78,10 @@ struct LessonMemoReading: View {
                                         isPresented: $showQuiz,
                                         onDismiss: {
                                             currentLesson.newPart()
-                                            showScore.toggle()
                                             if currentLesson.state == .end {
+                                                addItemToCoreData()
                                                 currentLesson.reset()
+                                                lessonInfoMustClose = true
                                                 self.presentation.wrappedValue.dismiss()
                                             }
                                         },
@@ -86,21 +91,9 @@ struct LessonMemoReading: View {
                                             miniQuiz: MiniQuiz(
                                                 type: currentLesson.kanaType == "hiragana" ? .hiragana : .katakana,
                                                 kanas: currentLesson.kanas,
-                                                romajis: currentLesson.romajis, draw: false))
+                                                romajis: currentLesson.romajis, draw: false),
+                                            lessonInfoMustClose: $lessonInfoMustClose)
                                             .environment(\.managedObjectContext, self.viewContext)
-                                    })
-                                } else if currentLesson.currentPart == .score {
-                                    ContinueButtonScore(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showScore: $showScore)
-                                    .padding(.bottom, heightDevice/20)
-                                    .sheet(
-                                        isPresented: $showScore,
-                                        onDismiss: {
-                                            addItemToCoreData()
-                                            currentLesson.reset()
-                                            self.presentation.wrappedValue.dismiss()
-                                        },
-                                        content: {
-                                            ScoreView()
                                     })
                                 }
                             }
@@ -143,7 +136,8 @@ struct LessonMemoReading_Previews: PreviewProvider {
                     mode: .reading,
                     kanaType: "hiragana",
                     kanas: ["あ", "い", "う", "え", "お"],
-                    romajis: ["a", "i", "u", "e", "o"])
+                    romajis: ["a", "i", "u", "e", "o"]),
+                lessonInfoMustClose: .constant(false)
             )
         }
     }

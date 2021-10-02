@@ -55,6 +55,7 @@
 "Number of questions: %lld" = "Nombres de questions: %lld";
 "Orange" = "Orange";
 "%@ Part %lld / %lld" = "%@ Partie %lld / %lld";
+"Part %lld / %lld" = "Partie %lld / %lld";
 "Practice drawing %@: %@" = "Entraîne toi à écrire le %@: %@";
 "Previous" = "Précédent";
 "Primary" = "Noir/Blanc";
@@ -79,6 +80,7 @@
 "Show guide" = "Aff. guide";
 "Start" = "Commencer";
 "Start a lesson right now by clicking on 'lessons' at the top left" = "Commence une leçon tout de suite en cliquant sur \"leçons\" en haut à gauche de l'écran";
+"Start a mini Quiz" = "Commencer un mini Quiz";
 "Statistics" = "Statistiques";
 "Statistics colors in tables" = "Couleurs de statistique dans les tableaux";
 "Stop" = "Arreter";

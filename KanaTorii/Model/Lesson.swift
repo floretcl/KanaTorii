@@ -39,11 +39,10 @@ class Lesson: ObservableObject {
         let memo = LessonPart.memo
         let test = LessonPart.test
         let quiz = LessonPart.quiz
-        let score = LessonPart.score
         if kanas.count == 5 {
-            return [memo, test, memo, test, memo, test, memo, test, memo, test, quiz, score]
+            return [memo, test, memo, test, memo, test, memo, test, memo, test, quiz]
         } else {
-            return [memo, test, memo, test, memo, test, quiz, score]
+            return [memo, test, memo, test, memo, test, quiz]
         }
 
     }
@@ -93,8 +92,6 @@ class Lesson: ObservableObject {
                 numberOfTest += 1
             } else if currentPart == .quiz {
                 numberOfQuiz += 1
-            } else if currentPart == .score {
-                numberOfScore += 1
             }
         } else {
             lessonFinished()

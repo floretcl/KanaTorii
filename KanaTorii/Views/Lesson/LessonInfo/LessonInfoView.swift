@@ -12,20 +12,21 @@ struct LessonInfoView: View {
     @Environment(\.colorScheme) var colorScheme
 
     var lesson: LessonForList
-    @State var lessonAlreadyStart: Bool = false
+    @State var lessonInfoMustClose: Bool = false
 
     var body: some View {
         VStack {
             if colorScheme == .light {
-                LessonInfo(lesson: lesson)
+                LessonInfo(lesson: lesson, lessonInfoMustClose: $lessonInfoMustClose)
                 .background(Color(UIColor.secondarySystemBackground))
             } else {
-                LessonInfo(lesson: lesson)
+                LessonInfo(lesson: lesson, lessonInfoMustClose: $lessonInfoMustClose)
             }
         }
         .navigationBarTitle("Lesson \(lesson.id + 1)", displayMode: .inline)
         .onAppear(perform: {
-            if lessonAlreadyStart {
+            if lessonInfoMustClose {
+                lessonInfoMustClose = false
                 self.presentation.wrappedValue.dismiss()
             }
         })

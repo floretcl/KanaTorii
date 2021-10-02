@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LessonInfo: View {
     var lesson: LessonForList
-    @State var lessonAlreadyStart: Bool = false
+    @Binding var lessonInfoMustClose: Bool
 
     var body: some View {
         GeometryReader(content: { geometry in
@@ -18,11 +18,12 @@ struct LessonInfo: View {
             VStack {
                 LessonInfoText(lesson: lesson, heightDevice: heightDevice)
                 LessonInfoList(lesson: lesson, heightDevice: heightDevice)
-                ContinueNavLink(lesson: lesson, widthDevice: widthDevice, heightDevice: heightDevice)
-                    .padding(.bottom, heightDevice/20)
-                    .onTapGesture(perform: {
-                        lessonAlreadyStart.toggle()
-                    })
+                ContinueNavLink(
+                    lesson: lesson,
+                    widthDevice: widthDevice,
+                    heightDevice: heightDevice,
+                    lessonInfoMustClose: $lessonInfoMustClose)
+                .padding(.bottom, heightDevice/20)
             }
         })
     }
@@ -31,6 +32,6 @@ struct LessonInfo: View {
 struct LessonInfo_Previews: PreviewProvider {
     static var lessons = ModelData().lessons
     static var previews: some View {
-        LessonInfo(lesson: lessons[0])
+        LessonInfo(lesson: lessons[0], lessonInfoMustClose: .constant(false))
     }
 }

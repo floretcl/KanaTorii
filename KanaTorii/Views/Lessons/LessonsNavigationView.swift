@@ -54,12 +54,14 @@ struct LessonsNavigationView: View {
                                 .foregroundColor(Color.accentColor)
                                 .font(.title3)
                                 .padding(.bottom, 10.0)
+                            Text("Restore")
                         }),
                         trailing: Button(action: {
                             hapticFeedback(style: .soft)
                             showReminder.toggle()
                         },
                         label: {
+                            Text("Reminder")
                             Label("Reminder", systemImage: "clock.arrow.circlepath")
                                 .foregroundColor(Color.accentColor)
                                 .font(.title3)

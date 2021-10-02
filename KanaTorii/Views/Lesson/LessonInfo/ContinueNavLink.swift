@@ -12,18 +12,22 @@ struct ContinueNavLink: View {
     var lesson: LessonForList
     var widthDevice: CGFloat
     var heightDevice: CGFloat
-
+    
+    @Binding var lessonInfoMustClose: Bool
+    
     var body: some View {
         if lesson.type == "Reading" || lesson.type == "Lecture" {
             VStack {
                 NavigationLink(
                     destination:
-                        LessonMemoReading(currentLesson: Lesson(
-                            name: "\(lesson.title) | \(lesson.type)",
-                            mode: .reading,
-                            kanaType: lesson.kanaTypeString,
-                            kanas: lesson.kanas,
-                            romajis: lesson.romaji))
+                        LessonMemoReading(
+                            currentLesson: Lesson(
+                                name: "\(lesson.title) | \(lesson.type)",
+                                mode: .reading,
+                                kanaType: lesson.kanaTypeString,
+                                kanas: lesson.kanas,
+                                romajis: lesson.romaji),
+                            lessonInfoMustClose: $lessonInfoMustClose)
                         .navigationBarHidden(true)
                         .environment(\.managedObjectContext, self.viewContext),
                     label: {
@@ -35,12 +39,14 @@ struct ContinueNavLink: View {
             VStack {
                 NavigationLink(
                     destination:
-                        LessonMemoWriting(currentLesson: Lesson(
-                            name: "\(lesson.title) | \(lesson.type)",
-                            mode: .writing,
-                            kanaType: lesson.kanaTypeString,
-                            kanas: lesson.kanas,
-                            romajis: lesson.romaji))
+                        LessonMemoWriting(
+                            currentLesson: Lesson(
+                                name: "\(lesson.title) | \(lesson.type)",
+                                mode: .writing,
+                                kanaType: lesson.kanaTypeString,
+                                kanas: lesson.kanas,
+                                romajis: lesson.romaji),
+                            lessonInfoMustClose: $lessonInfoMustClose)
                         .navigationBarHidden(true)
                         .environment(\.managedObjectContext, self.viewContext),
                     label: {
@@ -55,7 +61,7 @@ struct ContinueNavLink: View {
 struct ContinueNavLink_Previews: PreviewProvider {
     static var lessons = ModelData().lessons
     static var previews: some View {
-        ContinueNavLink(lesson: lessons[0], widthDevice: 300, heightDevice: 600)
+        ContinueNavLink(lesson: lessons[0], widthDevice: 300, heightDevice: 600, lessonInfoMustClose: .constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .previewLayout(.sizeThatFits)
     }
