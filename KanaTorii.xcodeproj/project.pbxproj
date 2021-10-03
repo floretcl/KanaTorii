@@ -116,6 +116,8 @@
 		7E64757C26125731005507E0 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 7E64757B26125731005507E0 /* SwiftKeychainWrapper */; };
 		7E647581261257AA005507E0 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 7E647580261257AA005507E0 /* Configuration.storekit */; };
 		7E7F642926122385007C8C70 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7F642826122385007C8C70 /* StoreKit.framework */; };
+		7E84CE0C2708DF1100A88B5F /* HiraganaRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7E84CE0B2708DF1100A88B5F /* HiraganaRecognizer.mlmodel */; };
+		7E84CE0E2708DF2B00A88B5F /* KatakanaRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7E84CE0D2708DF2B00A88B5F /* KatakanaRecognizer.mlmodel */; };
 		7E863A2125CC5E9E00D3570E /* SuggestionCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E863A2025CC5E9E00D3570E /* SuggestionCellTest.swift */; };
 		7E89855325E16A2000C4900B /* ContinueButtonTestDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89855225E16A2000C4900B /* ContinueButtonTestDrawing.swift */; };
 		7E8BAB0825F3FCC300205949 /* QuizsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8BAB0725F3FCC300205949 /* QuizsView.swift */; };
@@ -152,8 +154,6 @@
 		7EF5EAAD25F9548D003D498B /* TitleQuizKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EAAC25F9548D003D498B /* TitleQuizKeyboard.swift */; };
 		7EF5EAB225F954DD003D498B /* TitleQuizWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5EAB125F954DD003D498B /* TitleQuizWriting.swift */; };
 		7EF9804125D9796300634116 /* DetailButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9804025D9796300634116 /* DetailButtons.swift */; };
-		7EFAC71127064ECF000DF539 /* KatakanaRecognizer.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAC71027064ECF000DF539 /* KatakanaRecognizer.mlpackage */; };
-		7EFAC71327064EE3000DF539 /* HiraganaRecognizer.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAC71227064EE3000DF539 /* HiraganaRecognizer.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,6 +291,8 @@
 		7E647572261228C1005507E0 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		7E647580261257AA005507E0 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		7E7F642826122385007C8C70 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7E84CE0B2708DF1100A88B5F /* HiraganaRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HiraganaRecognizer.mlmodel; sourceTree = "<group>"; };
+		7E84CE0D2708DF2B00A88B5F /* KatakanaRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = KatakanaRecognizer.mlmodel; sourceTree = "<group>"; };
 		7E863A2025CC5E9E00D3570E /* SuggestionCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellTest.swift; sourceTree = "<group>"; };
 		7E89855225E16A2000C4900B /* ContinueButtonTestDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTestDrawing.swift; sourceTree = "<group>"; };
 		7E8BAB0725F3FCC300205949 /* QuizsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizsView.swift; sourceTree = "<group>"; };
@@ -337,8 +339,6 @@
 		7EF5EAAC25F9548D003D498B /* TitleQuizKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleQuizKeyboard.swift; sourceTree = "<group>"; };
 		7EF5EAB125F954DD003D498B /* TitleQuizWriting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleQuizWriting.swift; sourceTree = "<group>"; };
 		7EF9804025D9796300634116 /* DetailButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButtons.swift; sourceTree = "<group>"; };
-		7EFAC71027064ECF000DF539 /* KatakanaRecognizer.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = KatakanaRecognizer.mlpackage; sourceTree = "<group>"; };
-		7EFAC71227064EE3000DF539 /* HiraganaRecognizer.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = HiraganaRecognizer.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -701,8 +701,8 @@
 				7E9B2B6925E41F1300481D71 /* Quiz.swift */,
 				7E4AE9FF25ED9F3300FDFDC6 /* Score.swift */,
 				7E25672E25FBBE5C005B71A8 /* Weekday.swift */,
-				7EFAC71227064EE3000DF539 /* HiraganaRecognizer.mlpackage */,
-				7EFAC71027064ECF000DF539 /* KatakanaRecognizer.mlpackage */,
+				7E84CE0B2708DF1100A88B5F /* HiraganaRecognizer.mlmodel */,
+				7E84CE0D2708DF2B00A88B5F /* KatakanaRecognizer.mlmodel */,
 				7E3E425A25CB2C7C00B2F5AC /* Persistence.swift */,
 				7E3F6A7325D6FD0600F22669 /* ImageProcessor.swift */,
 				7E45E35F25DAD94D009B9A16 /* Extensions.swift */,
@@ -1049,7 +1049,6 @@
 				7EBF6DCF25E7F5F40077F4D2 /* QuizHeader.swift in Sources */,
 				7E3F6A7425D6FD0600F22669 /* ImageProcessor.swift in Sources */,
 				7E3E431A25CB35B800B2F5AC /* DakuonHandakuonGrid.swift in Sources */,
-				7EFAC71327064EE3000DF539 /* HiraganaRecognizer.mlpackage in Sources */,
 				7ECFBBCD2608ED4D003EC368 /* LessonsNavigationView.swift in Sources */,
 				7E3E435225CB369900B2F5AC /* DrawView.swift in Sources */,
 				7E3E436825CB38AC00B2F5AC /* ContinueNavLink.swift in Sources */,
@@ -1063,13 +1062,13 @@
 				7E3FE92B25E3FE2E00AB398D /* QuizMCQ.swift in Sources */,
 				7E3E435125CB369900B2F5AC /* Guide.swift in Sources */,
 				7ECFBBDC2608FEA7003EC368 /* BodyTestReading.swift in Sources */,
+				7E84CE0C2708DF1100A88B5F /* HiraganaRecognizer.mlmodel in Sources */,
 				7E335B3B25E6BE55004EC2C9 /* SuggestionCellQuiz.swift in Sources */,
 				7E3E437625CB420400B2F5AC /* LessonMemoWriting.swift in Sources */,
 				7E3E431B25CB35B800B2F5AC /* GojuonGrid.swift in Sources */,
 				7E60022925EA931800231C40 /* SuggestionsMiniQuiz.swift in Sources */,
 				7E125B5D263C4F150074043F /* QuizsViewIphone.swift in Sources */,
 				7E3E437F25CB42DF00B2F5AC /* LessonHeader.swift in Sources */,
-				7EFAC71127064ECF000DF539 /* KatakanaRecognizer.mlpackage in Sources */,
 				7E45E36025DAD94D009B9A16 /* Extensions.swift in Sources */,
 				7E3E432925CB361D00B2F5AC /* Chevron.swift in Sources */,
 				7EF5EA7025F93B2A003D498B /* NavigationButtonNext.swift in Sources */,
@@ -1128,6 +1127,7 @@
 				7EF5EA5825F92FBF003D498B /* SheetHeaderSettings.swift in Sources */,
 				7E8BAB0825F3FCC300205949 /* QuizsView.swift in Sources */,
 				7EED307E25F92D3D00B2C5F1 /* HomeButtonAbout.swift in Sources */,
+				7E84CE0E2708DF2B00A88B5F /* KatakanaRecognizer.mlmodel in Sources */,
 				7E3E434A25CB369900B2F5AC /* DrawingGrid.swift in Sources */,
 				7E3E439A25CB446100B2F5AC /* Lesson.swift in Sources */,
 				7E3E439C25CB446100B2F5AC /* LessonForList.swift in Sources */,

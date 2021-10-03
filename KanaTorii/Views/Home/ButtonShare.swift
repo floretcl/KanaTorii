@@ -15,9 +15,14 @@ struct ButtonShare: View {
             hapticFeedback(style: .soft)
             self.showShare = true
         }, label: {
-            Label("Share", systemImage: "square.and.arrow.up")
-                .foregroundColor(.white)
-                .padding()
+            HStack {
+                Label("Share", systemImage: "square.and.arrow.up")
+                    .foregroundColor(.white)
+                if #available(iOS 15.0, *) {
+                    Text("Share")
+                        .foregroundColor(.white)
+                }
+            }.padding()
         })
     }
 }

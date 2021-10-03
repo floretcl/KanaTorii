@@ -17,41 +17,40 @@ struct QuizKeyboard: View {
 
     @State var widthDeviceSaved: CGFloat = 0
     @State var heightDeviceSaved: CGFloat = 0
+    
+    var widthDevice: CGFloat
+    var heightDevice: CGFloat
 
     var body: some View {
-        GeometryReader(content: { geometry in
-            let widthDevice = geometry.size.width
-            let heightDevice = geometry.size.height
-            if UIDevice.current.localizedModel == "iPad" {
-                BodyQuizKeyboard(
-                    quiz: quiz,
-                    text: $text,
-                    showActionSheet: $showActionSheet,
-                    showScore: $showScore,
-                    widthDeviceSaved: $widthDeviceSaved,
-                    heightDeviceSaved: $heightDeviceSaved)
-                .background(Color(UIColor.secondarySystemBackground))
-                .onAppear(perform: {
-                    widthDeviceSaved = widthDevice
-                    heightDeviceSaved = heightDevice
-                })
+        if UIDevice.current.localizedModel == "iPad" {
+            BodyQuizKeyboard(
+                quiz: quiz,
+                text: $text,
+                showActionSheet: $showActionSheet,
+                showScore: $showScore,
+                widthDeviceSaved: $widthDeviceSaved,
+                heightDeviceSaved: $heightDeviceSaved)
+            .background(Color(UIColor.secondarySystemBackground))
+            .onAppear(perform: {
+                widthDeviceSaved = widthDevice
+                heightDeviceSaved = heightDevice
+            })
 
-            } else {
-                BodyQuizKeyboard(
-                    quiz: quiz,
-                    text: $text,
-                    showActionSheet: $showActionSheet,
-                    showScore: $showScore,
-                    widthDeviceSaved: $widthDeviceSaved,
-                    heightDeviceSaved: $heightDeviceSaved)
-                .background(Color(UIColor.secondarySystemBackground))
-                .edgesIgnoringSafeArea(.bottom)
-                .onAppear(perform: {
-                    widthDeviceSaved = widthDevice
-                    heightDeviceSaved = heightDevice
-                })
-            }
-        })
+        } else {
+            BodyQuizKeyboard(
+                quiz: quiz,
+                text: $text,
+                showActionSheet: $showActionSheet,
+                showScore: $showScore,
+                widthDeviceSaved: $widthDeviceSaved,
+                heightDeviceSaved: $heightDeviceSaved)
+            .background(Color(UIColor.secondarySystemBackground))
+            .edgesIgnoringSafeArea(.bottom)
+            .onAppear(perform: {
+                widthDeviceSaved = widthDevice
+                heightDeviceSaved = heightDevice
+            })
+        }
     }
 }
 
@@ -67,7 +66,9 @@ struct QuizKeyboard_Previews: PreviewProvider {
                     katakana: false,
                     kanaSection: .all,
                     nbQuestions: 10.0),
-                showScore: .constant(false)
+                showScore: .constant(false),
+                widthDevice: 830,
+                heightDevice: 380
             ).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }

@@ -27,7 +27,7 @@ struct BodyQuizWriting: View {
     @Binding var showActionSheet: Bool
 
     var body: some View {
-        HStack {
+        ZStack {
             Spacer()
             VStack {
                 TitleQuizWriting(quiz: quiz, kanaType: kanaType, heightDevice: heightDevice)

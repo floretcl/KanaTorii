@@ -22,17 +22,19 @@ struct DrawingPad: View {
                 cornerRadius: 10,
                 style: .continuous)
             .foregroundColor(Color(UIColor.systemBackground))
-            .shadow(color: Color("Shadow"), radius: 10, x: 0, y: 0)
+            .shadow(color: Color("Shadow"), radius: 10, x: 0, y: 0)            
             DrawingArea(
+                isPractice: true,
+                isTest: false,
+                isQuiz: false,
+                kana: kana,
+                kanaType: kanaType,
+                showGuide: showGuide,
                 drawing: $drawing,
                 paths: $drawings,
                 image: $image,
                 color: .primary,
                 lineWidth: lineWidth)
-            if showGuide {
-                Guide(kana: kana, kanaType: kanaType)
-            }
-            DrawingGrid()
         }
     }
 }

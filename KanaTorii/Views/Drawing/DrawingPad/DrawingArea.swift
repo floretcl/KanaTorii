@@ -26,6 +26,14 @@ struct Drawing: Identifiable {
 }
 
 struct DrawingArea: View {
+    var isPractice: Bool
+    var isTest: Bool
+    var isQuiz: Bool
+    var kana: Kana?
+    var romaji: String?
+    var kanaType: String?
+    var showGuide: Bool?
+
     @Binding var drawing: Drawing
     @Binding var paths: [Drawing]
     @Binding var image: UIImage
@@ -38,6 +46,18 @@ struct DrawingArea: View {
             let widthDevice = geometry.size.width
             ZStack {
                 Color(UIColor.systemBackground)
+                if isPractice {
+                    if showGuide! {
+                        Guide(kana: kana!, kanaType: kanaType!)
+                    }
+                } else if isTest {
+                    if showGuide! {
+                        GuideTest(romaji: romaji!, kanaType: kanaType!)
+                    }
+                } else if isQuiz {
+                    // nothing to show
+                }
+                DrawingGrid()
             }
             .gesture(
                 DragGesture(minimumDistance: 0)
@@ -69,7 +89,18 @@ struct DrawingArea: View {
 }
 
 struct DrawingArea_Previews: PreviewProvider {
+    static let modelData = ModelData()
     static var previews: some View {
-        DrawingArea(drawing: .constant(Drawing()), paths: .constant([Drawing]()), image: .constant(UIImage()), color: .primary, lineWidth: 10)
+        DrawingArea(
+            isPractice: true,
+            isTest: false,
+            isQuiz: false,
+            kana: modelData.kanas[100],
+            kanaType: "hiragana",
+            showGuide: true,
+            drawing: .constant(Drawing()),
+            paths: .constant([Drawing]()),
+            image: .constant(UIImage()),
+            color: .primary, lineWidth: 10)
     }
 }

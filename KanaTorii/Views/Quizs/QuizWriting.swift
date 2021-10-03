@@ -9,6 +9,8 @@ import SwiftUI
 
 struct QuizWriting: View {
     @Environment(\.presentationMode) var presentation
+    var secondaryBackgroundColor: Color = Color(UIColor.secondarySystemBackground)
+    
     @StateObject var quiz: Quiz
 
     @State var drawing: Drawing = Drawing()
@@ -17,24 +19,23 @@ struct QuizWriting: View {
 
     @Binding var showScore: Bool
     @State var showActionSheet: Bool = false
+    
+    var widthDevice: CGFloat
+    var heightDevice: CGFloat
 
     var body: some View {
-        GeometryReader(content: { geometry in
-            let widthDevice = geometry.size.width
-            let heightDevice = geometry.size.height
+        VStack {
             if UIDevice.current.localizedModel == "iPad" {
-                VStack {
-                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
-                        .padding(.top, 5)
-                    BodyQuizWriting(
-                        quiz: quiz,
-                        drawing: $drawing,
-                        drawings: $drawings,
-                        image: $image,
-                        widthDevice: widthDevice,
-                        heightDevice: heightDevice,
-                        showActionSheet: $showActionSheet)
-                }.background(Color(UIColor.secondarySystemBackground))
+                QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
+                    .padding(.top, 5)
+                BodyQuizWriting(
+                    quiz: quiz,
+                    drawing: $drawing,
+                    drawings: $drawings,
+                    image: $image,
+                    widthDevice: widthDevice,
+                    heightDevice: heightDevice,
+                    showActionSheet: $showActionSheet)
                 .alert(isPresented: $showActionSheet, content: {
                     Alert(title: Text("Your result: "),
                           message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
@@ -50,18 +51,16 @@ struct QuizWriting: View {
                     )
                 })
             } else {
-                VStack {
-                    QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
-                        .padding(.top, 5)
-                    BodyQuizWriting(
-                        quiz: quiz,
-                        drawing: $drawing,
-                        drawings: $drawings,
-                        image: $image,
-                        widthDevice: widthDevice,
-                        heightDevice: heightDevice,
-                        showActionSheet: $showActionSheet)
-                }.background(Color(UIColor.secondarySystemBackground))
+                QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
+                    .padding(.top, 5)
+                BodyQuizWriting(
+                    quiz: quiz,
+                    drawing: $drawing,
+                    drawings: $drawings,
+                    image: $image,
+                    widthDevice: widthDevice,
+                    heightDevice: heightDevice,
+                    showActionSheet: $showActionSheet)
                 .actionSheet(isPresented: $showActionSheet, content: {
                     ActionSheet(
                         title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
@@ -79,7 +78,9 @@ struct QuizWriting: View {
                     )
                 })
             }
-        })
+        }
+        .background(secondaryBackgroundColor)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
@@ -94,7 +95,9 @@ struct QuizWriting_Previews: PreviewProvider {
                 katakana: true,
                 kanaSection: .all,
                 nbQuestions: 5.0),
-            showScore: .constant(false)
+            showScore: .constant(false),
+            widthDevice: 830,
+            heightDevice: 380
         )
     }
 }

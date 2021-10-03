@@ -15,9 +15,14 @@ struct ButtonSettings: View {
             hapticFeedback(style: .soft)
             self.showSettings.toggle()
         }, label: {
-            Label("Settings", systemImage: "gearshape")
-                .foregroundColor(.white)
-                .padding()
+            HStack {
+                if #available(iOS 15.0, *) {
+                    Text("Settings")
+                        .foregroundColor(.white)
+                }
+                Label("Settings", systemImage: "gearshape")
+                    .foregroundColor(.white)
+            }.padding()
         })
     }
 }
