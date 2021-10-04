@@ -25,7 +25,7 @@ struct ContinueText: View {
 
 struct ContinueText_Previews: PreviewProvider {
     static var previews: some View {
-        ContinueText(widthDevice: 300, heightDevice: 600, textSize: 33)
+        ContinueText(widthDevice: 380, heightDevice: 830, textSize: 20)
             .previewLayout(.sizeThatFits)
     }
 }

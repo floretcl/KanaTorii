@@ -16,6 +16,7 @@ struct DetailsView<Page: View>: View {
             PageViewController(pages: pages, currentPage: $currentPage)
                 .edgesIgnoringSafeArea(.all)
             PageControl(numberOfPages: pages.count, currentPage: $currentPage)
+                .background(Color(UIColor.secondarySystemBackground))
             Chevrons()
         }
     }
@@ -23,10 +24,12 @@ struct DetailsView<Page: View>: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(
-            pages: ModelData().kanas.map {
-                DetailPage(kana: $0, kanaType: .hiragana)},
-            currentPage: 4
-        )
+        Group {
+            DetailsView(
+                pages: ModelData().kanas.map {
+                    DetailPage(kana: $0, kanaType: .hiragana)},
+                currentPage: 4
+            )
+        }
     }
 }

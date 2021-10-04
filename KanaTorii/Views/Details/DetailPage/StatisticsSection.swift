@@ -66,7 +66,8 @@ struct StatisticsSection: View {
                 value: percCorrectAnswers,
                 total: 100.0) {
                     HStack {
-                        Text("Corrects answers: ").font(.subheadline)
+                        Text("Corrects answers: ")
+                            .font(.system(size: sizeText))
                         Text("\(Int(percCorrectAnswers)) %")
                     }
                 }
@@ -75,11 +76,6 @@ struct StatisticsSection: View {
             Text("\(Int(nbCorrectAnswers)) Corrects / \(Int(nbTotalAnswers)) Answers")
                 .font(.system(size: sizeText))
         }
-        .padding(.horizontal, widthDevice/40)
-        .padding(.vertical, 5)
-        .background(Color(UIColor.tertiarySystemBackground))
-        .cornerRadius(7)
-        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
     }
 }
 

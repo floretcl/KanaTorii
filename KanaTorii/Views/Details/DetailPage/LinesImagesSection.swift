@@ -21,11 +21,6 @@ struct LinesImagesSection: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
-        .padding(.vertical)
-        .padding(.horizontal, widthDevice/10)
-        .background(Color(UIColor.tertiarySystemBackground))
-        .cornerRadius(7)
-        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
     }
 }
 

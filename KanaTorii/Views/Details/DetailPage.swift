@@ -32,16 +32,16 @@ struct DetailPage: View {
         GeometryReader(content: { geometry in
             let widthDevice = geometry.size.width
             let heightDevice = geometry.size.height
-            VStack {
-                FlashCard(
-                    type: type,
-                    label: kanaLabel,
-                    otherLabel: otherLabel,
-                    romaji: kana.romaji,
-                    heightDevice: heightDevice)
-                    .padding(.top, heightDevice/30)
-                    .padding(.bottom, heightDevice/40)
-                if UIDevice.current.localizedModel == "iPad" {
+            if UIDevice.current.localizedModel == "iPad" {
+                VStack {
+                    FlashCard(
+                        type: type,
+                        label: kanaLabel,
+                        otherLabel: otherLabel,
+                        romaji: kana.romaji,
+                        heightDevice: heightDevice)
+                        .padding(.top, heightDevice/20)
+                        .padding(.bottom, heightDevice/40)
                     DetailButtons(
                         kana: kana,
                         kanaLabel: kanaLabel,
@@ -56,15 +56,37 @@ struct DetailPage: View {
                         sizeText: heightDevice/40,
                         widthDevice: widthDevice,
                         heightDevice: heightDevice)
+                        .padding(.horizontal, widthDevice/40)
+                        .padding(.vertical, 5)
+                        .frame(minWidth: 300, idealWidth: 360, maxWidth: 450)
+                    //(width: widthDevice/1.7, alignment: .center)
+                        .background(Color(UIColor.tertiarySystemBackground))
+                        .cornerRadius(7)
+                        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
                         .padding(.all, heightDevice/80)
-                        .frame(width: widthDevice/1.7, alignment: .center)
                     LinesImagesSection(
                         linesOrderImage: self.linesOrderImage,
                         widthDevice: widthDevice,
                         heightDevice: heightDevice, sizeText: heightDevice/35)
+                        .padding(.horizontal, widthDevice/10)
+                        .padding(.vertical)
+                        .frame(minWidth: 200, idealWidth: 360, maxWidth: 450, minHeight: heightDevice/2.9, idealHeight: heightDevice/2.9, maxHeight: heightDevice/2.9)
+                    //(width: widthDevice/1.7, height: heightDevice/2.9, alignment: .center)
+                        .background(Color(UIColor.tertiarySystemBackground))
+                        .cornerRadius(7)
+                        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
                         .padding(.all, heightDevice/80)
-                        .frame(width: widthDevice/1.45, height: heightDevice / 2.5, alignment: .center)
-                } else {
+                }
+            } else {
+                VStack {
+                    FlashCard(
+                        type: type,
+                        label: kanaLabel,
+                        otherLabel: otherLabel,
+                        romaji: kana.romaji,
+                        heightDevice: heightDevice)
+                        .padding(.top, heightDevice/20)
+                        .padding(.bottom, heightDevice/40)
                     DetailButtons(
                         kana: kana,
                         kanaLabel: kanaLabel,
@@ -79,21 +101,28 @@ struct DetailPage: View {
                         sizeText: heightDevice/34,
                         widthDevice: widthDevice,
                         heightDevice: heightDevice)
-                        .padding(.all, heightDevice/80)
+                        .padding(.horizontal, widthDevice/40)
+                        .padding(.vertical, 5)
                         .frame(width: widthDevice/1.4, alignment: .center)
+                        .background(Color(UIColor.tertiarySystemBackground))
+                        .cornerRadius(7)
+                        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
+                        .padding(.all, heightDevice/80)
                     LinesImagesSection(
                         linesOrderImage: self.linesOrderImage,
                         widthDevice: widthDevice,
                         heightDevice: heightDevice, sizeText: heightDevice/34)
+                        .padding(.horizontal, widthDevice/10)
+                        .padding(.vertical)
+                        .frame(width: widthDevice/1.4, height: heightDevice/3.5, alignment: .center)
+                        .background(Color(UIColor.tertiarySystemBackground))
+                        .cornerRadius(7)
+                        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
                         .padding(.all, heightDevice/80)
-                        .frame(width: widthDevice, height: heightDevice / 2.5, alignment: .center)
                 }
-                Spacer()
+                //Spacer()
             }
-            .padding(.top, heightDevice/7)
-            .background(Color(UIColor.secondarySystemBackground))
-            .edgesIgnoringSafeArea(.top)
-        })
+        }).background(Color(UIColor.secondarySystemBackground))
     }
 
     private func getLinesOrderImage(kana: Kana) -> String {
@@ -116,6 +145,8 @@ struct DetailPage: View {
 struct DetailPage_Previews: PreviewProvider {
     static let modelData = ModelData()
     static var previews: some View {
-        DetailPage(kana: modelData.kanas[0], kanaType: .hiragana)
+        Group {
+            DetailPage(kana: modelData.kanas[0], kanaType: .hiragana)
+        }
     }
 }

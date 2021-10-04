@@ -20,7 +20,7 @@ struct ShowGuideButtonLabel: View {
                 RoundedRectangle(cornerRadius: 25.0)
                     .stroke()
                     .foregroundColor(.accentColor)
-                    .frame(width: self.width, height: self.height, alignment: .center)
+                    .frame(width: width, height: height, alignment: .center)
             )
     }
 }

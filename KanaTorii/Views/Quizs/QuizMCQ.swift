@@ -19,8 +19,8 @@ struct QuizMCQ: View {
         }
     }
 
-    let itemsCellIphone = GridItem(.fixed(90))
-    let itemsCellIpad = GridItem(.fixed(160))
+    let itemsCellIphone = GridItem(.flexible(minimum: 80, maximum: 110))
+    let itemsCellIpad = GridItem(.flexible(minimum: 150, maximum: 210))
 
     @State var showActionSheet: Bool = false
     @Binding var showScore: Bool
@@ -41,7 +41,7 @@ struct QuizMCQ: View {
                             .font(.system(size: heightDevice/10))
                             .padding(heightDevice/35)
                         Spacer()
-                        SuggestionsQuiz(quiz: quiz, items: itemsCellIpad, spacing: 30, width: 125, height: 125, textSize: heightDevice/24, showActionSheet: $showActionSheet)
+                        SuggestionsQuiz(quiz: quiz, items: itemsCellIpad, spacing: 35, width: heightDevice/7, height: heightDevice/7, textSize: heightDevice/26, showActionSheet: $showActionSheet)
                             .padding(.bottom, heightDevice/8)
                     }
                     Spacer()
@@ -72,7 +72,7 @@ struct QuizMCQ: View {
                         Text(label)
                             .font(.system(size: heightDevice/9))
                         Spacer()
-                        SuggestionsQuiz(quiz: quiz, items: itemsCellIphone, spacing: 20, width: 80, height: 80, textSize: widthDevice/15, showActionSheet: $showActionSheet)
+                        SuggestionsQuiz(quiz: quiz, items: itemsCellIphone, spacing: 25, width: heightDevice/8, height: heightDevice/8, textSize: widthDevice/15, showActionSheet: $showActionSheet)
                             .padding(.bottom, heightDevice/10)
                     }
                     Spacer()
@@ -111,8 +111,8 @@ struct QuizMCQ_Previews: PreviewProvider {
                     kanaSection: .all,
                     nbQuestions: 10.0),
                 showScore: .constant(false),
-                widthDevice: 830,
-                heightDevice: 380
+                widthDevice: 380,
+                heightDevice: 830
             )
         }
     }

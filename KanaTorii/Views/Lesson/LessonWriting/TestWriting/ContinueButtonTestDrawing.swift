@@ -71,7 +71,7 @@ struct ContinueButtonTestDrawing_Previews: PreviewProvider {
             showGuide: .constant(false),
             drawings: .constant([Drawing]()),
             image: .constant(UIImage()),
-            widthDevice: 320,
+            widthDevice: 380,
             heightDevice: 830,
             textSize: 20,
             showActionSheet: .constant(false))

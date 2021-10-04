@@ -35,8 +35,8 @@ struct BodyQuizKeyboard: View {
                     TitleQuizKeyboard(quiz: quiz, heightDevice: heightDeviceSaved)
                     if UIDevice.current.localizedModel == "iPad" {
                         Text(quiz.currentKana)
-                            .font(.system(size: heightDeviceSaved/5))
-                            .padding(heightDeviceSaved/20)
+                            .font(.system(size: heightDeviceSaved/8))
+                            .padding(heightDeviceSaved/40)
                     } else {
                         Text(quiz.currentKana)
                             .font(.system(size: heightDeviceSaved/7))

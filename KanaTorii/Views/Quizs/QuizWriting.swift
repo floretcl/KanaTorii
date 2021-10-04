@@ -80,7 +80,7 @@ struct QuizWriting: View {
             }
         }
         .background(secondaryBackgroundColor)
-        .edgesIgnoringSafeArea(.bottom)
+        //.edgesIgnoringSafeArea(.bottom)
     }
 }
 
