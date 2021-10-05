@@ -16,6 +16,7 @@ struct DrawingButtonsTest: View {
     var sizeText: CGFloat
     var width: CGFloat
     var height: CGFloat
+    var widthSpace: CGFloat
 
     var body: some View {
         HStack {
@@ -25,17 +26,40 @@ struct DrawingButtonsTest: View {
                     hapticFeedback(style: .soft)
                     showGuide.toggle()
                 }, label: {
-                    ShowGuideButtonLabel(sizeText: sizeText, width: width, height: height)
-                })
+                    HStack {
+                        Label(showGuide ? "Hide guide" : "Show guide", systemImage: showGuide ? "eye.slash" : "eye")
+                            .font(.system(size: self.sizeText))
+                            .foregroundColor(.accentColor)
+                            .background(
+                                RoundedRectangle(cornerRadius: 25.0)
+                                    .stroke()
+                                    .foregroundColor(.accentColor)
+                                    .frame(width: width, height: height, alignment: .center)
+                        )
+                    }.frame(width: width, height: height, alignment: .center)
+                }).padding(.vertical, 10)
+                HStack{}
+                    .frame(width: widthSpace)
+            } else {
+                Spacer()
             }
-            Spacer()
             Button(action: {
                 hapticFeedback(style: .soft)
                 drawings = [Drawing]()
             }, label: {
-                DeleteButtonLabel(sizeText: sizeText, width: width, height: height)
+                HStack {
+                    Label("Delete", systemImage: "trash")
+                        .font(.system(size: self.sizeText))
+                        .foregroundColor(.red)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .stroke()
+                                .foregroundColor(.red)
+                                .frame(width: width, height: height, alignment: .center)
+                    )
+                }.frame(width: width, height: height, alignment: .center)
             })
-            .padding(.all, 10)
+            .padding(.vertical, 10)
             .animation(.linear)
             Spacer()
         }
@@ -50,7 +74,8 @@ struct DrawingButtonsTest_Previews: PreviewProvider {
             showGuide: .constant(true),
             sizeText: 20,
             width: 130,
-            height: 60
+            height: 60,
+            widthSpace: 50
         )
         .previewLayout(.sizeThatFits)
     }

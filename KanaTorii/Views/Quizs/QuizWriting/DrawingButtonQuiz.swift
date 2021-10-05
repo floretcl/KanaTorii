@@ -21,9 +21,19 @@ struct DrawingButtonQuiz: View {
                 hapticFeedback(style: .soft)
                 drawings = [Drawing]()
             }, label: {
-                DeleteButtonLabel(sizeText: sizeText, width: width, height: height)
+                HStack {
+                    Label("Delete", systemImage: "trash")
+                        .font(.system(size: self.sizeText))
+                        .foregroundColor(.red)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .stroke()
+                                .foregroundColor(.red)
+                                .frame(width: width, height: height, alignment: .center)
+                    )
+                }.frame(width: width, height: height, alignment: .center)
             })
-            .padding(.all, 10)
+            .padding(.vertical, 10)
             Spacer()
         }
     }

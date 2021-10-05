@@ -20,7 +20,7 @@ struct TitleDraw: View {
     var sizeText: CGFloat
 
     var body: some View {
-        Text("\(kanaType.capitalized):   \(kana.romaji.capitalized) \(kanaLabel)")
+        Text("\(kanaType.capitalized): \(kana.romaji.capitalized)")
             .font(.system(size: sizeText))
             .fontWeight(.medium)
     }

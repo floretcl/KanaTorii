@@ -22,7 +22,6 @@ struct HomeView: View {
 
     var body: some View {
         GeometryReader(content: { geometry in
-            let widthDevice = geometry.size.width
             let heightDevice = geometry.size.height
             NavigationView {
                 ZStack {
@@ -33,7 +32,7 @@ struct HomeView: View {
                         SubtitleHome()
                         Spacer()
                         Spacer()
-                        HomeButtons(showIntroduction: $showIntroduction, showAbout: $showAbout, width: widthDevice/2.3, heightPadding: heightDevice/55, sizeText: 20)
+                        HomeButtons(showIntroduction: $showIntroduction, showAbout: $showAbout, heightPadding: heightDevice/55, sizeText: 20)
                         Spacer()
                     }
                 }

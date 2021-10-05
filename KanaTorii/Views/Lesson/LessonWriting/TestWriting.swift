@@ -50,7 +50,7 @@ struct TestWriting: View {
                             DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: 15, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
-                            DrawingButtonsTest(test: test, drawings: $drawings, showGuide: $showGuide, sizeText: heightDevice/40, width: widthDevice/6, height: heightDevice/22)
+                            DrawingButtonsTest(test: test, drawings: $drawings, showGuide: $showGuide, sizeText: heightDevice/40, width: heightDevice/5, height: heightDevice/22, widthSpace: widthDevice/44)
                             Spacer()
                             ContinueButtonTestDrawing(
                                 test: test,
@@ -99,7 +99,7 @@ struct TestWriting: View {
                             DrawingPadTest(drawing: $drawing, drawings: $drawings, image: $image, lineWidth: widthDevice/40, romaji: test.romaji, kanaType: kanaType, showGuide: showGuide)
                                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 600, minHeight: 250, idealHeight: 300, maxHeight: 400, alignment: .center)
                                 .padding(.all, heightDevice/40)
-                            DrawingButtonsTest(test: test, drawings: $drawings, showGuide: $showGuide, sizeText: widthDevice/22, width: widthDevice/3.3, height: heightDevice/22)
+                            DrawingButtonsTest(test: test, drawings: $drawings, showGuide: $showGuide, sizeText: widthDevice/22, width: heightDevice/5, height: heightDevice/22, widthSpace: widthDevice/40)
                             Spacer()
                             ContinueButtonTestDrawing(
                                 test: test,

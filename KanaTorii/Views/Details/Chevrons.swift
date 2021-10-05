@@ -15,9 +15,15 @@ struct Chevrons: View {
             VStack(alignment: .center, spacing: 0, content: {
                 Spacer()
                 HStack {
-                    Chevron(label: "chevron.left", heightDevice: heightDevice)
+                    Image(systemName: "chevron.left")
+                        .font(.largeTitle)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, heightDevice/12)
                     Spacer()
-                    Chevron(label: "chevron.right", heightDevice: heightDevice)
+                    Image(systemName: "chevron.right")
+                        .font(.largeTitle)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, heightDevice/12)
                 }
                 Spacer()
             })
