@@ -41,15 +41,15 @@ struct LessonMemoWriting: View {
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
                                 heightDevice: heightDevice)
-                                .padding(.vertical, heightDevice/12)
+                                .padding(.vertical, heightDevice/20)
                                 .padding(.horizontal, widthDevice/4)
                         } else {
                             MemoCard(
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
                                 heightDevice: heightDevice)
-                                .padding(.vertical, heightDevice/50)
-                                .padding(.horizontal, widthDevice/4.5)
+                                .padding(.vertical, heightDevice/30)
+                                .padding(.horizontal, widthDevice/5)
                         }
                         Spacer()
                         ZStack {

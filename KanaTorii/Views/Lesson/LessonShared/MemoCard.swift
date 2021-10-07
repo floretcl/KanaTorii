@@ -33,7 +33,7 @@ struct MemoCard: View {
                 }.padding(.bottom, heightDevice/90)
             }.frame(width: widthDevice/1.8, height: heightDevice/3, alignment: .center)
             .background(
-                RoundedRectangle(cornerRadius: 4.0)
+                RoundedRectangle(cornerRadius: 25)
                     .frame(width: widthDevice/1.8, height: heightDevice/3, alignment: .center)
                     .foregroundColor(Color(UIColor.tertiarySystemBackground))
                     .shadow(color: Color.black, radius: 2, x: 1, y: 3)
@@ -57,7 +57,7 @@ struct MemoCard: View {
                 }.padding(heightDevice/80)
             }
             .background(
-                RoundedRectangle(cornerRadius: 4.0)
+                RoundedRectangle(cornerRadius: 25)
                     .frame(width: widthDevice/1.5, height: heightDevice/2.1, alignment: .center)
                     .foregroundColor(Color(UIColor.tertiarySystemBackground))
                     .shadow(color: Color.black, radius: 2, x: 1, y: 3)

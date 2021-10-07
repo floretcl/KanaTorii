@@ -21,25 +21,21 @@ struct ListsView: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
-            let widthDevice = geometry.size.width
-            let heightDevice = geometry.size.height
-            NavigationView(content: {
-                VStack {
-                    Grid(colorsInTables: _colorsInTables, kanaType: kanaType, heightDevice: heightDevice, widthDevice: widthDevice)
-                    HStack {
-                        Spacer()
-                        GreenSegmentedControl(pickerSelection: $pickerSelection)
-                        .frame(maxWidth: 600, alignment: .center)
-                        .padding(.top, 5.0)
-                        .padding(.bottom, 10.0)
-                        Spacer()
-                    }
+        NavigationView(content: {
+            VStack {
+                Grid(colorsInTables: _colorsInTables, kanaType: kanaType)
+                HStack {
+                    Spacer()
+                    GreenSegmentedControl(pickerSelection: $pickerSelection)
+                    .frame(maxWidth: 600, alignment: .center)
+                    .padding(.top, 5.0)
+                    .padding(.bottom, 10.0)
+                    Spacer()
                 }
-                .navigationBarTitle("\(pickerSelection.capitalized) charts", displayMode: .inline)
-            })
-            .navigationViewStyle(StackNavigationViewStyle())
-        }
+            }
+            .navigationBarTitle("\(pickerSelection.capitalized) charts", displayMode: .inline)
+        })
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

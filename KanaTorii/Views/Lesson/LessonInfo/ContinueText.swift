@@ -15,7 +15,7 @@ struct ContinueText: View {
     var body: some View {
         Text("Continue")
             .font(.system(size: textSize))
-            .padding(.horizontal, widthDevice/8)
+            .padding(.horizontal, heightDevice/12)
             .padding(.vertical, heightDevice/50)
             .foregroundColor(.white)
             .background(Color.orange)

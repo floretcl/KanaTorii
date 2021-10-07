@@ -23,21 +23,17 @@ struct DakuonHandakuonGrid: View {
     var widthDevice: CGFloat
 
     var body: some View {
-        HStack {
-            Spacer()
-            LazyVGrid(
-                columns: [itemsCell, itemsCell, itemsCell, itemsCell, itemsCell],
-                alignment: .center,
-                spacing: widthDevice/20,
-                content: {
-                    ForEach(limitGojuon..<limitDakuonHandakuon) { index in
-                        KanaCell(colorsInTables: _colorsInTables, kanaForList: kanasForList[index], kanaType: self.kanaType, widthDevice: widthDevice)
-                    }
-            })
-            .padding(.top, 20)
-            .padding(.bottom, 60)
-            Spacer()
-        }
+        LazyVGrid(
+            columns: [itemsCell, itemsCell, itemsCell, itemsCell, itemsCell],
+            alignment: .center,
+            spacing: widthDevice/20,
+            content: {
+                ForEach(limitGojuon..<limitDakuonHandakuon) { index in
+                    KanaCell(colorsInTables: _colorsInTables, kanaForList: kanasForList[index], kanaType: self.kanaType, widthDevice: widthDevice)
+            }
+        })
+        .padding(.top, 20)
+        .padding(.bottom, 60)
     }
 }
 

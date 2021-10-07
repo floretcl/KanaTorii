@@ -14,9 +14,14 @@ struct StatRow: View {
         animation: .default) var statKana: FetchedResults<StatKana>
 
     var kana: StatKana
-
+    
+    let spacing: CGFloat
+    let spacingStats: CGFloat
+    let sizeCustomCircularProgessView: CGFloat
+    let sizeText: CGFloat
+    
     var body: some View {
-        HStack {
+        HStack(spacing: spacing) {
             if UIDevice.current.localizedModel == "iPad" {
                 VStack {
                     Text("\(kana.kana!)")
@@ -31,29 +36,26 @@ struct StatRow: View {
                         .font(.title2)
                 }.frame(width: 70, alignment: .center)
             }
-            VStack {
-                ProgressView(value: getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers), total: 100.0) {
-                    HStack {
-                        Text("Corrects answers: ")
-                        Text("\(Int(getPercentage(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers))) %")
-                    }
+            HStack(spacing: spacingStats) {
+                CustomCircularProgressView(
+                    progress: getPercentage(),
+                    progressColor: getProgressViewColor(),
+                    size: sizeCustomCircularProgessView,
+                    sizeText: sizeText)
+                VStack {
+                    Text("\(Int(kana.nbCorrectAnswers)) Corrects")
+                    Text("\(Int(kana.nbTotalAnswers)) Answers")
                 }
-                    .progressViewStyle(
-                        LinearProgressViewStyle(
-                            tint: getProgressViewColor(nbCorrectAnswers: kana.nbCorrectAnswers, nbTotalAnswers: kana.nbTotalAnswers)
-                        )
-                    )
-                Text("\(Int(kana.nbCorrectAnswers)) Corrects / \(Int(kana.nbTotalAnswers)) Answers")
             }
         }
     }
 
-    private func getPercentage(nbCorrectAnswers: Float, nbTotalAnswers: Float) -> Float {
-        return (nbCorrectAnswers / nbTotalAnswers) * 100.0
+    private func getPercentage() -> Float {
+        return (kana.nbCorrectAnswers / kana.nbTotalAnswers) * 100.0
     }
 
-    private func getProgressViewColor(nbCorrectAnswers: Float, nbTotalAnswers: Float) -> Color {
-        switch getPercentage(nbCorrectAnswers: nbCorrectAnswers, nbTotalAnswers: nbTotalAnswers) {
+    private func getProgressViewColor() -> Color {
+        switch getPercentage() {
         case 0..<20:
             return .black
         case 20..<40:
@@ -67,12 +69,5 @@ struct StatRow: View {
         default:
             return .gray
         }
-    }
-}
-
-struct StatRow_Previews: PreviewProvider {
-    static var previews: some View {
-        StatRow(kana: StatKana())
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

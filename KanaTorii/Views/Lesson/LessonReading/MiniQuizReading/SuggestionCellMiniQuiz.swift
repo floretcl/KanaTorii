@@ -44,13 +44,13 @@ struct SuggestionCellMiniQuiz: View {
                 .font(.system(size: textSize))
                 .foregroundColor(.primary)
                 .frame(width: width, height: height, alignment: .center)
-                .border(Color.primary, width: 0.45)
                 .background(
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(color)
                         .animation(.linear)
-                        .shadow(color: Color("Shadow"), radius: 1, x: 2, y: 2)
+                        .shadow(color: Color("Shadow"), radius: 2, x: 1, y: 1)
                 )
+            
         })
     }
     private func addItemToCoreData(correctAnswer: Bool) {

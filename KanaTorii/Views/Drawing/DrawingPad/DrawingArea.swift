@@ -102,5 +102,6 @@ struct DrawingArea_Previews: PreviewProvider {
             paths: .constant([Drawing]()),
             image: .constant(UIImage()),
             color: .primary, lineWidth: 10)
+            .previewLayout(.sizeThatFits)
     }
 }

@@ -7,6 +7,8 @@
 */
 
 "%lld Corrects / %lld Answers" = "%lld / %lld";
+"%lld Corrects" = "%lld Buenas";
+"%lld Answers" = "%lld Respuestas";
 "%@ charts" = "Tablas de %@";
 "All" = "Todos";
 "ABOUT" = "ACERCA";

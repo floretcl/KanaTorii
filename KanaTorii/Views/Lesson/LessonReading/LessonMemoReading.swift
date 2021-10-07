@@ -39,15 +39,16 @@ struct LessonMemoReading: View {
                             TitleLessonReading(heightDevice: heightDevice)
                             if UIDevice.current.localizedModel == "iPad" {
                                 MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
-                                    .padding(.vertical, heightDevice/12)
-                                    .padding(.horizontal, widthDevice/4)
+                                    .padding(.top, heightDevice/16)
+                                    .padding(.bottom, heightDevice/50)
+                                    .padding(.horizontal, widthDevice/8)
                             } else {
                                 MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                     .padding(.vertical, heightDevice/50)
-                                    .padding(.horizontal, widthDevice/4.5)
+                                    .padding(.horizontal, widthDevice/10)
                             }
                             SoundButton(currentLesson: currentLesson)
-                                .padding(heightDevice/80)
+                                .padding(5)
                             Spacer()
                             ZStack {
                                 if currentLesson.currentPart != .quiz && currentLesson.currentPart != .score {

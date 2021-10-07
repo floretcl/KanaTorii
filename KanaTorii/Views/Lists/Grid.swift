@@ -12,12 +12,12 @@ struct Grid: View {
     @AppStorage var colorsInTables: Bool
 
     var kanaType: Kana.KanaType
-    var heightDevice: CGFloat
-    var widthDevice: CGFloat
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: true, content: {
-            VStack {
+        GeometryReader { geometry in
+            let widthDevice = geometry.size.width
+            let heightDevice = geometry.size.height
+            ScrollView(.vertical, showsIndicators: true, content: {
                 Section(header: CustomSection(label: "Gojuon").padding(.bottom, heightDevice/40)) {
                     GojuonGrid(colorsInTables: _colorsInTables, kanaType: kanaType, widthDevice: widthDevice)
                 }
@@ -27,14 +27,14 @@ struct Grid: View {
                 Section(header: CustomSection(label: "Yoon").padding(.bottom, heightDevice/40)) {
                     YoonGrid(colorsInTables: _colorsInTables, kanaType: kanaType, widthDevice: widthDevice)
                 }
-            }
-        })
+            })
+        }
     }
 }
 
 struct Grid_Previews: PreviewProvider {
     static var previews: some View {
-        Grid(colorsInTables: .init(wrappedValue: true, "colors-in-tables"), kanaType: .hiragana, heightDevice: 800, widthDevice: 350)
+        Grid(colorsInTables: .init(wrappedValue: true, "colors-in-tables"), kanaType: .hiragana)
             .environmentObject(ModelData())
     }
 }

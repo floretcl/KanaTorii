@@ -13,11 +13,11 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for _ in 0..<13 {
             let newKana = StatKana(context: viewContext)
             newKana.kana = "ぎゃ"
-            newKana.romaji = "gya"
-            newKana.nbCorrectAnswers = 10
+            newKana.romaji = "zu(du)"
+            newKana.nbCorrectAnswers = 30
             newKana.nbTotalAnswers = 30
             let newlesson = StatLesson(context: viewContext)
             newlesson.name = "Lesson 1"

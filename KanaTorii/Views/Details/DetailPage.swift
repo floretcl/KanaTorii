@@ -53,28 +53,28 @@ struct DetailPage: View {
                         })
                     StatisticsSection(
                         kanaLabel: kanaLabel,
-                        sizeText: heightDevice/40,
                         widthDevice: widthDevice,
-                        heightDevice: heightDevice)
+                        heightDevice: heightDevice,
+                        sizeText: heightDevice/47,
+                        sizeTextCustomCircularProgressView: 14,
+                        sizeCustomCircularProgressView: 55)
                         .padding(.horizontal, widthDevice/40)
                         .padding(.vertical, 5)
                         .frame(minWidth: 300, idealWidth: 360, maxWidth: 450)
-                    //(width: widthDevice/1.7, alignment: .center)
                         .background(Color(UIColor.tertiarySystemBackground))
-                        .cornerRadius(7)
-                        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
+                        .cornerRadius(10)
+                        .shadow(color: Color("Shadow"), radius: 7, x: 0.0, y: 0.0)
                         .padding(.all, heightDevice/80)
                     LinesImagesSection(
                         linesOrderImage: self.linesOrderImage,
                         widthDevice: widthDevice,
                         heightDevice: heightDevice, sizeText: heightDevice/35)
-                        .padding(.horizontal, widthDevice/10)
+                        .padding(.horizontal, widthDevice/30)
                         .padding(.vertical)
                         .frame(minWidth: 200, idealWidth: 360, maxWidth: 450, minHeight: heightDevice/2.9, idealHeight: heightDevice/2.9, maxHeight: heightDevice/2.9)
-                    //(width: widthDevice/1.7, height: heightDevice/2.9, alignment: .center)
                         .background(Color(UIColor.tertiarySystemBackground))
-                        .cornerRadius(7)
-                        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
+                        .cornerRadius(10)
+                        .shadow(color: Color("Shadow"), radius: 7, x: 0.0, y: 0.0)
                         .padding(.all, heightDevice/80)
                 }
             } else {
@@ -98,15 +98,17 @@ struct DetailPage: View {
                         })
                     StatisticsSection(
                         kanaLabel: kanaLabel,
-                        sizeText: heightDevice/34,
                         widthDevice: widthDevice,
-                        heightDevice: heightDevice)
+                        heightDevice: heightDevice,
+                        sizeText: widthDevice/20,
+                        sizeTextCustomCircularProgressView: 12,
+                        sizeCustomCircularProgressView: 50)
                         .padding(.horizontal, widthDevice/40)
                         .padding(.vertical, 5)
                         .frame(width: widthDevice/1.4, alignment: .center)
                         .background(Color(UIColor.tertiarySystemBackground))
-                        .cornerRadius(7)
-                        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
+                        .cornerRadius(10)
+                        .shadow(color: Color("Shadow"), radius: 7, x: 0.0, y: 0.0)
                         .padding(.all, heightDevice/80)
                     LinesImagesSection(
                         linesOrderImage: self.linesOrderImage,
@@ -116,11 +118,10 @@ struct DetailPage: View {
                         .padding(.vertical)
                         .frame(width: widthDevice/1.4, height: heightDevice/3.5, alignment: .center)
                         .background(Color(UIColor.tertiarySystemBackground))
-                        .cornerRadius(7)
-                        .shadow(color: Color.black.opacity(0.1), radius: 29, x: 0.0, y: 0.0)
+                        .cornerRadius(10)
+                        .shadow(color: Color("Shadow"), radius: 7, x: 0.0, y: 0.0)
                         .padding(.all, heightDevice/80)
                 }
-                //Spacer()
             }
         }).background(Color(UIColor.secondarySystemBackground))
     }

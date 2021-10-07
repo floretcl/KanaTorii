@@ -24,8 +24,8 @@ struct BodyMiniQuizReading: View {
 
     @Binding var showActionSheet: Bool
 
-    let itemsCellIphone = GridItem(.fixed(120))
-    let itemsCellIpad = GridItem(.fixed(200))
+    let itemsCellIphone = GridItem(.flexible(minimum: 80, maximum: 140))
+    let itemsCellIpad = GridItem(.flexible(minimum: 145, maximum: 210))
     
     @Binding var lessonInfoMustClose: Bool
 
@@ -53,13 +53,31 @@ struct BodyMiniQuizReading: View {
                         }
                         Spacer()
                         if UIDevice.current.localizedModel == "iPad" {
-                            SuggestionsMiniQuiz(miniQuiz: miniQuiz, items: itemsCellIpad, spacing: 35, width: 175, height: 175, textSize: heightDevice/24, showActionSheet: $showActionSheet)
+                            SuggestionsMiniQuiz(
+                                miniQuiz: miniQuiz,
+                                items: itemsCellIpad,
+                                spacing: widthDevice/14,
+                                width: heightDevice/8,
+                                height: heightDevice/8,
+                                textSize: heightDevice/24,
+                                showActionSheet: $showActionSheet)
+                                .padding(.horizontal, widthDevice/3.5)
+                                .padding(.bottom, heightDevice/12)
                                 .environment(\.managedObjectContext, self.viewContext)
-                                .padding(.bottom, heightDevice/8)
+                                
                         } else {
-                            SuggestionsMiniQuiz(miniQuiz: miniQuiz, items: itemsCellIphone, spacing: 30, width: 100, height: 100, textSize: widthDevice/14, showActionSheet: $showActionSheet)
-                                .environment(\.managedObjectContext, self.viewContext)
+                            SuggestionsMiniQuiz(
+                                miniQuiz: miniQuiz,
+                                items: itemsCellIphone,
+                                spacing: 30,
+                                width: heightDevice/8,
+                                height: heightDevice/8,
+                                textSize: widthDevice/14,
+                                showActionSheet: $showActionSheet)
                                 .padding(.bottom, heightDevice/10)
+                                .padding(.horizontal, widthDevice/6)
+                                .environment(\.managedObjectContext, self.viewContext)
+                                
                         }
                     }
                     Spacer()

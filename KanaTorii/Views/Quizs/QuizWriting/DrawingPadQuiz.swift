@@ -16,10 +16,10 @@ struct DrawingPadQuiz: View {
     var body: some View {
         ZStack {
             RoundedRectangle(
-                cornerRadius: 10,
+                cornerRadius: 25,
                 style: .continuous)
             .foregroundColor(Color(UIColor.systemBackground))
-            .shadow(color: Color("Shadow"), radius: 10, x: 0, y: 0)
+            .shadow(color: Color("Shadow"), radius: 7, x: 0, y: 0)
             DrawingArea(
                 isPractice: false,
                 isTest: false,
@@ -29,6 +29,7 @@ struct DrawingPadQuiz: View {
                 image: $image,
                 color: .primary,
                 lineWidth: lineWidth)
+                .cornerRadius(25)
         }
     }
 }

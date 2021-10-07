@@ -42,7 +42,7 @@ struct QuizMCQ: View {
                             .padding(heightDevice/35)
                         Spacer()
                         SuggestionsQuiz(quiz: quiz, items: itemsCellIpad, spacing: 35, width: heightDevice/7, height: heightDevice/7, textSize: heightDevice/26, showActionSheet: $showActionSheet)
-                            .padding(.bottom, heightDevice/8)
+                            .padding(.bottom, heightDevice/16)
                     }
                     Spacer()
                 }
@@ -114,6 +114,7 @@ struct QuizMCQ_Previews: PreviewProvider {
                 widthDevice: 380,
                 heightDevice: 830
             )
+                .previewLayout(.sizeThatFits)
         }
     }
 }

@@ -46,10 +46,10 @@ struct FlashCard: View {
                 }
             }
             .background(
-                RoundedRectangle(cornerRadius: 4.0)
+                RoundedRectangle(cornerRadius: 10)
                     .frame(width: heightDevice/3.5, height: heightDevice/3.5, alignment: .center)
                     .foregroundColor(Color(UIColor.tertiarySystemBackground))
-                    .shadow(color: Color.black, radius: 2, x: 1, y: 3)
+                    .shadow(color: Color("Shadow"), radius: 7, x: 0, y: 0)
                     .padding(.bottom, 10)
             )
             Spacer()
@@ -60,5 +60,6 @@ struct FlashCard: View {
 struct FlashCard_Previews: PreviewProvider {
     static var previews: some View {
         FlashCard(type: "hiragana", label: "あ", otherLabel: "ア", romaji: "a", heightDevice: 800)
+            
     }
 }

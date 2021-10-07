@@ -56,32 +56,32 @@ struct StatisticsSection: View {
             return .gray
         }
     }
-    var sizeText: CGFloat
+    
     var widthDevice: CGFloat
     var heightDevice: CGFloat
 
+    var sizeText: CGFloat
+    var sizeTextCustomCircularProgressView: CGFloat
+    var sizeCustomCircularProgressView: CGFloat
+    
     var body: some View {
-        VStack {
-            ProgressView(
-                value: percCorrectAnswers,
-                total: 100.0) {
-                    HStack {
-                        Text("Corrects answers: ")
-                            .font(.system(size: sizeText))
-                        Text("\(Int(percCorrectAnswers)) %")
-                    }
-                }
-                .font(.system(size: sizeText))
-                .progressViewStyle(LinearProgressViewStyle(tint: progressViewColor))
-            Text("\(Int(nbCorrectAnswers)) Corrects / \(Int(nbTotalAnswers)) Answers")
-                .font(.system(size: sizeText))
+        HStack {
+            CustomCircularProgressView(
+                progress: percCorrectAnswers,
+                progressColor: progressViewColor,
+                size: sizeCustomCircularProgressView,
+                sizeText: sizeTextCustomCircularProgressView)
+            VStack {
+                Text("\(Int(nbCorrectAnswers)) Corrects")
+                Text("\(Int(nbTotalAnswers)) Answers")
+            }.font(.system(size: sizeText))
         }
     }
 }
 
 struct StatisticsSection_Previews: PreviewProvider {
     static var previews: some View {
-        StatisticsSection(kanaLabel: "あ", sizeText: 20, widthDevice: 350, heightDevice: 800)
+        StatisticsSection(kanaLabel: "あ", widthDevice: 380, heightDevice: 830, sizeText: 18, sizeTextCustomCircularProgressView: 12, sizeCustomCircularProgressView: 50)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .previewLayout(.sizeThatFits)
     }

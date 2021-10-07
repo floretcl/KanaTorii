@@ -13,60 +13,63 @@ struct StatisticsView: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
         animation: .default) var statKana: FetchedResults<StatKana>
+    let itemIpad = GridItem(.flexible(minimum: 280, maximum: 400))
 
     var body: some View {
-        if UIDevice.current.localizedModel == "iPad" {
-            if statKanaIsEmpty() == true {
-                NavigationView {
-                    EmptyStatisticView()
-                        .navigationBarTitle("Statistics")
-                }
-                .padding(.horizontal, 100)
-                .navigationViewStyle(StackNavigationViewStyle())
-            } else {
-                VStack {
+        GeometryReader { geometry in
+            let widthDevice = geometry.size.width
+            if UIDevice.current.localizedModel == "iPad" {
+                if statKanaIsEmpty() == true {
                     NavigationView {
-                        Form {
-                            List {
-                                ForEach(statKana) { kana in
-                                    StatRow(kana: kana)
-                                }
-                                .onDelete(perform: deleteItems)
-                            }
-                        }.navigationBarTitle("Statistics")
+                        EmptyStatisticView()
+                            .navigationBarTitle("Statistics")
                     }
                     .padding(.horizontal, 100)
                     .navigationViewStyle(StackNavigationViewStyle())
-                }
-                .background(Color(UIColor.secondarySystemBackground))
-                .edgesIgnoringSafeArea(.all)
-            }
-        } else {
-            NavigationView {
-                if statKanaIsEmpty() == true {
-                    EmptyStatisticView()
-                        .navigationBarTitle("Statistics")
                 } else {
-                    List {
-                        ForEach(statKana) { kana in
-                            StatRow(kana: kana)
+                    VStack {
+                        NavigationView {
+                            List {
+                                LazyVGrid(
+                                    columns: [itemIpad,itemIpad],
+                                    alignment: .center,
+                                    spacing: 20,
+                                    content: {
+                                    ForEach(statKana) { kana in
+                                        StatRow(
+                                            kana: kana,
+                                            spacing: 0,
+                                            spacingStats: 5,
+                                            sizeCustomCircularProgessView: 60,
+                                            sizeText: 16)
+                                    }
+                                })
+                            }.navigationBarTitle("Statistics")
                         }
-                        .onDelete(perform: deleteItems)
-                    }.navigationBarTitle("Statistics")
+                        .padding(.horizontal, 50)
+                        .navigationViewStyle(StackNavigationViewStyle())
+                    }
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .edgesIgnoringSafeArea(.all)
                 }
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { statKana[$0] }.forEach(viewContext.delete)
-            do {
-                try viewContext.save()
-            } catch {
-                print(error)
-                // let nsError = error as NSError
-                // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            } else {
+                NavigationView {
+                    if statKanaIsEmpty() == true {
+                        EmptyStatisticView()
+                            .navigationBarTitle("Statistics")
+                    } else {
+                        List {
+                            ForEach(statKana) { kana in
+                                StatRow(
+                                    kana: kana,
+                                    spacing: widthDevice/14,
+                                    spacingStats: 10,
+                                    sizeCustomCircularProgessView: 50,
+                                    sizeText: 12)
+                            }
+                        }.navigationBarTitle("Statistics")
+                    }
+                }
             }
         }
     }
