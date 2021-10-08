@@ -101,8 +101,8 @@ struct DetailPage: View {
                         widthDevice: widthDevice,
                         heightDevice: heightDevice,
                         sizeText: widthDevice/20,
-                        sizeTextCustomCircularProgressView: 12,
-                        sizeCustomCircularProgressView: 50)
+                        sizeTextCustomCircularProgressView: 10,
+                        sizeCustomCircularProgressView: 45)
                         .padding(.horizontal, widthDevice/40)
                         .padding(.vertical, 5)
                         .frame(width: widthDevice/1.4, alignment: .center)

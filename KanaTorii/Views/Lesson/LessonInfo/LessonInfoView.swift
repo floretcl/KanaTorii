@@ -39,7 +39,7 @@ struct LessonInfoView_Previews: PreviewProvider {
         Group {
             LessonInfoView(lesson: lessons[0])
             LessonInfoView(lesson: lessons[0])
-                .preferredColorScheme(.dark)
+                .previewDevice("iPad Pro (12.9-inch) (5th generation)")
         }
     }
 }

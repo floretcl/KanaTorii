@@ -10,6 +10,7 @@ import SwiftUI
 struct LessonInfoList: View {
     var lesson: LessonForList
     var heightDevice: CGFloat
+    var widthDevice: CGFloat
 
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
@@ -23,7 +24,7 @@ struct LessonInfoList: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .padding(.horizontal, 100)
+            .padding(.horizontal, widthDevice/5)
         } else {
             List {
                 ForEach(0..<lesson.kanas.count) { index in
@@ -34,6 +35,7 @@ struct LessonInfoList: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
+            .padding(.horizontal, 40)
         }
     }
 }
@@ -41,7 +43,7 @@ struct LessonInfoList: View {
 struct LessonInfoList_Previews: PreviewProvider {
     static var lessons = ModelData().lessons
     static var previews: some View {
-        LessonInfoList(lesson: lessons[0], heightDevice: 600)
+        LessonInfoList(lesson: lessons[0], heightDevice: 830, widthDevice: 380)
             .previewLayout(.sizeThatFits)
     }
 }

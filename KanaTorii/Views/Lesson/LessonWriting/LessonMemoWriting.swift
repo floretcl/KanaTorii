@@ -41,8 +41,8 @@ struct LessonMemoWriting: View {
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
                                 heightDevice: heightDevice)
-                                .padding(.vertical, heightDevice/20)
-                                .padding(.horizontal, widthDevice/4)
+                                .padding(.vertical, heightDevice/18)
+                                .padding(.horizontal, widthDevice/6)
                         } else {
                             MemoCard(
                                 currentLesson: currentLesson,

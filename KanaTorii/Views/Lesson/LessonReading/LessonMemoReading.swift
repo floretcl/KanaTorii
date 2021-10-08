@@ -39,9 +39,8 @@ struct LessonMemoReading: View {
                             TitleLessonReading(heightDevice: heightDevice)
                             if UIDevice.current.localizedModel == "iPad" {
                                 MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
-                                    .padding(.top, heightDevice/16)
-                                    .padding(.bottom, heightDevice/50)
-                                    .padding(.horizontal, widthDevice/8)
+                                    .padding(.vertical, heightDevice/18)
+                                    .padding(.horizontal, widthDevice/6)
                             } else {
                                 MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                     .padding(.vertical, heightDevice/50)

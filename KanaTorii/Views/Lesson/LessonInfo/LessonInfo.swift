@@ -17,7 +17,7 @@ struct LessonInfo: View {
             let widthDevice = geometry.size.width
             VStack {
                 LessonInfoText(lesson: lesson, heightDevice: heightDevice)
-                LessonInfoList(lesson: lesson, heightDevice: heightDevice)
+                LessonInfoList(lesson: lesson, heightDevice: heightDevice, widthDevice: widthDevice)
                 ContinueNavLink(
                     lesson: lesson,
                     widthDevice: widthDevice,

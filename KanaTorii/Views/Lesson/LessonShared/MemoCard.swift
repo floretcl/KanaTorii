@@ -21,8 +21,9 @@ struct MemoCard: View {
             VStack {
                 Text(currentLesson.kanaType)
                     .font(.system(size: heightDevice/25))
+                    .padding(.top, heightDevice/40)
                 Text(currentLesson.currentKana)
-                    .font(.custom("YuMincho", size: heightDevice/8))
+                    .font(.custom("YuMincho", size: heightDevice/10))
                     .padding(.vertical, heightDevice/60)
                 HStack {
                     Text("Romaji :")
@@ -30,11 +31,11 @@ struct MemoCard: View {
                     Text(currentLesson.currentRomaji.capitalized)
                         .font(.system(size: heightDevice/22))
                         .fontWeight(.semibold)
-                }.padding(.bottom, heightDevice/90)
-            }.frame(width: widthDevice/1.8, height: heightDevice/3, alignment: .center)
+                }.padding(.bottom, heightDevice/30)
+            }
+            .padding(.horizontal, widthDevice/12)
             .background(
                 RoundedRectangle(cornerRadius: 25)
-                    .frame(width: widthDevice/1.8, height: heightDevice/3, alignment: .center)
                     .foregroundColor(Color(UIColor.tertiarySystemBackground))
                     .shadow(color: Color.black, radius: 2, x: 1, y: 3)
                     .padding(.bottom, 10)
@@ -43,22 +44,22 @@ struct MemoCard: View {
             VStack {
                 Text(currentLesson.kanaType)
                     .font(.system(size: heightDevice/25))
-                    .padding(.bottom, heightDevice/60)
+                    .padding(.top, heightDevice/40)
                     Image(fileNameLinesImage)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: heightDevice/3.5, alignment: .center)
+                        .frame(height: heightDevice/4, alignment: .center)
                 HStack {
                     Text("Romaji :")
                         .font(.system(size: heightDevice/25))
                     Text(currentLesson.currentRomaji.capitalized)
                         .font(.system(size: heightDevice/22))
                         .fontWeight(.semibold)
-                }.padding(heightDevice/80)
+                }.padding(.bottom, heightDevice/30)
             }
+            .padding(.horizontal, widthDevice/10)
             .background(
                 RoundedRectangle(cornerRadius: 25)
-                    .frame(width: widthDevice/1.5, height: heightDevice/2.1, alignment: .center)
                     .foregroundColor(Color(UIColor.tertiarySystemBackground))
                     .shadow(color: Color.black, radius: 2, x: 1, y: 3)
                     .padding(.bottom, 10)
@@ -80,17 +81,16 @@ struct MemoCard_Previews: PreviewProvider {
                         kanaType: "hiragana",
                         kanas: ["あ", "い", "う", "え", "お"],
                         romajis: ["a", "i", "u", "e", "o"]),
-                     widthDevice: 400,
-                 heightDevice: 800)
+                     widthDevice: 420,
+                 heightDevice: 830)
             MemoCard(currentLesson: Lesson(
-                        name: "Lesson 1 Hiragana a i u e o | Writing",
+                        name: "Lesson 1 Hiragana a i u e o | Reading",
                         mode: .writing,
                         kanaType: "hiragana",
                         kanas: ["あ", "い", "う", "え", "お"],
                         romajis: ["a", "i", "u", "e", "o"]),
-                     widthDevice: 400,
-                     heightDevice: 800)
+                     widthDevice: 420,
+                 heightDevice: 830)
         }
-
     }
 }

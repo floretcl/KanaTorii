@@ -257,19 +257,20 @@ struct QuizsViewIpad: View {
                             )
                             Spacer()
                         }
-                    }.padding(.horizontal, 100)
+                    }
+                    .padding(.horizontal, widthDevice/5)
                 }
                 .navigationBarTitle("Quiz", displayMode: .inline)
                 .background(Color(UIColor.secondarySystemBackground))
                 .edgesIgnoringSafeArea(.top)
-                
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .onAppear {
                 UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("Green"))
                 UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
                 UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("Green"))], for: .normal)
-        }
+                    
+            }
         }
     }
     private func resetScore() {
@@ -279,7 +280,11 @@ struct QuizsViewIpad: View {
 
 struct QuizsViewIpad_Previews: PreviewProvider {
     static var previews: some View {
-        QuizsViewIpad(quickQuizNbQuestions: .init(wrappedValue: 10.0, "quick-quiz-nb-questions"))
-            .previewDevice("iPad (9th generation)")
+        Group {
+            QuizsViewIpad(quickQuizNbQuestions: .init(wrappedValue: 10.0, "quick-quiz-nb-questions"))
+                .previewDevice("iPad (9th generation)")
+            QuizsViewIpad(quickQuizNbQuestions: .init(wrappedValue: 10.0, "quick-quiz-nb-questions"))
+                .previewDevice("iPad Pro (12.9-inch) (5th generation)")
+        }
     }
 }
