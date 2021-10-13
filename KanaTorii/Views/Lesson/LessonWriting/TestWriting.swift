@@ -71,7 +71,7 @@ struct TestWriting: View {
             })
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "),
-                      message: test.correctDrawing ? Text("Right answer") : Text("Wrong answer"),
+                      message: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
                       dismissButton: .default(Text("Continue"), action: {
                         currentLesson.newPart()
                         drawings = [Drawing]()
@@ -120,7 +120,7 @@ struct TestWriting: View {
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
-                    title: test.correctDrawing ? Text("Right answer") : Text("Wrong answer"),
+                    title: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
                     buttons: [
                         .default(Text("Continue"), action: {
                             currentLesson.newPart()

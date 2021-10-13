@@ -19,51 +19,53 @@ struct MemoCard: View {
     var body: some View {
         if currentLesson.mode == .reading {
             VStack {
-                Text(currentLesson.kanaType)
+                Text(currentLesson.kanaType.capitalized)
                     .font(.system(size: heightDevice/25))
                     .padding(.top, heightDevice/40)
                 Text(currentLesson.currentKana)
-                    .font(.custom("YuMincho", size: heightDevice/10))
+                    .font(.custom("YuMincho", size: heightDevice/8))
                     .padding(.vertical, heightDevice/60)
                 HStack {
                     Text("Romaji :")
-                        .font(.system(size: heightDevice/25))
+                        .font(.system(size: heightDevice/27))
                     Text(currentLesson.currentRomaji.capitalized)
-                        .font(.system(size: heightDevice/22))
+                        .font(.system(size: heightDevice/27))
                         .fontWeight(.semibold)
                 }.padding(.bottom, heightDevice/30)
             }
-            .padding(.horizontal, widthDevice/12)
+            .frame(minWidth: 220, idealWidth: 240, maxWidth: 420)
             .background(
                 RoundedRectangle(cornerRadius: 25)
                     .foregroundColor(Color(UIColor.tertiarySystemBackground))
                     .shadow(color: Color.black, radius: 2, x: 1, y: 3)
                     .padding(.bottom, 10)
             )
+            .padding(.horizontal, widthDevice/9)
         } else {
             VStack {
-                Text(currentLesson.kanaType)
-                    .font(.system(size: heightDevice/25))
+                Text(currentLesson.kanaType.capitalized)
+                    .font(.system(size: heightDevice/27))
                     .padding(.top, heightDevice/40)
-                    Image(fileNameLinesImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: heightDevice/4, alignment: .center)
+                Image(fileNameLinesImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: heightDevice/3, alignment: .center)
                 HStack {
                     Text("Romaji :")
-                        .font(.system(size: heightDevice/25))
+                        .font(.system(size: heightDevice/27))
                     Text(currentLesson.currentRomaji.capitalized)
-                        .font(.system(size: heightDevice/22))
+                        .font(.system(size: heightDevice/27))
                         .fontWeight(.semibold)
                 }.padding(.bottom, heightDevice/30)
             }
-            .padding(.horizontal, widthDevice/10)
+            .frame(minWidth: 220, idealWidth: 260, maxWidth: 420)
             .background(
                 RoundedRectangle(cornerRadius: 25)
                     .foregroundColor(Color(UIColor.tertiarySystemBackground))
                     .shadow(color: Color.black, radius: 2, x: 1, y: 3)
                     .padding(.bottom, 10)
             )
+            .padding(.horizontal, widthDevice/9)
         }
     }
 
@@ -81,7 +83,7 @@ struct MemoCard_Previews: PreviewProvider {
                         kanaType: "hiragana",
                         kanas: ["あ", "い", "う", "え", "お"],
                         romajis: ["a", "i", "u", "e", "o"]),
-                     widthDevice: 420,
+                     widthDevice: 380,
                  heightDevice: 830)
             MemoCard(currentLesson: Lesson(
                         name: "Lesson 1 Hiragana a i u e o | Reading",
@@ -89,7 +91,7 @@ struct MemoCard_Previews: PreviewProvider {
                         kanaType: "hiragana",
                         kanas: ["あ", "い", "う", "え", "お"],
                         romajis: ["a", "i", "u", "e", "o"]),
-                     widthDevice: 420,
+                     widthDevice: 380,
                  heightDevice: 830)
         }
     }

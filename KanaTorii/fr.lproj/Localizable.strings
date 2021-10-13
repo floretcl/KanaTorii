@@ -51,6 +51,8 @@
 "Mode" = "Mode";
 "Multiple choice questions" = "Questions à choix multiples";
 "Next" = "Suivant";
+"Not recognized" = "Pas reconnu";
+"Not recognized: %@" = "Pas reconnu: %@";
 "NOTIFICATIONS" = "NOTIFICATIONS";
 "No statistics to display" = "Pas de statistiques à afficher";
 "Notification will arrive on time" = "La notification arrivera à temps !";

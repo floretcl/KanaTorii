@@ -40,11 +40,9 @@ struct LessonMemoReading: View {
                             if UIDevice.current.localizedModel == "iPad" {
                                 MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                     .padding(.vertical, heightDevice/18)
-                                    .padding(.horizontal, widthDevice/6)
                             } else {
                                 MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
                                     .padding(.vertical, heightDevice/50)
-                                    .padding(.horizontal, widthDevice/10)
                             }
                             SoundButton(currentLesson: currentLesson)
                                 .padding(5)

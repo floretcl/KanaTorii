@@ -16,11 +16,9 @@ struct ButtonSettings: View {
             self.showSettings.toggle()
         }, label: {
             HStack {
-                if #available(iOS 15.0, *) {
-                    Text("Settings")
-                        .foregroundColor(.white)
-                }
-                Label("Settings", systemImage: "gearshape")
+                Text("Settings")
+                    .foregroundColor(.white)
+                Image(systemName: "gearshape")
                     .foregroundColor(.white)
             }.padding()
         })

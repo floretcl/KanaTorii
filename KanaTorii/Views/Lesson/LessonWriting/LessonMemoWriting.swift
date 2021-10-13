@@ -42,14 +42,12 @@ struct LessonMemoWriting: View {
                                 widthDevice: widthDevice,
                                 heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/18)
-                                .padding(.horizontal, widthDevice/6)
                         } else {
                             MemoCard(
                                 currentLesson: currentLesson,
                                 widthDevice: widthDevice,
                                 heightDevice: heightDevice)
                                 .padding(.vertical, heightDevice/30)
-                                .padding(.horizontal, widthDevice/5)
                         }
                         Spacer()
                         ZStack {

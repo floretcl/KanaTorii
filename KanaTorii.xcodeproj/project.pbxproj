@@ -292,12 +292,6 @@
 		7E978B1C25D968C7007B5A04 /* DrawingNavigationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingNavigationButtons.swift; sourceTree = "<group>"; };
 		7E9A89A02605298A00DE8573 /* SettingsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsForm.swift; sourceTree = "<group>"; };
 		7E9B2B6925E41F1300481D71 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
-		7E9CDC8D26949A43001B45A7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/lessonData.json; sourceTree = "<group>"; };
-		7E9CDC8E26949A43001B45A7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/weekdays.json; sourceTree = "<group>"; };
-		7E9CDC8F26949A43001B45A7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7E9CDC9326949A69001B45A7 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-PT"; path = "pt-PT.lproj/lessonData.json"; sourceTree = "<group>"; };
-		7E9CDC9426949A69001B45A7 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-PT"; path = "pt-PT.lproj/weekdays.json"; sourceTree = "<group>"; };
-		7E9CDC9526949A69001B45A7 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7EA5EC3025D9A78F00A1FCF4 /* ContinueButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonTest.swift; sourceTree = "<group>"; };
 		7EA5EC3E25D9A9B500A1FCF4 /* ContinueButtonQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonQuiz.swift; sourceTree = "<group>"; };
 		7EAA3B9F25EACBE100A137E8 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
@@ -315,9 +309,6 @@
 		7ECFBBDB2608FEA7003EC368 /* BodyTestReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTestReading.swift; sourceTree = "<group>"; };
 		7ECFBBE326090361003EC368 /* BodyMiniQuizReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMiniQuizReading.swift; sourceTree = "<group>"; };
 		7ED04E3625D96F3200686D48 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
-		7EDFD345269201810060AD9C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/lessonData.json; sourceTree = "<group>"; };
-		7EDFD346269201830060AD9C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/weekdays.json; sourceTree = "<group>"; };
-		7EDFD347269201840060AD9C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7EED307D25F92D3D00B2C5F1 /* HomeButtonAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonAbout.swift; sourceTree = "<group>"; };
 		7EED308225F92D7B00B2C5F1 /* HomeButtonIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonIntroduction.swift; sourceTree = "<group>"; };
 		7EF09E26268C9CB300890454 /* EmptyStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticView.swift; sourceTree = "<group>"; };
@@ -925,9 +916,6 @@
 				en,
 				Base,
 				fr,
-				es,
-				it,
-				"pt-PT",
 			);
 			mainGroup = 7E3E424525CB2C7C00B2F5AC;
 			packageReferences = (
@@ -1173,9 +1161,6 @@
 			children = (
 				7E25672825FBBDDD005B71A8 /* en */,
 				7E25672D25FBBDE1005B71A8 /* fr */,
-				7EDFD346269201830060AD9C /* es */,
-				7E9CDC8E26949A43001B45A7 /* it */,
-				7E9CDC9426949A69001B45A7 /* pt-PT */,
 			);
 			name = weekdays.json;
 			sourceTree = "<group>";
@@ -1185,9 +1170,6 @@
 			children = (
 				7E3F062725F7E17F000FE9EE /* en */,
 				7E3F062C25F7E182000FE9EE /* fr */,
-				7EDFD345269201810060AD9C /* es */,
-				7E9CDC8D26949A43001B45A7 /* it */,
-				7E9CDC9326949A69001B45A7 /* pt-PT */,
 			);
 			name = lessonData.json;
 			sourceTree = "<group>";
@@ -1197,9 +1179,6 @@
 			children = (
 				7EC7085625F6625F00013F38 /* en */,
 				7EC7085B25F6626300013F38 /* fr */,
-				7EDFD347269201840060AD9C /* es */,
-				7E9CDC8F26949A43001B45A7 /* it */,
-				7E9CDC9526949A69001B45A7 /* pt-PT */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1259,7 +1238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1315,7 +1294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1337,7 +1316,7 @@
 				DEVELOPMENT_TEAM = X56656LMAV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KanaTorii/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1362,7 +1341,7 @@
 				DEVELOPMENT_TEAM = X56656LMAV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KanaTorii/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -16,12 +16,10 @@ struct ButtonShare: View {
             self.showShare = true
         }, label: {
             HStack {
-                Label("Share", systemImage: "square.and.arrow.up")
+                Image(systemName: "square.and.arrow.up")
                     .foregroundColor(.white)
-                if #available(iOS 15.0, *) {
-                    Text("Share")
-                        .foregroundColor(.white)
-                }
+                Text("Share")
+                    .foregroundColor(.white)
             }.padding()
         })
     }

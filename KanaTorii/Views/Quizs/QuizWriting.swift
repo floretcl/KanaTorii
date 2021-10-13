@@ -38,7 +38,7 @@ struct QuizWriting: View {
                     showActionSheet: $showActionSheet)
                 .alert(isPresented: $showActionSheet, content: {
                     Alert(title: Text("Your result: "),
-                          message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
+                          message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
                           dismissButton: .default(Text("Continue"), action: {
                             if quiz.state == .play {
                                 quiz.nextQuestion()
@@ -63,7 +63,7 @@ struct QuizWriting: View {
                     showActionSheet: $showActionSheet)
                 .actionSheet(isPresented: $showActionSheet, content: {
                     ActionSheet(
-                        title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Wrong answer: \(quiz.currentSolution.uppercased())"),
+                        title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
                         buttons: [
                             .default(Text("Continue"), action: {
                                 if quiz.state == .play {

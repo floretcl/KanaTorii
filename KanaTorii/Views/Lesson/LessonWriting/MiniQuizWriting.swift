@@ -72,7 +72,7 @@ struct MiniQuizWriting: View {
             })
             .alert(isPresented: $showActionSheet, content: {
                 Alert(title: Text("Your result: "),
-                      message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Wrong answer: \(miniQuiz.currentSolution.uppercased())"),
+                      message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
                       dismissButton: .default(Text("Continue"), action: {
                         drawings = [Drawing]()
                         if miniQuiz.state == .play {
@@ -121,7 +121,7 @@ struct MiniQuizWriting: View {
             })
             .actionSheet(isPresented: $showActionSheet, content: {
                 ActionSheet(
-                    title: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Wrong answer: \(miniQuiz.currentSolution.uppercased())"),
+                    title: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
                     buttons: [
                         .default(Text("Continue"), action: {
                             drawings = [Drawing]()

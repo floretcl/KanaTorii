@@ -50,25 +50,21 @@ struct LessonsNavigationView: View {
                         leading: Button(action: {
                             storeManager.restoreProducts()
                         }, label: {
-                            Label("Restore", systemImage: "cart")
+                            Image(systemName: "cart")
                                 .foregroundColor(Color.accentColor)
                                 .font(.title3)
                                 .padding(.bottom, 10.0)
-                            if #available(iOS 15.0, *) {
-                                Text("Restore")
-                                    .foregroundColor(Color.accentColor)
-                            }
+                            Text("Restore")
+                                .foregroundColor(Color.accentColor)
                         }),
                         trailing: Button(action: {
                             hapticFeedback(style: .soft)
                             showReminder.toggle()
                         },
                         label: {
-                            if #available(iOS 15.0, *) {
-                                Text("Reminder")
-                                    .foregroundColor(Color.accentColor)
-                            }
-                            Label("Reminder", systemImage: "clock.arrow.circlepath")
+                            Text("Reminder")
+                                .foregroundColor(Color.accentColor)
+                            Image(systemName: "clock.arrow.circlepath")
                                 .foregroundColor(Color.accentColor)
                                 .font(.title3)
                                 .padding(.bottom, 10.0)
@@ -99,25 +95,21 @@ struct LessonsNavigationView: View {
                         leading: Button(action: {
                             storeManager.restoreProducts()
                         }, label: {
-                            Label("Restore", systemImage: "cart")
+                            Image(systemName: "cart")
                                 .foregroundColor(Color.accentColor)
                                 .font(.title3)
                                 .padding(.bottom, 10.0)
-                            if #available(iOS 15.0, *) {
-                                Text("Restore")
-                                    .foregroundColor(Color.accentColor)
-                            }
+                            Text("Restore")
+                                .foregroundColor(Color.accentColor)
                         }),
                         trailing: Button(action: {
                             hapticFeedback(style: .soft)
                             showReminder.toggle()
                         },
                         label: {
-                            if #available(iOS 15.0, *) {
-                                Text("Reminder")
-                                    .foregroundColor(Color.accentColor)
-                            }
-                            Label("Reminder", systemImage: "clock.arrow.circlepath")
+                            Text("Reminder")
+                                .foregroundColor(Color.accentColor)
+                            Image(systemName: "clock.arrow.circlepath")
                                 .foregroundColor(Color.accentColor)
                                 .font(.title3)
                                 .padding(.bottom, 10.0)
@@ -149,10 +141,10 @@ struct LessonsNavigationView: View {
     }
 }
 
-struct LessonsNavigationView_Previews: PreviewProvider {
-    static var previews: some View {
-        LessonsNavigationView(storeManager: StoreManager())
-            .environmentObject(StoreManager())
-            .environmentObject(ModelData())
-    }
-}
+//struct LessonsNavigationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LessonsNavigationView(storeManager: StoreManager())
+//            .environmentObject(StoreManager())
+//            .environmentObject(ModelData())
+//    }
+//}

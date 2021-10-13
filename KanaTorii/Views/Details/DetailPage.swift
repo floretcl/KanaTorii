@@ -115,8 +115,8 @@ struct DetailPage: View {
                         widthDevice: widthDevice,
                         heightDevice: heightDevice, sizeText: heightDevice/34)
                         .padding(.horizontal, widthDevice/10)
-                        .padding(.vertical)
-                        .frame(width: widthDevice/1.4, height: heightDevice/3.5, alignment: .center)
+                        .padding(.vertical, 10)
+                        .frame(width: widthDevice/1.4, height: heightDevice/3.7, alignment: .center)
                         .background(Color(UIColor.tertiarySystemBackground))
                         .cornerRadius(10)
                         .shadow(color: Color("Shadow"), radius: 7, x: 0.0, y: 0.0)

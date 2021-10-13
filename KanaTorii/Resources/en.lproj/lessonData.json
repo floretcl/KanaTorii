@@ -196,7 +196,7 @@
         "type": "Reading",
         "kanas": ["だ","ぢ","づ","で","ど"],
         "romaji": ["da","ji","zu","de","do"],
-        "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nThis time t- becomes d-.\nAlso, pay attention to じ(ji) and ぢ(ji). And also to ず(zu) and づ(zu): だ ぢ づ で ど",
+        "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nThis time t- becomes d-.\nAlso, pay attention to じ(ji) and ぢ(ji*). And also to ず(zu) and づ(zu*): だ ぢ づ で ど",
         "id": 24
     },
     {
@@ -612,7 +612,7 @@
         "type": "Reading",
         "kanas": ["ダ","ヂ","ヅ","デ","ド"],
         "romaji": ["da","ji","zu","de","do"],
-        "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nHere t- becomes d-.\nAlso, pay attention to ジ(ji) and ヂ(ji). And also to ズ(zu) and ヅ(zu), they exist but are less used: ダ ヂ ヅ デ ド",
+        "text": "You have learned 10 new (Han)dakuon characters, let's continue with the next 5 characters.\nHere t- becomes d-.\nAlso, pay attention to ジ(ji) and ヂ(ji*). And also to ズ(zu) and ヅ(zu*), they exist but are less used: ダ ヂ ヅ デ ド",
         "id": 76
     },
     {
