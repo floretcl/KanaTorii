@@ -23,7 +23,7 @@ struct SettingsView: View {
                         .padding(.horizontal, widthDevice/5)
                     Spacer()
                 }
-                .background(Color(UIColor.secondarySystemBackground))
+                .background(Color("BackgroundWithForms"))
             } else {
                 VStack {
                     SheetHeaderSettings(paddingLeading: 20)

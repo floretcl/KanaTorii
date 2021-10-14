@@ -261,7 +261,7 @@ struct QuizsViewIpad: View {
                     .padding(.horizontal, widthDevice/5)
                 }
                 .navigationBarTitle("Quiz", displayMode: .inline)
-                .background(Color(UIColor.secondarySystemBackground))
+                .background(Color("BackgroundWithForms"))
                 .edgesIgnoringSafeArea(.top)
             }
             .navigationViewStyle(StackNavigationViewStyle())

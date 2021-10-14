@@ -49,7 +49,7 @@ struct StatisticsView: View {
                         .padding(.horizontal, 50)
                         .navigationViewStyle(StackNavigationViewStyle())
                     }
-                    .background(Color(UIColor.secondarySystemBackground))
+                    .background(Color("BackgroundWithForms"))
                     .edgesIgnoringSafeArea(.all)
                 }
             } else {
