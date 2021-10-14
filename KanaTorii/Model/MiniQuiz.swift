@@ -10,7 +10,6 @@ import AVFoundation
 import SwiftUI
 
 class MiniQuiz: ObservableObject {
-    private var scoreData = Score()
     private var hiraganaRecognizer: HiraganaRecognizer?
     private var katakanaRecognizer: KatakanaRecognizer?
     private var draw: Bool
@@ -18,7 +17,6 @@ class MiniQuiz: ObservableObject {
     private var kanas: [String]
     private var romajis: [String]
     @Published var state: State
-    private var score: Int
     private var arrayIndex: [Int]
     private var cycle: Int
     @Published var testDone: Bool
@@ -87,7 +85,6 @@ class MiniQuiz: ObservableObject {
         self.kanas = kanas
         self.romajis = romajis
         self.state = .play
-        self.score = 0
         self.cycle = 1
         self.testDone = false
         self.correctAnswer = false
@@ -105,9 +102,7 @@ class MiniQuiz: ObservableObject {
         } else {
             initializeConfiguration()
         }
-
-        resetScore()
-
+        
         Kana.readTextInJapanese(text: currentKana)
         print("initialisation")
     }
@@ -116,7 +111,6 @@ class MiniQuiz: ObservableObject {
         if state == .play {
             let isCorrectAnswer = testAnswer(with: answer)
             if isCorrectAnswer {
-                score += 1
                 correctAnswer = true
                 playSound(sound: "Correct Beep", ext: "mp3")
             } else {
@@ -130,7 +124,6 @@ class MiniQuiz: ObservableObject {
         } else if currentIndex == kanas.count - 1 && cycle == 1 {
             cycle += 1
         }
-        saveScore()
     }
 
     func testAnswer(with answer: String) -> Bool {
@@ -153,7 +146,7 @@ class MiniQuiz: ObservableObject {
         }
         Kana.readTextInJapanese(text: currentKana)
     }
-
+    
     private func resetStateAnswer() {
         correctAnswer = false
         testDone = false
@@ -161,16 +154,6 @@ class MiniQuiz: ObservableObject {
 
     private func quizEnd() {
         state = .end
-    }
-
-    private func saveScore() {
-        scoreData.nbCorrectAnswers = score
-        scoreData.nbTotalQuestions = numberTotalKana * cycle
-    }
-
-    private func resetScore() {
-        scoreData.nbCorrectAnswers = 0
-        scoreData.nbTotalQuestions = numberTotalKana
     }
 
     private func getSuggestions() -> [String] {

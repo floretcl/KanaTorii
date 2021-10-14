@@ -11,6 +11,9 @@ import CoreML
 struct MiniQuizWriting: View {
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
+        animation: .default) var statKana: FetchedResults<StatKana>
 
     @Environment(\.presentationMode) var presentation
 
@@ -71,9 +74,19 @@ struct MiniQuizWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "),
-                      message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
-                      dismissButton: .default(Text("Continue"), action: {
+                Alert(
+                    title: Text("Your result: "),
+                    message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
+                    primaryButton: .default(Text("Validate anyway"), action: {
+                        addCorrectAnswerToStat()
+                        drawings = [Drawing]()
+                        if miniQuiz.state == .play {
+                            miniQuiz.nextQuestion()
+                        } else {
+                            self.presentation.wrappedValue.dismiss()
+                        }
+                    }),
+                    secondaryButton: .destructive(Text("Continue"), action: {
                         drawings = [Drawing]()
                         if miniQuiz.state == .play {
                             miniQuiz.nextQuestion()
@@ -123,7 +136,16 @@ struct MiniQuizWriting: View {
                 ActionSheet(
                     title: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
                     buttons: [
-                        .default(Text("Continue"), action: {
+                        .default(Text("Validate anyway"), action: {
+                            addCorrectAnswerToStat()
+                            drawings = [Drawing]()
+                            if miniQuiz.state == .play {
+                                miniQuiz.nextQuestion()
+                            } else {
+                                self.presentation.wrappedValue.dismiss()
+                            }
+                        }),
+                        .destructive(Text("Continue"), action: {
                             drawings = [Drawing]()
                             if miniQuiz.state == .play {
                                 miniQuiz.nextQuestion()
@@ -134,6 +156,21 @@ struct MiniQuizWriting: View {
                     ]
                 )
             })
+        }
+    }
+    
+    private func addCorrectAnswerToStat() {
+        for stat in statKana {
+            if miniQuiz.currentKana == stat.kana {
+                stat.nbCorrectAnswers += Float(1)
+                do {
+                    try viewContext.save()
+                } catch {
+                    print(error)
+                    // let nsError = error as NSError
+                    // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                }
+            }
         }
     }
 }

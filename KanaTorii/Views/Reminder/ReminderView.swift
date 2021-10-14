@@ -17,6 +17,7 @@ struct ReminderView: View {
     var weekdays: [Weekday] {
         return modelData.weekdays
     }
+    var textNotification = NSLocalizedString("It's time to learn new kanas, がんばって! (Cheer up!)", comment: "")
 
     var body: some View {
         NavigationView {
@@ -34,7 +35,7 @@ struct ReminderView: View {
                     self.localNotification.sendNotification(
                         title: "Kana Torii",
                         subtitle: nil,
-                        body: "It's time to learn new kanas, がんばって! (Cheer up!)",
+                        body: textNotification,
                         weekday: selectedWeekDay,
                         hour: hour,
                         minute: minute)

@@ -273,8 +273,10 @@ struct QuizsViewIpad: View {
             }
         }
     }
+    
     private func resetScore() {
         scoreData.nbCorrectAnswers = 0
+        scoreData.nbTotalQuestions = 0
     }
 }
 

@@ -70,9 +70,18 @@ struct TestWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "),
-                      message: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
-                      dismissButton: .default(Text("Continue"), action: {
+                Alert(
+                    title: Text("Your result: "),
+                    message: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
+                    primaryButton: .default(Text("Validate anyway"), action: {
+                        currentLesson.newPart()
+                        drawings = [Drawing]()
+                        if currentLesson.currentPart == .quiz {
+                            showQuiz.toggle()
+                        }
+                        self.presentation.wrappedValue.dismiss()
+                    }),
+                    secondaryButton: .destructive(Text("Continue"), action: {
                         currentLesson.newPart()
                         drawings = [Drawing]()
                         if currentLesson.currentPart == .quiz {
@@ -122,7 +131,15 @@ struct TestWriting: View {
                 ActionSheet(
                     title: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
                     buttons: [
-                        .default(Text("Continue"), action: {
+                        .default(Text("Validate anyway"), action: {
+                            currentLesson.newPart()
+                            drawings = [Drawing]()
+                            if currentLesson.currentPart == .quiz {
+                                showQuiz.toggle()
+                            }
+                            self.presentation.wrappedValue.dismiss()
+                        }),
+                        .destructive(Text("Continue"), action: {
                             currentLesson.newPart()
                             drawings = [Drawing]()
                             if currentLesson.currentPart == .quiz {

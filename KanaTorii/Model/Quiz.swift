@@ -154,6 +154,11 @@ class Quiz: ObservableObject {
             suggestions = getSuggestions()
         }
     }
+    
+    func addOneToScore() {
+        score += 1
+        saveScore()
+    }
 
     private func resetStateAnswer() {
         correctAnswer = false

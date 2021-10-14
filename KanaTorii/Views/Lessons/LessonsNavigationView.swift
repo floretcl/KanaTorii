@@ -134,10 +134,10 @@ struct LessonsNavigationView: View {
         }
     }
     private func getProduct() -> Bool {
-        guard let product = KeychainWrapper.standard.bool(forKey: productID) else {
+        guard let alreadyPurchased = KeychainWrapper.standard.bool(forKey: productID) else {
             return false
         }
-        return product
+        return alreadyPurchased
     }
 }
 

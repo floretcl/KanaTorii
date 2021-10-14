@@ -58,7 +58,7 @@ struct ContinueButtonQuizDrawing: View {
     }
 
     private func addItemToCoreData(correctAnswer: Bool) {
-        var same: Bool = false
+        var found: Bool = false
         for stat in statKana {
             if quiz.currentKana == stat.kana {
                 if correctAnswer {
@@ -72,10 +72,10 @@ struct ContinueButtonQuizDrawing: View {
                     // let nsError = error as NSError
                     // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
-                same = true
+                found = true
             }
         }
-        if same == false {
+        if found == false {
             let newStat = StatKana(context: viewContext)
             newStat.kana = quiz.currentKana
             newStat.romaji = quiz.currentRomaji

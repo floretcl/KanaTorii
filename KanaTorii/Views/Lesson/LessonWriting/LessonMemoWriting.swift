@@ -15,7 +15,7 @@ struct LessonMemoWriting: View {
         animation: .default) var statLesson: FetchedResults<StatLesson>
 
     @Environment(\.presentationMode) private var presentation
-
+    
     @StateObject var currentLesson: Lesson
     @State var showTest: Bool = false
     @State var showQuiz: Bool = false
@@ -114,6 +114,7 @@ struct LessonMemoWriting: View {
             }
         }).background(Color(UIColor.secondarySystemBackground))
     }
+    
     private func addItemToCoreData() {
         var same: Bool = false
         for stat in statLesson {

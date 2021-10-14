@@ -38,10 +38,16 @@ struct LessonMemoReading: View {
                         VStack {
                             TitleLessonReading(heightDevice: heightDevice)
                             if UIDevice.current.localizedModel == "iPad" {
-                                MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
+                                MemoCard(
+                                    currentLesson: currentLesson,
+                                    widthDevice: widthDevice,
+                                    heightDevice: heightDevice)
                                     .padding(.vertical, heightDevice/18)
                             } else {
-                                MemoCard(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice)
+                                MemoCard(
+                                    currentLesson: currentLesson,
+                                    widthDevice: widthDevice,
+                                    heightDevice: heightDevice)
                                     .padding(.vertical, heightDevice/50)
                             }
                             SoundButton(currentLesson: currentLesson)
@@ -49,7 +55,12 @@ struct LessonMemoReading: View {
                             Spacer()
                             ZStack {
                                 if currentLesson.currentPart != .quiz && currentLesson.currentPart != .score {
-                                    ContinueButtonTest(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showTest: $showTest)
+                                    ContinueButtonTest(
+                                        currentLesson: currentLesson,
+                                        widthDevice: widthDevice,
+                                        heightDevice: heightDevice,
+                                        textSize: heightDevice/40,
+                                        showTest: $showTest)
                                     .padding(.bottom, heightDevice/20)
                                     .fullScreenCover(
                                         isPresented: $showTest,
@@ -70,7 +81,12 @@ struct LessonMemoReading: View {
                                                 lessonInfoMustClose: $lessonInfoMustClose)
                                         })
                                 } else if currentLesson.currentPart == .quiz {
-                                    ContinueButtonQuiz(currentLesson: currentLesson, widthDevice: widthDevice, heightDevice: heightDevice, textSize: heightDevice/40, showQuiz: $showQuiz)
+                                    ContinueButtonQuiz(
+                                        currentLesson: currentLesson,
+                                        widthDevice: widthDevice,
+                                        heightDevice: heightDevice,
+                                        textSize: heightDevice/40,
+                                        showQuiz: $showQuiz)
                                     .padding(.bottom, heightDevice/20)
                                     .fullScreenCover(
                                         isPresented: $showQuiz,

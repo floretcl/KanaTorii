@@ -54,8 +54,8 @@ class TestDrawing: ObservableObject {
 
     func answerCurrentQuestion(with answer: String) {
         if state == .play {
-            let iscorrectDrawing = testAnswer(with: answer)
-            if iscorrectDrawing {
+            let isCorrectDrawing = testAnswer(with: answer)
+            if isCorrectDrawing {
                 correctDrawing = true
                 playSound(sound: "Correct Beep", ext: "mp3")
             } else {

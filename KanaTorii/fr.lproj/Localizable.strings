@@ -14,7 +14,7 @@
 "ABOUT" = "À PROPOS";
 "About" = "À propos";
 "About Kana Torii" = "À propos de Kana Torii";
-"About text" = "Cette application a pour but de vous aider dans l'apprentissage des Kana Japonais.\n\nPour cela, pour rendre la tâche plus facile il y a dans cette application une section \"Leçons\". Elle permet d'apprendre pas à pas à reconnaître les Hiragana puis les Katakana. Je vous conseille de les répéter autant de fois que nécessaire.\n\nPour un vision d'ensemble, vous pouvez aller dans la section \"Listes\", visualiser un caractère, connaître son écriture, écouter sa prononciation et vous entrainez à l'écrire.\n\nEnfin une section \"Quiz\" vous permettra de maîtrisez les Kana en vous entraînant de manière variée et efficace.";
+"About text" = "Cette application a pour but de t'aider dans l'apprentissage des Kana Japonais.\n\nPour cela, pour rendre la tâche plus facile il y a dans cette application une section \"Leçons\". Elle permet d'apprendre pas à pas à reconnaître les Hiragana puis les Katakana. N'hésite pas à les répéter autant de fois que nécessaire.\n\nPour une vision d'ensemble, tu peux aller dans la section \"Listes\", visualiser un caractère, connaître son écriture, écouter sa prononciation et t'entrainer à l'écrire.\n\nEnfin une section \"Quiz\" te permettra de maîtriser les Kana en t'entraînant de manière variée et efficace.";
 "Buy 84 extra lessons %@" = "Acheter 84 leçons supplémentaires %@";
 "CHARACTER CHARTS" = "TABLEAUX DE CARACTÈRES";
 "Close" = "Fermer";
@@ -29,14 +29,15 @@
 "Find correct answer" = "Trouve la bonne réponse";
 "Green" = "Vert";
 "Hard" = "Difficile";
+"Hide guide" = "Guide";
 "Hiragana Drawing" = "Écriture de Hiragana ";
 "Hiragana Reading" = "Lecture de Hiragana ";
 "Home" = "Accueil";
 "Hour:" = "Heure:";
 "Introduction" = "Introduction";
 "Introduction to Kana" = "Introduction aux Kana";
-"Introduction text" = "Lorsque l’on commence l’apprentissage du Japonais, la première étape pour comprendre et écrire en japonais est d’apprendre et de retenir les \"Kana\".\n\nLes Kana sont composés de deux syllabaires, qui représentent l’ensemble des sons de la langue: les \"Hiragana\" et  les \"Katakana\". Ces deux systèmes d’écritures sont un peu les \"Alphabets\" Japonais. Chaque son a deux écritures, soit en hiragana pour les mots japonais (si l’on n’utilise pas les Kanji), soit en katakana pour les mots d’origine étrangère.\n\nDans ces deux systèmes d’écritures il y a de nombreux caractères mais les plus utilisés sont au nombre de 104 : les \"Gojuon\" (46 caractères simples), les \"Dakuon\" (20 caractères) et \"Handakuon\" (5 caractères) dérivés de caractères simples, et enfin les \"Yoon\" (33 caractères) composés de deux caractères simples.\n\nPour apprendre les kana il n'y a pas de secret, il faut les apprendre par coeur !";
-"It's time to learn new kanas, がんばって! (Cheer up!)" = "Il est temps d'apprendre de nouveaux Kana, がんばって! (Courage!)";
+"Introduction text" = "Lorsque l’on commence l’apprentissage du Japonais, la première étape pour comprendre et écrire en japonais est d’apprendre et de retenir les \"Kana\".\n\nLes Kana sont composés de deux syllabaires, qui représentent l’ensemble des sons de la langue: les \"Hiragana\" et  les \"Katakana\". Ces deux systèmes d’écritures sont un peu les \"Alphabets\" Japonais. Chaque son a deux écritures, soit en hiragana pour les mots japonais (si l’on n’utilise pas les Kanji), soit en katakana pour les mots d’origines étrangères.\n\nDans ces deux systèmes d’écritures il y a de nombreux caractères mais pour les plus utilisés, il y en a 104 : les \"Gojuon\" (46 caractères simples), les \"Dakuon\" (20 caractères) et \"Handakuon\" (5 caractères) dérivés des caractères simples, et enfin les \"Yoon\" (33 caractères) composés de deux caractères simples.\n\nPour apprendre les kana il n'y a pas de secret, il faut les apprendre par coeur !";
+"It's time to learn new kanas, がんばって! (Cheer up!)" = "Il est l'heure d'apprendre de nouveaux Kana, がんばって! (Courage!)";
 "Katakana Drawing" = "Écriture de Katakana";
 "Katakana Reading" = "Lecture de Katakana";
 "Keyboard and drawing" = "Clavier et Écriture";
@@ -81,7 +82,7 @@
 "Settings" = "Réglages";
 "Share" = "Partager";
 "Show Score" = "Voir le Score";
-"Show guide" = "Aff. guide";
+"Show guide" = "Guide";
 "Start" = "Commencer";
 "Start a lesson right now by clicking on 'lessons' at the top left" = "Commence une leçon tout de suite en cliquant sur \"leçons\" en haut à gauche de l'écran";
 "Start a mini Quiz" = "Commencer un mini Quiz";
@@ -90,6 +91,7 @@
 "Stop" = "Arreter";
 "Stop current notifications" = "Arreter les notifications en cours";
 "Validate" = "Valider";
+"Validate anyway" = "Valider quand même";
 "Version" = "Version";
 "Weekday" = "Jour de la semaine";
 "Write" = "Écrire";

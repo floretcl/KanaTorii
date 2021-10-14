@@ -26,9 +26,10 @@ struct MiniQuizReading: View {
                 showActionSheet: $showActionSheet,
                 lessonInfoMustClose: $lessonInfoMustClose)
             .alert(isPresented: $showActionSheet, content: {
-                Alert(title: Text("Your result: "),
-                      message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Wrong answer: \(miniQuiz.currentSolution.uppercased())"),
-                      dismissButton: .default(Text("Continue"), action: {
+                Alert(
+                    title: Text("Your result: "),
+                    message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Wrong answer: \(miniQuiz.currentSolution.uppercased())"),
+                    dismissButton: .default(Text("Continue"), action: {
                         if miniQuiz.state == .play {
                             miniQuiz.nextQuestion()
                         } else {

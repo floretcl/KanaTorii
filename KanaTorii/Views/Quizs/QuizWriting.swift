@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct QuizWriting: View {
+    // Core Data
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \StatKana.romaji, ascending: true)],
+        animation: .default) var statKana: FetchedResults<StatKana>
+    
     @Environment(\.presentationMode) var presentation
     var secondaryBackgroundColor: Color = Color(UIColor.secondarySystemBackground)
     
@@ -37,9 +43,21 @@ struct QuizWriting: View {
                     heightDevice: heightDevice,
                     showActionSheet: $showActionSheet)
                 .alert(isPresented: $showActionSheet, content: {
-                    Alert(title: Text("Your result: "),
-                          message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
-                          dismissButton: .default(Text("Continue"), action: {
+                    Alert(
+                        title: Text("Your result: "),
+                        message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
+                        primaryButton: .default(Text("Validate anyway"), action: {
+                            quiz.addOneToScore()
+                            addCorrectAnswerToStat()
+                            if quiz.state == .play {
+                                quiz.nextQuestion()
+                                drawings = [Drawing]()
+                            } else {
+                                showScore.toggle()
+                                self.presentation.wrappedValue.dismiss()
+                            }
+                        }),
+                        secondaryButton: .destructive(Text("Continue"), action: {
                             if quiz.state == .play {
                                 quiz.nextQuestion()
                                 drawings = [Drawing]()
@@ -65,7 +83,18 @@ struct QuizWriting: View {
                     ActionSheet(
                         title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
                         buttons: [
-                            .default(Text("Continue"), action: {
+                            .default(Text("Validate anyway"), action: {
+                                addCorrectAnswerToStat()
+                                quiz.addOneToScore()
+                                if quiz.state == .play {
+                                    quiz.nextQuestion()
+                                    drawings = [Drawing]()
+                                } else {
+                                    showScore.toggle()
+                                    self.presentation.wrappedValue.dismiss()
+                                }
+                            }),
+                            .destructive(Text("Continue"), action: {
                                 if quiz.state == .play {
                                     quiz.nextQuestion()
                                     drawings = [Drawing]()
@@ -81,6 +110,21 @@ struct QuizWriting: View {
         }
         .background(secondaryBackgroundColor)
         //.edgesIgnoringSafeArea(.bottom)
+    }
+    
+    private func addCorrectAnswerToStat() {
+        for stat in statKana {
+            if quiz.currentKana == stat.kana {
+                stat.nbCorrectAnswers += Float(1)
+                do {
+                    try viewContext.save()
+                } catch {
+                    print(error)
+                    // let nsError = error as NSError
+                    // fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                }
+            }
+        }
     }
 }
 

@@ -14,7 +14,7 @@
 "ABOUT" = "ABOUT";
 "About" = "About";
 "About Kana Torii" = "About Kana Torii";
-"About text" = "This application aims to help you in learning Japanese Kana.\n\nFor that, to make the task easier there is in this application a section \"Lessons\". It allows you to learn step by step to recognize Hiragana and Katakana. I advise you to repeat them as many times as necessary.\n\nFor an overview, you can go to the \"Lists\" section, see a character, know its writing, listen to its pronunciation and practice writing it.\n\nFinally a \"Quiz\" section will allow you to master the Kana by training in a varied and efficient way.";
+"About text" = "This application aims to help you in learning Japanese Kana.\n\nTo make the task easier there is the \"Lessons\" section. It allows you to learn step by step how to recognize Hiragana and Katakana characters. Repeat them as many times as necessary.\n\nFor an overview, you can go to the \"Lists\" section, visualize a character, learn its writing, listen to its pronunciation and practice writing it.\n\nFinally the \"Quiz\" section will allow you to master the Kana by practicing in a varied and efficient way.";
 "Buy 84 extra lessons %@" = "Buy 84 extra lessons %@";
 "CHARACTER CHARTS" = "CHARACTERS CHARTS";
 "Close" = "Close";
@@ -29,13 +29,14 @@
 "Find correct answer" = "Find correct answer";
 "Green" = "Green";
 "Hard" = "Hard";
+"Hide guide" = "Hide guide";
 "Hiragana Drawing" = "Hiragana Drawing";
 "Hiragana Reading" = "Hiragana Reading";
 "Home" = "Home";
 "Hour:" = "Hour:";
 "Introduction" = "Introduction";
 "Introduction to Kana" = "Introduction to Kana";
-"Introduction text" = "When starting to learn Japanese, the first step in understanding and writing in Japanese is to learn and remember \"Kana\".\n\nKana are made up of two syllabaries, which represent the set of sounds of the language: the \"Hiragana\" and the \"Katakana\". These two writing systems are a bit like the Japanese \"Alphabets\". Each sound has two scripts, either in Hiragana for Japanese words (if Kanji is not used) or in Katakana for words of foreign origin.\n\nIn these two writing systems there are many characters but the most used are 104: the \"Gojuon\" (46 single characters), the \"Dakuon\" (20 characters) and \"Handakuon\" (5 characters) derived from characters simple, and finally the \"Yoon\" (33 characters) composed of two single characters.\n\nTo learn Kana there is no secret, you have to learn them by heart!";
+"Introduction text" = "When you start learning Japanese, the first step to understanding and writing Japanese is to learn and remember \"Kanas\".\n\nThe Kanas are composed of two syllabaries, which represent all the sounds of the language: the \"Hiraganas\" and the \"Katakanas\". These two writing systems are a bit like the Japanese \"Alphabets\". Each sound has two writings, either in Hiragana for Japanese words (if you don't use Kanji) or in Katakana for words of foreign origin.\n\nIn these two writing systems there are many characters but for the most used, there are 104: the \"Gojuons\" (46 simple characters), the \"Dakuons\" (20 characters) and the \"Handakuons\" (5 characters) derived from simple characters, and finally the \"Yoon\" (33 characters) composed of two simple characters.\n\nTo learn the Kanas there is no secret, you have to learn them by heart!";
 "It's time to learn new kanas, がんばって! (Cheer up!)" = "It's time to learn new Kana, がんばって! (Cheer up!)";
 "Katakana Drawing" = "Katakana Drawing";
 "Katakana Reading" = "Katakana Reading";
@@ -90,6 +91,7 @@
 "Stop" = "Stop";
 "Stop current notifications" = "Stop current notifications";
 "Validate" = "Validate";
+"Validate anyway" = "Validate anyway";
 "Version" = "Version";
 "Weekday" = "Weekday";
 "Write" = "Write";
