@@ -74,27 +74,43 @@ struct MiniQuizWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(
-                    title: Text("Your result: "),
-                    message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
-                    primaryButton: .default(Text("Validate anyway"), action: {
-                        addCorrectAnswerToStat()
-                        drawings = [Drawing]()
-                        if miniQuiz.state == .play {
-                            miniQuiz.nextQuestion()
-                        } else {
-                            self.presentation.wrappedValue.dismiss()
-                        }
-                    }),
-                    secondaryButton: .destructive(Text("Continue"), action: {
-                        drawings = [Drawing]()
-                        if miniQuiz.state == .play {
-                            miniQuiz.nextQuestion()
-                        } else {
-                            self.presentation.wrappedValue.dismiss()
-                        }
-                    })
-                )
+                if miniQuiz.correctAnswer {
+                    return Alert(
+                        title: Text("Your result: "),
+                        message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
+                        dismissButton: .default(Text("Continue"), action: {
+                            drawings = [Drawing]()
+                            if miniQuiz.state == .play {
+                                miniQuiz.nextQuestion()
+                            } else {
+                                self.presentation.wrappedValue.dismiss()
+                            }
+                        })
+                    )
+                } else {
+                    return Alert(
+                        title: Text("Your result: "),
+                        message: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
+                        primaryButton: .default(Text("Continue"), action: {
+                            drawings = [Drawing]()
+                            if miniQuiz.state == .play {
+                                miniQuiz.nextQuestion()
+                            } else {
+                                self.presentation.wrappedValue.dismiss()
+                            }
+                        }),
+                        secondaryButton: .destructive(Text("Validate anyway"), action: {
+                            addCorrectAnswerToStat()
+                            drawings = [Drawing]()
+                            if miniQuiz.state == .play {
+                                miniQuiz.nextQuestion()
+                            } else {
+                                self.presentation.wrappedValue.dismiss()
+                            }
+                        })
+                    )
+                }
+                
             })
         } else {
             GeometryReader(content: { geometry in
@@ -133,28 +149,45 @@ struct MiniQuizWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .actionSheet(isPresented: $showActionSheet, content: {
-                ActionSheet(
-                    title: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
-                    buttons: [
-                        .default(Text("Validate anyway"), action: {
-                            addCorrectAnswerToStat()
-                            drawings = [Drawing]()
-                            if miniQuiz.state == .play {
-                                miniQuiz.nextQuestion()
-                            } else {
-                                self.presentation.wrappedValue.dismiss()
-                            }
-                        }),
-                        .destructive(Text("Continue"), action: {
-                            drawings = [Drawing]()
-                            if miniQuiz.state == .play {
-                                miniQuiz.nextQuestion()
-                            } else {
-                                self.presentation.wrappedValue.dismiss()
-                            }
-                        })
-                    ]
-                )
+                if miniQuiz.correctAnswer {
+                    return ActionSheet(
+                        title: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
+                        buttons: [
+                            .default(Text("Continue"), action: {
+                                drawings = [Drawing]()
+                                if miniQuiz.state == .play {
+                                    miniQuiz.nextQuestion()
+                                } else {
+                                    self.presentation.wrappedValue.dismiss()
+                                }
+                            })
+                        ]
+                    )
+                } else {
+                    return ActionSheet(
+                        title: miniQuiz.correctAnswer ? Text("Right answer: \(miniQuiz.currentSolution.uppercased())") : Text("Not recognized: \(miniQuiz.currentSolution.uppercased())"),
+                        buttons: [
+                            .default(Text("Continue"), action: {
+                                drawings = [Drawing]()
+                                if miniQuiz.state == .play {
+                                    miniQuiz.nextQuestion()
+                                } else {
+                                    self.presentation.wrappedValue.dismiss()
+                                }
+                            }),
+                            .destructive(Text("Validate anyway"), action: {
+                                addCorrectAnswerToStat()
+                                drawings = [Drawing]()
+                                if miniQuiz.state == .play {
+                                    miniQuiz.nextQuestion()
+                                } else {
+                                    self.presentation.wrappedValue.dismiss()
+                                }
+                            })
+                        ]
+                    )
+                }
+                
             })
         }
     }

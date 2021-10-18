@@ -10,8 +10,8 @@ import AVFoundation
 import SwiftUI
 
 class MiniQuiz: ObservableObject {
-    private var hiraganaRecognizer: HiraganaRecognizer?
-    private var katakanaRecognizer: KatakanaRecognizer?
+    private var hiraganaClassifier: HiraganaClassifier?
+    private var katakanaClassifier: KatakanaClassifier?
     private var draw: Bool
     var type: KanaType
     private var kanas: [String]
@@ -197,13 +197,13 @@ class MiniQuiz: ObservableObject {
     private func initializeConfiguration() {
         if type == .hiragana {
             do {
-                try hiraganaRecognizer = HiraganaRecognizer(configuration: .init())
+                try hiraganaClassifier = HiraganaClassifier(configuration: .init())
             } catch {
                 fatalError("Error to init model")
             }
         } else {
             do {
-                try katakanaRecognizer = KatakanaRecognizer(configuration: .init())
+                try katakanaClassifier = KatakanaClassifier(configuration: .init())
             } catch {
                 fatalError("Error to init model")
             }
@@ -221,13 +221,13 @@ class MiniQuiz: ObservableObject {
         }
         if type == .hiragana {
             do {
-                try prediction = hiraganaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
+                try prediction = hiraganaClassifier?.prediction(image: pixelbuffer).classLabel ?? ""
             } catch {
                 fatalError("Unexpected runtime error: \(error)")
             }
         } else {
             do {
-                try prediction = katakanaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
+                try prediction = katakanaClassifier?.prediction(image: pixelbuffer).classLabel ?? ""
             } catch {
                 fatalError("Unexpected runtime error: \(error)")
             }

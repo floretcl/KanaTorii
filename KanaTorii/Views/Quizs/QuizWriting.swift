@@ -43,30 +43,46 @@ struct QuizWriting: View {
                     heightDevice: heightDevice,
                     showActionSheet: $showActionSheet)
                 .alert(isPresented: $showActionSheet, content: {
-                    Alert(
-                        title: Text("Your result: "),
-                        message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
-                        primaryButton: .default(Text("Validate anyway"), action: {
-                            quiz.addOneToScore()
-                            addCorrectAnswerToStat()
-                            if quiz.state == .play {
-                                quiz.nextQuestion()
-                                drawings = [Drawing]()
-                            } else {
-                                showScore.toggle()
-                                self.presentation.wrappedValue.dismiss()
-                            }
-                        }),
-                        secondaryButton: .destructive(Text("Continue"), action: {
-                            if quiz.state == .play {
-                                quiz.nextQuestion()
-                                drawings = [Drawing]()
-                            } else {
-                                showScore.toggle()
-                                self.presentation.wrappedValue.dismiss()
-                            }
-                        })
-                    )
+                    if quiz.correctAnswer {
+                        return Alert(
+                            title: Text("Your result: "),
+                            message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
+                            dismissButton: .default(Text("Continue"), action: {
+                                if quiz.state == .play {
+                                    quiz.nextQuestion()
+                                    drawings = [Drawing]()
+                                } else {
+                                    showScore.toggle()
+                                    self.presentation.wrappedValue.dismiss()
+                                }
+                            })
+                        )
+                    } else {
+                        return Alert(
+                            title: Text("Your result: "),
+                            message: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
+                            primaryButton: .default(Text("Continue"), action: {
+                                if quiz.state == .play {
+                                    quiz.nextQuestion()
+                                    drawings = [Drawing]()
+                                } else {
+                                    showScore.toggle()
+                                    self.presentation.wrappedValue.dismiss()
+                                }
+                            }),
+                            secondaryButton: .destructive(Text("Validate anyway"), action: {
+                                quiz.addOneToScore()
+                                addCorrectAnswerToStat()
+                                if quiz.state == .play {
+                                    quiz.nextQuestion()
+                                    drawings = [Drawing]()
+                                } else {
+                                    showScore.toggle()
+                                    self.presentation.wrappedValue.dismiss()
+                                }
+                            })
+                        )
+                    }
                 })
             } else {
                 QuizHeader(quiz: quiz, showScore: $showScore, heightDevice: heightDevice)
@@ -80,31 +96,48 @@ struct QuizWriting: View {
                     heightDevice: heightDevice,
                     showActionSheet: $showActionSheet)
                 .actionSheet(isPresented: $showActionSheet, content: {
-                    ActionSheet(
-                        title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
-                        buttons: [
-                            .default(Text("Validate anyway"), action: {
-                                addCorrectAnswerToStat()
-                                quiz.addOneToScore()
-                                if quiz.state == .play {
-                                    quiz.nextQuestion()
-                                    drawings = [Drawing]()
-                                } else {
-                                    showScore.toggle()
-                                    self.presentation.wrappedValue.dismiss()
-                                }
-                            }),
-                            .destructive(Text("Continue"), action: {
-                                if quiz.state == .play {
-                                    quiz.nextQuestion()
-                                    drawings = [Drawing]()
-                                } else {
-                                    showScore.toggle()
-                                    self.presentation.wrappedValue.dismiss()
-                                }
-                            })
-                        ]
-                    )
+                    if quiz.correctAnswer {
+                        return ActionSheet(
+                            title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
+                            buttons: [
+                                .default(Text("Continue"), action: {
+                                    if quiz.state == .play {
+                                        quiz.nextQuestion()
+                                        drawings = [Drawing]()
+                                    } else {
+                                        showScore.toggle()
+                                        self.presentation.wrappedValue.dismiss()
+                                    }
+                                })
+                            ]
+                        )
+                    } else {
+                        return ActionSheet(
+                            title: quiz.correctAnswer ? Text("Right answer: \(quiz.currentSolution.uppercased())") : Text("Not recognized: \(quiz.currentSolution.uppercased())"),
+                            buttons: [
+                                .default(Text("Continue"), action: {
+                                    if quiz.state == .play {
+                                        quiz.nextQuestion()
+                                        drawings = [Drawing]()
+                                    } else {
+                                        showScore.toggle()
+                                        self.presentation.wrappedValue.dismiss()
+                                    }
+                                }),
+                                .destructive(Text("Validate anyway"), action: {
+                                    addCorrectAnswerToStat()
+                                    quiz.addOneToScore()
+                                    if quiz.state == .play {
+                                        quiz.nextQuestion()
+                                        drawings = [Drawing]()
+                                    } else {
+                                        showScore.toggle()
+                                        self.presentation.wrappedValue.dismiss()
+                                    }
+                                })
+                            ]
+                        )
+                    }
                 })
             }
         }

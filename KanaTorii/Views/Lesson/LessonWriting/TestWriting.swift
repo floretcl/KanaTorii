@@ -70,26 +70,41 @@ struct TestWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .alert(isPresented: $showActionSheet, content: {
-                Alert(
-                    title: Text("Your result: "),
-                    message: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
-                    primaryButton: .default(Text("Validate anyway"), action: {
-                        currentLesson.newPart()
-                        drawings = [Drawing]()
-                        if currentLesson.currentPart == .quiz {
-                            showQuiz.toggle()
-                        }
-                        self.presentation.wrappedValue.dismiss()
-                    }),
-                    secondaryButton: .destructive(Text("Continue"), action: {
-                        currentLesson.newPart()
-                        drawings = [Drawing]()
-                        if currentLesson.currentPart == .quiz {
-                            showQuiz.toggle()
-                        }
-                        self.presentation.wrappedValue.dismiss()
-                    })
-                )
+                if test.correctDrawing {
+                    return Alert(
+                        title: Text("Your result: "),
+                        message: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
+                        dismissButton: .default(Text("Continue"), action: {
+                            currentLesson.newPart()
+                            drawings = [Drawing]()
+                            if currentLesson.currentPart == .quiz {
+                                showQuiz.toggle()
+                            }
+                            self.presentation.wrappedValue.dismiss()
+                        })
+                    )
+                } else {
+                    return Alert(
+                        title: Text("Your result: "),
+                        message: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
+                        primaryButton: .default(Text("Continue"), action: {
+                            currentLesson.newPart()
+                            drawings = [Drawing]()
+                            if currentLesson.currentPart == .quiz {
+                                showQuiz.toggle()
+                            }
+                            self.presentation.wrappedValue.dismiss()
+                        }),
+                        secondaryButton: .destructive(Text("Validate anyway"), action: {
+                            currentLesson.newPart()
+                            drawings = [Drawing]()
+                            if currentLesson.currentPart == .quiz {
+                                showQuiz.toggle()
+                            }
+                            self.presentation.wrappedValue.dismiss()
+                        })
+                    )
+                }
             })
         } else {
             GeometryReader(content: { geometry in
@@ -128,27 +143,43 @@ struct TestWriting: View {
                 .edgesIgnoringSafeArea(.bottom)
             })
             .actionSheet(isPresented: $showActionSheet, content: {
-                ActionSheet(
-                    title: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
-                    buttons: [
-                        .default(Text("Validate anyway"), action: {
-                            currentLesson.newPart()
-                            drawings = [Drawing]()
-                            if currentLesson.currentPart == .quiz {
-                                showQuiz.toggle()
-                            }
-                            self.presentation.wrappedValue.dismiss()
-                        }),
-                        .destructive(Text("Continue"), action: {
-                            currentLesson.newPart()
-                            drawings = [Drawing]()
-                            if currentLesson.currentPart == .quiz {
-                                showQuiz.toggle()
-                            }
-                            self.presentation.wrappedValue.dismiss()
-                        })
-                    ]
-                )
+                if test.correctDrawing {
+                    return ActionSheet(
+                        title: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
+                        buttons: [
+                            .default(Text("Continue"), action: {
+                                currentLesson.newPart()
+                                drawings = [Drawing]()
+                                if currentLesson.currentPart == .quiz {
+                                    showQuiz.toggle()
+                                }
+                                self.presentation.wrappedValue.dismiss()
+                            })
+                        ]
+                    )
+                } else {
+                    return ActionSheet(
+                        title: test.correctDrawing ? Text("Right answer") : Text("Not recognized"),
+                        buttons: [
+                            .default(Text("Continue"), action: {
+                                currentLesson.newPart()
+                                drawings = [Drawing]()
+                                if currentLesson.currentPart == .quiz {
+                                    showQuiz.toggle()
+                                }
+                                self.presentation.wrappedValue.dismiss()
+                            }),
+                            .destructive(Text("Validate anyway"), action: {
+                                currentLesson.newPart()
+                                drawings = [Drawing]()
+                                if currentLesson.currentPart == .quiz {
+                                    showQuiz.toggle()
+                                }
+                                self.presentation.wrappedValue.dismiss()
+                            })
+                        ]
+                    )
+                }
             })
         }
     }

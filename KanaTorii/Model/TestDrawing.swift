@@ -11,8 +11,8 @@ import SwiftUI
 import CoreML
 
 class TestDrawing: ObservableObject {
-    private var hiraganaRecognizer: HiraganaRecognizer?
-    private var katakanaRecognizer: KatakanaRecognizer?
+    private var hiraganaClassifier: HiraganaClassifier?
+    private var katakanaClassifier: KatakanaClassifier?
     private var kana: String
     @Published var type: KanaType
     @Published var romaji: String
@@ -104,13 +104,13 @@ class TestDrawing: ObservableObject {
     private func initializeConfiguration() {
         if type == .hiragana {
             do {
-                try hiraganaRecognizer = HiraganaRecognizer(configuration: .init())
+                try hiraganaClassifier = HiraganaClassifier(configuration: .init())
             } catch {
                 fatalError("Error to init model")
             }
         } else {
             do {
-                try katakanaRecognizer = KatakanaRecognizer(configuration: .init())
+                try katakanaClassifier = KatakanaClassifier(configuration: .init())
             } catch {
                 fatalError("Error to init model")
             }
@@ -128,13 +128,13 @@ class TestDrawing: ObservableObject {
         }
         if type == .hiragana {
             do {
-                try prediction = hiraganaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
+                try prediction = hiraganaClassifier?.prediction(image: pixelbuffer).classLabel ?? ""
             } catch {
                 fatalError("Unexpected runtime error: \(error)")
             }
         } else {
             do {
-                try prediction = katakanaRecognizer?.prediction(image: pixelbuffer).classLabel ?? ""
+                try prediction = katakanaClassifier?.prediction(image: pixelbuffer).classLabel ?? ""
             } catch {
                 fatalError("Unexpected runtime error: \(error)")
             }
