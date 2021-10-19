@@ -11,7 +11,7 @@ import SwiftKeychainWrapper
 
 @main
 struct KanaToriiApp: App {
-    @StateObject var storeManager = StoreManager()
+    @StateObject var storeManager = StoreManager(products: ["fr.clementfloret.kanatorii.IAP.lessons"])
     @StateObject var modelData = ModelData()
     let persistenceController = PersistenceController.shared
 
@@ -31,7 +31,6 @@ struct KanaToriiApp: App {
                         KeychainWrapper.standard.set(false, forKey: productIDs[0])
                     }
                     SKPaymentQueue.default().add(storeManager)
-                    storeManager.getProducts(productIDs: productIDs)
                 })
         }
     }

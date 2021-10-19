@@ -14,6 +14,11 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
     @Published var transactionState: SKPaymentTransactionState?
 
     private var productsRequest: SKProductsRequest!
+    
+    init(products: [String]) {
+        super.init()
+        getProducts(productIDs: products)
+    }
 
     func getProducts(productIDs: [String]) {
         print("Start requesting products ...")

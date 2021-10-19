@@ -141,10 +141,11 @@ struct LessonsNavigationView: View {
     }
 }
 
-//struct LessonsNavigationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LessonsNavigationView(storeManager: StoreManager())
-//            .environmentObject(StoreManager())
-//            .environmentObject(ModelData())
-//    }
-//}
+struct LessonsNavigationView_Previews: PreviewProvider {
+    static var previews: some View {
+        let storeManager = StoreManager(products: ["fr.clementfloret.kanatorii.IAP.lessons"])
+        LessonsNavigationView(storeManager: storeManager)
+            .environmentObject(storeManager)
+            .environmentObject(ModelData())
+    }
+}
