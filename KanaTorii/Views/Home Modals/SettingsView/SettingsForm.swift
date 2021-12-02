@@ -127,7 +127,7 @@ struct SettingsForm: View {
                         Text(version)
                     }
                 }
-                Link(destination: URL(string: "https://floretcl.github.io/en/kanatorii.html")!, label: {
+                Link(destination: URL(string: "https://www.kanatorii.com")!, label: {
                     Label("Support website", systemImage: "network")
                 })
                 Link(destination: URL(string: "https://twitter.com/FloretClement")!, label: {

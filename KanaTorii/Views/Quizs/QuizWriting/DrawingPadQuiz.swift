@@ -21,15 +21,13 @@ struct DrawingPadQuiz: View {
             .foregroundColor(Color(UIColor.systemBackground))
             .shadow(color: Color("Shadow"), radius: 7, x: 0, y: 0)
             DrawingArea(
-                isPractice: false,
-                isTest: false,
-                isQuiz: true,
                 drawing: $drawing,
                 paths: $drawings,
                 image: $image,
                 color: .primary,
                 lineWidth: lineWidth)
                 .cornerRadius(25)
+            DrawingGrid()
         }
     }
 }
