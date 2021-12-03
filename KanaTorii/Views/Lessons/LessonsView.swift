@@ -22,8 +22,6 @@ struct LessonsView: View {
 
 struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
-        let storeManager = StoreManager(products: ["fr.clementfloret.kanatorii.IAP.lessons"])
-        LessonsView(storeManager: storeManager)
-            .environmentObject(storeManager)
+        LessonsView(storeManager: StoreManager())
     }
 }

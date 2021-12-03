@@ -7,7 +7,6 @@
 
 import Foundation
 import StoreKit
-import SwiftKeychainWrapper
 
 class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     @Published var products = [SKProduct]()
@@ -15,11 +14,6 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
 
     private var productsRequest: SKProductsRequest!
     
-    init(products: [String]) {
-        super.init()
-        getProducts(productIDs: products)
-    }
-
     func getProducts(productIDs: [String]) {
         print("Start requesting products ...")
         productsRequest = SKProductsRequest(productIdentifiers: Set(productIDs))
@@ -28,7 +22,7 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
     }
 
     func request(_ request: SKRequest, didFailWithError error: Error) {
-      print("Failed getting products: \(error)")
+      print("Failed requesting products: \(error)")
     }
 
     func purchaseProduct(product: SKProduct) {
@@ -65,11 +59,11 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
             case .purchasing:
                 transactionState = .purchasing
             case .purchased:
-                KeychainWrapper.standard.set(true, forKey: transaction.payment.productIdentifier)
+                UserDefaults.standard.set(true, forKey: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
                 transactionState = .purchased
             case .restored:
-                KeychainWrapper.standard.set(true, forKey: transaction.payment.productIdentifier)
+                UserDefaults.standard.set(true, forKey: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
                 transactionState = .restored
             case .failed, .deferred:

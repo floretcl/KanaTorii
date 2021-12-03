@@ -57,12 +57,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let storeManager = StoreManager(products: ["fr.clementfloret.kanatorii.IAP.lessons"])
-        Group {
-            ContentView(storeManager: storeManager)
-                .preferredColorScheme(.dark)
-                .environmentObject(storeManager)
-                .environmentObject(ModelData())
-        }
+        ContentView(storeManager: StoreManager())
+            .preferredColorScheme(.dark)
+            .environmentObject(ModelData())
     }
 }

@@ -18,21 +18,6 @@
           "description" : "Accès à toutes les leçons",
           "displayName" : "84 leçons supplémentaires",
           "locale" : "fr"
-        },
-        {
-          "description" : "Acesso a todas as liçoes",
-          "displayName" : "84 liçoes adicionais",
-          "locale" : "pt_PT"
-        },
-        {
-          "description" : "Acceso a todas las lecciones",
-          "displayName" : "84 lecciones adicionales",
-          "locale" : "es_ES"
-        },
-        {
-          "description" : "Accesso a tutte le lezioni",
-          "displayName" : "84 lezioni aggiuntive",
-          "locale" : "it"
         }
       ],
       "productID" : "fr.clementfloret.kanatorii.IAP.lessons",
