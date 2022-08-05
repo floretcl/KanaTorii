@@ -61,21 +61,23 @@ struct LessonsNavigationView: View {
         NavigationView {
             VStack {
                 ForEach(storeManager.products, id: \.self) { product in
-                    if UserDefaults.standard.bool(forKey: product.productIdentifier) {
-                        ListOfLessons(lessons: lessons)
-                    } else {
-                        Button(action: {
-                            storeManager.purchaseProduct(product: product)
-                        }, label: {
-                            Text("\(product.localizedTitle) \(product.price)")
-                                .font(.headline)
-                                .foregroundColor(Color.white)
-                                .padding(10)
-                                .background(Color.accentColor)
-                                .clipShape(Capsule())
-                        })
-                        ListOfLessons(lessons: freeLessons)
-                    }
+                    ListOfLessons(lessons: lessons)
+                    // In app purchase
+//                    if UserDefaults.standard.bool(forKey: product.productIdentifier) {
+//                        ListOfLessons(lessons: lessons)
+//                    } else {
+//                        Button(action: {
+//                            storeManager.purchaseProduct(product: product)
+//                        }, label: {
+//                            Text("\(product.localizedTitle) \(product.price)")
+//                                .font(.headline)
+//                                .foregroundColor(Color.white)
+//                                .padding(10)
+//                                .background(Color.accentColor)
+//                                .clipShape(Capsule())
+//                        })
+//                        ListOfLessons(lessons: freeLessons)
+//                    }
                 }
             }
             if UIDevice.current.localizedModel == "iPad" {
