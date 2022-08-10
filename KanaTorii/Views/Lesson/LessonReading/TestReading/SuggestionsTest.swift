@@ -23,7 +23,7 @@ struct SuggestionsTest: View {
             alignment: .center,
             spacing: spacing,
             content: {
-                ForEach(0..<test.suggestions.count) { index in
+                ForEach(0..<test.suggestions.count, id: \.self) { index in
                     SuggestionCellTest(
                         test: test,
                         index: index,

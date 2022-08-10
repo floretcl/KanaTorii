@@ -27,7 +27,7 @@ struct SuggestionsMiniQuiz: View {
             alignment: .center,
             spacing: spacing,
             content: {
-                ForEach(0..<miniQuiz.suggestions!.count) { index in
+                ForEach(0..<miniQuiz.suggestions!.count, id: \.self) { index in
                     SuggestionCellMiniQuiz(
                         miniQuiz: miniQuiz,
                         index: index,

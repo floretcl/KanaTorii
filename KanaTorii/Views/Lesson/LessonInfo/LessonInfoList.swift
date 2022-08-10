@@ -15,7 +15,7 @@ struct LessonInfoList: View {
     var body: some View {
         if UIDevice.current.localizedModel == "iPad" {
             List {
-                ForEach(0..<lesson.kanas.count) { index in
+                ForEach(0..<lesson.kanas.count, id: \.self) { index in
                     let kana = lesson.kanas[index]
                     let romaji = lesson.romaji[index]
                     Text("\(kana)    :    \(romaji)")
@@ -27,7 +27,7 @@ struct LessonInfoList: View {
             .padding(.horizontal, widthDevice/5)
         } else {
             List {
-                ForEach(0..<lesson.kanas.count) { index in
+                ForEach(0..<lesson.kanas.count, id: \.self) { index in
                     let kana = lesson.kanas[index]
                     let romaji = lesson.romaji[index]
                     Text("\(kana)    :    \(romaji)")

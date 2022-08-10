@@ -23,7 +23,7 @@ struct ReminderView: View {
         NavigationView {
             Form(content: {
                 Picker("Weekday", selection: $selectedWeekDay) {
-                    ForEach(0..<weekdays.count) {
+                    ForEach(0..<weekdays.count, id: \.self) {
                         Text(self.weekdays[$0].name)
                     }
                 }

@@ -28,7 +28,7 @@ struct DakuonHandakuonGrid: View {
             alignment: .center,
             spacing: widthDevice/20,
             content: {
-                ForEach(limitGojuon..<limitDakuonHandakuon) { index in
+                ForEach(limitGojuon..<limitDakuonHandakuon, id: \.self) { index in
                     KanaCell(colorsInTables: _colorsInTables, kanaForList: kanasForList[index], kanaType: self.kanaType, widthDevice: widthDevice)
             }
         })

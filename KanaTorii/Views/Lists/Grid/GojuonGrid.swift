@@ -26,7 +26,7 @@ struct GojuonGrid: View {
             alignment: .center,
             spacing: widthDevice/20,
             content: {
-                ForEach(0..<limitGojuon) { index in
+                ForEach(0..<limitGojuon, id: \.self) { index in
                     KanaCell(colorsInTables: _colorsInTables, kanaForList: kanasForList[index], kanaType: self.kanaType, widthDevice: widthDevice)
             }
         })

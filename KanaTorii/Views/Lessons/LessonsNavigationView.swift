@@ -29,16 +29,16 @@ struct LessonsNavigationView: View {
         }
         .navigationBarTitle("Lessons")
         .navigationBarItems(
-            leading: Button(action: {
-                storeManager.restoreProducts()
-            }, label: {
-                Image(systemName: "cart")
-                    .foregroundColor(Color.accentColor)
-                    .font(.title3)
-                    .padding(.bottom, 10.0)
-                Text("Restore")
-                    .foregroundColor(Color.accentColor)
-            }),
+//            leading: Button(action: {
+//                storeManager.restoreProducts()
+//            }, label: {
+//                Image(systemName: "cart")
+//                    .foregroundColor(Color.accentColor)
+//                    .font(.title3)
+//                    .padding(.bottom, 10.0)
+//                Text("Restore")
+//                    .foregroundColor(Color.accentColor)
+//            }),
             trailing: Button(
                 action: {
                     hapticFeedback(style: .soft)
