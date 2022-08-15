@@ -9,11 +9,11 @@ import SwiftUI
 import StoreKit
 
 struct LessonsNavigationView: View {
-    @StateObject var storeManager: StoreManager
+//    @StateObject var storeManager: StoreManager
     @EnvironmentObject var modelData: ModelData
-    var freeLessons: [LessonForList] {
-        return modelData.freeLessons
-    }
+//    var freeLessons: [LessonForList] {
+//        return modelData.freeLessons
+//    }
     var lessons: [LessonForList] {
         return modelData.lessons  
     }
@@ -60,9 +60,9 @@ struct LessonsNavigationView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ForEach(storeManager.products, id: \.self) { product in
                     ListOfLessons(lessons: lessons)
                     // In app purchase
+//                ForEach(lessons, id: \.self) { lesson in
 //                    if UserDefaults.standard.bool(forKey: product.productIdentifier) {
 //                        ListOfLessons(lessons: lessons)
 //                    } else {
@@ -78,7 +78,7 @@ struct LessonsNavigationView: View {
 //                        })
 //                        ListOfLessons(lessons: freeLessons)
 //                    }
-                }
+//                }
             }
             if UIDevice.current.localizedModel == "iPad" {
                 VStack {
@@ -99,7 +99,8 @@ struct LessonsNavigationView: View {
 
 struct LessonsNavigationView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonsNavigationView(storeManager: StoreManager())
+        LessonsNavigationView()
             .environmentObject(ModelData())
+
     }
 }

@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var storeManager: StoreManager
-    
     @State var tabViewSelectedItem: Int = 0
 
     // User Defaults
@@ -30,7 +28,7 @@ struct ContentView: View {
                             .foregroundColor(Color.black)
                         Image(systemName: "list.triangle")
                     }.tag(1)
-                LessonsView(storeManager: storeManager)
+                LessonsView()
                     .tabItem {
                         Text("Lessons")
                         Image(systemName: "book")
@@ -57,7 +55,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(storeManager: StoreManager())
+        ContentView()
             .preferredColorScheme(.dark)
             .environmentObject(ModelData())
     }

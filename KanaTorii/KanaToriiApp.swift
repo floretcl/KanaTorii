@@ -10,12 +10,12 @@ import StoreKit
 
 @main
 struct KanaToriiApp: App {
-    let productIDs = [
-        // 84 extra lesssons
-        "fr.clementfloret.kanatorii.IAP.lessons"
-    ]
+//    let productIDs = [
+//        // 84 extra lesssons
+//        "fr.clementfloret.kanatorii.IAP.lessons"
+//    ]
     
-    @StateObject var storeManager = StoreManager()
+    
     @StateObject var modelData = ModelData()
     let persistenceController = PersistenceController.shared
 
@@ -23,13 +23,13 @@ struct KanaToriiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(storeManager: storeManager)
+            ContentView()
                 .environmentObject(modelData)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .onAppear(perform: {
-                    SKPaymentQueue.default().add(storeManager)
-                    storeManager.getProducts(productIDs: productIDs)
-                })
+//                .onAppear(perform: {
+//                    SKPaymentQueue.default().add(storeManager)
+//                    storeManager.getProducts(productIDs: productIDs)
+//                })
         }
     }
 }

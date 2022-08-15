@@ -27,7 +27,7 @@ struct YoonGrid: View {
             alignment: .center,
             spacing: widthDevice/20,
             content: {
-                ForEach(limitDakuonHandakuon..<limitYoon) { index in
+                ForEach(limitDakuonHandakuon..<limitYoon, id: \.self) { index in
                     KanaCell(colorsInTables: _colorsInTables, kanaForList: kanasForList[index], kanaType: self.kanaType, widthDevice: widthDevice)
             }
         })
