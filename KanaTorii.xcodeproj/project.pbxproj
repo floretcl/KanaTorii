@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03F09F6E2C8E21F1000E9DFC /* HiraganaClassifier.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 03F09F6D2C8E21F1000E9DFC /* HiraganaClassifier.mlpackage */; };
+		03F09F702C8E21FB000E9DFC /* KatakanaClassifier.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 03F09F6F2C8E21FB000E9DFC /* KatakanaClassifier.mlpackage */; };
 		7E090BA725D1C12700FF35F4 /* GuideTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E090BA625D1C12700FF35F4 /* GuideTest.swift */; };
 		7E0954A925D9A5BF00A58AFF /* TitleLessonReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0954A825D9A5BF00A58AFF /* TitleLessonReading.swift */; };
 		7E0954AE25D9A63F00A58AFF /* SoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0954AD25D9A63F00A58AFF /* SoundButton.swift */; };
@@ -134,8 +136,6 @@
 		7ECFBBDC2608FEA7003EC368 /* BodyTestReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECFBBDB2608FEA7003EC368 /* BodyTestReading.swift */; };
 		7ECFBBE426090361003EC368 /* BodyMiniQuizReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECFBBE326090361003EC368 /* BodyMiniQuizReading.swift */; };
 		7ED04E3725D96F3200686D48 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED04E3625D96F3200686D48 /* HomeButtons.swift */; };
-		7ED85C90271C8032007BDC69 /* HiraganaClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7ED85C8F271C8032007BDC69 /* HiraganaClassifier.mlmodel */; };
-		7ED85C92271C87B4007BDC69 /* KatakanaClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7ED85C91271C87B3007BDC69 /* KatakanaClassifier.mlmodel */; };
 		7EED307E25F92D3D00B2C5F1 /* HomeButtonAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EED307D25F92D3D00B2C5F1 /* HomeButtonAbout.swift */; };
 		7EED308325F92D7B00B2C5F1 /* HomeButtonIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EED308225F92D7B00B2C5F1 /* HomeButtonIntroduction.swift */; };
 		7EF09E27268C9CB300890454 /* EmptyStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF09E26268C9CB300890454 /* EmptyStatisticView.swift */; };
@@ -169,6 +169,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03F09F6D2C8E21F1000E9DFC /* HiraganaClassifier.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = HiraganaClassifier.mlpackage; sourceTree = "<group>"; };
+		03F09F6F2C8E21FB000E9DFC /* KatakanaClassifier.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = KatakanaClassifier.mlpackage; sourceTree = "<group>"; };
 		7E090BA625D1C12700FF35F4 /* GuideTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTest.swift; sourceTree = "<group>"; };
 		7E0954A825D9A5BF00A58AFF /* TitleLessonReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLessonReading.swift; sourceTree = "<group>"; };
 		7E0954AD25D9A63F00A58AFF /* SoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundButton.swift; sourceTree = "<group>"; };
@@ -306,8 +308,6 @@
 		7ECFBBDB2608FEA7003EC368 /* BodyTestReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTestReading.swift; sourceTree = "<group>"; };
 		7ECFBBE326090361003EC368 /* BodyMiniQuizReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMiniQuizReading.swift; sourceTree = "<group>"; };
 		7ED04E3625D96F3200686D48 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
-		7ED85C8F271C8032007BDC69 /* HiraganaClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HiraganaClassifier.mlmodel; sourceTree = "<group>"; };
-		7ED85C91271C87B3007BDC69 /* KatakanaClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = KatakanaClassifier.mlmodel; sourceTree = "<group>"; };
 		7EED307D25F92D3D00B2C5F1 /* HomeButtonAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonAbout.swift; sourceTree = "<group>"; };
 		7EED308225F92D7B00B2C5F1 /* HomeButtonIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonIntroduction.swift; sourceTree = "<group>"; };
 		7EF09E26268C9CB300890454 /* EmptyStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticView.swift; sourceTree = "<group>"; };
@@ -664,8 +664,8 @@
 				7E9B2B6925E41F1300481D71 /* Quiz.swift */,
 				7E4AE9FF25ED9F3300FDFDC6 /* Score.swift */,
 				7E25672E25FBBE5C005B71A8 /* Weekday.swift */,
-				7ED85C8F271C8032007BDC69 /* HiraganaClassifier.mlmodel */,
-				7ED85C91271C87B3007BDC69 /* KatakanaClassifier.mlmodel */,
+				03F09F6D2C8E21F1000E9DFC /* HiraganaClassifier.mlpackage */,
+				03F09F6F2C8E21FB000E9DFC /* KatakanaClassifier.mlpackage */,
 				7E3E425A25CB2C7C00B2F5AC /* Persistence.swift */,
 				7E3F6A7325D6FD0600F22669 /* ImageProcessor.swift */,
 				7E45E35F25DAD94D009B9A16 /* Extensions.swift */,
@@ -890,7 +890,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					7E3E424D25CB2C7C00B2F5AC = {
 						CreatedOnToolsVersion = 12.4;
@@ -1005,6 +1005,8 @@
 				7E3E430C25CB358200B2F5AC /* ListsView.swift in Sources */,
 				7E3E42F625CB345A00B2F5AC /* HomeView.swift in Sources */,
 				7E3E433525CB366400B2F5AC /* StatisticsSection.swift in Sources */,
+				03F09F6E2C8E21F1000E9DFC /* HiraganaClassifier.mlpackage in Sources */,
+				03F09F702C8E21FB000E9DFC /* KatakanaClassifier.mlpackage in Sources */,
 				7E3E437025CB393600B2F5AC /* LessonMemoReading.swift in Sources */,
 				7E3E439B25CB446100B2F5AC /* ModelData.swift in Sources */,
 				7E3FE92B25E3FE2E00AB398D /* QuizMCQ.swift in Sources */,
@@ -1055,7 +1057,6 @@
 				7E3E425E25CB2C7C00B2F5AC /* KanaTorii.xcdatamodeld in Sources */,
 				7E89855325E16A2000C4900B /* ContinueButtonTestDrawing.swift in Sources */,
 				7E647573261228C1005507E0 /* StoreManager.swift in Sources */,
-				7ED85C92271C87B4007BDC69 /* KatakanaClassifier.mlmodel in Sources */,
 				7E3E431725CB35B800B2F5AC /* Grid.swift in Sources */,
 				7EF9804125D9796300634116 /* DetailButtons.swift in Sources */,
 				7ECFBBD22608EFF7003EC368 /* LessonInfo.swift in Sources */,
@@ -1072,7 +1073,6 @@
 				7E3E434925CB369900B2F5AC /* InversedLabel.swift in Sources */,
 				7EF5EA5825F92FBF003D498B /* SheetHeaderSettings.swift in Sources */,
 				7E8BAB0825F3FCC300205949 /* QuizsView.swift in Sources */,
-				7ED85C90271C8032007BDC69 /* HiraganaClassifier.mlmodel in Sources */,
 				7EED307E25F92D3D00B2C5F1 /* HomeButtonAbout.swift in Sources */,
 				7E3E434A25CB369900B2F5AC /* DrawingGrid.swift in Sources */,
 				7E3E439A25CB446100B2F5AC /* Lesson.swift in Sources */,

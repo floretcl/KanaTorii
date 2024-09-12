@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "2CDDBB8F-264A-464F-A4FF-09FC042195A2": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "2F0E7C3C-21BE-4918-96CA-F96C866BA7B3": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "KatakanaClassifier.mlmodel",
+            "path": "com.apple.CoreML/KatakanaClassifier.mlmodel"
+        },
+        "F40FDCC2-88EF-490E-858E-FA8B117BED55": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        }
+    },
+    "rootModelIdentifier": "2F0E7C3C-21BE-4918-96CA-F96C866BA7B3"
+}

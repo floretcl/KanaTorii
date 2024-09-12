@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "4CA0C439-C2CD-49D2-9EBB-62B4E5E446E7": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "9C539D71-5BBE-4A33-A23B-A32A6561092F": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        },
+        "C8912E74-5E9D-41FF-B150-31B866CF6122": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "HiraganaClassifier.mlmodel",
+            "path": "com.apple.CoreML/HiraganaClassifier.mlmodel"
+        }
+    },
+    "rootModelIdentifier": "C8912E74-5E9D-41FF-B150-31B866CF6122"
+}

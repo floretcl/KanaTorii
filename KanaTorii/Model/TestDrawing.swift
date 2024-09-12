@@ -104,13 +104,17 @@ class TestDrawing: ObservableObject {
     private func initializeConfiguration() {
         if type == .hiragana {
             do {
-                try hiraganaClassifier = HiraganaClassifier(configuration: .init())
+                let config = MLModelConfiguration()
+                config.computeUnits = .cpuOnly
+                try hiraganaClassifier = HiraganaClassifier(configuration: config)
             } catch {
                 fatalError("Error to init model")
             }
         } else {
             do {
-                try katakanaClassifier = KatakanaClassifier(configuration: .init())
+                let config = MLModelConfiguration()
+                config.computeUnits = .cpuOnly
+                try katakanaClassifier = KatakanaClassifier(configuration: config)
             } catch {
                 fatalError("Error to init model")
             }
